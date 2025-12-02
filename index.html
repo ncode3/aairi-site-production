@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>AAIRI Site</title>
+    <style>
+      body { font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; padding: 2rem; }
+      header { margin-bottom: 1.5rem; }
+      .images { display:flex; gap:1rem; flex-wrap:wrap }
+      .images img { max-width:200px; height:auto; border:1px solid #ddd; padding:4px }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>AAIRI Site</h1>
+      <p>Welcome — this is a minimal index page for the nginx Docker image.</p>
+    </header>
+
+    <section>
+      <h2>Images</h2>
+      <p>If you have images in the <code>images/</code> folder they will appear below.</p>
+      <div class="images">
+        <!-- Example: if you have an image named example.png put it in images/ -->
+        <img src="images/example.png" alt="example image" onerror="this.style.display='none'">
+      </div>
+    </section>
+
+    <footer>
+      <p><small>Served by nginx via Dockerfile</small></p>
+    </footer>
+  </body>
+</html>
