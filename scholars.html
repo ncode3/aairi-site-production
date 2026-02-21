@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>David Mykel Taylor Scholars Program | AARI</title>
+    <meta name="description" content="The David Mykel Taylor Scholars Program combines hardware ownership, technical training, and academic support to prepare high-potential APS students for real outcomes in technology, infrastructure, and AI.">
+
+    <!-- 1. Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- 2. Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: { 900: '#020617', 800: '#0f172a', 700: '#1e293b' },
+                        electric: { 500: '#3b82f6', 400: '#60a5fa' },
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- 3. Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        body { font-family: 'Inter', sans-serif; background: #020617; color: #f8fafc; }
+        .glass-panel {
+            background: rgba(15, 23, 42, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gradient-text-blue {
+            background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #020617; }
+        ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #3b82f6; }
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        .fade-in-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .outcome-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .outcome-card:hover {
+            transform: translateY(-4px);
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-amber-500 selection:text-white">
+
+    <!-- NAVIGATION -->
+    <nav class="fixed w-full z-50 transition-all duration-300 glass-panel border-b-0 border-b-white/5">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-3 group">
+                <div class="bg-white/90 p-1.5 rounded-lg hover:bg-white transition-colors">
+                    <img src="images/header-logo.png" alt="AARI Logo" class="h-10 w-auto object-contain">
+                </div>
+            </a>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-300">
+                <a href="index.html#mission" class="hover:text-white transition-colors">Mission</a>
+                <a href="index.html#programs" class="hover:text-white transition-colors">Programs</a>
+                <a href="scholars.html" class="text-amber-400 font-semibold">Scholars</a>
+                <a href="index.html#curriculum" class="hover:text-white transition-colors">Curriculum</a>
+                <a href="index.html#impact" class="hover:text-white transition-colors">Impact</a>
+                <a href="index.html#recognition-wall" class="hover:text-white transition-colors">Partners</a>
+                <a href="index.html#partner" class="bg-emerald-500 hover:bg-emerald-400 text-white px-4 py-2.5 rounded-lg transition-all shadow-lg shadow-emerald-900/30 flex items-center gap-2 font-semibold">
+                    <i data-lucide="heart" class="w-4 h-4"></i>
+                    Donate
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden text-slate-300" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+                <i data-lucide="menu" class="w-8 h-8"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-navy-900 border-t border-white/10 p-4">
+            <a href="index.html#mission" class="block py-3 text-slate-300">Mission</a>
+            <a href="index.html#programs" class="block py-3 text-slate-300">Programs</a>
+            <a href="scholars.html" class="block py-3 text-amber-400 font-bold">Scholars</a>
+            <a href="index.html#curriculum" class="block py-3 text-slate-300">Curriculum</a>
+            <a href="index.html#impact" class="block py-3 text-slate-300">Impact</a>
+            <a href="index.html#recognition-wall" class="block py-3 text-slate-300">Partners</a>
+            <a href="index.html#partner" class="block py-3 text-emerald-400 font-bold flex items-center gap-2">
+                <i data-lucide="heart" class="w-4 h-4"></i>
+                Donate Now
+            </a>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="relative pt-36 pb-20 md:pt-52 md:pb-32 overflow-hidden">
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[500px] bg-amber-600/10 rounded-full blur-[120px] -z-10"></div>
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="max-w-4xl">
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-900/30 border border-amber-500/30 text-amber-300 text-sm font-medium mb-8">
+                    <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
+                    Operated by AARI · Pilot Cohort
+                </div>
+
+                <h1 class="text-5xl md:text-7xl font-bold leading-tight mb-8">
+                    David Mykel Taylor<br>
+                    <span class="gradient-text">Scholars Program</span>
+                </h1>
+
+                <p class="text-lg md:text-xl text-slate-400 mb-10 leading-relaxed max-w-3xl">
+                    The David Mykel Taylor Scholars Program, operated by AARI, is a pilot scholarship and talent pipeline designed to support high-potential students transitioning from Atlanta Public Schools to AUC institutions. This is not a traditional scholarship. It combines hardware ownership, technical training, and academic support to prepare students for real outcomes in technology, infrastructure, and AI.
+                </p>
+
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="https://buy.stripe.com/28E9AU2mf3ZL0gT08afnO00" target="_blank" rel="noopener noreferrer"
+                       class="bg-amber-500 hover:bg-amber-400 text-navy-900 font-bold px-8 py-4 rounded-xl transition-all shadow-lg shadow-amber-900/30 flex items-center justify-center gap-2 text-lg">
+                        <i data-lucide="laptop" class="w-5 h-5"></i>
+                        Sponsor a Student Hardware Kit — $1,500
+                    </a>
+                    <a href="https://buy.stripe.com/28E9AU2mf3ZL0gT08afnO00" target="_blank" rel="noopener noreferrer"
+                       class="glass-panel border border-amber-500/30 text-amber-300 hover:border-amber-400 font-semibold px-8 py-4 rounded-xl transition-all flex items-center justify-center gap-2 text-lg">
+                        <i data-lucide="graduation-cap" class="w-5 h-5"></i>
+                        Support Program Scholarships
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHAT A SCHOLAR RECEIVES -->
+    <section class="py-24 bg-navy-900">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-16 fade-in-up">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">What a Scholar Receives</h2>
+                <p class="text-slate-400">Not just support — ownership. Every scholar gets tools and opportunities built for real outcomes.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <!-- Hardware Grant -->
+                <div class="outcome-card glass-panel rounded-2xl p-8 fade-in-up border-l-4 border-amber-500">
+                    <div class="flex items-start gap-5 mb-4">
+                        <div class="w-14 h-14 bg-amber-500/10 rounded-xl flex items-center justify-center border border-amber-500/30 flex-shrink-0">
+                            <i data-lucide="laptop" class="text-amber-400 w-7 h-7"></i>
+                        </div>
+                        <div>
+                            <div class="inline-flex items-center gap-2 bg-amber-500/10 border border-amber-500/20 text-amber-300 text-xs font-bold px-3 py-1 rounded-full mb-2">
+                                THEY KEEP IT
+                            </div>
+                            <h3 class="text-xl font-bold">Educational Hardware Grant</h3>
+                        </div>
+                    </div>
+                    <p class="text-slate-400 mb-4">Every scholar receives a complete hardware kit — no borrowing, no returning.</p>
+                    <ul class="space-y-2 text-slate-300 text-sm">
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="text-amber-400 w-4 h-4 flex-shrink-0"></i> Linux-capable laptop</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="text-amber-400 w-4 h-4 flex-shrink-0"></i> Edge device</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="text-amber-400 w-4 h-4 flex-shrink-0"></i> Monitor</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="text-amber-400 w-4 h-4 flex-shrink-0"></i> Storage</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="text-amber-400 w-4 h-4 flex-shrink-0"></i> Peripherals</li>
+                    </ul>
+                    <div class="mt-6 pt-5 border-t border-white/10 flex items-center justify-between">
+                        <span class="text-slate-500 text-sm">Hardware sponsorship</span>
+                        <span class="text-amber-400 font-bold text-xl">$1,500 per student</span>
+                    </div>
+                </div>
+
+                <!-- Scholarship Support -->
+                <div class="outcome-card glass-panel rounded-2xl p-8 fade-in-up border-l-4 border-purple-500">
+                    <div class="flex items-start gap-5 mb-4">
+                        <div class="w-14 h-14 bg-purple-500/10 rounded-xl flex items-center justify-center border border-purple-500/30 flex-shrink-0">
+                            <i data-lucide="graduation-cap" class="text-purple-400 w-7 h-7"></i>
+                        </div>
+                        <div>
+                            <div class="inline-flex items-center gap-2 bg-purple-500/10 border border-purple-500/20 text-purple-300 text-xs font-bold px-3 py-1 rounded-full mb-2">
+                                RESTRICTED USE
+                            </div>
+                            <h3 class="text-xl font-bold">Program Scholarship Support</h3>
+                        </div>
+                    </div>
+                    <p class="text-slate-400 mb-4">Scholarship funds go directly toward academic costs — restricted to legitimate educational expenses.</p>
+                    <ul class="space-y-2 text-slate-300 text-sm">
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="text-purple-400 w-4 h-4 flex-shrink-0"></i> Tuition at AUC institutions</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="text-purple-400 w-4 h-4 flex-shrink-0"></i> Books and course materials</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="text-purple-400 w-4 h-4 flex-shrink-0"></i> Fees (restricted use)</li>
+                    </ul>
+                </div>
+
+                <!-- AARI Fellowship -->
+                <div class="outcome-card glass-panel rounded-2xl p-8 fade-in-up border-l-4 border-blue-500">
+                    <div class="flex items-start gap-5 mb-4">
+                        <div class="w-14 h-14 bg-blue-500/10 rounded-xl flex items-center justify-center border border-blue-500/30 flex-shrink-0">
+                            <i data-lucide="users" class="text-blue-400 w-7 h-7"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold">AARI Fellowship Placement</h3>
+                        </div>
+                    </div>
+                    <p class="text-slate-400 mb-4">Scholars are placed in AARI's hands-on learning environment alongside mentors and real projects.</p>
+                    <ul class="space-y-2 text-slate-300 text-sm">
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="text-blue-400 w-4 h-4 flex-shrink-0"></i> Hands-on infrastructure labs</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="text-blue-400 w-4 h-4 flex-shrink-0"></i> Mentorship from practitioners</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="text-blue-400 w-4 h-4 flex-shrink-0"></i> Applied AI and systems projects</li>
+                    </ul>
+                </div>
+
+                <!-- Venture Track -->
+                <div class="outcome-card glass-panel rounded-2xl p-8 fade-in-up border-l-4 border-green-500">
+                    <div class="flex items-start gap-5 mb-4">
+                        <div class="w-14 h-14 bg-green-500/10 rounded-xl flex items-center justify-center border border-green-500/30 flex-shrink-0">
+                            <i data-lucide="trending-up" class="text-green-400 w-7 h-7"></i>
+                        </div>
+                        <div>
+                            <div class="inline-flex items-center gap-2 bg-green-500/10 border border-green-500/20 text-green-300 text-xs font-bold px-3 py-1 rounded-full mb-2">
+                                SELECT STUDENTS
+                            </div>
+                            <h3 class="text-xl font-bold">Optional Venture Track</h3>
+                        </div>
+                    </div>
+                    <p class="text-slate-400 mb-4">For students with founder potential, an optional track provides access to early-stage support.</p>
+                    <ul class="space-y-2 text-slate-300 text-sm">
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="text-green-400 w-4 h-4 flex-shrink-0"></i> Business building fundamentals</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="text-green-400 w-4 h-4 flex-shrink-0"></i> Access to micro-capital</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="text-green-400 w-4 h-4 flex-shrink-0"></i> Founder-ready mentorship</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHO THIS IS FOR -->
+    <section class="py-24">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div class="fade-in-up">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">Who This Is For</h2>
+                    <p class="text-slate-400 text-lg mb-8 leading-relaxed">
+                        This is not open enrollment. The David Mykel Taylor Scholars Program is cohort-based and selective — built for students who are ready to commit to a different path.
+                    </p>
+                    <ul class="space-y-5">
+                        <li class="flex items-start gap-4">
+                            <div class="w-10 h-10 bg-amber-500/10 rounded-lg flex items-center justify-center border border-amber-500/30 flex-shrink-0 mt-0.5">
+                                <i data-lucide="map-pin" class="text-amber-400 w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <div class="font-semibold text-white mb-1">APS-Identified Students</div>
+                                <p class="text-slate-400 text-sm">Students identified through Atlanta Public Schools and partner educators</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <div class="w-10 h-10 bg-blue-500/10 rounded-lg flex items-center justify-center border border-blue-500/30 flex-shrink-0 mt-0.5">
+                                <i data-lucide="graduation-cap" class="text-blue-400 w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <div class="font-semibold text-white mb-1">Future AUC Students</div>
+                                <p class="text-slate-400 text-sm">Committed to technical and academic growth at an HBCU</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <div class="w-10 h-10 bg-purple-500/10 rounded-lg flex items-center justify-center border border-purple-500/30 flex-shrink-0 mt-0.5">
+                                <i data-lucide="users" class="text-purple-400 w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <div class="font-semibold text-white mb-1">Cohort-Based & Selective</div>
+                                <p class="text-slate-400 text-sm">Not open enrollment — students are selected for each cohort</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <div class="w-10 h-10 bg-green-500/10 rounded-lg flex items-center justify-center border border-green-500/30 flex-shrink-0 mt-0.5">
+                                <i data-lucide="calendar" class="text-green-400 w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <div class="font-semibold text-white mb-1">10-Week Summer Internship</div>
+                                <p class="text-slate-400 text-sm">Immersive summer program with structured daily labs and real outcomes</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Stats Panel -->
+                <div class="glass-panel rounded-2xl p-8 fade-in-up border border-amber-500/20">
+                    <h3 class="text-xl font-bold mb-6 text-center">Program at a Glance</h3>
+                    <div class="grid grid-cols-2 gap-5">
+                        <div class="bg-navy-800/50 rounded-xl p-5 text-center border border-white/5">
+                            <div class="text-3xl font-bold text-amber-400 mb-1">10</div>
+                            <div class="text-slate-400 text-sm">Week Program</div>
+                        </div>
+                        <div class="bg-navy-800/50 rounded-xl p-5 text-center border border-white/5">
+                            <div class="text-3xl font-bold text-blue-400 mb-1">APS</div>
+                            <div class="text-slate-400 text-sm">Pipeline Source</div>
+                        </div>
+                        <div class="bg-navy-800/50 rounded-xl p-5 text-center border border-white/5">
+                            <div class="text-3xl font-bold text-purple-400 mb-1">AUC</div>
+                            <div class="text-slate-400 text-sm">Destination</div>
+                        </div>
+                        <div class="bg-navy-800/50 rounded-xl p-5 text-center border border-white/5">
+                            <div class="text-3xl font-bold text-green-400 mb-1">$1,500</div>
+                            <div class="text-slate-400 text-sm">Hardware / Scholar</div>
+                        </div>
+                    </div>
+                    <div class="mt-6 pt-5 border-t border-white/10 text-center">
+                        <p class="text-slate-400 text-sm">Pilot cohort · Limited seats · Selection by partner educators</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- OUTCOMES -->
+    <section class="py-24 bg-navy-900">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-16 fade-in-up">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Outcomes We're Driving</h2>
+                <p class="text-slate-400">Every element of the program points toward measurable, real-world results.</p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="outcome-card glass-panel rounded-2xl p-6 text-center fade-in-up">
+                    <div class="w-14 h-14 bg-blue-500/10 rounded-xl flex items-center justify-center mx-auto mb-4 border border-blue-500/30">
+                        <i data-lucide="school" class="text-blue-400 w-7 h-7"></i>
+                    </div>
+                    <h3 class="font-bold mb-2">College Enrollment & Persistence</h3>
+                    <p class="text-slate-400 text-sm">Supporting students through enrollment and into their first year at AUC institutions</p>
+                </div>
+
+                <div class="outcome-card glass-panel rounded-2xl p-6 text-center fade-in-up">
+                    <div class="w-14 h-14 bg-green-500/10 rounded-xl flex items-center justify-center mx-auto mb-4 border border-green-500/30">
+                        <i data-lucide="terminal" class="text-green-400 w-7 h-7"></i>
+                    </div>
+                    <h3 class="font-bold mb-2">Technical Readiness</h3>
+                    <p class="text-slate-400 text-sm">Linux, Python, and systems fundamentals before day one of college</p>
+                </div>
+
+                <div class="outcome-card glass-panel rounded-2xl p-6 text-center fade-in-up">
+                    <div class="w-14 h-14 bg-purple-500/10 rounded-xl flex items-center justify-center mx-auto mb-4 border border-purple-500/30">
+                        <i data-lucide="briefcase" class="text-purple-400 w-7 h-7"></i>
+                    </div>
+                    <h3 class="font-bold mb-2">Internships & Recruitment</h3>
+                    <p class="text-slate-400 text-sm">Direct pathways to employer partners and tech internships</p>
+                </div>
+
+                <div class="outcome-card glass-panel rounded-2xl p-6 text-center fade-in-up">
+                    <div class="w-14 h-14 bg-amber-500/10 rounded-xl flex items-center justify-center mx-auto mb-4 border border-amber-500/30">
+                        <i data-lucide="rocket" class="text-amber-400 w-7 h-7"></i>
+                    </div>
+                    <h3 class="font-bold mb-2">Founder-Ready Skills</h3>
+                    <p class="text-slate-400 text-sm">Select students gain the fundamentals to start and build a business</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY SPONSOR -->
+    <section class="py-24">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="max-w-4xl mx-auto">
+                <div class="glass-panel rounded-3xl p-10 md:p-16 border border-amber-500/20 shadow-[0_0_50px_rgba(251,191,36,0.07)] fade-in-up">
+                    <div class="text-center mb-10">
+                        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-900/30 border border-amber-500/30 text-amber-300 text-sm font-medium mb-6">
+                            <i data-lucide="building" class="w-4 h-4"></i>
+                            For Corporate & Individual Sponsors
+                        </div>
+                        <h2 class="text-3xl md:text-4xl font-bold mb-6">Why Sponsor</h2>
+                        <p class="text-lg text-slate-300 leading-relaxed max-w-2xl mx-auto">
+                            For a modest investment, sponsors help create a measurable, multi-year pipeline that replaces late-stage recruiting with early access to prepared talent.
+                        </p>
+                    </div>
+
+                    <div class="grid md:grid-cols-3 gap-6 mb-10">
+                        <div class="bg-navy-800/50 rounded-xl p-5 text-center border border-white/5">
+                            <i data-lucide="target" class="text-amber-400 w-8 h-8 mx-auto mb-3"></i>
+                            <div class="font-semibold mb-1">Early Access</div>
+                            <p class="text-slate-500 text-sm">Connect with talented students before they hit the open job market</p>
+                        </div>
+                        <div class="bg-navy-800/50 rounded-xl p-5 text-center border border-white/5">
+                            <i data-lucide="bar-chart-2" class="text-blue-400 w-8 h-8 mx-auto mb-3"></i>
+                            <div class="font-semibold mb-1">Measurable Impact</div>
+                            <p class="text-slate-500 text-sm">Tracked outcomes: enrollment, technical skills, internship placement</p>
+                        </div>
+                        <div class="bg-navy-800/50 rounded-xl p-5 text-center border border-white/5">
+                            <i data-lucide="refresh-cw" class="text-green-400 w-8 h-8 mx-auto mb-3"></i>
+                            <div class="font-semibold mb-1">Multi-Year Pipeline</div>
+                            <p class="text-slate-500 text-sm">Cohort model builds an annual, compounding talent pipeline</p>
+                        </div>
+                    </div>
+
+                    <!-- Sponsor CTAs -->
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="https://buy.stripe.com/28E9AU2mf3ZL0gT08afnO00" target="_blank" rel="noopener noreferrer"
+                           class="bg-amber-500 hover:bg-amber-400 text-navy-900 font-bold px-8 py-4 rounded-xl transition-all shadow-lg shadow-amber-900/30 flex items-center justify-center gap-3 text-lg">
+                            <i data-lucide="laptop" class="w-5 h-5"></i>
+                            Sponsor a Student Hardware Kit — $1,500
+                        </a>
+                        <a href="https://buy.stripe.com/28E9AU2mf3ZL0gT08afnO00" target="_blank" rel="noopener noreferrer"
+                           class="glass-panel border border-amber-500/30 text-amber-300 hover:border-amber-400 hover:bg-amber-500/5 font-semibold px-8 py-4 rounded-xl transition-all flex items-center justify-center gap-3 text-lg">
+                            <i data-lucide="graduation-cap" class="w-5 h-5"></i>
+                            Support Program Scholarships
+                        </a>
+                    </div>
+
+                    <p class="text-slate-500 text-xs text-center mt-6">
+                        AARI is a 501(c)(3) nonprofit. EIN: 41-2742893. All donations are tax-deductible to the extent allowed by law. Secure payment via Stripe.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT / LEARN MORE -->
+    <section class="py-16 bg-navy-900 border-t border-white/5">
+        <div class="max-w-3xl mx-auto px-6 text-center fade-in-up">
+            <h3 class="text-2xl font-bold mb-4">Questions About the Program?</h3>
+            <p class="text-slate-400 mb-8">Reach out directly to learn more about sponsorship opportunities, cohort timing, or partnership with Atlanta Public Schools.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="mailto:nolan@atlanta-robotics.org" class="glass-panel border border-white/10 hover:border-white/30 text-white font-semibold px-8 py-3 rounded-xl transition-all flex items-center justify-center gap-2">
+                    <i data-lucide="mail" class="w-5 h-5"></i>
+                    nolan@atlanta-robotics.org
+                </a>
+                <a href="index.html" class="glass-panel border border-white/10 hover:border-white/30 text-white font-semibold px-8 py-3 rounded-xl transition-all flex items-center justify-center gap-2">
+                    <i data-lucide="arrow-left" class="w-5 h-5"></i>
+                    Back to AARI Home
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="py-12 px-6 border-t border-white/5">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="flex items-center gap-3">
+                    <div class="bg-white/90 p-1.5 rounded-lg">
+                        <img src="images/header-logo.png" alt="AARI Logo" class="h-8 w-auto object-contain">
+                    </div>
+                    <span class="text-slate-400 text-sm">Atlanta AI & Robotics Initiative</span>
+                </div>
+
+                <div class="flex items-center gap-6 text-slate-400 text-sm">
+                    <a href="index.html#mission" class="hover:text-white transition-colors">Mission</a>
+                    <a href="index.html#programs" class="hover:text-white transition-colors">Programs</a>
+                    <a href="scholars.html" class="text-amber-400">Scholars</a>
+                    <a href="index.html#partner" class="hover:text-white transition-colors">Donate</a>
+                    <a href="mailto:nolan@atlanta-robotics.org" class="hover:text-white transition-colors">Contact</a>
+                </div>
+
+                <div class="text-slate-500 text-sm">
+                    &copy; 2026 AARI. A 501(c)(3) Organization.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        // Fade-in animation
+        const fadeElements = document.querySelectorAll('.fade-in-up');
+        const fadeObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+        fadeElements.forEach(el => fadeObserver.observe(el));
+    </script>
+</body>
+</html>
