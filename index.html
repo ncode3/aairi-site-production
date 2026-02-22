@@ -454,7 +454,7 @@
                     Our Curriculum
                 </div>
                 <h2 class="text-3xl md:text-4xl font-bold mb-4">Energy to App: How We Teach AI</h2>
-                <p class="text-slate-400 text-lg leading-relaxed">We don't just teach coding. We teach systems. AARI students learn AI from the ground up — understanding the full stack from power and silicon to deployed applications.</p>
+                <p class="text-slate-400 text-lg leading-relaxed">We don't just teach coding. We teach systems. AARI students learn AI from the ground up - understanding the full stack from power and silicon to deployed applications.</p>
             </div>
 
             <!-- Visual Pipeline -->
@@ -545,7 +545,7 @@
                     <i data-lucide="bot" class="text-blue-400 w-7 h-7"></i>
                 </div>
                 <p class="text-lg text-slate-300 leading-relaxed">
-                    <span class="text-white font-semibold">The robot isn't the goal — it's proof the pipeline works.</span> Our students don't just use AI tools. They understand and build the systems that power them.
+                    <span class="text-white font-semibold">The robot isn't the goal - it's proof the pipeline works.</span> Our students don't just use AI tools. They understand and build the systems that power them.
                 </p>
             </div>
         </div>
@@ -843,14 +843,14 @@
                     <p class="text-slate-300 text-sm">20 GPU compute hours for a student project</p>
                 </div>
 
-                <!-- $1,500 Impact — Hardware Kit -->
+                <!-- $1,500 Impact - Hardware Kit -->
                 <div class="glass-panel rounded-2xl p-6 text-center hover:border-amber-500/50 transition-all fade-in-up border border-amber-500/20">
                     <div class="text-3xl font-bold text-amber-400 mb-2">$1,500</div>
                     <div class="w-12 h-12 bg-amber-500/10 rounded-xl flex items-center justify-center mx-auto mb-4">
                         <i data-lucide="laptop" class="text-amber-400 w-6 h-6"></i>
                     </div>
                     <p class="text-slate-300 text-sm font-medium">One student's complete hardware kit</p>
-                    <p class="text-slate-500 text-xs mt-2">Linux laptop, edge device, monitor, storage &amp; peripherals — theirs to keep</p>
+                    <p class="text-slate-500 text-xs mt-2">Linux laptop, edge device, monitor, storage &amp; peripherals - theirs to keep</p>
                 </div>
 
                 <!-- Scholarship Funds -->
@@ -1176,7 +1176,7 @@
                 <!-- Impact Display -->
                 <div id="donation-impact" class="text-center mb-6 p-4 bg-navy-800/50 rounded-xl">
                     <p class="text-slate-300">
-                        <span class="text-blue-400 font-semibold">$250</span> powers <span class="text-green-400 font-semibold">50 hours</span> of GPU compute time for student projects — or contribute <span class="text-amber-400 font-semibold">$1,500</span> for a full student hardware kit
+                        <span class="text-blue-400 font-semibold">$250</span> powers <span class="text-green-400 font-semibold">50 hours</span> of GPU compute time for student projects - or contribute <span class="text-amber-400 font-semibold">$1,500</span> for a full student hardware kit
                     </p>
                 </div>
             </div>
@@ -1381,9 +1381,9 @@
             const impactDiv = document.getElementById('donation-impact');
             let impactText = '';
             if (amount >= 1500) {
-                impactText = `<p class="text-slate-300"><span class="text-amber-400 font-semibold">$${amount.toLocaleString()}</span> sponsors a <span class="text-amber-300 font-semibold">complete student hardware kit</span> — Linux laptop, edge device, monitor, storage &amp; peripherals (theirs to keep)</p>`;
+                impactText = `<p class="text-slate-300"><span class="text-amber-400 font-semibold">$${amount.toLocaleString()}</span> sponsors a <span class="text-amber-300 font-semibold">complete student hardware kit</span> - Linux laptop, edge device, monitor, storage &amp; peripherals (theirs to keep)</p>`;
             } else if (amount >= 500) {
-                impactText = `<p class="text-slate-300"><span class="text-purple-400 font-semibold">$${amount.toLocaleString()}</span> provides <span class="text-purple-300 font-semibold">scholarship support</span> — tuition, books, and fees for a scholar</p>`;
+                impactText = `<p class="text-slate-300"><span class="text-purple-400 font-semibold">$${amount.toLocaleString()}</span> provides <span class="text-purple-300 font-semibold">scholarship support</span> - tuition, books, and fees for a scholar</p>`;
             } else {
                 const hours = Math.floor(amount / 5);
                 impactText = `<p class="text-slate-300"><span class="text-blue-400 font-semibold">$${amount.toLocaleString()}</span> powers <span class="text-green-400 font-semibold">${hours}+ hours</span> of GPU compute time for student projects</p>`;
