@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy | Atlanta AI &amp; Robotics Initiative</title>
+    <meta name="description" content="Privacy Policy for the Atlanta AI &amp; Robotics Initiative, Inc. — a 501(c)(3) nonprofit organization. Learn how we collect, use, and protect your information.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: { 900: '#020617', 800: '#0f172a', 700: '#1e293b' },
+                        electric: { 500: '#3b82f6', 400: '#60a5fa' },
+                    },
+                    fontFamily: { sans: ['Inter', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; background: #020617; color: #f8fafc; }
+        .glass-panel { background: rgba(15,23,42,0.7); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.1); }
+        .gradient-text { background: linear-gradient(135deg,#60a5fa 0%,#a78bfa 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #020617; }
+        ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #3b82f6; }
+        .prose-dark h3 { color: #f1f5f9; font-size: 1.25rem; font-weight: 700; margin-top: 2rem; margin-bottom: 0.75rem; }
+        .prose-dark p { color: #94a3b8; line-height: 1.75; margin-bottom: 1rem; }
+        .prose-dark ul { color: #94a3b8; list-style-type: disc; padding-left: 1.5rem; margin-bottom: 1rem; space-y: 0.5rem; }
+        .prose-dark li { margin-bottom: 0.5rem; line-height: 1.7; }
+        .prose-dark strong { color: #e2e8f0; }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- NAVIGATION -->
+    <nav class="fixed w-full z-50 transition-all duration-300 glass-panel border-b-0 border-b-white/5">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-3 group">
+                <div class="bg-white/90 p-1.5 rounded-lg hover:bg-white transition-colors">
+                    <img src="images/header-logo.png" alt="AARI Logo" class="h-10 w-auto object-contain">
+                </div>
+            </a>
+            <div class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-300">
+                <a href="index.html#mission" class="hover:text-white transition-colors">Home</a>
+                <a href="about.html" class="hover:text-white transition-colors">About Us</a>
+                <a href="scholars.html" class="hover:text-white transition-colors">Scholars Program</a>
+                <a href="infrastructure.html" class="hover:text-white transition-colors">Technical Infrastructure</a>
+                <a href="privacy.html" class="text-blue-400 font-semibold">Privacy Policy</a>
+                <a href="https://buy.stripe.com/28E9AU2mf3ZL0gT08afnO00" target="_blank" rel="noopener noreferrer" class="bg-emerald-500 hover:bg-emerald-400 text-white px-4 py-2.5 rounded-lg transition-all shadow-lg shadow-emerald-900/30 flex items-center gap-2 font-semibold">
+                    <i data-lucide="heart" class="w-4 h-4"></i>
+                    Donate
+                </a>
+            </div>
+            <button class="md:hidden text-slate-300" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+                <i data-lucide="menu" class="w-8 h-8"></i>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-navy-900 border-t border-white/10 p-4">
+            <a href="index.html#mission" class="block py-3 text-slate-300">Home</a>
+            <a href="about.html" class="block py-3 text-slate-300">About Us</a>
+            <a href="scholars.html" class="block py-3 text-slate-300">Scholars Program</a>
+            <a href="infrastructure.html" class="block py-3 text-slate-300">Technical Infrastructure</a>
+            <a href="privacy.html" class="block py-3 text-blue-400 font-bold">Privacy Policy</a>
+            <a href="https://buy.stripe.com/28E9AU2mf3ZL0gT08afnO00" target="_blank" rel="noopener noreferrer" class="block py-3 text-emerald-400 font-bold flex items-center gap-2">
+                <i data-lucide="heart" class="w-4 h-4"></i>
+                Donate Now
+            </a>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="relative pt-36 pb-12 md:pt-48 md:pb-16 overflow-hidden">
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[400px] bg-blue-600/8 rounded-full blur-[120px] -z-10"></div>
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-900/30 border border-blue-500/30 text-blue-300 text-sm font-medium mb-8">
+                <i data-lucide="lock" class="w-4 h-4"></i>
+                Privacy &amp; Data
+            </div>
+            <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-6">
+                Privacy <span class="gradient-text">Policy</span>
+            </h1>
+            <p class="text-slate-400 text-lg mb-4">Atlanta AI &amp; Robotics Initiative, Inc.</p>
+            <p class="text-slate-500 text-sm">Effective Date: January 1, 2026 | Last Updated: February 2026</p>
+        </div>
+    </section>
+
+    <!-- POLICY CONTENT -->
+    <section class="py-16">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="glass-panel rounded-2xl p-8 md:p-12 prose-dark">
+
+                <p>
+                    The Atlanta AI &amp; Robotics Initiative, Inc. ("AARI," "we," "us," or "our") is a registered 501(c)(3) nonprofit organization (EIN: 41-2742893) based in Smyrna, Georgia. We are committed to protecting the privacy of our donors, program participants, newsletter subscribers, and website visitors. This Privacy Policy explains how we collect, use, store, and protect your personal information.
+                </p>
+                <p>
+                    By using our website at <strong>atlanta-robotics.org</strong> or submitting information through any AARI contact form, donation page, or newsletter signup, you agree to the practices described in this policy.
+                </p>
+
+                <h3>1. Information We Collect</h3>
+                <p>We may collect the following types of information:</p>
+                <ul>
+                    <li><strong>Contact Form Submissions:</strong> Name, email address, phone number (optional), and the content of your message when you reach out through our website or email.</li>
+                    <li><strong>Donation Information:</strong> Name, email address, billing address, and donation amount when you make a contribution. Payment card data is processed securely by Stripe and is never stored on our servers.</li>
+                    <li><strong>Newsletter Subscriptions:</strong> Email address and communication preferences when you sign up for AARI updates.</li>
+                    <li><strong>Program Inquiries:</strong> Name, academic institution, and contact information when you inquire about the Scholars Program or Infrastructure Fellows Program.</li>
+                    <li><strong>Website Analytics:</strong> Anonymized usage data such as pages visited, browser type, and approximate geographic region through standard web analytics tools.</li>
+                </ul>
+                <p>We do <strong>not</strong> collect Social Security numbers, government ID numbers, or sensitive financial account information beyond what is required by our donation processor (Stripe).</p>
+
+                <h3>2. How We Use Your Information</h3>
+                <p>AARI uses the information we collect for the following purposes:</p>
+                <ul>
+                    <li>To respond to your inquiries and communications</li>
+                    <li>To process and acknowledge donations and issue tax receipts</li>
+                    <li>To send quarterly impact reports, program updates, and organizational news to newsletter subscribers</li>
+                    <li>To evaluate program eligibility for Scholars Program and Infrastructure Fellows Program applicants</li>
+                    <li>To comply with legal obligations, including IRS reporting requirements for a 501(c)(3) organization</li>
+                    <li>To improve our website and communications based on aggregated, anonymized usage data</li>
+                </ul>
+                <p>We will only contact you for purposes consistent with why you provided your information. You may opt out of newsletter communications at any time.</p>
+
+                <h3>3. We Do Not Sell Your Data</h3>
+                <p>
+                    <strong>AARI does not sell, rent, trade, or otherwise transfer your personal information to third parties for commercial purposes. Ever.</strong>
+                </p>
+                <p>
+                    As a nonprofit organization, our mission is education — not data monetization. Your information is used only to fulfill our organizational mission and to communicate directly with you.
+                </p>
+
+                <h3>4. Data Sharing</h3>
+                <p>We may share your information only in the following limited circumstances:</p>
+                <ul>
+                    <li><strong>Service Providers:</strong> We use Stripe for donation processing and may use email service providers (such as Mailchimp or similar) for newsletter distribution. These providers are bound by their own privacy policies and are prohibited from using your data for any purpose other than providing services to AARI.</li>
+                    <li><strong>Legal Requirements:</strong> We may disclose information if required by law, court order, or governmental authority, or if we believe disclosure is necessary to protect the rights, property, or safety of AARI, our participants, or others.</li>
+                    <li><strong>Organizational Transitions:</strong> In the unlikely event of an organizational merger or dissolution, data would be transferred in accordance with applicable nonprofit law and this Privacy Policy.</li>
+                </ul>
+
+                <h3>5. Data Retention</h3>
+                <p>
+                    We retain personal information for as long as necessary to fulfill the purposes for which it was collected, comply with legal obligations (including IRS record-keeping requirements for nonprofits), and resolve any disputes. Donor records are retained for a minimum of seven (7) years in accordance with nonprofit accounting standards. You may request deletion of your information at any time, subject to our legal obligations.
+                </p>
+
+                <h3>6. Data Security</h3>
+                <p>
+                    AARI implements reasonable technical and organizational measures to protect your personal information against unauthorized access, disclosure, alteration, or destruction. Donation processing is handled entirely by Stripe, which maintains PCI DSS compliance. However, no method of transmission over the Internet or electronic storage is 100% secure, and we cannot guarantee absolute security.
+                </p>
+
+                <h3>7. Cookies and Analytics</h3>
+                <p>
+                    Our website may use cookies and similar tracking technologies for functional purposes (such as remembering your preferences) and analytics (such as understanding how visitors use our site). You may control cookie settings through your browser preferences. We do not use advertising cookies or sell data to advertising networks.
+                </p>
+
+                <h3>8. Children's Privacy</h3>
+                <p>
+                    Our website is not directed at children under the age of 13. We do not knowingly collect personal information from children under 13 without verifiable parental consent. Program participants under 18 must have parental or guardian consent to participate in AARI programs. If you believe a child has provided us with personal information without appropriate consent, please contact us immediately.
+                </p>
+
+                <h3>9. Your Rights</h3>
+                <p>You have the right to:</p>
+                <ul>
+                    <li>Access the personal information we hold about you</li>
+                    <li>Request correction of inaccurate information</li>
+                    <li>Request deletion of your information (subject to legal retention requirements)</li>
+                    <li>Opt out of newsletter and marketing communications at any time</li>
+                    <li>Request a copy of your donation records for tax purposes</li>
+                </ul>
+                <p>To exercise any of these rights, please contact us at <strong>nolan@atlanta-robotics.org</strong>.</p>
+
+                <h3>10. Changes to This Policy</h3>
+                <p>
+                    We may update this Privacy Policy from time to time to reflect changes in our practices or legal requirements. We will post the updated policy on this page with a revised effective date. Continued use of our website or services after changes are posted constitutes your acceptance of the updated policy.
+                </p>
+
+                <h3>11. Contact Us</h3>
+                <p>If you have any questions, concerns, or requests regarding this Privacy Policy or our data practices, please contact:</p>
+                <div class="bg-navy-800/50 rounded-xl p-6 border border-white/10 mt-4">
+                    <p class="text-slate-300 font-semibold mb-1">Atlanta AI &amp; Robotics Initiative, Inc.</p>
+                    <p class="text-slate-400 text-sm">Smyrna, Georgia</p>
+                    <p class="text-slate-400 text-sm">EIN: 41-2742893</p>
+                    <p class="text-slate-400 text-sm mt-2">Privacy Contact: <a href="mailto:nolan@atlanta-robotics.org" class="text-blue-400 hover:text-blue-300">nolan@atlanta-robotics.org</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="py-12 px-6 border-t border-white/5">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6 mb-8">
+                <div class="flex items-center gap-3">
+                    <div class="bg-white/90 p-1.5 rounded-lg">
+                        <img src="images/header-logo.png" alt="AARI Logo" class="h-8 w-auto object-contain">
+                    </div>
+                    <span class="text-slate-400 text-sm">Atlanta AI &amp; Robotics Initiative</span>
+                </div>
+                <div class="flex flex-wrap items-center gap-5 text-slate-400 text-sm">
+                    <a href="index.html#mission" class="hover:text-white transition-colors">Home</a>
+                    <a href="about.html" class="hover:text-white transition-colors">About Us</a>
+                    <a href="scholars.html" class="hover:text-white transition-colors">Scholars Program</a>
+                    <a href="infrastructure.html" class="hover:text-white transition-colors">Technical Infrastructure</a>
+                    <a href="privacy.html" class="text-blue-400">Privacy Policy</a>
+                </div>
+            </div>
+            <div class="border-t border-white/5 pt-8 text-center text-slate-500 text-sm space-y-1">
+                <p><strong class="text-slate-300">Atlanta AI &amp; Robotics Initiative, Inc.</strong></p>
+                <p>A Registered 501(c)(3) Nonprofit Organization</p>
+                <p>EIN: 41-2742893 | Smyrna, Georgia</p>
+                <p>Contact: <a href="mailto:nolan@atlanta-robotics.org" class="text-blue-400 hover:text-blue-300">nolan@atlanta-robotics.org</a> | <a href="https://atlanta-robotics.org" class="text-blue-400 hover:text-blue-300">atlanta-robotics.org</a></p>
+                <p class="pt-2">&copy; 2026 AARI. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

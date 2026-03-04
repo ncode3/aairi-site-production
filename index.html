@@ -108,26 +108,17 @@
 
             <!-- Desktop Menu -->
             <div class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-300">
-                <a href="#mission" class="hover:text-white transition-colors">Mission</a>
-                <a href="#programs" class="hover:text-white transition-colors">Programs</a>
-                <a href="#curriculum" class="hover:text-white transition-colors">Curriculum</a>
-                <a href="#program-ladder" class="hover:text-white transition-colors">Pathway</a>
-                <a href="#impact" class="hover:text-white transition-colors">Impact</a>
-                <a href="#success-stories" class="hover:text-white transition-colors">Stories</a>
-                <a href="#transparency" class="hover:text-white transition-colors">Transparency</a>
-                <a href="#hardware-wishlist" class="hover:text-white transition-colors">Wishlist</a>
-                <a href="scholars.html" class="hover:text-white transition-colors">Scholars</a>
-                <a href="#recognition-wall" class="hover:text-white transition-colors">Partners</a>
-                <a href="#newsletter" class="hover:text-white transition-colors">Newsletter</a>
-                <a href="#partner" class="bg-blue-600 hover:bg-blue-500 text-white px-4 py-2.5 rounded-lg transition-all shadow-lg shadow-blue-900/20">
-                    Partner With Us
-                </a>
+                <a href="#mission" class="hover:text-white transition-colors">Home</a>
+                <a href="about.html" class="hover:text-white transition-colors">About Us</a>
+                <a href="scholars.html" class="hover:text-white transition-colors">Scholars Program</a>
+                <a href="infrastructure.html" class="hover:text-white transition-colors">Technical Infrastructure</a>
+                <a href="privacy.html" class="hover:text-white transition-colors">Privacy Policy</a>
                 <a href="https://buy.stripe.com/28E9AU2mf3ZL0gT08afnO00" target="_blank" rel="noopener noreferrer" class="bg-emerald-500 hover:bg-emerald-400 text-white px-4 py-2.5 rounded-lg transition-all shadow-lg shadow-emerald-900/30 flex items-center gap-2 font-semibold animate-pulse hover:animate-none">
                     <i data-lucide="heart" class="w-4 h-4"></i>
                     Donate
                 </a>
             </div>
-            
+
             <!-- Mobile Menu Button -->
             <button class="md:hidden text-slate-300" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
                 <i data-lucide="menu" class="w-8 h-8"></i>
@@ -136,18 +127,11 @@
 
         <!-- Mobile Menu Dropdown -->
         <div id="mobile-menu" class="hidden md:hidden bg-navy-900 border-t border-white/10 p-4">
-            <a href="#mission" class="block py-3 text-slate-300">Mission</a>
-            <a href="#programs" class="block py-3 text-slate-300">Programs</a>
-            <a href="#curriculum" class="block py-3 text-slate-300">Curriculum</a>
-            <a href="#program-ladder" class="block py-3 text-slate-300">Pathway</a>
-            <a href="#impact" class="block py-3 text-slate-300">Impact</a>
-            <a href="#success-stories" class="block py-3 text-slate-300">Stories</a>
-            <a href="#transparency" class="block py-3 text-slate-300">Transparency</a>
-            <a href="#hardware-wishlist" class="block py-3 text-slate-300">Wishlist</a>
-            <a href="scholars.html" class="block py-3 text-slate-300">Scholars</a>
-            <a href="#recognition-wall" class="block py-3 text-slate-300">Partners</a>
-            <a href="#newsletter" class="block py-3 text-slate-300">Newsletter</a>
-            <a href="#partner" class="block py-3 text-blue-400 font-bold">Partner With Us</a>
+            <a href="#mission" class="block py-3 text-slate-300">Home</a>
+            <a href="about.html" class="block py-3 text-slate-300">About Us</a>
+            <a href="scholars.html" class="block py-3 text-slate-300">Scholars Program</a>
+            <a href="infrastructure.html" class="block py-3 text-slate-300">Technical Infrastructure</a>
+            <a href="privacy.html" class="block py-3 text-slate-300">Privacy Policy</a>
             <a href="https://buy.stripe.com/28E9AU2mf3ZL0gT08afnO00" target="_blank" rel="noopener noreferrer" class="block py-3 text-emerald-400 font-bold flex items-center gap-2">
                 <i data-lucide="heart" class="w-4 h-4"></i>
                 Donate Now
@@ -365,13 +349,23 @@
     <section id="mission" class="py-24 bg-navy-900 scroll-mt-24">
         <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
             <div>
-                <h2 class="text-3xl font-bold mb-6">Hands-On Infrastructure<br><span class="text-blue-500">Real-World Skills</span></h2>
-                <div class="space-y-6 text-slate-400 text-lg">
+                <h2 class="text-3xl font-bold mb-6">About AARI &amp; Our Mission<br><span class="text-blue-500">AI Infrastructure Physics</span></h2>
+                <div class="space-y-5 text-slate-400 text-base leading-relaxed">
                     <p>
-                        AARI provides students with direct access to enterprise-grade hardware and infrastructure typically found only at major universities and technology companies.
+                        The Atlanta AI &amp; Robotics Initiative, Inc. (AARI) is a 501(c)(3) nonprofit organization dedicated to building the infrastructure workforce of tomorrow. We bridge the gap between advanced technology and community education by providing students in the Atlanta area with hands-on experience in AI, machine learning, and robotics infrastructure.
                     </p>
                     <p>
-                        Through our <strong>AARI Systems Lab</strong>, students gain practical experience deploying AI models, managing GPU clusters, and building the physical infrastructure that powers modern computing.
+                        Our mission is rooted in the belief that the future of the digital economy depends on a diverse and highly skilled technical workforce. Through our curriculum and partnerships with industry leaders like Red Hat and Palo Alto Networks, we provide Scholars with access to enterprise-grade tools, including OpenShift, OpenStack, and bare-metal systems. By focusing on edge-to-cloud computing and accelerated hardware like NVIDIA Jetson and Raspberry Pi, we ensure our students are not just consumers of technology, but the architects of it.
+                    </p>
+                    <p>
+                        AARI is doing something genuinely new. This isn't just Computer Science, Physics, or Electrical Engineering. It's the in-between space where the future is actually built. We are teaching <strong class="text-blue-400">AI Infrastructure Physics</strong> — one arc, one doctrine:
+                    </p>
+                    <div class="glass-panel rounded-xl p-4 border border-blue-500/30 text-center">
+                        <p class="text-blue-300 font-semibold text-sm tracking-wide">Energy → Silicon → Infrastructure → Models → Applications → Quantum</p>
+                        <p class="text-slate-500 text-xs mt-2">Every layer is built on the one below it. Nothing is learned in a vacuum.</p>
+                    </div>
+                    <p>
+                        Most programs teach students to talk about technology. AARI teaches students to <em class="text-white">operate</em> it. By the time an AARI graduate walks into an interview, they've already run real infrastructure, deployed real models, and solved real problems on enterprise-grade hardware. Our pilot cohort at Morehouse College — 40 students strong — is proof this model works.
                     </p>
                 </div>
                 <div class="mt-8 grid grid-cols-2 gap-4">
@@ -382,6 +376,14 @@
                     <div class="flex items-center gap-3">
                         <div class="p-2 bg-blue-500/10 rounded-lg text-blue-400"><i data-lucide="globe"></i></div>
                         <span class="font-medium">Edge Computing</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <div class="p-2 bg-yellow-500/10 rounded-lg text-yellow-400"><i data-lucide="zap"></i></div>
+                        <span class="font-medium">Energy to App</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <div class="p-2 bg-green-500/10 rounded-lg text-green-400"><i data-lucide="atom"></i></div>
+                        <span class="font-medium">Quantum Ready</span>
                     </div>
                 </div>
             </div>
@@ -454,7 +456,8 @@
                     Our Curriculum
                 </div>
                 <h2 class="text-3xl md:text-4xl font-bold mb-4">Energy to App: How We Teach AI</h2>
-                <p class="text-slate-400 text-lg leading-relaxed">We don't just teach coding. We teach systems. AARI students learn AI from the ground up - understanding the full stack from power and silicon to deployed applications.</p>
+                <p class="text-slate-400 text-lg leading-relaxed mb-4">Most programs teach Models → Applications. We teach Energy → Chips → Infrastructure → Models. Applications are the capstone, not the foundation. The robot isn't the goal — it's proof the pipeline works.</p>
+                <p class="text-slate-500 text-base leading-relaxed">AARI students learn AI from the ground up, understanding the full physical and digital stack from power systems and silicon to deployed quantum-ready applications.</p>
             </div>
 
             <!-- Visual Pipeline -->
@@ -533,7 +536,23 @@
                                 <span class="text-xs font-bold text-emerald-400 uppercase tracking-wider bg-emerald-500/10 px-2 py-0.5 rounded">Layer 5</span>
                                 <h3 class="text-xl font-bold">Applications</h3>
                             </div>
-                            <p class="text-slate-400">Real-world AI products, robotics, automation</p>
+                            <p class="text-slate-400">Real-world AI products, robotics, automation — the capstone of the pipeline</p>
+                        </div>
+                        <i data-lucide="chevron-down" class="text-emerald-400/50 w-5 h-5 flex-shrink-0 mt-1 hidden md:block"></i>
+                    </div>
+
+                    <!-- Level 6: Quantum -->
+                    <div class="glass-panel rounded-2xl p-6 flex items-start gap-6 fade-in-up border-l-4 border-violet-500 hover:border-violet-400 transition-all">
+                        <div class="flex-shrink-0 w-16 h-16 bg-violet-500/10 rounded-xl flex flex-col items-center justify-center border border-violet-500/30">
+                            <i data-lucide="atom" class="text-violet-400 w-6 h-6"></i>
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex items-center gap-3 mb-2">
+                                <span class="text-xs font-bold text-violet-400 uppercase tracking-wider bg-violet-500/10 px-2 py-0.5 rounded">Layer 6</span>
+                                <h3 class="text-xl font-bold">Quantum</h3>
+                                <span class="text-xs font-bold text-violet-300 bg-violet-900/40 border border-violet-500/30 px-2 py-0.5 rounded-full">NVIDIA CUDA-Q</span>
+                            </div>
+                            <p class="text-slate-400">Quantum computing foundations using NVIDIA CUDA-Q — the frontier of compute</p>
                         </div>
                     </div>
                 </div>
@@ -545,100 +564,115 @@
                     <i data-lucide="bot" class="text-blue-400 w-7 h-7"></i>
                 </div>
                 <p class="text-lg text-slate-300 leading-relaxed">
-                    <span class="text-white font-semibold">The robot isn't the goal - it's proof the pipeline works.</span> Our students don't just use AI tools. They understand and build the systems that power them.
+                    <span class="text-white font-semibold">The robot isn't the goal — it's proof the pipeline works.</span> Our students don't just use AI tools. They understand and build the systems that power them — from the first watt to the final deployed model.
                 </p>
             </div>
         </div>
     </section>
 
-    <!-- PROGRAM LADDER SECTION -->
+    <!-- INFRASTRUCTURE FELLOWS PROGRAM -->
     <section id="program-ladder" class="py-24 bg-navy-900 scroll-mt-24">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center max-w-3xl mx-auto mb-16 fade-in-up">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">Student Progression Pathway</h2>
-                <p class="text-slate-400">Our structured curriculum guides students from foundational skills to advanced systems engineering.</p>
+            <div class="text-center max-w-3xl mx-auto mb-6 fade-in-up">
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-900/30 border border-blue-500/30 text-blue-300 text-sm font-medium mb-6">
+                    <i data-lucide="layers" class="w-4 h-4"></i>
+                    Infrastructure Fellows Program
+                </div>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">The AARI Pathway</h2>
+                <p class="text-slate-400">Four 8-week levels. Real systems. Real uptime. Real outcomes. By graduation, Fellows have operated infrastructure, not just studied it.</p>
+            </div>
+
+            <!-- Three Tracks -->
+            <div class="flex flex-wrap justify-center gap-3 mb-12 fade-in-up">
+                <span class="px-4 py-2 bg-blue-500/10 border border-blue-500/30 text-blue-300 rounded-full text-sm font-semibold">Track A: Infrastructure + Cloud</span>
+                <span class="px-4 py-2 bg-purple-500/10 border border-purple-500/30 text-purple-300 rounded-full text-sm font-semibold">Track B: AI Systems + MLOps</span>
+                <span class="px-4 py-2 bg-green-500/10 border border-green-500/30 text-green-300 rounded-full text-sm font-semibold">Track C: Robotics + Edge AI</span>
             </div>
 
             <div class="max-w-4xl mx-auto space-y-6">
-                <!-- Level 1: Foundations -->
+                <!-- Level 0 -->
                 <div class="glass-panel rounded-2xl p-8 fade-in-up border-l-4 border-blue-500">
                     <div class="flex items-start gap-6">
                         <div class="flex-shrink-0">
                             <div class="w-16 h-16 bg-blue-500/10 rounded-xl flex items-center justify-center border border-blue-500/30">
-                                <span class="text-2xl font-bold text-blue-400">1</span>
+                                <span class="text-2xl font-bold text-blue-400">0</span>
                             </div>
                         </div>
                         <div class="flex-1">
-                            <h3 class="text-2xl font-bold mb-3">Foundations <span class="text-blue-400">(Weeks 1-8)</span></h3>
-                            <p class="text-slate-400 mb-4">Introduction to computing fundamentals, Linux command line, basic networking, and version control with Git.</p>
+                            <h3 class="text-2xl font-bold mb-1">Infrastructure Literacy <span class="text-blue-400">(8 Weeks)</span></h3>
+                            <p class="text-slate-500 text-sm mb-3 uppercase tracking-wider font-semibold">The Foundation</p>
+                            <p class="text-slate-400 mb-4">Linux, networking, security fundamentals, storage, and compute. The vocabulary of the physical layer.</p>
                             <div class="flex flex-wrap gap-2">
-                                <span class="px-3 py-1 bg-navy-700/50 rounded-full text-sm text-slate-300 border border-white/10">Command Line</span>
-                                <span class="px-3 py-1 bg-navy-700/50 rounded-full text-sm text-slate-300 border border-white/10">Linux Basics</span>
-                                <span class="px-3 py-1 bg-navy-700/50 rounded-full text-sm text-slate-300 border border-white/10">Git & GitHub</span>
-                                <span class="px-3 py-1 bg-navy-700/50 rounded-full text-sm text-slate-300 border border-white/10">TCP/IP Fundamentals</span>
+                                <span class="px-3 py-1 bg-navy-700/50 rounded-full text-sm text-slate-300 border border-white/10">Linux CLI</span>
+                                <span class="px-3 py-1 bg-navy-700/50 rounded-full text-sm text-slate-300 border border-white/10">TCP/IP Networking</span>
+                                <span class="px-3 py-1 bg-navy-700/50 rounded-full text-sm text-slate-300 border border-white/10">Security Basics</span>
+                                <span class="px-3 py-1 bg-navy-700/50 rounded-full text-sm text-slate-300 border border-white/10">Storage Architecture</span>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Level 2: Infrastructure -->
+                <!-- Level 1 -->
                 <div class="glass-panel rounded-2xl p-8 fade-in-up border-l-4 border-purple-500">
                     <div class="flex items-start gap-6">
                         <div class="flex-shrink-0">
                             <div class="w-16 h-16 bg-purple-500/10 rounded-xl flex items-center justify-center border border-purple-500/30">
-                                <span class="text-2xl font-bold text-purple-400">2</span>
+                                <span class="text-2xl font-bold text-purple-400">1</span>
                             </div>
                         </div>
                         <div class="flex-1">
-                            <h3 class="text-2xl font-bold mb-3">Infrastructure <span class="text-purple-400">(Weeks 9-16)</span></h3>
-                            <p class="text-slate-400 mb-4">Hands-on server deployment, containerization, and basic cloud architecture using enterprise-grade hardware.</p>
+                            <h3 class="text-2xl font-bold mb-1">Systems in Motion <span class="text-purple-400">(8 Weeks)</span></h3>
+                            <p class="text-slate-500 text-sm mb-3 uppercase tracking-wider font-semibold">The Stack</p>
+                            <p class="text-slate-400 mb-4">Virtualization, containers, Kubernetes, and observability. Systems that actually run.</p>
                             <div class="flex flex-wrap gap-2">
-                                <span class="px-3 py-1 bg-navy-700/50 rounded-full text-sm text-slate-300 border border-white/10">Docker</span>
-                                <span class="px-3 py-1 bg-navy-700/50 rounded-full text-sm text-slate-300 border border-white/10">Server Administration</span>
-                                <span class="px-3 py-1 bg-navy-700/50 rounded-full text-sm text-slate-300 border border-white/10">Virtual Machines</span>
-                                <span class="px-3 py-1 bg-navy-700/50 rounded-full text-sm text-slate-300 border border-white/10">Network Configuration</span>
+                                <span class="px-3 py-1 bg-navy-700/50 rounded-full text-sm text-slate-300 border border-white/10">Docker / Containers</span>
+                                <span class="px-3 py-1 bg-navy-700/50 rounded-full text-sm text-slate-300 border border-white/10">Kubernetes</span>
+                                <span class="px-3 py-1 bg-navy-700/50 rounded-full text-sm text-slate-300 border border-white/10">OpenShift</span>
+                                <span class="px-3 py-1 bg-navy-700/50 rounded-full text-sm text-slate-300 border border-white/10">Observability</span>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Level 3: AI & Robotics -->
+                <!-- Level 2 -->
                 <div class="glass-panel rounded-2xl p-8 fade-in-up border-l-4 border-green-500">
                     <div class="flex items-start gap-6">
                         <div class="flex-shrink-0">
                             <div class="w-16 h-16 bg-green-500/10 rounded-xl flex items-center justify-center border border-green-500/30">
-                                <span class="text-2xl font-bold text-green-400">3</span>
+                                <span class="text-2xl font-bold text-green-400">2</span>
                             </div>
                         </div>
                         <div class="flex-1">
-                            <h3 class="text-2xl font-bold mb-3">AI & Robotics <span class="text-green-400">(Weeks 17-28)</span></h3>
-                            <p class="text-slate-400 mb-4">GPU cluster management, AI model deployment, and autonomous robotics development with computer vision.</p>
+                            <h3 class="text-2xl font-bold mb-1">Applied AI Systems <span class="text-green-400">(8 Weeks)</span></h3>
+                            <p class="text-slate-500 text-sm mb-3 uppercase tracking-wider font-semibold">The Intelligence Layer</p>
+                            <p class="text-slate-400 mb-4">Inference pipelines, model deployment, and MLOps on real hardware. NVIDIA Jetson edge AI and GPU clusters.</p>
                             <div class="flex flex-wrap gap-2">
-                                <span class="px-3 py-1 bg-navy-700/50 rounded-full text-sm text-slate-300 border border-white/10">GPU Computing</span>
+                                <span class="px-3 py-1 bg-navy-700/50 rounded-full text-sm text-slate-300 border border-white/10">Inference Pipelines</span>
+                                <span class="px-3 py-1 bg-navy-700/50 rounded-full text-sm text-slate-300 border border-white/10">MLOps</span>
+                                <span class="px-3 py-1 bg-navy-700/50 rounded-full text-sm text-slate-300 border border-white/10">NVIDIA Jetson</span>
                                 <span class="px-3 py-1 bg-navy-700/50 rounded-full text-sm text-slate-300 border border-white/10">Model Deployment</span>
-                                <span class="px-3 py-1 bg-navy-700/50 rounded-full text-sm text-slate-300 border border-white/10">Computer Vision</span>
-                                <span class="px-3 py-1 bg-navy-700/50 rounded-full text-sm text-slate-300 border border-white/10">Robotics</span>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Level 4: Advanced Systems -->
+                <!-- Level 3 -->
                 <div class="glass-panel rounded-2xl p-8 fade-in-up border-l-4 border-yellow-500">
                     <div class="flex items-start gap-6">
                         <div class="flex-shrink-0">
                             <div class="w-16 h-16 bg-yellow-500/10 rounded-xl flex items-center justify-center border border-yellow-500/30">
-                                <span class="text-2xl font-bold text-yellow-400">4</span>
+                                <span class="text-2xl font-bold text-yellow-400">3</span>
                             </div>
                         </div>
                         <div class="flex-1">
-                            <h3 class="text-2xl font-bold mb-3">Advanced Systems <span class="text-yellow-400">(Weeks 29-40)</span></h3>
-                            <p class="text-slate-400 mb-4">Kubernetes orchestration, security hardening, GovCloud compliance, and capstone project deployment.</p>
+                            <h3 class="text-2xl font-bold mb-1">Capstone <span class="text-yellow-400">(8 Weeks)</span></h3>
+                            <p class="text-slate-500 text-sm mb-3 uppercase tracking-wider font-semibold">Real System. Real Users. Real Uptime.</p>
+                            <p class="text-slate-400 mb-4">Fellows build, deploy, and maintain a production system with real users. Public demo. Employer showcase. The graduation is the job interview.</p>
                             <div class="flex flex-wrap gap-2">
-                                <span class="px-3 py-1 bg-navy-700/50 rounded-full text-sm text-slate-300 border border-white/10">Kubernetes</span>
-                                <span class="px-3 py-1 bg-navy-700/50 rounded-full text-sm text-slate-300 border border-white/10">Security Protocols</span>
-                                <span class="px-3 py-1 bg-navy-700/50 rounded-full text-sm text-slate-300 border border-white/10">GovCloud</span>
-                                <span class="px-3 py-1 bg-navy-700/50 rounded-full text-sm text-slate-300 border border-white/10">Capstone Project</span>
+                                <span class="px-3 py-1 bg-navy-700/50 rounded-full text-sm text-slate-300 border border-white/10">Production Systems</span>
+                                <span class="px-3 py-1 bg-navy-700/50 rounded-full text-sm text-slate-300 border border-white/10">Live Uptime SLA</span>
+                                <span class="px-3 py-1 bg-navy-700/50 rounded-full text-sm text-slate-300 border border-white/10">Public Demo</span>
+                                <span class="px-3 py-1 bg-navy-700/50 rounded-full text-sm text-slate-300 border border-white/10">Employer Showcase</span>
                             </div>
                         </div>
                     </div>
@@ -647,18 +681,22 @@
 
             <!-- Completion Stats -->
             <div class="mt-12 glass-panel rounded-2xl p-8 fade-in-up">
-                <div class="grid md:grid-cols-3 gap-8 text-center">
+                <div class="grid md:grid-cols-4 gap-8 text-center">
                     <div>
-                        <div class="text-3xl font-bold text-blue-400 mb-2">40</div>
-                        <div class="text-slate-400">Weeks to Complete</div>
+                        <div class="text-3xl font-bold text-blue-400 mb-2">32</div>
+                        <div class="text-slate-400">Weeks Total</div>
                     </div>
                     <div>
                         <div class="text-3xl font-bold text-purple-400 mb-2">500+</div>
                         <div class="text-slate-400">Hands-On Hours</div>
                     </div>
                     <div>
-                        <div class="text-3xl font-bold text-green-400 mb-2">85%</div>
-                        <div class="text-slate-400">Employment Rate</div>
+                        <div class="text-3xl font-bold text-green-400 mb-2">3</div>
+                        <div class="text-slate-400">Career Tracks</div>
+                    </div>
+                    <div>
+                        <div class="text-3xl font-bold text-yellow-400 mb-2">$115K</div>
+                        <div class="text-slate-400">First Graduate Salary</div>
                     </div>
                 </div>
             </div>
@@ -763,6 +801,253 @@
                     </div>
                     <h4 class="font-bold mb-2">Higher Education</h4>
                     <p class="text-slate-400 text-sm">Prepared for computer science and engineering programs</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- THE AARI DIFFERENCE -->
+    <section id="aari-difference" class="py-24 scroll-mt-24">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="max-w-4xl mx-auto glass-panel rounded-3xl p-10 md:p-14 border border-blue-500/20 shadow-[0_0_60px_rgba(59,130,246,0.08)] fade-in-up text-center">
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-900/30 border border-blue-500/30 text-blue-300 text-sm font-medium mb-8">
+                    <i data-lucide="zap" class="w-4 h-4"></i>
+                    The AARI Difference
+                </div>
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">Operators, Not Observers</h2>
+                <p class="text-xl text-slate-300 leading-relaxed mb-8">
+                    Most programs teach students to <em>talk</em> about technology. AARI teaches students to <strong class="text-white">operate</strong> it. By the time an AARI graduate walks into an interview, they've already run real infrastructure, deployed real models, and solved real problems on enterprise-grade hardware.
+                </p>
+                <div class="grid md:grid-cols-3 gap-6 text-left mt-10">
+                    <div class="bg-navy-800/50 rounded-2xl p-6 border border-white/5">
+                        <div class="w-12 h-12 bg-red-500/10 rounded-xl flex items-center justify-center mb-4 border border-red-500/20">
+                            <i data-lucide="x-circle" class="text-red-400 w-6 h-6"></i>
+                        </div>
+                        <h4 class="font-bold text-red-300 mb-2">Other Programs</h4>
+                        <p class="text-slate-400 text-sm">Teach theory. Build toy projects. Graduate students who can describe systems they've never run.</p>
+                    </div>
+                    <div class="bg-navy-800/50 rounded-2xl p-6 border border-blue-500/20">
+                        <div class="w-12 h-12 bg-blue-500/10 rounded-xl flex items-center justify-center mb-4 border border-blue-500/30">
+                            <i data-lucide="check-circle" class="text-blue-400 w-6 h-6"></i>
+                        </div>
+                        <h4 class="font-bold text-blue-300 mb-2">AARI Fellows</h4>
+                        <p class="text-slate-400 text-sm">Run production infrastructure. Deploy real AI. Graduate with uptime records, not just diplomas.</p>
+                    </div>
+                    <div class="bg-navy-800/50 rounded-2xl p-6 border border-white/5">
+                        <div class="w-12 h-12 bg-green-500/10 rounded-xl flex items-center justify-center mb-4 border border-green-500/20">
+                            <i data-lucide="trending-up" class="text-green-400 w-6 h-6"></i>
+                        </div>
+                        <h4 class="font-bold text-green-300 mb-2">The Outcome</h4>
+                        <p class="text-slate-400 text-sm">80% of CS graduates don't feel ready for IT work. AARI graduates already are.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROOF POINTS -->
+    <section id="proof-points" class="py-24 bg-navy-900 scroll-mt-24">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-16 fade-in-up">
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-900/30 border border-emerald-500/30 text-emerald-300 text-sm font-medium mb-6">
+                    <i data-lucide="bar-chart-2" class="w-4 h-4"></i>
+                    Real Outcomes
+                </div>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Proof Points</h2>
+                <p class="text-slate-400">This isn't a theory. It's a working model with measurable results.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="glass-panel rounded-2xl p-8 text-center fade-in-up border border-emerald-500/20">
+                    <div class="text-5xl font-bold text-emerald-400 mb-3">$115K</div>
+                    <h3 class="font-bold text-lg mb-2">First Graduate Placed</h3>
+                    <p class="text-slate-400 text-sm">Our first AARI graduate landed a $115,000 infrastructure role — before most of their peers had even started job searching.</p>
+                </div>
+                <div class="glass-panel rounded-2xl p-8 text-center fade-in-up border border-blue-500/20">
+                    <div class="text-5xl font-bold text-blue-400 mb-3">40</div>
+                    <h3 class="font-bold text-lg mb-2">First Cohort: Morehouse</h3>
+                    <p class="text-slate-400 text-sm">Our inaugural cohort at Morehouse College enrolled 40 students. The model works. Now we scale it.</p>
+                </div>
+                <div class="glass-panel rounded-2xl p-8 text-center fade-in-up border border-red-500/20">
+                    <div class="text-5xl font-bold text-red-400 mb-3">80%</div>
+                    <h3 class="font-bold text-lg mb-2">The Gap We Close</h3>
+                    <p class="text-slate-400 text-sm">80% of CS graduates report they don't feel ready for real IT work. AARI graduates have already done the work. The gap is closed on day one.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ACADEMIC LEADERSHIP -->
+    <section id="academic-leadership" class="py-24 scroll-mt-24">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-16 fade-in-up">
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-purple-900/30 border border-purple-500/30 text-purple-300 text-sm font-medium mb-6">
+                    <i data-lucide="graduation-cap" class="w-4 h-4"></i>
+                    Academic Leadership
+                </div>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">World-Class Educators</h2>
+                <p class="text-slate-400">AARI's academic advisors bring together HBCU roots, elite research credentials, and a shared belief that representation in STEM changes the world.</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="glass-panel rounded-2xl p-8 fade-in-up border border-purple-500/20">
+                    <div class="flex items-start gap-5 mb-5">
+                        <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-600 rounded-full flex items-center justify-center text-2xl font-bold text-white flex-shrink-0">CB</div>
+                        <div>
+                            <h3 class="text-xl font-bold">Dr. Carlotta Berry, PhD</h3>
+                            <p class="text-purple-400 text-sm font-semibold">#NoireSTEMinist · Rose-Hulman Institute of Technology</p>
+                        </div>
+                    </div>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-5">A transformational force in STEM education and diversity, Dr. Berry brings both academic rigor and grassroots passion to AARI's mission. Spelman College and Georgia Tech alumna.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-purple-500/10 border border-purple-500/20 rounded-full text-purple-300 text-xs font-semibold">IEEE Teaching Award</span>
+                        <span class="px-3 py-1 bg-purple-500/10 border border-purple-500/20 rounded-full text-purple-300 text-xs font-semibold">Forbes 50 Over 50</span>
+                        <span class="px-3 py-1 bg-purple-500/10 border border-purple-500/20 rounded-full text-purple-300 text-xs font-semibold">SWE Distinguished Educator</span>
+                        <span class="px-3 py-1 bg-purple-500/10 border border-purple-500/20 rounded-full text-purple-300 text-xs font-semibold">Spelman &amp; Georgia Tech Alumna</span>
+                    </div>
+                </div>
+                <div class="glass-panel rounded-2xl p-8 fade-in-up border border-blue-500/20">
+                    <div class="flex items-start gap-5 mb-5">
+                        <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-full flex items-center justify-center text-2xl font-bold text-white flex-shrink-0">DJ</div>
+                        <div>
+                            <h3 class="text-xl font-bold">Dr. Dwayne Joseph, PhD</h3>
+                            <p class="text-blue-400 text-sm font-semibold">Morehouse College · Dual-Degree Engineering Coordinator</p>
+                        </div>
+                    </div>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-5">Dr. Joseph coordinates Morehouse College's Dual-Degree Engineering Program, bridging HBCU excellence with top-tier engineering institutions. Physics expertise rooted at FAMU.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-blue-500/10 border border-blue-500/20 rounded-full text-blue-300 text-xs font-semibold">Morehouse College</span>
+                        <span class="px-3 py-1 bg-blue-500/10 border border-blue-500/20 rounded-full text-blue-300 text-xs font-semibold">Dual-Degree Engineering</span>
+                        <span class="px-3 py-1 bg-blue-500/10 border border-blue-500/20 rounded-full text-blue-300 text-xs font-semibold">Physics / FAMU</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CORPORATE PARTNERSHIPS -->
+    <section id="corporate-partnerships" class="py-24 bg-navy-900 scroll-mt-24">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-16 fade-in-up">
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-900/30 border border-blue-500/30 text-blue-300 text-sm font-medium mb-6">
+                    <i data-lucide="building-2" class="w-4 h-4"></i>
+                    Corporate Partnerships
+                </div>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Our Industry Partners</h2>
+                <p class="text-slate-400">AARI partners with enterprise technology leaders to ensure our curriculum reflects the real world our graduates will enter.</p>
+            </div>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+                <div class="glass-panel rounded-2xl p-6 text-center fade-in-up border border-red-500/20">
+                    <div class="w-14 h-14 bg-red-500/10 rounded-xl flex items-center justify-center mx-auto mb-4 border border-red-500/30">
+                        <i data-lucide="server" class="text-red-400 w-7 h-7"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-1">Red Hat</h3>
+                    <p class="text-red-400 text-xs font-semibold uppercase tracking-wider mb-3">Curriculum Sponsor</p>
+                    <p class="text-slate-400 text-sm">OpenShift, OpenStack, and enterprise Linux — the backbone of our systems curriculum.</p>
+                </div>
+                <div class="glass-panel rounded-2xl p-6 text-center fade-in-up border border-slate-600/40">
+                    <div class="w-14 h-14 bg-blue-500/10 rounded-xl flex items-center justify-center mx-auto mb-4 border border-blue-500/30">
+                        <i data-lucide="cloud" class="text-blue-400 w-7 h-7"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-1">Microsoft</h3>
+                    <p class="text-slate-500 text-xs font-semibold uppercase tracking-wider mb-3">Partnership Discussions</p>
+                    <p class="text-slate-400 text-sm">Cloud architecture and Azure ecosystem integration. Partnership in active development.</p>
+                </div>
+                <div class="glass-panel rounded-2xl p-6 text-center fade-in-up border border-orange-500/20">
+                    <div class="w-14 h-14 bg-orange-500/10 rounded-xl flex items-center justify-center mx-auto mb-4 border border-orange-500/30">
+                        <i data-lucide="shield" class="text-orange-400 w-7 h-7"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-1">Palo Alto Networks</h3>
+                    <p class="text-orange-400 text-xs font-semibold uppercase tracking-wider mb-3">Security Architecture</p>
+                    <p class="text-slate-400 text-sm">Enterprise security architecture and zero-trust networking woven into every level of the curriculum.</p>
+                </div>
+                <div class="glass-panel rounded-2xl p-6 text-center fade-in-up border border-green-500/20">
+                    <div class="w-14 h-14 bg-green-500/10 rounded-xl flex items-center justify-center mx-auto mb-4 border border-green-500/30">
+                        <i data-lucide="cpu" class="text-green-400 w-7 h-7"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-1">NVIDIA</h3>
+                    <p class="text-green-400 text-xs font-semibold uppercase tracking-wider mb-3">GPU Grants · CUDA-Q</p>
+                    <p class="text-slate-400 text-sm">GPU hardware grants and CUDA-Q quantum computing curriculum powering our AI and quantum track.</p>
+                </div>
+            </div>
+            <!-- AWS-MLU Banner -->
+            <div class="glass-panel rounded-2xl p-8 border border-amber-500/30 fade-in-up">
+                <div class="flex flex-col md:flex-row items-center gap-6">
+                    <div class="w-16 h-16 bg-amber-500/10 rounded-xl flex items-center justify-center border border-amber-500/30 flex-shrink-0">
+                        <i data-lucide="award" class="text-amber-400 w-8 h-8"></i>
+                    </div>
+                    <div class="flex-1 text-center md:text-left">
+                        <div class="inline-flex items-center gap-2 bg-amber-500/10 border border-amber-500/20 text-amber-300 text-xs font-bold px-3 py-1 rounded-full mb-2">
+                            ACCEPTED · 2026–27 COHORT
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-1">AWS Machine Learning University — 2026-27 Transformation Alliance</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">AARI has been accepted into the AWS-MLU 2026-27 Transformation Alliance cohort — a nationally competitive program recognizing organizations that are redefining how AI education is delivered. This isn't a certificate program. It's recognition that what we're building here is legitimately new.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5-YEAR STRATEGIC VISION -->
+    <section id="strategic-vision" class="py-24 scroll-mt-24">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-16 fade-in-up">
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-violet-900/30 border border-violet-500/30 text-violet-300 text-sm font-medium mb-6">
+                    <i data-lucide="map" class="w-4 h-4"></i>
+                    5-Year Strategic Vision
+                </div>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">From Atlanta to the World</h2>
+                <p class="text-slate-400">We prove the model here. Then we scale it everywhere.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="glass-panel rounded-2xl p-8 fade-in-up border-t-4 border-blue-500">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 bg-blue-500/10 rounded-lg flex items-center justify-center border border-blue-500/30">
+                            <span class="text-blue-400 font-bold text-sm">1</span>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-lg">Phase 1</h3>
+                            <p class="text-blue-400 text-sm">Current · Atlanta Pilot</p>
+                        </div>
+                    </div>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-4">Atlanta pilot running across 2 sites with 40 students. Prove the model. Document everything. Build the playbook.</p>
+                    <div class="space-y-2">
+                        <div class="flex items-center gap-2 text-sm text-slate-300"><i data-lucide="check" class="text-blue-400 w-4 h-4 flex-shrink-0"></i> 2 sites, 40 students</div>
+                        <div class="flex items-center gap-2 text-sm text-slate-300"><i data-lucide="check" class="text-blue-400 w-4 h-4 flex-shrink-0"></i> Morehouse College cohort</div>
+                        <div class="flex items-center gap-2 text-sm text-slate-300"><i data-lucide="check" class="text-blue-400 w-4 h-4 flex-shrink-0"></i> AARI Systems Lab build-out</div>
+                    </div>
+                </div>
+                <div class="glass-panel rounded-2xl p-8 fade-in-up border-t-4 border-purple-500">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 bg-purple-500/10 rounded-lg flex items-center justify-center border border-purple-500/30">
+                            <span class="text-purple-400 font-bold text-sm">2</span>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-lg">Phase 2</h3>
+                            <p class="text-purple-400 text-sm">2026–2027 · 10 HBCUs</p>
+                        </div>
+                    </div>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-4">Expand to 10 HBCUs across the Southeast. Train the trainers. Reach 500 students per year. Build the national network.</p>
+                    <div class="space-y-2">
+                        <div class="flex items-center gap-2 text-sm text-slate-300"><i data-lucide="check" class="text-purple-400 w-4 h-4 flex-shrink-0"></i> 10 HBCU partners</div>
+                        <div class="flex items-center gap-2 text-sm text-slate-300"><i data-lucide="check" class="text-purple-400 w-4 h-4 flex-shrink-0"></i> 500 students/year</div>
+                        <div class="flex items-center gap-2 text-sm text-slate-300"><i data-lucide="check" class="text-purple-400 w-4 h-4 flex-shrink-0"></i> Train-the-trainers program</div>
+                    </div>
+                </div>
+                <div class="glass-panel rounded-2xl p-8 fade-in-up border-t-4 border-emerald-500">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 bg-emerald-500/10 rounded-lg flex items-center justify-center border border-emerald-500/30">
+                            <span class="text-emerald-400 font-bold text-sm">3</span>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-lg">Phase 3</h3>
+                            <p class="text-emerald-400 text-sm">2028+ · Global Deployment</p>
+                        </div>
+                    </div>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-4">African deployment with solar-powered data centers. Building AI sovereignty on the continent where computing's next billion users live.</p>
+                    <div class="space-y-2">
+                        <div class="flex items-center gap-2 text-sm text-slate-300"><i data-lucide="check" class="text-emerald-400 w-4 h-4 flex-shrink-0"></i> African deployment</div>
+                        <div class="flex items-center gap-2 text-sm text-slate-300"><i data-lucide="check" class="text-emerald-400 w-4 h-4 flex-shrink-0"></i> Solar-powered data centers</div>
+                        <div class="flex items-center gap-2 text-sm text-slate-300"><i data-lucide="check" class="text-emerald-400 w-4 h-4 flex-shrink-0"></i> AI sovereignty mission</div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1265,24 +1550,28 @@
     <!-- FOOTER -->
     <footer class="py-12 px-6 border-t border-white/5">
         <div class="max-w-7xl mx-auto">
-            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6 mb-8">
                 <div class="flex items-center gap-3">
                     <div class="bg-white/90 p-1.5 rounded-lg">
-                        <img src="images/header-logo.png" alt="AAIRI Logo" class="h-8 w-auto object-contain">
+                        <img src="images/header-logo.png" alt="AARI Logo" class="h-8 w-auto object-contain">
                     </div>
-                    <span class="text-slate-400 text-sm">Atlanta AI & Robotics Initiative</span>
+                    <span class="text-slate-400 text-sm">Atlanta AI &amp; Robotics Initiative</span>
                 </div>
-                
-                <div class="flex items-center gap-6 text-slate-400 text-sm">
-                    <a href="#mission" class="hover:text-white transition-colors">Mission</a>
-                    <a href="#programs" class="hover:text-white transition-colors">Programs</a>
-                    <a href="#partner" class="hover:text-white transition-colors">Donate</a>
-                    <a href="mailto:nolan@atlanta-robotics.org" class="hover:text-white transition-colors">Contact</a>
+                <div class="flex flex-wrap items-center gap-5 text-slate-400 text-sm">
+                    <a href="#mission" class="hover:text-white transition-colors">Home</a>
+                    <a href="about.html" class="hover:text-white transition-colors">About Us</a>
+                    <a href="scholars.html" class="hover:text-white transition-colors">Scholars Program</a>
+                    <a href="infrastructure.html" class="hover:text-white transition-colors">Technical Infrastructure</a>
+                    <a href="privacy.html" class="hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="https://buy.stripe.com/28E9AU2mf3ZL0gT08afnO00" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">Donate</a>
                 </div>
-                
-                <div class="text-slate-500 text-sm">
-                    &copy; 2026 AAIRI. A 501(c)(3) Organization.
-                </div>
+            </div>
+            <div class="border-t border-white/5 pt-8 text-center text-slate-500 text-sm space-y-1">
+                <p><strong class="text-slate-300">Atlanta AI &amp; Robotics Initiative, Inc.</strong></p>
+                <p>A Registered 501(c)(3) Nonprofit Organization</p>
+                <p>EIN: 41-2742893 | Smyrna, Georgia</p>
+                <p>Contact: <a href="mailto:nolan@atlanta-robotics.org" class="text-blue-400 hover:text-blue-300">nolan@atlanta-robotics.org</a> | <a href="https://atlanta-robotics.org" class="text-blue-400 hover:text-blue-300">atlanta-robotics.org</a></p>
+                <p class="pt-2">&copy; 2026 AARI. All Rights Reserved.</p>
             </div>
         </div>
     </footer>

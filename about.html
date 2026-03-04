@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Atlanta AI &amp; Robotics Initiative</title>
+    <meta name="description" content="Learn about AARI founder Nolan Code — U.S. Army veteran, former Microsoft Cloud Solution Architect, and Georgia Tech Black Alumni Entrepreneur of the Year.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: { 900: '#020617', 800: '#0f172a', 700: '#1e293b' },
+                        electric: { 500: '#3b82f6', 400: '#60a5fa' },
+                    },
+                    fontFamily: { sans: ['Inter', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; background: #020617; color: #f8fafc; }
+        .glass-panel { background: rgba(15,23,42,0.7); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.1); }
+        .gradient-text { background: linear-gradient(135deg,#60a5fa 0%,#a78bfa 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #020617; }
+        ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #3b82f6; }
+        .fade-in-up { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+        .fade-in-up.visible { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- NAVIGATION -->
+    <nav class="fixed w-full z-50 transition-all duration-300 glass-panel border-b-0 border-b-white/5">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-3 group">
+                <div class="bg-white/90 p-1.5 rounded-lg hover:bg-white transition-colors">
+                    <img src="images/header-logo.png" alt="AARI Logo" class="h-10 w-auto object-contain">
+                </div>
+            </a>
+            <div class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-300">
+                <a href="index.html#mission" class="hover:text-white transition-colors">Home</a>
+                <a href="about.html" class="text-blue-400 font-semibold">About Us</a>
+                <a href="scholars.html" class="hover:text-white transition-colors">Scholars Program</a>
+                <a href="infrastructure.html" class="hover:text-white transition-colors">Technical Infrastructure</a>
+                <a href="privacy.html" class="hover:text-white transition-colors">Privacy Policy</a>
+                <a href="https://buy.stripe.com/28E9AU2mf3ZL0gT08afnO00" target="_blank" rel="noopener noreferrer" class="bg-emerald-500 hover:bg-emerald-400 text-white px-4 py-2.5 rounded-lg transition-all shadow-lg shadow-emerald-900/30 flex items-center gap-2 font-semibold">
+                    <i data-lucide="heart" class="w-4 h-4"></i>
+                    Donate
+                </a>
+            </div>
+            <button class="md:hidden text-slate-300" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+                <i data-lucide="menu" class="w-8 h-8"></i>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-navy-900 border-t border-white/10 p-4">
+            <a href="index.html#mission" class="block py-3 text-slate-300">Home</a>
+            <a href="about.html" class="block py-3 text-blue-400 font-bold">About Us</a>
+            <a href="scholars.html" class="block py-3 text-slate-300">Scholars Program</a>
+            <a href="infrastructure.html" class="block py-3 text-slate-300">Technical Infrastructure</a>
+            <a href="privacy.html" class="block py-3 text-slate-300">Privacy Policy</a>
+            <a href="https://buy.stripe.com/28E9AU2mf3ZL0gT08afnO00" target="_blank" rel="noopener noreferrer" class="block py-3 text-emerald-400 font-bold flex items-center gap-2">
+                <i data-lucide="heart" class="w-4 h-4"></i>
+                Donate Now
+            </a>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="relative pt-36 pb-20 md:pt-52 md:pb-32 overflow-hidden">
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[500px] bg-blue-600/10 rounded-full blur-[120px] -z-10"></div>
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="max-w-4xl">
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-900/30 border border-blue-500/30 text-blue-300 text-sm font-medium mb-8">
+                    <span class="w-2 h-2 rounded-full bg-blue-400 animate-pulse"></span>
+                    About AARI
+                </div>
+                <h1 class="text-5xl md:text-7xl font-bold leading-tight mb-8">
+                    Who We Are &amp;<br>
+                    <span class="gradient-text">Why We Build</span>
+                </h1>
+                <p class="text-lg md:text-xl text-slate-400 mb-10 leading-relaxed max-w-3xl">
+                    The Atlanta AI &amp; Robotics Initiative was founded on a simple belief: the people building the future should look like the whole of humanity. We exist to make that true.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOUNDER STORY -->
+    <section class="py-24 bg-navy-900">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div class="fade-in-up">
+                    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-900/30 border border-blue-500/30 text-blue-300 text-sm font-medium mb-8">
+                        <i data-lucide="user" class="w-4 h-4"></i>
+                        Founder &amp; Executive Director
+                    </div>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">Nolan Code</h2>
+                    <div class="space-y-5 text-slate-400 text-base leading-relaxed">
+                        <p>
+                            Nolan Code built AARI from a garage. Not metaphorically — literally. What began as a personal lab for deep infrastructure work became the model for a new kind of technical education: one that starts with real hardware, not slides.
+                        </p>
+                        <p>
+                            Nolan's path to AARI ran through the U.S. Army, where he served as a logistics officer — learning how to move complex systems, manage resources under pressure, and lead people through hard problems. Those skills didn't leave when he transitioned out.
+                        </p>
+                        <p>
+                            After the Army, Nolan joined Microsoft as a <strong class="text-white">Cloud Solution Architect</strong>, helping enterprise clients architect and deploy some of the most demanding cloud workloads in the world. He saw firsthand what it takes to operate real infrastructure at scale — and he saw the massive gap between what universities were teaching and what employers actually needed.
+                        </p>
+                        <p>
+                            Recognized as <strong class="text-white">Georgia Tech's Black Alumni Entrepreneur of the Year</strong>, Nolan brought that same energy to AARI: build something real, make it work, and bring others with you.
+                        </p>
+                        <p>
+                            His mission is personal. He grew up in Atlanta. He knows the talent that exists here. And he refuses to accept a future where that talent is locked out of the industry simply because nobody gave them access to the hardware.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Credentials Panel -->
+                <div class="glass-panel rounded-2xl p-8 fade-in-up border border-blue-500/20">
+                    <h3 class="text-xl font-bold mb-6 text-center">Background &amp; Credentials</h3>
+                    <div class="space-y-5">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-green-500/10 rounded-xl flex items-center justify-center border border-green-500/30 flex-shrink-0">
+                                <i data-lucide="shield" class="text-green-400 w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <div class="font-semibold text-white mb-1">U.S. Army Veteran</div>
+                                <p class="text-slate-400 text-sm">Logistics Officer — leading complex systems operations under pressure. The same discipline that powers AARI.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-blue-500/10 rounded-xl flex items-center justify-center border border-blue-500/30 flex-shrink-0">
+                                <i data-lucide="cloud" class="text-blue-400 w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <div class="font-semibold text-white mb-1">Microsoft Cloud Solution Architect</div>
+                                <p class="text-slate-400 text-sm">Designed and deployed enterprise cloud architectures. Saw the skills gap from the inside.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-yellow-500/10 rounded-xl flex items-center justify-center border border-yellow-500/30 flex-shrink-0">
+                                <i data-lucide="award" class="text-yellow-400 w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <div class="font-semibold text-white mb-1">Georgia Tech Black Alumni Entrepreneur of the Year</div>
+                                <p class="text-slate-400 text-sm">Recognized for building AARI from the ground up and creating measurable community impact.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-purple-500/10 rounded-xl flex items-center justify-center border border-purple-500/30 flex-shrink-0">
+                                <i data-lucide="map-pin" class="text-purple-400 w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <div class="font-semibold text-white mb-1">Atlanta, Georgia</div>
+                                <p class="text-slate-400 text-sm">Born and built here. AARI is a hometown bet on Atlanta's next generation of infrastructure engineers.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ORIGIN STORY -->
+    <section class="py-24">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="text-center mb-12 fade-in-up">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">The Garage Data Center</h2>
+                <p class="text-slate-400 text-lg">Where it started — and why it matters.</p>
+            </div>
+            <div class="glass-panel rounded-2xl p-10 fade-in-up border border-white/10 space-y-6 text-slate-300 text-base leading-relaxed">
+                <p>
+                    Before AARI had a name, it had a garage. Nolan was running bare-metal servers, experimenting with edge AI, and building the kind of infrastructure most people only read about in white papers.
+                </p>
+                <p>
+                    When students started showing up to learn, he didn't turn them away. He put them to work. Not on simulations. On the actual hardware. That's where AARI's core doctrine was born: <strong class="text-white">you learn by doing, and doing means real systems.</strong>
+                </p>
+                <p>
+                    The Garage Data Center became the AARI Systems Lab — a professional, enterprise-grade facility purpose-built for training the next generation of AI infrastructure engineers. The origin story stays, because it's true, and because it matters: this was built from scratch, by hand, out of conviction. Not venture capital.
+                </p>
+                <p>
+                    That ethos is baked into everything we teach. Students who come through AARI know what it feels like to build something from nothing — because that's exactly how AARI was built.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- THE SKILLS GAP PROBLEM -->
+    <section class="py-24 bg-navy-900">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-16 fade-in-up">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">The Problem We're Solving</h2>
+                <p class="text-slate-400">The infrastructure skills gap is real, it's growing, and it disproportionately affects underrepresented communities.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="glass-panel rounded-2xl p-8 fade-in-up text-center border border-red-500/20">
+                    <div class="text-5xl font-bold text-red-400 mb-3">80%</div>
+                    <h3 class="font-bold text-lg mb-2">CS Grads Feel Unprepared</h3>
+                    <p class="text-slate-400 text-sm">8 in 10 computer science graduates report they don't feel ready for real IT infrastructure work on day one.</p>
+                </div>
+                <div class="glass-panel rounded-2xl p-8 fade-in-up text-center border border-blue-500/20">
+                    <div class="text-5xl font-bold text-blue-400 mb-3">$115K</div>
+                    <h3 class="font-bold text-lg mb-2">First Graduate Placed</h3>
+                    <p class="text-slate-400 text-sm">AARI's first graduate secured a $115,000 infrastructure role — before their peers were even searching.</p>
+                </div>
+                <div class="glass-panel rounded-2xl p-8 fade-in-up text-center border border-emerald-500/20">
+                    <div class="text-5xl font-bold text-emerald-400 mb-3">40</div>
+                    <h3 class="font-bold text-lg mb-2">Morehouse Pilot Cohort</h3>
+                    <p class="text-slate-400 text-sm">Our first cohort at Morehouse College enrolled 40 students. The model works. Now we scale it.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-16 border-t border-white/5">
+        <div class="max-w-3xl mx-auto px-6 text-center fade-in-up">
+            <h3 class="text-2xl font-bold mb-4">Want to Learn More or Get Involved?</h3>
+            <p class="text-slate-400 mb-8">Reach out to Nolan directly, explore the Scholars Program, or make a donation to support our mission.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="mailto:nolan@atlanta-robotics.org" class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-8 py-4 rounded-xl transition-all flex items-center justify-center gap-2">
+                    <i data-lucide="mail" class="w-5 h-5"></i>
+                    Contact Nolan
+                </a>
+                <a href="scholars.html" class="glass-panel border border-white/10 hover:border-white/30 text-white font-semibold px-8 py-4 rounded-xl transition-all flex items-center justify-center gap-2">
+                    <i data-lucide="graduation-cap" class="w-5 h-5"></i>
+                    Scholars Program
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="py-12 px-6 border-t border-white/5">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6 mb-8">
+                <div class="flex items-center gap-3">
+                    <div class="bg-white/90 p-1.5 rounded-lg">
+                        <img src="images/header-logo.png" alt="AARI Logo" class="h-8 w-auto object-contain">
+                    </div>
+                    <span class="text-slate-400 text-sm">Atlanta AI &amp; Robotics Initiative</span>
+                </div>
+                <div class="flex flex-wrap items-center gap-5 text-slate-400 text-sm">
+                    <a href="index.html#mission" class="hover:text-white transition-colors">Home</a>
+                    <a href="about.html" class="text-blue-400">About Us</a>
+                    <a href="scholars.html" class="hover:text-white transition-colors">Scholars Program</a>
+                    <a href="infrastructure.html" class="hover:text-white transition-colors">Technical Infrastructure</a>
+                    <a href="privacy.html" class="hover:text-white transition-colors">Privacy Policy</a>
+                </div>
+            </div>
+            <div class="border-t border-white/5 pt-8 text-center text-slate-500 text-sm space-y-1">
+                <p><strong class="text-slate-300">Atlanta AI &amp; Robotics Initiative, Inc.</strong></p>
+                <p>A Registered 501(c)(3) Nonprofit Organization</p>
+                <p>EIN: 41-2742893 | Smyrna, Georgia</p>
+                <p>Contact: <a href="mailto:nolan@atlanta-robotics.org" class="text-blue-400 hover:text-blue-300">nolan@atlanta-robotics.org</a> | <a href="https://atlanta-robotics.org" class="text-blue-400 hover:text-blue-300">atlanta-robotics.org</a></p>
+                <p class="pt-2">&copy; 2026 AARI. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+        const fadeElements = document.querySelectorAll('.fade-in-up');
+        const fadeObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+        }, { threshold: 0.1 });
+        fadeElements.forEach(el => fadeObserver.observe(el));
+    </script>
+</body>
+</html>
