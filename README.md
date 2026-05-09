@@ -18,6 +18,8 @@ This app is **plain static HTML**.
 
 The site is configured for Azure Static Web Apps with GitHub as source control.
 
+- **Azure resource name:** `swa-aari-website-prod`
+- **Azure resource group:** `rg-aari-website-prod`
 - **Production branch:** `main`
 - **Workflow:** `.github/workflows/azure-static-web-apps-polite-tree-06850430f.yml`
 - **Build command:** none
