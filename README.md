@@ -1,34 +1,64 @@
-# AAIRI Official Website
+# Nolan Speaker Site
 
-Official website for the **Atlanta AI & Robotics Initiative (AARI)**, a 501(c)(3) nonprofit organization providing hands-on AI and robotics education to students, veterans, and underserved communities in Atlanta.
+Static speaker and press-kit website for `nolancode.bio`.
 
-## About AARI
+## Purpose
 
-AARI equips the next generation with real-world infrastructure skills - from bare-metal server administration to AI deployment, robotics, and edge computing. Our programs bridge the gap between theoretical knowledge and practical systems engineering.
+This site positions Nolan as a paid speaker, founder, educator, and infrastructure strategist across:
 
-## Website Structure
+- AI infrastructure
+- robotics and edge AI
+- quantum literacy
+- workforce development
+- executive and institutional strategy
 
-- **index.html** - Main landing page with program information, impact metrics, and partnership opportunities
-- **images/** - Logo and program photos
+## Security Posture
 
-## Technology Stack
+This site is intentionally static and low-risk.
 
-- HTML5 with Tailwind CSS
-- Lucide Icons
-- Responsive design optimized for all devices
-- Mermaid diagrams for architecture visualization
+- No server-side runtime
+- No client-side secrets
+- No third-party JavaScript
+- No analytics scripts
+- No form backend storing visitor data
+- Booking form uses a local `mailto:` handoff so submission data is not posted to a public API
+- Content Security Policy is set with a restrictive meta policy
+- Custom domain is set through `CNAME` for GitHub Pages
 
-## Programs
+## Structure
 
-1. **AI Infrastructure** - GPU cluster management, model deployment, bare-metal computing
-2. **Robotics & Vision** - Autonomous systems, computer vision, circuit design
-3. **Systems Engineering** - Linux administration, containerization, GovCloud security
+- `index.html` - Main speaker homepage
+- `speaker-kit.html` - Printable one-sheet
+- `media-kit.html` - Media summary
+- `rider.html` - Speaker rider
+- `rates.html` - Speaking rates
+- `styles/site.css` - Shared styles
+- `scripts/site.js` - Mobile navigation and booking form handoff
+- `images/` - Headshots and legacy site imagery
 
-## Contact
+## Local Preview
 
-- Website: [atlanta-robotics.org](https://atlanta-robotics.org)
-- Email: nolan@atlanta-robotics.org
+Run a local static server from the repo root:
 
-## License
+```bash
+python3 -m http.server 8000
+```
 
-© 2026 Atlanta AI & Robotics Initiative. All rights reserved.
+Then open:
+
+```text
+http://localhost:8000
+```
+
+## GitHub Pages Deployment
+
+1. Push the repo to GitHub.
+2. In the GitHub repo settings, enable GitHub Pages from the default branch root.
+3. Confirm the custom domain is set to `nolancode.bio`.
+4. In DNS, point `nolancode.bio` to GitHub Pages using the required A / ALIAS records.
+5. Enforce HTTPS in GitHub Pages settings once the certificate is issued.
+
+## Notes
+
+- The downloadable press-kit links open printable HTML pages until final PDF assets are produced.
+- If you later add a real form backend, do not expose API keys or SMTP credentials client-side.
