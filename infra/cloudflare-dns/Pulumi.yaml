@@ -1,0 +1,6 @@
+name: aairi-cloudflare-dns
+runtime:
+  name: python
+  options:
+    virtualenv: .venv
+description: Cloudflare DNS cutover for atlanta-robotics.org to Azure Static Web Apps

@@ -63,6 +63,96 @@ For `www.atlanta-robotics.org`, create:
 
 - `CNAME www -> polite-tree-06850430f.7.azurestaticapps.net`
 
+## Pulumi Cloudflare DNS Cutover
+
+The Cloudflare DNS cutover is managed in:
+
+- `infra/cloudflare-dns/`
+
+This Pulumi project manages only the website cutover records:
+
+- removes the legacy GitHub Pages apex A records
+- removes the legacy `www -> ncode3.github.io` CNAME
+- creates the Azure Static Web Apps validation TXT record
+- creates the Azure Static Web Apps apex CNAME
+- creates the Azure Static Web Apps `www` CNAME
+
+It does **not** touch unrelated records such as:
+
+- MX
+- Google verification
+- `autodiscover`
+- `automation`
+- `coach`
+- `gdc`
+- `vpn`
+- `_domainconnect`
+
+### Cloudflare authentication
+
+Use an environment variable only. Do not commit secrets.
+
+```bash
+export CLOUDFLARE_API_TOKEN="<cloudflare-api-token>"
+```
+
+Required token scopes:
+
+- `Zone:Read`
+- `DNS:Edit`
+
+### Pulumi config example
+
+```bash
+cd infra/cloudflare-dns
+python3 -m venv .venv
+source .venv/bin/activate
+python3 -m pip install -r requirements.txt
+pulumi login
+pulumi stack init dev
+pulumi config set domain atlanta-robotics.org
+pulumi config set azureHostname polite-tree-06850430f.7.azurestaticapps.net
+pulumi config set validationToken _mish3wq5ou7jsdbsac5xoin79mx1rjk
+pulumi config set githubPagesWwwTarget ncode3.github.io
+```
+
+Optional when automatic zone lookup is not desired:
+
+```bash
+pulumi config set cloudflareZoneId "<cloudflare-zone-id>"
+```
+
+### Preview and apply
+
+Review the exact planned changes before apply:
+
+```bash
+pulumi preview
+pulumi up
+```
+
+Expected website cutover changes:
+
+- delete `A @ 185.199.108.153`
+- delete `A @ 185.199.109.153`
+- delete `A @ 185.199.110.153`
+- delete `A @ 185.199.111.153`
+- delete `CNAME www ncode3.github.io`
+- create `TXT @ _mish3wq5ou7jsdbsac5xoin79mx1rjk`
+- create `CNAME @ polite-tree-06850430f.7.azurestaticapps.net`
+- create `CNAME www polite-tree-06850430f.7.azurestaticapps.net`
+
+### Verification commands
+
+```bash
+dig TXT atlanta-robotics.org
+dig atlanta-robotics.org
+dig www.atlanta-robotics.org
+curl -I https://atlanta-robotics.org
+curl -I https://www.atlanta-robotics.org
+az staticwebapp hostname list -n swa-aari-website-prod -g rg-aari-website-prod -o table
+```
+
 ### Redirect behavior
 
 After both domains are attached in Azure Static Web Apps:
@@ -89,6 +179,14 @@ gh workflow run azure-static-web-apps-polite-tree-06850430f.yml --repo ncode3/aa
 git revert <bad-commit>
 git push origin main
 ```
+
+6. To roll back DNS from Azure Static Web Apps to GitHub Pages, reapply the previous Cloudflare website records:
+
+- `A @ 185.199.108.153`
+- `A @ 185.199.109.153`
+- `A @ 185.199.110.153`
+- `A @ 185.199.111.153`
+- `CNAME www ncode3.github.io`
 
 ## Current Public URLs
 
