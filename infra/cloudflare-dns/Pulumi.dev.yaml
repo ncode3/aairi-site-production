@@ -1,6 +1,7 @@
 config:
   aairi-cloudflare-dns:domain: atlanta-robotics.org
   aairi-cloudflare-dns:azureHostname: polite-tree-06850430f.7.azurestaticapps.net
-  aairi-cloudflare-dns:validationToken: _mish3wq5ou7jsdbsac5xoin79mx1rjk
+  aairi-cloudflare-dns:validationToken: _mvp9fa27cb48dlsqvz04i434ex0oiy3
+  aairi-cloudflare-dns:wwwValidationToken: _lqbyy7qkoaw8gjba04qxmxox7wyj0so
   aairi-cloudflare-dns:githubPagesWwwTarget: ncode3.github.io
 encryptionsalt: v1:/b/IIzIRJNI=:v1:hOAhnK3jsEtJIfef:7/hbNBP7hU3/ya6P5EMOK4lvoQbrFg==

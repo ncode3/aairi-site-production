@@ -1,9 +1,11 @@
 import json
 import os
+import ssl
 import urllib.parse
 import urllib.request
 from typing import Any
 
+import certifi
 import pulumi
 import pulumi.dynamic as dynamic
 import pulumi_cloudflare as cloudflare
@@ -14,6 +16,7 @@ config = pulumi.Config()
 domain = config.get("domain") or "atlanta-robotics.org"
 azure_hostname = config.get("azureHostname") or "polite-tree-06850430f.7.azurestaticapps.net"
 validation_token = config.get("validationToken") or "_mish3wq5ou7jsdbsac5xoin79mx1rjk"
+www_validation_token = config.get("wwwValidationToken") or "_lqbyy7qkoaw8gjba04qxmxox7wyj0so"
 github_pages_www_target = config.get("githubPagesWwwTarget") or "ncode3.github.io"
 cloudflare_zone_id = config.get("cloudflareZoneId")
 
@@ -54,7 +57,8 @@ class WebsiteDnsCleanupProvider(dynamic.ResourceProvider):
             },
             method=method,
         )
-        with urllib.request.urlopen(request, timeout=30) as response:
+        ssl_context = ssl.create_default_context(cafile=certifi.where())
+        with urllib.request.urlopen(request, timeout=30, context=ssl_context) as response:
             payload = json.loads(response.read().decode("utf-8"))
         if not payload.get("success"):
             raise RuntimeError(f"Cloudflare API request failed for {path}: {payload}")
@@ -166,6 +170,28 @@ apex_validation = cloudflare.DnsRecord(
     opts=pulumi.ResourceOptions(depends_on=[cleanup]),
 )
 
+apex_dnsauth_validation = cloudflare.DnsRecord(
+    "website-apex-dnsauth-validation-txt",
+    zone_id=zone_id,
+    name="_dnsauth",
+    type="TXT",
+    content=validation_token,
+    ttl=1,
+    comment="Azure Static Web Apps apex TXT-token validation record for atlanta-robotics.org",
+    opts=pulumi.ResourceOptions(depends_on=[cleanup]),
+)
+
+www_dnsauth_validation = cloudflare.DnsRecord(
+    "website-www-dnsauth-validation-txt",
+    zone_id=zone_id,
+    name="_dnsauth.www",
+    type="TXT",
+    content=www_validation_token,
+    ttl=1,
+    comment="Azure Static Web Apps www TXT-token validation record for atlanta-robotics.org",
+    opts=pulumi.ResourceOptions(depends_on=[cleanup]),
+)
+
 apex_cname = cloudflare.DnsRecord(
     "website-apex-cname",
     zone_id=zone_id,
@@ -191,8 +217,6 @@ www_cname = cloudflare.DnsRecord(
 )
 
 pulumi.export("domain", domain)
-pulumi.export("zoneId", cleanup.resolved_zone_id)
-pulumi.export("removedGithubPagesRecords", cleanup.removed_records)
 pulumi.export(
     "plannedCreates",
     [
@@ -200,6 +224,20 @@ pulumi.export(
             "type": "TXT",
             "name": "@",
             "content": validation_token,
+            "ttl": "automatic",
+            "proxied": False,
+        },
+        {
+            "type": "TXT",
+            "name": "_dnsauth",
+            "content": validation_token,
+            "ttl": "automatic",
+            "proxied": False,
+        },
+        {
+            "type": "TXT",
+            "name": "_dnsauth.www",
+            "content": www_validation_token,
             "ttl": "automatic",
             "proxied": False,
         },
@@ -233,4 +271,13 @@ pulumi.export(
         }
     ],
 )
-pulumi.export("managedRecordIds", [apex_validation.id, apex_cname.id, www_cname.id])
+pulumi.export(
+    "managedRecordIds",
+    [
+        apex_validation.id,
+        apex_dnsauth_validation.id,
+        www_dnsauth_validation.id,
+        apex_cname.id,
+        www_cname.id,
+    ],
+)
