@@ -1,22 +1,530 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17997086735"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-17997086735');
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="refresh" content="0; url=/#media">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self'; script-src 'none'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'">
-    <title>Redirecting to Nolan Media</title>
-    <link rel="stylesheet" href="styles/site.css">
+    <title>Partners &amp; Sponsors | Atlanta AI &amp; Robotics Initiative</title>
+    <meta name="description" content="AARI partnership and sponsorship tiers. Cisco confirmed Silver Partner. Open tiers: Platinum $100K+, Gold $50K+, Silver $25K+, Community, Technology, Workforce, and Equipment partners.">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: { 900: '#020617', 800: '#0f172a', 700: '#1e293b' },
+                        electric: { 500: '#3b82f6', 400: '#60a5fa' },
+                    },
+                    fontFamily: { sans: ['Inter', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; background: #020617; color: #f8fafc; }
+        .glass-panel { background: rgba(15,23,42,0.7); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.1); }
+        .gradient-text { background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #020617; }
+        ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #3b82f6; }
+        .fade-in-up { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+        .fade-in-up.visible { opacity: 1; transform: translateY(0); }
+        .partner-card { transition: transform 0.3s ease; }
+        .partner-card:hover { transform: translateY(-4px); }
+    </style>
 </head>
-<body>
-    <main class="print-layout">
-        <div class="shell">
-            <section class="print-card">
-                <p class="section-kicker">Redirecting</p>
-                <h1>Media &amp; Recognition</h1>
-                <p class="print-copy">This page has moved to the main speaker site. If you are not redirected automatically, <a href="/#media">continue to Media, Awards &amp; Recognition</a>.</p>
-            </section>
+<body class="antialiased">
+
+    <!-- NAVIGATION -->
+    <nav class="fixed w-full z-50 transition-all duration-300 glass-panel border-b-0 border-b-white/5">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-3 group">
+                <div class="bg-white/90 p-1.5 rounded-lg hover:bg-white transition-colors">
+                    <img src="images/header-logo.png" alt="AARI Logo" class="h-10 w-auto object-contain">
+                </div>
+            </a>
+            <div class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-300">
+                <a href="index.html#mission" class="hover:text-white transition-colors">Home</a>
+                <a href="about.html" class="hover:text-white transition-colors">About Us</a>
+                <a href="scholars.html" class="hover:text-white transition-colors">Scholars Program</a>
+                <a href="infrastructure.html" class="hover:text-white transition-colors">Infrastructure</a>
+                <a href="partners.html" class="text-blue-400 font-semibold">Partners</a>
+                <a href="https://buy.stripe.com/28E9AU2mf3ZL0gT08afnO00?success_url=https://atlanta-robotics.org/thank-you.html" target="_blank" rel="noopener noreferrer" class="bg-emerald-500 hover:bg-emerald-400 text-white px-4 py-2.5 rounded-lg transition-all shadow-lg shadow-emerald-900/30 flex items-center gap-2 font-semibold">
+                    <i data-lucide="heart" class="w-4 h-4"></i>
+                    Donate
+                </a>
+            </div>
+            <button class="md:hidden text-slate-300" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+                <i data-lucide="menu" class="w-8 h-8"></i>
+            </button>
         </div>
-    </main>
+        <div id="mobile-menu" class="hidden md:hidden bg-navy-900 border-t border-white/10 p-4">
+            <a href="index.html#mission" class="block py-3 text-slate-300">Home</a>
+            <a href="about.html" class="block py-3 text-slate-300">About Us</a>
+            <a href="scholars.html" class="block py-3 text-slate-300">Scholars Program</a>
+            <a href="infrastructure.html" class="block py-3 text-slate-300">Infrastructure</a>
+            <a href="partners.html" class="block py-3 text-blue-400 font-bold">Partners</a>
+            <a href="https://buy.stripe.com/28E9AU2mf3ZL0gT08afnO00?success_url=https://atlanta-robotics.org/thank-you.html" target="_blank" rel="noopener noreferrer" class="block py-3 text-emerald-400 font-bold flex items-center gap-2">
+                <i data-lucide="heart" class="w-4 h-4"></i>
+                Donate Now
+            </a>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="relative pt-36 pb-20 md:pt-52 md:pb-32 overflow-hidden">
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[500px] bg-blue-600/10 rounded-full blur-[120px] -z-10"></div>
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="max-w-4xl">
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-900/30 border border-blue-500/30 text-blue-300 text-sm font-medium mb-8">
+                    <span class="w-2 h-2 rounded-full bg-blue-400 animate-pulse"></span>
+                    Summer 2026 Sponsorship | Open for Partnerships
+                </div>
+                <h1 class="text-5xl md:text-7xl font-bold leading-tight mb-8">
+                    Partners &amp;<br>
+                    <span class="gradient-text">Sponsors</span>
+                </h1>
+                <p class="text-lg md:text-xl text-slate-400 mb-6 leading-relaxed max-w-3xl">
+                    AARI builds real infrastructure talent from Atlanta's APS pipeline to AUC to workforce. Sponsors get early access to prepared technical talent and a direct pipeline into the cohort model.
+                </p>
+                <p class="text-lg md:text-xl text-slate-400 mb-10 leading-relaxed max-w-3xl">
+                    Cash and in-kind contributions are both welcome. Every tier is data-driven: add a partner by dropping into the config, no custom dev required.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#become-partner" class="bg-white text-navy-900 font-bold px-8 py-4 rounded-xl hover:bg-slate-200 transition-colors flex items-center justify-center gap-2">
+                        Become a Partner
+                        <i data-lucide="arrow-down" class="w-5 h-5"></i>
+                    </a>
+                    <a href="mailto:nolan@atlanta-robotics.org?subject=Partnership Inquiry" class="glass-panel text-white font-semibold px-8 py-4 rounded-xl hover:bg-white/5 transition-colors flex items-center justify-center gap-2">
+                        <i data-lucide="mail" class="w-5 h-5"></i>
+                        Contact Directly
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONFIRMED PARTNERS -->
+    <section class="py-24 bg-navy-900">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-16 fade-in-up">
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-900/30 border border-emerald-500/30 text-emerald-300 text-sm font-medium mb-6">
+                    <i data-lucide="check-circle" class="w-4 h-4"></i>
+                    Confirmed Partners
+                </div>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Who's In</h2>
+                <p class="text-slate-400">Active partnerships and confirmed sponsorships.</p>
+            </div>
+
+            <!-- Silver: Cisco -->
+            <div class="mb-12 fade-in-up">
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="h-px flex-1 bg-slate-700/50"></div>
+                    <div class="flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-800 border border-slate-600/50">
+                        <span class="w-3 h-3 rounded-full bg-slate-300 inline-block"></span>
+                        <span class="text-slate-300 text-sm font-bold uppercase tracking-wider">Silver Partner | $25,000+</span>
+                    </div>
+                    <div class="h-px flex-1 bg-slate-700/50"></div>
+                </div>
+                <div class="flex flex-wrap justify-center gap-6">
+                    <div class="partner-card glass-panel rounded-2xl p-8 text-center border border-slate-400/30 w-full max-w-xs">
+                        <div class="h-16 flex items-center justify-center mb-4">
+                            <span class="text-white font-bold text-3xl tracking-tight">Cisco</span>
+                        </div>
+                        <div class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-emerald-900/40 border border-emerald-500/30 text-emerald-300 text-xs font-bold rounded-full mb-4">
+                            <i data-lucide="check-circle" class="w-3.5 h-3.5"></i>
+                            Confirmed | Silver Partner
+                        </div>
+                        <p class="text-slate-400 text-sm leading-relaxed">Networking infrastructure and curriculum alignment with AARI's infrastructure-first training model.</p>
+                        <div class="mt-4 pt-4 border-t border-white/10">
+                            <span class="text-xs text-slate-400 uppercase tracking-wider font-semibold">Silver Partner | $25K Confirmed</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Curriculum & Technology Partners -->
+            <div class="mb-8 fade-in-up">
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="h-px flex-1 bg-slate-700/50"></div>
+                    <span class="text-slate-400 text-sm font-semibold uppercase tracking-wider px-3">Curriculum &amp; Technology Partners</span>
+                    <div class="h-px flex-1 bg-slate-700/50"></div>
+                </div>
+                <div class="flex flex-wrap justify-center gap-6">
+                    <!-- Red Hat -->
+                    <div class="partner-card glass-panel rounded-2xl p-6 text-center border border-red-500/20 w-full sm:w-72">
+                        <div class="h-12 flex items-center justify-center mb-4">
+                            <div class="bg-white rounded-lg px-3 py-2 inline-flex items-center">
+                                <img src="images/logo-redhat.png" alt="Red Hat" class="h-8 w-auto object-contain">
+                            </div>
+                        </div>
+                        <h3 class="font-bold text-lg mb-1">Red Hat</h3>
+                        <p class="text-red-400 text-xs font-semibold uppercase tracking-wider mb-3">Curriculum Sponsor</p>
+                        <p class="text-slate-400 text-sm">OpenShift, OpenStack, RHEL, and Ansible. The backbone of AARI's systems curriculum.</p>
+                        <div class="mt-4 pt-4 border-t border-white/10 flex items-center justify-center gap-2">
+                            <span class="text-xs text-slate-500 uppercase tracking-wider">In-Kind &amp; Curriculum</span>
+                        </div>
+                    </div>
+                    <!-- NVIDIA -->
+                    <div class="partner-card glass-panel rounded-2xl p-6 text-center border border-green-500/20 w-full sm:w-72">
+                        <div class="h-12 flex items-center justify-center mb-4">
+                            <div class="bg-white rounded-lg px-3 py-2 inline-flex items-center">
+                                <img src="images/logo-nvidia.png" alt="NVIDIA" class="h-8 w-auto object-contain">
+                            </div>
+                        </div>
+                        <h3 class="font-bold text-lg mb-1">NVIDIA</h3>
+                        <p class="text-green-400 text-xs font-semibold uppercase tracking-wider mb-3">GPU Grants &middot; CUDA-Q</p>
+                        <p class="text-slate-400 text-sm">GPU hardware grants and CUDA-Q quantum computing curriculum. Powers AARI's AI and edge compute tracks.</p>
+                        <div class="mt-4 pt-4 border-t border-white/10">
+                            <span class="text-xs text-slate-500 uppercase tracking-wider">In-Kind &amp; Curriculum</span>
+                        </div>
+                    </div>
+                    <!-- QTS -->
+                    <div class="partner-card glass-panel rounded-2xl p-6 text-center border border-orange-500/20 w-full sm:w-72">
+                        <div class="h-12 flex items-center justify-center mb-4">
+                            <div class="bg-white rounded-lg px-3 py-2 inline-flex items-center">
+                                <img src="images/logo-qts.png" alt="QTS Data Centers" class="h-8 w-auto object-contain">
+                            </div>
+                        </div>
+                        <h3 class="font-bold text-lg mb-1">QTS Data Centers</h3>
+                        <p class="text-orange-400 text-xs font-semibold uppercase tracking-wider mb-3">Pilot Partner | Summer 2026 POC</p>
+                        <p class="text-slate-400 text-sm">90-day use case engagement for Summer 2026. Anchor conversion path following the August ribbon-cutting.</p>
+                        <div class="mt-4 pt-4 border-t border-white/10">
+                            <span class="text-xs text-orange-500 uppercase tracking-wider">$25K Pilot | Anchor Conversion Path</span>
+                        </div>
+                    </div>
+                    <!-- Microsoft -->
+                    <div class="partner-card glass-panel rounded-2xl p-6 text-center border border-slate-600/30 w-full sm:w-72">
+                        <div class="h-12 flex items-center justify-center mb-4">
+                            <div class="bg-white rounded-lg px-3 py-2 inline-flex items-center">
+                                <img src="images/logo-microsoft.webp" alt="Microsoft" class="h-7 w-auto object-contain">
+                            </div>
+                        </div>
+                        <h3 class="font-bold text-lg mb-1">Microsoft</h3>
+                        <p class="text-slate-400 text-xs font-semibold uppercase tracking-wider mb-3">Partnership in Active Development</p>
+                        <p class="text-slate-400 text-sm">Cloud architecture and Azure ecosystem integration. Active development.</p>
+                        <div class="mt-4 pt-4 border-t border-white/10">
+                            <span class="text-xs text-slate-500 uppercase tracking-wider">In Development</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- AWS-MLU Recognition -->
+            <div class="glass-panel rounded-2xl p-8 border border-amber-500/30 fade-in-up max-w-3xl mx-auto">
+                <div class="flex flex-col md:flex-row items-center gap-6">
+                    <div class="w-16 h-16 bg-amber-500/10 rounded-xl flex items-center justify-center border border-amber-500/30 flex-shrink-0">
+                        <i data-lucide="award" class="text-amber-400 w-8 h-8"></i>
+                    </div>
+                    <div class="flex-1 text-center md:text-left">
+                        <div class="inline-flex items-center gap-2 bg-amber-500/10 border border-amber-500/20 text-amber-300 text-xs font-bold px-3 py-1 rounded-full mb-2">
+                            ACCEPTED &middot; 2026-27 COHORT
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-1">AWS Machine Learning University, 2026-27 Transformation Alliance</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">AARI has been accepted into the AWS-MLU 2026-27 Transformation Alliance cohort, a nationally competitive program recognizing organizations redefining how AI education is delivered.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TIER STRUCTURE -->
+    <section id="tiers" class="py-24 scroll-mt-24">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-16 fade-in-up">
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-900/30 border border-blue-500/30 text-blue-300 text-sm font-medium mb-6">
+                    <i data-lucide="layers" class="w-4 h-4"></i>
+                    Sponsorship Tiers
+                </div>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">How to Partner with AARI</h2>
+                <p class="text-slate-400">Four tiers structured around the Summer 2026 cohort and the August 2026 Atlanta Applied Robotics Campus opening at Thomasville Heights.</p>
+            </div>
+
+            <!-- Tier Cards -->
+            <div class="space-y-6 max-w-4xl mx-auto" id="tier-grid">
+
+                <!-- Founding Anchor -->
+                <div class="partner-card glass-panel rounded-2xl p-8 fade-in-up border-l-4 border-yellow-400 shadow-[0_0_40px_rgba(234,179,8,0.06)]">
+                    <div class="flex flex-col md:flex-row md:items-start gap-6">
+                        <div class="flex-shrink-0">
+                            <div class="w-16 h-16 bg-yellow-500/10 rounded-xl flex items-center justify-center border border-yellow-500/30">
+                                <i data-lucide="crown" class="text-yellow-400 w-8 h-8"></i>
+                            </div>
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex flex-wrap items-center gap-3 mb-2">
+                                <h3 class="text-2xl font-bold">Founding Anchor</h3>
+                                <span class="px-3 py-1 bg-yellow-500/10 border border-yellow-500/20 text-yellow-400 text-sm font-bold rounded-full">$500K/year | 3-Year Minimum</span>
+                                <span class="px-3 py-1 bg-navy-700/50 border border-white/10 text-slate-400 text-xs rounded-full uppercase tracking-wider">Open</span>
+                            </div>
+                            <p class="text-slate-400 text-sm leading-relaxed mb-4">Vertical naming rights at the Atlanta Applied Robotics Campus. Deep integration across the cohort, campus, and AARI brand. Six verticals available for anchor positioning.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-3 py-1 bg-yellow-500/10 rounded-full text-xs text-yellow-300 border border-yellow-500/20">Vertical Naming Rights</span>
+                                <span class="px-3 py-1 bg-navy-700/50 rounded-full text-xs text-slate-300 border border-white/10">8 Apprentice Seats/Year</span>
+                                <span class="px-3 py-1 bg-navy-700/50 rounded-full text-xs text-slate-300 border border-white/10">Dedicated Edge AI Use Case Track</span>
+                                <span class="px-3 py-1 bg-navy-700/50 rounded-full text-xs text-slate-300 border border-white/10">First-Look Hiring</span>
+                                <span class="px-3 py-1 bg-navy-700/50 rounded-full text-xs text-slate-300 border border-white/10">Advisory Board Seat</span>
+                                <span class="px-3 py-1 bg-navy-700/50 rounded-full text-xs text-slate-300 border border-white/10">Ribbon-Cutting Recognition</span>
+                            </div>
+                            <div class="glass-panel rounded-xl p-4 border border-yellow-500/10 mb-4">
+                                <p class="text-xs text-slate-500 uppercase tracking-wider font-semibold mb-2">Six Verticals Available</p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="px-2 py-1 bg-navy-700/50 rounded text-xs text-slate-400 border border-white/5">Data Center Infrastructure</span>
+                                    <span class="px-2 py-1 bg-navy-700/50 rounded text-xs text-slate-400 border border-white/5">Edge AI &amp; Robotics Compute</span>
+                                    <span class="px-2 py-1 bg-navy-700/50 rounded text-xs text-slate-400 border border-white/5">Cloud-to-Edge Deployment</span>
+                                    <span class="px-2 py-1 bg-navy-700/50 rounded text-xs text-slate-400 border border-white/5">Quantum &amp; Hybrid Systems</span>
+                                    <span class="px-2 py-1 bg-navy-700/50 rounded text-xs text-slate-400 border border-white/5">Networking &amp; Smart Infrastructure</span>
+                                    <span class="px-2 py-1 bg-navy-700/50 rounded text-xs text-slate-400 border border-white/5">Mobility &amp; Autonomy</span>
+                                </div>
+                            </div>
+                            <a href="mailto:nolan@atlanta-robotics.org?subject=Founding%20Anchor%20Sponsorship%20Inquiry" class="inline-flex items-center gap-2 bg-yellow-500 hover:bg-yellow-400 text-navy-900 font-bold px-6 py-2.5 rounded-xl transition-all text-sm">
+                                <i data-lucide="mail" class="w-4 h-4"></i>
+                                Discuss This Tier
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Program Sponsor -->
+                <div class="partner-card glass-panel rounded-2xl p-8 fade-in-up border-l-4 border-blue-500">
+                    <div class="flex flex-col md:flex-row md:items-start gap-6">
+                        <div class="flex-shrink-0">
+                            <div class="w-16 h-16 bg-blue-500/10 rounded-xl flex items-center justify-center border border-blue-500/30">
+                                <i data-lucide="building-2" class="text-blue-400 w-8 h-8"></i>
+                            </div>
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex flex-wrap items-center gap-3 mb-2">
+                                <h3 class="text-2xl font-bold">Program Sponsor</h3>
+                                <span class="px-3 py-1 bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm font-bold rounded-full">$150K/year</span>
+                                <span class="px-3 py-1 bg-navy-700/50 border border-white/10 text-slate-400 text-xs rounded-full uppercase tracking-wider">Open</span>
+                            </div>
+                            <p class="text-slate-400 text-sm leading-relaxed mb-4">Named apprentice seats with first-look hiring access and one annual use case engagement. Direct integration into the cohort model.</p>
+                            <div class="flex flex-wrap gap-2 mb-5">
+                                <span class="px-3 py-1 bg-navy-700/50 rounded-full text-xs text-slate-300 border border-white/10">2 Named Apprentice Seats</span>
+                                <span class="px-3 py-1 bg-navy-700/50 rounded-full text-xs text-slate-300 border border-white/10">One Annual Use Case Engagement</span>
+                                <span class="px-3 py-1 bg-navy-700/50 rounded-full text-xs text-slate-300 border border-white/10">First-Look Hiring on Sponsored Seats</span>
+                                <span class="px-3 py-1 bg-navy-700/50 rounded-full text-xs text-slate-300 border border-white/10">Demo Day Access</span>
+                            </div>
+                            <a href="mailto:nolan@atlanta-robotics.org?subject=Program%20Sponsor%20Inquiry" class="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-500 text-white font-bold px-6 py-2.5 rounded-xl transition-all text-sm">
+                                <i data-lucide="mail" class="w-4 h-4"></i>
+                                Discuss This Tier
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pilot Partner -->
+                <div class="partner-card glass-panel rounded-2xl p-8 fade-in-up border-l-4 border-orange-500">
+                    <div class="flex flex-col md:flex-row md:items-start gap-6">
+                        <div class="flex-shrink-0">
+                            <div class="w-16 h-16 bg-orange-500/10 rounded-xl flex items-center justify-center border border-orange-500/30">
+                                <i data-lucide="flask-conical" class="text-orange-400 w-8 h-8"></i>
+                            </div>
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex flex-wrap items-center gap-3 mb-2">
+                                <h3 class="text-2xl font-bold">Pilot Partner</h3>
+                                <span class="px-3 py-1 bg-orange-500/10 border border-orange-500/20 text-orange-400 text-sm font-bold rounded-full">$25K-$50K</span>
+                                <span class="px-3 py-1 bg-navy-700/50 border border-white/10 text-slate-400 text-xs rounded-full uppercase tracking-wider">Open</span>
+                            </div>
+                            <p class="text-slate-400 text-sm leading-relaxed mb-4">A 90-day use case engagement with a defined scope and deliverable. Designed to convert to Program Sponsor or Founding Anchor after a successful pilot.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-3 py-1 bg-navy-700/50 rounded-full text-xs text-slate-300 border border-white/10">90-Day Use Case Engagement</span>
+                                <span class="px-3 py-1 bg-navy-700/50 rounded-full text-xs text-slate-300 border border-white/10">Defined Scope and Deliverable</span>
+                                <span class="px-3 py-1 bg-navy-700/50 rounded-full text-xs text-slate-300 border border-white/10">Conversion Path to Higher Tier</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-xs text-orange-300 bg-orange-900/20 border border-orange-500/20 rounded-lg px-3 py-2 mb-5 w-fit">
+                                <i data-lucide="check-circle" class="w-4 h-4"></i>
+                                QTS Data Centers is currently engaged at this tier for Summer 2026
+                            </div>
+                            <a href="mailto:nolan@atlanta-robotics.org?subject=Pilot%20Partner%20Inquiry" class="inline-flex items-center gap-2 bg-orange-600 hover:bg-orange-500 text-white font-bold px-6 py-2.5 rounded-xl transition-all text-sm">
+                                <i data-lucide="mail" class="w-4 h-4"></i>
+                                Discuss This Tier
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Summer Apprenticeship Sponsor -->
+                <div class="partner-card glass-panel rounded-2xl p-8 fade-in-up border-l-4 border-emerald-500">
+                    <div class="flex flex-col md:flex-row md:items-start gap-6">
+                        <div class="flex-shrink-0">
+                            <div class="w-16 h-16 bg-emerald-500/10 rounded-xl flex items-center justify-center border border-emerald-500/30">
+                                <i data-lucide="graduation-cap" class="text-emerald-400 w-8 h-8"></i>
+                            </div>
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex flex-wrap items-center gap-3 mb-2">
+                                <h3 class="text-2xl font-bold">Summer Apprenticeship Sponsor</h3>
+                                <span class="px-3 py-1 bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-sm font-bold rounded-full">$35K</span>
+                                <span class="px-3 py-1 bg-navy-700/50 border border-white/10 text-slate-400 text-xs rounded-full uppercase tracking-wider">Open</span>
+                            </div>
+                            <p class="text-slate-400 text-sm leading-relaxed mb-4">Funds one AUC scholar plus one APS apprentice for the June through August 2026 cohort. Time-boxed offer for first-mover positioning before the August ribbon-cutting.</p>
+                            <div class="flex flex-wrap gap-2 mb-5">
+                                <span class="px-3 py-1 bg-navy-700/50 rounded-full text-xs text-slate-300 border border-white/10">One AUC Scholar + One APS Apprentice</span>
+                                <span class="px-3 py-1 bg-navy-700/50 rounded-full text-xs text-slate-300 border border-white/10">June through August 2026</span>
+                                <span class="px-3 py-1 bg-emerald-500/10 rounded-full text-xs text-emerald-300 border border-emerald-500/20">First-Mover Positioning</span>
+                            </div>
+                            <a href="mailto:nolan@atlanta-robotics.org?subject=Summer%20Apprenticeship%20Sponsor%20Inquiry" class="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white font-bold px-6 py-2.5 rounded-xl transition-all text-sm">
+                                <i data-lucide="mail" class="w-4 h-4"></i>
+                                Discuss This Tier
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY SPONSOR -->
+    <section class="py-24 bg-navy-900">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-16 fade-in-up">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Why Sponsor AARI</h2>
+                <p class="text-slate-400">Concrete returns, not just goodwill.</p>
+            </div>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+                <div class="glass-panel rounded-xl p-6 fade-in-up">
+                    <i data-lucide="target" class="text-blue-400 w-7 h-7 mb-4"></i>
+                    <h3 class="font-bold mb-2">Early Talent Access</h3>
+                    <p class="text-slate-400 text-sm">Connect with infrastructure-trained scholars before they enter the job market. Cohort-based access replaces late-stage recruiting.</p>
+                </div>
+                <div class="glass-panel rounded-xl p-6 fade-in-up">
+                    <i data-lucide="bar-chart-2" class="text-purple-400 w-7 h-7 mb-4"></i>
+                    <h3 class="font-bold mb-2">Tracked Outcomes</h3>
+                    <p class="text-slate-400 text-sm">Sponsors receive documented outcomes: enrollment numbers, technical milestones, mentoring hours, and placement data.</p>
+                </div>
+                <div class="glass-panel rounded-xl p-6 fade-in-up">
+                    <i data-lucide="refresh-cw" class="text-green-400 w-7 h-7 mb-4"></i>
+                    <h3 class="font-bold mb-2">Annual Pipeline</h3>
+                    <p class="text-slate-400 text-sm">Cohort model runs annually. One partnership builds a compounding, multi-year talent pipeline into your organization.</p>
+                </div>
+                <div class="glass-panel rounded-xl p-6 fade-in-up">
+                    <i data-lucide="map-pin" class="text-orange-400 w-7 h-7 mb-4"></i>
+                    <h3 class="font-bold mb-2">Atlanta Ecosystem Positioning</h3>
+                    <p class="text-slate-400 text-sm">AARI operates at the center of the APS-to-AUC-to-workforce pipeline. Sponsors are part of that Atlanta infrastructure story.</p>
+                </div>
+                <div class="glass-panel rounded-xl p-6 fade-in-up">
+                    <i data-lucide="shield-check" class="text-emerald-400 w-7 h-7 mb-4"></i>
+                    <h3 class="font-bold mb-2">Tax-Deductible</h3>
+                    <p class="text-slate-400 text-sm">AARI is a registered 501(c)(3). All cash contributions and in-kind donations are tax-deductible to the extent allowed by law. EIN: 41-2742893.</p>
+                </div>
+                <div class="glass-panel rounded-xl p-6 fade-in-up">
+                    <i data-lucide="users" class="text-amber-400 w-7 h-7 mb-4"></i>
+                    <h3 class="font-bold mb-2">Employer Match Eligible</h3>
+                    <p class="text-slate-400 text-sm">AARI is eligible for employer matching programs. Employees can double their impact. Contact us for matching gift documentation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MENTOR NETWORK & FINANCIAL TRANSPARENCY -->
+    <section class="py-12">
+        <div class="max-w-4xl mx-auto px-6 space-y-6">
+
+            <!-- NSBE Mentor Network -->
+            <div class="glass-panel rounded-2xl p-8 border border-slate-600/30 fade-in-up">
+                <div class="flex flex-col sm:flex-row items-start gap-5">
+                    <div class="w-14 h-14 bg-slate-700/50 rounded-xl flex items-center justify-center border border-slate-600/50 flex-shrink-0 mt-1">
+                        <i data-lucide="users" class="text-slate-400 w-7 h-7"></i>
+                    </div>
+                    <div class="flex-1">
+                        <div class="flex flex-wrap items-center gap-3 mb-3">
+                            <h3 class="text-xl font-bold">Mentor Network</h3>
+                            <span class="px-3 py-1 bg-slate-700/50 border border-slate-600/50 text-slate-400 text-xs font-bold rounded-full uppercase tracking-wider">Coming Soon</span>
+                        </div>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-3">AARI is developing a partnership with NSBE Atlanta Professionals as the mentor backbone of the Summer 2026 cohort. Industry mentors from the chapter would provide one-on-one guidance to AUC scholars and APS apprentices through the program.</p>
+                        <p class="text-slate-500 text-xs italic">Partnership announcement pending.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Financial Transparency -->
+            <div class="glass-panel rounded-2xl p-6 border border-emerald-500/20 fade-in-up text-center">
+                <div class="flex items-center justify-center gap-2 mb-2">
+                    <i data-lucide="trending-up" class="text-emerald-400 w-5 h-5"></i>
+                    <span class="text-emerald-300 font-bold text-lg">Year One Target: $2.6M</span>
+                </div>
+                <p class="text-slate-400 text-sm max-w-xl mx-auto">Corporate sponsorship and apprenticeship revenue. Conservative target. Stacks with grant funding, not in place of it.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- BECOME A PARTNER CTA -->
+    <section id="become-partner" class="py-24 scroll-mt-24">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="glass-panel rounded-3xl p-10 md:p-16 border border-blue-500/30 shadow-[0_0_50px_rgba(37,99,235,0.08)] fade-in-up text-center">
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-900/30 border border-blue-500/30 text-blue-300 text-sm font-medium mb-6">
+                    <i data-lucide="building-2" class="w-4 h-4"></i>
+                    Become a Partner
+                </div>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Ready to Partner?</h2>
+                <p class="text-lg text-slate-400 mb-10 max-w-xl mx-auto leading-relaxed">Reach out directly. We respond fast. Tell us which tier interests you, whether cash or in-kind, and what your timeline looks like.</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+                    <a href="mailto:nolan@atlanta-robotics.org?subject=Partnership Inquiry" class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-10 py-4 rounded-xl transition-all flex items-center justify-center gap-3 text-lg">
+                        <i data-lucide="mail" class="w-6 h-6"></i>
+                        nolan@atlanta-robotics.org
+                    </a>
+                    <a href="https://buy.stripe.com/28E9AU2mf3ZL0gT08afnO00?success_url=https://atlanta-robotics.org/thank-you.html" target="_blank" rel="noopener noreferrer" class="glass-panel border border-emerald-500/30 text-emerald-300 hover:border-emerald-400 font-semibold px-10 py-4 rounded-xl transition-all flex items-center justify-center gap-3 text-lg">
+                        <i data-lucide="laptop" class="w-6 h-6"></i>
+                        Sponsor a Scholar Kit | $1,500
+                    </a>
+                </div>
+                <p class="text-slate-500 text-xs">AARI is a 501(c)(3) nonprofit. EIN: 41-2742893. All contributions tax-deductible to the extent allowed by law. Secure payment via Stripe.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="py-12 px-6 border-t border-white/5">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6 mb-8">
+                <div class="flex items-center gap-3">
+                    <div class="bg-white/90 p-1.5 rounded-lg">
+                        <img src="images/header-logo.png" alt="AARI Logo" class="h-8 w-auto object-contain">
+                    </div>
+                    <span class="text-slate-400 text-sm">Atlanta AI &amp; Robotics Initiative</span>
+                </div>
+                <div class="flex flex-wrap items-center gap-5 text-slate-400 text-sm">
+                    <a href="index.html#mission" class="hover:text-white transition-colors">Home</a>
+                    <a href="about.html" class="hover:text-white transition-colors">About Us</a>
+                    <a href="scholars.html" class="hover:text-white transition-colors">Scholars Program</a>
+                    <a href="infrastructure.html" class="hover:text-white transition-colors">Infrastructure</a>
+                    <a href="partners.html" class="text-blue-400">Partners</a>
+                    <a href="privacy.html" class="hover:text-white transition-colors">Privacy Policy</a>
+                </div>
+            </div>
+            <div class="border-t border-white/5 pt-8 text-center text-slate-500 text-sm space-y-1">
+                <p><strong class="text-slate-300">Atlanta AI &amp; Robotics Initiative, Inc.</strong></p>
+                <p>A Registered 501(c)(3) Nonprofit Organization</p>
+                <p>EIN: 41-2742893 | Smyrna, Georgia</p>
+                <p>Contact: <a href="mailto:nolan@atlanta-robotics.org" class="text-blue-400 hover:text-blue-300">nolan@atlanta-robotics.org</a> | <a href="https://atlanta-robotics.org" class="text-blue-400 hover:text-blue-300">atlanta-robotics.org</a></p>
+                <p class="pt-2">&copy; 2026 AARI. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+        const fadeElements = document.querySelectorAll('.fade-in-up');
+        const fadeObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+        }, { threshold: 0.1 });
+        fadeElements.forEach(el => fadeObserver.observe(el));
+    </script>
 </body>
 </html>
