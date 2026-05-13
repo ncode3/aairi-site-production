@@ -8,6 +8,8 @@
       gtag('js', new Date());
       gtag('config', 'AW-17997086735');
     </script>
+    <script src="assets/js/analytics-config.js"></script>
+    <script src="assets/js/analytics.js" defer></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Atlanta AI &amp; Robotics Initiative | AI Infrastructure Workforce Pipeline</title>
@@ -738,7 +740,7 @@
                             </label>
                             <div class="form-confirmation" role="status" aria-live="polite"></div>
                             <button type="submit" class="w-full bg-white text-navy-950 font-semibold px-6 py-3 rounded-xl hover:bg-slate-200 transition-colors">Send Partnership Inquiry</button>
-                            <p class="text-xs text-slatebrand-500">By submitting this form, you agree to be contacted by AARI regarding your inquiry. We do not sell contact information.</p>
+                            <p class="text-xs text-slatebrand-500">By submitting this form, you agree to be contacted by AARI regarding your inquiry. We use analytics to understand site traffic and improve programs. We do not sell contact information.</p>
                         </form>
 
                         <form id="funder-form" data-secure-intake data-form-name="Funder inquiry" class="contact-card glass-panel rounded-3xl p-7 border border-white/10 space-y-4">
@@ -814,7 +816,7 @@
                             </label>
                             <div class="form-confirmation" role="status" aria-live="polite"></div>
                             <button type="submit" class="w-full bg-white text-navy-950 font-semibold px-6 py-3 rounded-xl hover:bg-slate-200 transition-colors">Send Funder Inquiry</button>
-                            <p class="text-xs text-slatebrand-500">By submitting this form, you agree to be contacted by AARI regarding your inquiry. We do not sell contact information.</p>
+                            <p class="text-xs text-slatebrand-500">By submitting this form, you agree to be contacted by AARI regarding your inquiry. We use analytics to understand site traffic and improve programs. We do not sell contact information.</p>
                         </form>
                     </div>
                 </div>
@@ -973,6 +975,7 @@
                     event.preventDefault();
                     const confirmation = form.querySelector('.form-confirmation');
                     confirmation?.classList.remove('visible');
+                    const formName = form.dataset.formName || form.querySelector('[name="form_name"]')?.value || 'Inquiry form';
 
                     const emailInput = form.querySelector('[name="email"]');
                     emailInput?.setCustomValidity('');
@@ -984,6 +987,7 @@
                     const emailDomain = email.split('@').pop()?.toLowerCase() || '';
 
                     if (!isValidEmail(email) || disposableEmailDomains.has(emailDomain)) {
+                        window.AARIAnalytics?.trackFormBlocked({ formName, blockReason: 'invalid_email' });
                         emailInput?.setCustomValidity('Please use a valid organizational or personal email address.');
                         emailInput?.reportValidity();
                         return;
@@ -1004,15 +1008,34 @@
                     const spamFound = hasSpamPattern(message);
                     const linksNotAllowed = linkCount > 0 && !linkAllowedTypes.has(inquiryType);
 
-                    if (honeypotFilled || submittedTooFast || spamFound || linksNotAllowed) return;
+                    if (honeypotFilled) {
+                        window.AARIAnalytics?.trackFormBlocked({ formName, blockReason: 'honeypot' });
+                        return;
+                    }
+                    if (submittedTooFast) {
+                        window.AARIAnalytics?.trackFormBlocked({ formName, blockReason: 'too_fast' });
+                        return;
+                    }
+                    if (spamFound) {
+                        window.AARIAnalytics?.trackFormBlocked({ formName, blockReason: 'spam_keyword' });
+                        return;
+                    }
+                    if (linksNotAllowed) {
+                        window.AARIAnalytics?.trackFormBlocked({ formName, blockReason: 'low_score' });
+                        return;
+                    }
 
                     const score = scoreInquiry({ data, message, honeypotFilled, submittedTooFast, linkCount, spamFound });
-                    if (score < 3) return;
+                    if (score < 3) {
+                        window.AARIAnalytics?.trackFormBlocked({ formName, blockReason: 'low_score' });
+                        return;
+                    }
 
                     if (confirmation) {
                         confirmation.textContent = confirmationText;
                         confirmation.classList.add('visible');
                     }
+                    window.AARIAnalytics?.trackFormSubmit({ formName, inquiryType, score });
 
                     const organization = (data.get('organization') || 'Unknown organization').toString().trim();
                     const subject = `AARI Inquiry: ${titleCaseInquiry(inquiryType)} — ${organization}`;
