@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support AARI | Atlanta AI &amp; Robotics Initiative</title>
+    <meta name="description" content="Support AARI as it builds the AI infrastructure workforce pipeline across HBCUs, robotics, edge AI, data centers, cloud, and quantum systems.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@500;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={theme:{extend:{colors:{navy:{950:'#04070d',900:'#09111f',850:'#0f1726'},electric:{400:'#4cc9f0'},slatebrand:{500:'#7f8ba3',400:'#9aa6bf',300:'#c3cde0',200:'#dbe4f4'}}}}}</script>
+    <style>
+        .donate-cta {
+            background: linear-gradient(135deg, #22c55e 0%, #10b981 48%, #84cc16 100%);
+            color: #022c22;
+            box-shadow: 0 0 0 1px rgba(187, 247, 208, 0.38), 0 12px 30px rgba(16, 185, 129, 0.34), 0 0 22px rgba(34, 197, 94, 0.28);
+            cursor: pointer;
+            transition: transform 0.22s ease, box-shadow 0.22s ease, filter 0.22s ease;
+        }
+        .donate-cta:hover {
+            transform: translateY(-1px);
+            filter: brightness(1.08);
+            box-shadow: 0 0 0 1px rgba(220, 252, 231, 0.62), 0 16px 38px rgba(16, 185, 129, 0.5), 0 0 32px rgba(34, 197, 94, 0.42);
+        }
+        .donate-cta:active {
+            transform: translateY(0);
+            filter: brightness(1);
+        }
+    </style>
+</head>
+<body class="bg-navy-950 text-white antialiased">
+    <nav class="border-b border-white/10 bg-navy-950/95">
+        <div class="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between gap-6">
+            <a href="index.html" class="flex items-center gap-3">
+                <img src="images/header-logo.png" alt="AARI logo" class="h-10 w-auto object-contain">
+                <div>
+                    <p class="text-sm font-semibold text-white">Atlanta AI &amp; Robotics Initiative</p>
+                    <p class="text-xs text-slatebrand-400">Infrastructure workforce pipeline</p>
+                </div>
+            </a>
+            <div class="hidden md:flex items-center gap-6 text-sm font-medium text-slatebrand-300">
+                <a href="index.html#top" class="hover:text-white transition-colors">Home</a>
+                <a href="index.html#programs" class="hover:text-white transition-colors">Programs</a>
+                <a href="index.html#proof" class="hover:text-white transition-colors">Work</a>
+                <a href="index.html#leadership" class="hover:text-white transition-colors">Team</a>
+                <a href="donate.html" class="text-white">Donate</a>
+                <a href="index.html#contact" class="hover:text-white transition-colors">Contact</a>
+            </div>
+        </div>
+    </nav>
+    <main>
+        <section class="py-24 md:py-32">
+            <div class="max-w-6xl mx-auto px-6">
+                <div class="max-w-3xl mb-10">
+                    <p class="text-sm uppercase tracking-[0.25em] text-electric-400 mb-4">Support AARI</p>
+                    <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-6">Help build the AI infrastructure workforce pipeline.</h1>
+                    <p class="text-lg md:text-xl text-slatebrand-300 leading-relaxed">AARI is training HBCU students and underrepresented learners to become operators of the AI infrastructure stack: energy, chips, data centers, GPUs, cloud, edge AI, robotics, and quantum systems.</p>
+                </div>
+                <div class="flex flex-col sm:flex-row gap-4 mb-14">
+                    <a href="https://buy.stripe.com/28E9AU2mf3ZL0gT08afnO00?success_url=https://atlanta-robotics.org/thank-you.html" target="_blank" rel="noopener noreferrer" class="donate-cta font-extrabold px-7 py-4 rounded-xl text-center">Donate</a>
+                    <a href="index.html#contact" class="border border-white/15 text-white font-semibold px-7 py-4 rounded-xl hover:bg-white/5 transition-colors text-center">Partner With Us</a>
+                </div>
+                <div class="grid md:grid-cols-2 gap-6 xl:grid-cols-4">
+                    <article class="rounded-3xl border border-white/10 bg-white/5 p-6">
+                        <h2 class="text-xl font-bold mb-3">Student operator fellowships</h2>
+                        <p class="text-sm text-slatebrand-300 leading-relaxed">Support direct student participation, stipends, and the operator training time required to move learners from exposure to execution.</p>
+                    </article>
+                    <article class="rounded-3xl border border-white/10 bg-white/5 p-6">
+                        <h2 class="text-xl font-bold mb-3">Lab equipment and edge hardware</h2>
+                        <p class="text-sm text-slatebrand-300 leading-relaxed">Fund the compute, embedded systems, sensors, robotics kits, and lab hardware students need to work on real infrastructure and physical AI systems.</p>
+                    </article>
+                    <article class="rounded-3xl border border-white/10 bg-white/5 p-6">
+                        <h2 class="text-xl font-bold mb-3">Curriculum and technical instruction</h2>
+                        <p class="text-sm text-slatebrand-300 leading-relaxed">Back curriculum development, technical leads, and structured instruction across cloud, security, AI infrastructure, and production systems.</p>
+                    </article>
+                    <article class="rounded-3xl border border-white/10 bg-white/5 p-6">
+                        <h2 class="text-xl font-bold mb-3">Robotics, quantum, and data center workforce programming</h2>
+                        <p class="text-sm text-slatebrand-300 leading-relaxed">Expand the pipeline into robotics, quantum literacy, and data center workforce preparation with hands-on programming tied to real operator outcomes.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="py-10 border-t border-white/10 bg-navy-950">
+        <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between gap-6">
+            <div>
+                <p class="text-white font-semibold">Atlanta AI &amp; Robotics Initiative</p>
+                <p class="text-slatebrand-400 text-sm mt-2 max-w-xl">AARI trains HBCU students and underrepresented learners to operate the infrastructure stack underneath modern AI.</p>
+            </div>
+            <div class="flex flex-wrap gap-4 text-sm text-slatebrand-400">
+                <a href="donate.html" class="hover:text-white transition-colors">Donate</a>
+                <a href="mailto:nolan@atlanta-robotics.org" class="hover:text-white transition-colors">Contact</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

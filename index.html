@@ -104,6 +104,31 @@
             font-weight: 600;
             background: rgba(15,23,42,0.65);
         }
+        .nav-link {
+            color: #cbd5e1;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.01em;
+            white-space: nowrap;
+            transition: color 0.2s ease;
+        }
+        .nav-link:hover { color: #fff; }
+        .donate-cta {
+            background: linear-gradient(135deg, #22c55e 0%, #10b981 48%, #84cc16 100%);
+            color: #022c22;
+            box-shadow: 0 0 0 1px rgba(187, 247, 208, 0.38), 0 12px 30px rgba(16, 185, 129, 0.34), 0 0 22px rgba(34, 197, 94, 0.28);
+            cursor: pointer;
+            transition: transform 0.22s ease, box-shadow 0.22s ease, filter 0.22s ease;
+        }
+        .donate-cta:hover {
+            transform: translateY(-1px);
+            filter: brightness(1.08);
+            box-shadow: 0 0 0 1px rgba(220, 252, 231, 0.62), 0 16px 38px rgba(16, 185, 129, 0.5), 0 0 32px rgba(34, 197, 94, 0.42);
+        }
+        .donate-cta:active {
+            transform: translateY(0);
+            filter: brightness(1);
+        }
         .hero-grid { display: grid; gap: 3rem; }
         @media (min-width: 1024px) { .hero-grid { grid-template-columns: 1.25fr 0.75fr; align-items: center; } }
         ::-webkit-scrollbar { width: 8px; }
@@ -114,43 +139,40 @@
 </head>
 <body class="antialiased selection:bg-electric-500 selection:text-white">
     <nav class="fixed inset-x-0 top-0 z-50 glass-panel border-b border-white/5">
-        <div class="section-shell h-20 flex items-center justify-between gap-6">
+        <div class="max-w-[92rem] mx-auto px-6 h-20 flex items-center justify-between gap-6">
             <a href="#top" class="flex items-center gap-3">
                 <div class="bg-white/90 p-1.5 rounded-lg">
                     <img src="images/header-logo.png" alt="AARI logo" class="h-10 w-auto object-contain">
                 </div>
-                <div class="hidden sm:block">
+                <div class="hidden 2xl:block">
                     <p class="text-sm font-semibold text-white">Atlanta AI &amp; Robotics Initiative</p>
                     <p class="text-xs text-slatebrand-400">Infrastructure workforce pipeline</p>
                 </div>
             </a>
 
-            <div class="hidden lg:flex items-center gap-6 text-sm font-medium text-slatebrand-300">
-                <a href="#problem" class="hover:text-white transition-colors">Problem</a>
-                <a href="#doctrine" class="hover:text-white transition-colors">Doctrine</a>
-                <a href="#programs" class="hover:text-white transition-colors">Programs</a>
-                <a href="#proof" class="hover:text-white transition-colors">Proof</a>
-                <a href="#impact" class="hover:text-white transition-colors">Impact</a>
-                <a href="#leadership" class="hover:text-white transition-colors">Leadership</a>
-                <a href="#funders" class="hover:text-white transition-colors">Funders</a>
-                <a href="#contact" class="hover:text-white transition-colors">Contact</a>
-            </div>
-
-            <div class="hidden lg:flex items-center gap-3">
-                <a href="partners.html" class="text-sm font-medium text-slatebrand-300 hover:text-white transition-colors">Partner Details</a>
-                <a href="https://buy.stripe.com/28E9AU2mf3ZL0gT08afnO00?success_url=https://atlanta-robotics.org/thank-you.html" target="_blank" rel="noopener noreferrer" class="bg-emerald-500 hover:bg-emerald-400 text-white font-semibold px-5 py-3 rounded-xl transition-colors inline-flex items-center gap-2">
+            <div class="hidden xl:flex items-center gap-4">
+                <a href="#problem" class="nav-link">Problem</a>
+                <a href="#doctrine" class="nav-link">Doctrine</a>
+                <a href="#programs" class="nav-link">Programs</a>
+                <a href="#proof" class="nav-link">Proof</a>
+                <a href="#impact" class="nav-link">Impact</a>
+                <a href="#leadership" class="nav-link">Leadership</a>
+                <a href="#funders" class="nav-link">Funders</a>
+                <a href="partners.html" class="nav-link">Partners</a>
+                <a href="#contact" class="nav-link">Contact</a>
+                <a href="donate.html" class="donate-cta font-extrabold px-4 py-2.5 rounded-xl inline-flex items-center gap-2">
                     <i data-lucide="heart" class="w-4 h-4"></i>
                     Donate
                 </a>
-                <a href="#contact" class="bg-white text-navy-950 font-semibold px-5 py-3 rounded-xl hover:bg-slate-200 transition-colors">Partner With AARI</a>
+                <a href="#contact" class="bg-white text-navy-950 font-semibold px-4 py-2.5 rounded-xl hover:bg-slate-200 transition-colors whitespace-nowrap">Partner With AARI</a>
             </div>
 
-            <button id="mobile-toggle" class="lg:hidden text-slatebrand-200" type="button" aria-expanded="false" aria-controls="mobile-menu">
+            <button id="mobile-toggle" class="xl:hidden text-slatebrand-200" type="button" aria-expanded="false" aria-controls="mobile-menu">
                 <i data-lucide="menu" class="w-8 h-8"></i>
             </button>
         </div>
 
-        <div id="mobile-menu" class="hidden lg:hidden border-t border-white/10 bg-navy-900/95">
+        <div id="mobile-menu" class="hidden xl:hidden border-t border-white/10 bg-navy-900/95">
             <div class="section-shell py-4 flex flex-col gap-3 text-sm font-medium text-slatebrand-300">
                 <a href="#problem" class="py-2">Problem</a>
                 <a href="#doctrine" class="py-2">Doctrine</a>
@@ -158,11 +180,14 @@
                 <a href="#proof" class="py-2">Proof</a>
                 <a href="#impact" class="py-2">Impact</a>
                 <a href="#leadership" class="py-2">Leadership</a>
-                <a href="#governance" class="py-2">Governance</a>
                 <a href="#funders" class="py-2">Funders</a>
+                <a href="partners.html" class="py-2">Partners</a>
                 <a href="#contact" class="py-2">Contact</a>
-                <a href="partners.html" class="py-2">Partner Details</a>
-                <a href="https://buy.stripe.com/28E9AU2mf3ZL0gT08afnO00?success_url=https://atlanta-robotics.org/thank-you.html" target="_blank" rel="noopener noreferrer" class="py-2 text-emerald-400 font-semibold">Donate</a>
+                <a href="donate.html" class="donate-cta mt-2 px-5 py-3 rounded-xl font-extrabold inline-flex items-center justify-center gap-2">
+                    <i data-lucide="heart" class="w-4 h-4"></i>
+                    Donate
+                </a>
+                <a href="#contact" class="bg-white text-navy-950 font-semibold px-5 py-3 rounded-xl text-center hover:bg-slate-200 transition-colors">Partner With AARI</a>
             </div>
         </div>
     </nav>
@@ -181,7 +206,7 @@
                     <div class="flex flex-col sm:flex-row gap-4 mb-8">
                         <a href="#contact" class="bg-white text-navy-950 font-semibold px-7 py-4 rounded-xl hover:bg-slate-200 transition-colors text-center">Partner With AARI</a>
                         <a href="#proof" class="glass-panel text-white font-semibold px-7 py-4 rounded-xl hover:bg-white/5 transition-colors text-center">View Our Work</a>
-                        <a href="https://buy.stripe.com/28E9AU2mf3ZL0gT08afnO00?success_url=https://atlanta-robotics.org/thank-you.html" target="_blank" rel="noopener noreferrer" class="bg-emerald-500 hover:bg-emerald-400 text-white font-semibold px-7 py-4 rounded-xl transition-colors text-center inline-flex items-center justify-center gap-2">
+                        <a href="donate.html" class="donate-cta font-extrabold px-7 py-4 rounded-xl text-center inline-flex items-center justify-center gap-2">
                             <i data-lucide="heart" class="w-5 h-5"></i>
                             Donate
                         </a>
@@ -369,23 +394,23 @@
                 <div class="max-w-3xl mb-12">
                     <div class="section-kicker mb-5"><i data-lucide="bar-chart-3" class="w-4 h-4"></i>Impact</div>
                     <h2 class="text-3xl md:text-4xl font-bold mb-4">Early traction</h2>
-                    <p class="text-lg text-slatebrand-300">These are editable operating metrics, not vanity numbers.</p>
+                    <p class="text-lg text-slatebrand-300">Early indicators from AARI's emerging AI infrastructure workforce model.</p>
                 </div>
                 <div class="grid sm:grid-cols-2 xl:grid-cols-3 gap-5">
                     <article class="metric-card glass-panel rounded-3xl p-7 border border-white/10">
                         <p class="text-sm uppercase tracking-[0.22em] text-slatebrand-500 mb-4">Students trained</p>
-                        <p class="text-4xl font-bold mb-3" data-metric="students-trained">[Update]</p>
-                        <p class="text-sm text-slatebrand-300">Distinct students trained through AARI workshops, labs, or cohort programming.</p>
+                        <p class="text-4xl font-bold mb-3" data-metric="students-trained">40+</p>
+                        <p class="text-sm text-slatebrand-300">Distinct students reached through AARI workshops, labs, and cohort programming.</p>
                     </article>
                     <article class="metric-card glass-panel rounded-3xl p-7 border border-white/10">
                         <p class="text-sm uppercase tracking-[0.22em] text-slatebrand-500 mb-4">Workshops delivered</p>
-                        <p class="text-4xl font-bold mb-3" data-metric="workshops-delivered">[Update]</p>
-                        <p class="text-sm text-slatebrand-300">Hands-on sessions delivered with documented curriculum and technical outcomes.</p>
+                        <p class="text-4xl font-bold mb-3" data-metric="workshops-delivered">3+</p>
+                        <p class="text-sm text-slatebrand-300">Hands-on technical sessions delivered across physical AI, cloud, edge deployment, and quantum literacy.</p>
                     </article>
                     <article class="metric-card glass-panel rounded-3xl p-7 border border-white/10">
                         <p class="text-sm uppercase tracking-[0.22em] text-slatebrand-500 mb-4">Industry partners engaged</p>
-                        <p class="text-4xl font-bold mb-3" data-metric="partners-engaged">[Update]</p>
-                        <p class="text-sm text-slatebrand-300">Organizations engaged through workshops, technical conversations, or program development.</p>
+                        <p class="text-4xl font-bold mb-3" data-metric="partners-engaged">10+</p>
+                        <p class="text-sm text-slatebrand-300">Organizations engaged through workshops, technical conversations, workforce planning, or program development.</p>
                     </article>
                     <article class="metric-card glass-panel rounded-3xl p-7 border border-white/10">
                         <p class="text-sm uppercase tracking-[0.22em] text-slatebrand-500 mb-4">First student placement</p>
@@ -394,15 +419,16 @@
                     </article>
                     <article class="metric-card glass-panel rounded-3xl p-7 border border-white/10">
                         <p class="text-sm uppercase tracking-[0.22em] text-slatebrand-500 mb-4">Active technical projects</p>
-                        <p class="text-4xl font-bold mb-3" data-metric="active-projects">[Update]</p>
-                        <p class="text-sm text-slatebrand-300">Projects currently running across infrastructure, edge AI, robotics, and quantum literacy.</p>
+                        <p class="text-4xl font-bold mb-3" data-metric="active-projects">5</p>
+                        <p class="text-sm text-slatebrand-300">Current workstreams across Smart Illuminating Helmets, edge AI, robotics, quantum lockbox, and AI infrastructure/data center curriculum.</p>
                     </article>
                     <article class="metric-card glass-panel rounded-3xl p-7 border border-white/10">
                         <p class="text-sm uppercase tracking-[0.22em] text-slatebrand-500 mb-4">Campus / lab footprint</p>
-                        <p class="text-4xl font-bold mb-3" data-metric="campus-footprint">[Update]</p>
-                        <p class="text-sm text-slatebrand-300">Operational lab, campus, or activation footprint tied to student training capacity.</p>
+                        <p class="text-4xl font-bold mb-3" data-metric="campus-footprint">100K+ sq ft</p>
+                        <p class="text-sm text-slatebrand-300">Interim robotics and AI workforce training footprint tied to Summer 2026 activation, plus AUC lab-based programming.</p>
                     </article>
                 </div>
+                <p class="text-xs text-slatebrand-500 mt-6">Metrics reflect current internal tracking and partner-facing program development as of 2026. Formal annual reporting is in development.</p>
             </div>
         </section>
 
@@ -646,10 +672,15 @@
                 <p class="text-slatebrand-400 text-sm mt-2 max-w-xl">AARI trains HBCU students and underrepresented learners to operate the infrastructure stack underneath modern AI.</p>
             </div>
             <div class="flex flex-wrap gap-4 text-sm text-slatebrand-400">
-                <a href="about.html" class="hover:text-white transition-colors">About Us</a>
-                <a href="scholars.html" class="hover:text-white transition-colors">Scholars Program</a>
-                <a href="infrastructure.html" class="hover:text-white transition-colors">Infrastructure</a>
+                <a href="#problem" class="hover:text-white transition-colors">Problem</a>
+                <a href="#doctrine" class="hover:text-white transition-colors">Doctrine</a>
+                <a href="#programs" class="hover:text-white transition-colors">Programs</a>
+                <a href="#proof" class="hover:text-white transition-colors">Proof</a>
+                <a href="#impact" class="hover:text-white transition-colors">Impact</a>
+                <a href="#leadership" class="hover:text-white transition-colors">Leadership</a>
+                <a href="#funders" class="hover:text-white transition-colors">Funders</a>
                 <a href="partners.html" class="hover:text-white transition-colors">Partners</a>
+                <a href="donate.html" class="hover:text-white transition-colors font-semibold text-emerald-300">Donate</a>
                 <a href="mailto:nolan@atlanta-robotics.org" class="hover:text-white transition-colors">Contact</a>
             </div>
         </div>
