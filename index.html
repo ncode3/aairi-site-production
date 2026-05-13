@@ -124,6 +124,7 @@
             box-shadow: 0 0 0 1px rgba(20, 184, 166, 0.38), 0 10px 24px rgba(34, 197, 94, 0.42), 0 0 34px rgba(0, 230, 118, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.45);
             cursor: pointer;
             transition: transform 0.22s ease, box-shadow 0.22s ease, filter 0.22s ease, border-color 0.22s ease;
+            animation: donateFlash 1.45s ease-in-out infinite;
         }
         .donate-cta::before {
             content: "";
@@ -133,6 +134,7 @@
             background: linear-gradient(115deg, rgba(255,255,255,0.45) 0%, rgba(255,255,255,0.16) 26%, transparent 52%);
             opacity: 0.85;
             transition: opacity 0.22s ease, transform 0.22s ease;
+            animation: donateSheen 2.2s ease-in-out infinite;
         }
         .donate-cta:hover {
             transform: translateY(-2px);
@@ -147,6 +149,21 @@
         .donate-cta:active {
             transform: translateY(0);
             filter: brightness(1.04);
+        }
+        @keyframes donateFlash {
+            0%, 100% {
+                filter: brightness(1) saturate(1);
+                box-shadow: 0 0 0 1px rgba(20, 184, 166, 0.38), 0 10px 24px rgba(34, 197, 94, 0.42), 0 0 34px rgba(0, 230, 118, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.45);
+            }
+            50% {
+                filter: brightness(1.18) saturate(1.22);
+                box-shadow: 0 0 0 1px rgba(220, 252, 231, 0.72), 0 14px 32px rgba(34, 197, 94, 0.58), 0 0 54px rgba(0, 230, 118, 0.78), 0 0 92px rgba(132, 204, 22, 0.34), inset 0 1px 0 rgba(255, 255, 255, 0.62);
+            }
+        }
+        @keyframes donateSheen {
+            0%, 42% { transform: translateX(-38%); opacity: 0.45; }
+            58% { transform: translateX(18%); opacity: 1; }
+            100% { transform: translateX(42%); opacity: 0.55; }
         }
         .hero-grid { display: grid; gap: 3rem; }
         @media (min-width: 1024px) { .hero-grid { grid-template-columns: 1.25fr 0.75fr; align-items: center; } }
@@ -173,6 +190,7 @@
                 <a href="#problem" class="nav-link">Problem</a>
                 <a href="#doctrine" class="nav-link">Doctrine</a>
                 <a href="#programs" class="nav-link">Programs</a>
+                <a href="scholars.html" class="nav-link">Scholarship</a>
                 <a href="#proof" class="nav-link">Proof</a>
                 <a href="#impact" class="nav-link">Impact</a>
                 <a href="#leadership" class="nav-link">Leadership</a>
@@ -196,6 +214,7 @@
                 <a href="#problem" class="py-2">Problem</a>
                 <a href="#doctrine" class="py-2">Doctrine</a>
                 <a href="#programs" class="py-2">Programs</a>
+                <a href="scholars.html" class="py-2">Scholarship</a>
                 <a href="#proof" class="py-2">Proof</a>
                 <a href="#impact" class="py-2">Impact</a>
                 <a href="#leadership" class="py-2">Leadership</a>
@@ -694,6 +713,7 @@
                 <a href="#problem" class="hover:text-white transition-colors">Problem</a>
                 <a href="#doctrine" class="hover:text-white transition-colors">Doctrine</a>
                 <a href="#programs" class="hover:text-white transition-colors">Programs</a>
+                <a href="scholars.html" class="hover:text-white transition-colors">Scholarship</a>
                 <a href="#proof" class="hover:text-white transition-colors">Proof</a>
                 <a href="#impact" class="hover:text-white transition-colors">Impact</a>
                 <a href="#leadership" class="hover:text-white transition-colors">Leadership</a>
