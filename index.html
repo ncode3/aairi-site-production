@@ -608,7 +608,7 @@
                         <h2 class="text-3xl md:text-4xl font-bold mb-4">Why fund AARI?</h2>
                         <p class="text-lg text-slatebrand-300 leading-relaxed mb-8">AARI sits at the intersection of AI infrastructure, HBCU talent, workforce development, robotics, edge computing, and national competitiveness.</p>
                         <div class="flex flex-col sm:flex-row gap-4">
-                        <a href="mailto:nolan@atlanta-robotics.org?subject=Request%20the%20AARI%20Funder%20Brief" class="bg-white text-navy-950 font-semibold px-7 py-4 rounded-xl hover:bg-slate-200 transition-colors inline-flex items-center gap-2">
+                        <a href="#contact" class="bg-white text-navy-950 font-semibold px-7 py-4 rounded-xl hover:bg-slate-200 transition-colors inline-flex items-center gap-2">
                             Request the AARI Funder Brief
                             <i data-lucide="arrow-up-right" class="w-5 h-5"></i>
                         </a>
@@ -641,14 +641,19 @@
                 <div class="max-w-3xl mb-12">
                     <div class="section-kicker mb-5"><i data-lucide="mail" class="w-4 h-4"></i>Contact</div>
                     <h2 class="text-3xl md:text-4xl font-bold mb-4">Contact AARI</h2>
-                    <p class="text-lg text-slatebrand-300">Serious inquiries only. AARI reviews partnership, funding, student, and media inquiries based on mission fit, timing, and capacity.</p>
+                    <p class="text-lg text-slatebrand-300 mb-4">For partnership, sponsorship, student programming, media, volunteer, or community inquiries, please use the form below.</p>
+                    <div class="space-y-3 text-sm md:text-base text-slatebrand-300 leading-relaxed">
+                        <p>AARI does not accept unsolicited fundraising, investor-introduction, lead-generation, SEO, marketing, outsourced development, or unrelated vendor solicitation emails sent directly to staff addresses.</p>
+                        <p>Messages that do not relate to AARI programming, partnerships, student opportunities, confirmed organizational business, or community engagement may not receive a response.</p>
+                        <p>Direct emails scraped from this website or other public sources may be filtered, blocked, or reported as spam.</p>
+                    </div>
                 </div>
                 <div class="grid xl:grid-cols-[0.8fr_1.2fr] gap-6">
                     <aside class="contact-card glass-panel rounded-3xl p-7 border border-white/10">
                         <div class="space-y-5">
                             <div>
-                                <p class="text-xs uppercase tracking-[0.22em] text-slatebrand-500 mb-2">General contact email</p>
-                                <a href="mailto:nolan@atlanta-robotics.org" class="text-white text-lg font-semibold underline underline-offset-4">nolan@atlanta-robotics.org</a>
+                                <p class="text-xs uppercase tracking-[0.22em] text-slatebrand-500 mb-2">General contact</p>
+                                <p class="text-white text-lg font-semibold">Please use the contact form below.</p>
                             </div>
                             <div>
                                 <p class="text-xs uppercase tracking-[0.22em] text-slatebrand-500 mb-2">Location</p>
@@ -702,13 +707,14 @@
                                 <span class="text-sm text-slatebrand-300">Inquiry type</span>
                                 <select class="mt-2 w-full rounded-xl border border-white/10 bg-navy-900 px-4 py-3 text-white" name="inquiry_type" required>
                                     <option value="">Select one</option>
-                                    <option>Funding / philanthropy</option>
-                                    <option>Corporate partnership</option>
-                                    <option>School / university partnership</option>
-                                    <option>Student opportunity</option>
-                                    <option>Volunteer / mentor</option>
-                                    <option>Media / speaking</option>
-                                    <option>General inquiry</option>
+                                    <option>Partnership</option>
+                                    <option>Sponsorship</option>
+                                    <option>Student Program</option>
+                                    <option>Media</option>
+                                    <option>Volunteer</option>
+                                    <option>Community Inquiry</option>
+                                    <option>Vendor / Service Provider</option>
+                                    <option>Other</option>
                                 </select>
                             </label>
                             <label class="block">
@@ -737,6 +743,10 @@
                             <label class="block">
                                 <span class="text-sm text-slatebrand-300">Message</span>
                                 <textarea class="mt-2 w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder:text-slatebrand-500" name="message" rows="5" required></textarea>
+                            </label>
+                            <label class="flex items-start gap-3 rounded-2xl border border-white/10 bg-white/5 p-4">
+                                <input class="mt-1 h-4 w-4 rounded border-white/20 bg-navy-900 text-electric-400" type="checkbox" name="contact_policy_confirm" value="yes" required>
+                                <span class="text-sm text-slatebrand-300 leading-relaxed">I confirm this message is related to AARI programming, partnership, sponsorship, student opportunity, media, volunteer, or community engagement. I understand unsolicited vendor, SEO, lead-generation, investor-introduction, or marketing outreach may not receive a response.</span>
                             </label>
                             <div class="form-confirmation" role="status" aria-live="polite"></div>
                             <button type="submit" class="w-full bg-white text-navy-950 font-semibold px-6 py-3 rounded-xl hover:bg-slate-200 transition-colors">Send Partnership Inquiry</button>
@@ -778,13 +788,14 @@
                                 <span class="text-sm text-slatebrand-300">Inquiry type</span>
                                 <select class="mt-2 w-full rounded-xl border border-white/10 bg-navy-900 px-4 py-3 text-white" name="inquiry_type" required>
                                     <option value="">Select one</option>
-                                    <option>Funding / philanthropy</option>
-                                    <option>Corporate partnership</option>
-                                    <option>School / university partnership</option>
-                                    <option>Student opportunity</option>
-                                    <option>Volunteer / mentor</option>
-                                    <option>Media / speaking</option>
-                                    <option>General inquiry</option>
+                                    <option>Partnership</option>
+                                    <option>Sponsorship</option>
+                                    <option>Student Program</option>
+                                    <option>Media</option>
+                                    <option>Volunteer</option>
+                                    <option>Community Inquiry</option>
+                                    <option>Vendor / Service Provider</option>
+                                    <option>Other</option>
                                 </select>
                             </label>
                             <label class="block">
@@ -814,6 +825,10 @@
                                 <span class="text-sm text-slatebrand-300">Message</span>
                                 <textarea class="mt-2 w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder:text-slatebrand-500" name="message" rows="5" required></textarea>
                             </label>
+                            <label class="flex items-start gap-3 rounded-2xl border border-white/10 bg-white/5 p-4">
+                                <input class="mt-1 h-4 w-4 rounded border-white/20 bg-navy-900 text-electric-400" type="checkbox" name="contact_policy_confirm" value="yes" required>
+                                <span class="text-sm text-slatebrand-300 leading-relaxed">I confirm this message is related to AARI programming, partnership, sponsorship, student opportunity, media, volunteer, or community engagement. I understand unsolicited vendor, SEO, lead-generation, investor-introduction, or marketing outreach may not receive a response.</span>
+                            </label>
                             <div class="form-confirmation" role="status" aria-live="polite"></div>
                             <button type="submit" class="w-full bg-white text-navy-950 font-semibold px-6 py-3 rounded-xl hover:bg-slate-200 transition-colors">Send Funder Inquiry</button>
                             <p class="text-xs text-slatebrand-500">By submitting this form, you agree to be contacted by AARI regarding your inquiry. We use analytics to understand site traffic and improve programs. We do not sell contact information.</p>
@@ -841,7 +856,7 @@
                 <a href="#funders" class="hover:text-white transition-colors">Funders</a>
                 <a href="partners.html" class="hover:text-white transition-colors">Partners</a>
                 <a href="donate.html" class="hover:text-white transition-colors font-semibold text-emerald-300">Donate</a>
-                <a href="mailto:nolan@atlanta-robotics.org" class="hover:text-white transition-colors">Contact</a>
+                <a href="#contact" class="hover:text-white transition-colors">Contact</a>
             </div>
         </div>
     </footer>
@@ -887,12 +902,7 @@
             'adult', 'pills', 'loan offer', 'click here', 'whatsapp only',
             'investment guaranteed'
         ];
-        const linkAllowedTypes = new Set([
-            'Funding / philanthropy',
-            'Corporate partnership',
-            'School / university partnership',
-            'Media / speaking'
-        ]);
+        const linkAllowedTypes = new Set(['Partnership', 'Sponsorship', 'Media']);
         const confirmationText = 'Thank you. Your inquiry has been received. AARI reviews partnership and funding inquiries based on mission fit, urgency, and program capacity.';
 
         const isValidEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i.test(email);
@@ -923,9 +933,9 @@
         const scoreInquiry = ({ data, message, honeypotFilled, submittedTooFast, linkCount, spamFound }) => {
             let score = 0;
             const inquiryType = data.get('inquiry_type') || '';
-            if (inquiryType === 'Funding / philanthropy') score += 3;
-            if (inquiryType === 'Corporate partnership') score += 3;
-            if (inquiryType === 'School / university partnership') score += 2;
+            if (inquiryType === 'Partnership') score += 3;
+            if (inquiryType === 'Sponsorship') score += 3;
+            if (inquiryType === 'Student Program') score += 2;
             if ((data.get('organization') || '').trim()) score += 2;
             if (message.length > 150) score += 2;
             if ((data.get('budget_range') || '').trim()) score += 2;
@@ -1040,7 +1050,9 @@
                     const organization = (data.get('organization') || 'Unknown organization').toString().trim();
                     const subject = `AARI Inquiry: ${titleCaseInquiry(inquiryType)} — ${organization}`;
                     const body = encodeURIComponent(buildMailBody(data, score, linkCount));
-                    window.location.href = `mailto:nolan@atlanta-robotics.org?subject=${encodeURIComponent(subject)}&body=${body}`;
+                    const contactMailbox = ['nolan', 'atlanta-robotics.org'].join('@');
+                    const mailScheme = ['mail', 'to:'].join('');
+                    window.location.href = `${mailScheme}${contactMailbox}?subject=${encodeURIComponent(subject)}&body=${body}`;
                 });
             });
         };
