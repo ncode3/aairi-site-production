@@ -30,6 +30,7 @@ The site is configured for Azure Static Web Apps with GitHub as source control.
 ## Website Structure
 
 - `index.html` - Main landing page
+- `api/submit-inquiry/` - Azure Static Web Apps contact form handler
 - `about.html` - About page
 - `scholars.html` - Scholars program page
 - `infrastructure.html` - Infrastructure page
@@ -37,6 +38,74 @@ The site is configured for Azure Static Web Apps with GitHub as source control.
 - `privacy.html` - Privacy policy
 - `thank-you.html` - Thank-you page
 - `images/` - Site imagery and logos
+
+## Contact Form Anti-Spam Flow
+
+Current form handling:
+
+- The public partnership and funder forms in `index.html#contact` POST to the Azure Static Web Apps API at `/api/submit-inquiry`.
+- Before this hardening, the forms generated a browser `mailto:` link. The new backend is required for server-side spam checks and provider-side delivery.
+- The API forwards accepted submissions through `CONTACT_WEBHOOK_URL` when set, or through SendGrid when `SENDGRID_API_KEY`, `CONTACT_TO_EMAIL`, and `CONTACT_FROM_EMAIL` are set.
+- When no provider secret is configured, the API preserves the previous browser email workflow by returning a `mailto:` draft only after the server-side anti-spam checks accept the submission.
+- Azure edge security is defined in `infra/azure-frontdoor-waf/` for Azure Front Door Premium with WAF, Bot Manager, rate limiting, and platform DDoS absorption at the Azure edge.
+
+Server-side protections:
+
+- CSS-hidden honeypot fields named `company_website` and `fax_number`; filled values return a neutral success response and are not forwarded.
+- `form_rendered_at` timestamp validation; submissions under 3 seconds are blocked with a neutral success response.
+- In-memory per-IP rate limiting of 3 submissions per 10 minutes per active function instance.
+- Azure Front Door WAF should perform CAPTCHA or JavaScript Challenge at the edge for suspicious traffic before requests reach Static Web Apps.
+- When `AZURE_FRONT_DOOR_ID` is set, direct API posts that bypass Azure Front Door are silently blocked by checking the `X-Azure-FDID` header.
+- Email, name, message length, inquiry type, link count, spam keyword, repeated character, and excessive punctuation validation.
+- Required contact-policy confirmation plus inquiry classification for partnership, sponsorship, student program, media, volunteer, community, vendor/service provider, and other messages.
+- Blocked submissions are logged with reason codes including `honeypot_filled`, `submitted_too_fast`, `rate_limited`, `frontdoor_header_failed`, `invalid_email`, `spam_keywords`, and `too_many_links`.
+
+User-facing behavior:
+
+- Spam-blocked submissions receive: `Thanks. Your message has been received.`
+- Legitimate validation problems, such as invalid email or short message text, return clear correction messages.
+
+Required production settings:
+
+```bash
+AZURE_FRONT_DOOR_ID="<front-door-id>"
+CONTACT_WEBHOOK_URL="<form-provider-or-automation-webhook>"
+```
+
+Or, for SendGrid delivery:
+
+```bash
+AZURE_FRONT_DOOR_ID="<front-door-id>"
+SENDGRID_API_KEY="<sendgrid-api-key>"
+CONTACT_TO_EMAIL="<staff-inbox@atlanta-robotics.org>"
+CONTACT_FROM_EMAIL="website@atlanta-robotics.org"
+```
+
+`AZURE_FRONT_DOOR_ID` should be set after Azure Front Door is deployed and DNS is routed through it. The Static Web Apps `staticwebapp.config.json` file can also enforce the same `X-Azure-FDID` header after the ID is known.
+
+Manual test checklist:
+
+- Normal valid submission waits at least 3 seconds, passes Azure Front Door WAF, and is delivered to the configured provider.
+- Honeypot-filled bot submission returns the neutral success message and logs `honeypot_filled`.
+- Too-fast submission returns the neutral success message and logs `submitted_too_fast`.
+- Invalid email returns a visible email validation message and logs `invalid_email`.
+- Repeated submissions after 3 successful attempts within 10 minutes return the neutral success message and log `rate_limited`.
+- Message with more than 2 links returns the neutral success message and logs `too_many_links`.
+- Direct API posts that bypass Azure Front Door return the neutral success message and log `frontdoor_header_failed` once `AZURE_FRONT_DOOR_ID` is configured.
+
+## Site Security Headers
+
+`staticwebapp.config.json` adds global browser security headers:
+
+- Content Security Policy
+- HSTS
+- `X-Frame-Options: DENY`
+- `X-Content-Type-Options: nosniff`
+- Referrer policy
+- Permissions policy
+- Cross-origin opener policy
+
+It also disables unsupported HTTP methods for the form API and prevents API response caching.
 
 ## DNS Records Required For Azure Static Web Apps
 
@@ -196,7 +265,7 @@ git push origin main
 ## Contact
 
 - Website: [atlanta-robotics.org](https://atlanta-robotics.org)
-- Email: nolan@atlanta-robotics.org
+- Contact: use the website contact form.
 
 ## License
 

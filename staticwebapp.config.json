@@ -1,0 +1,46 @@
+{
+  "routes": [
+    {
+      "route": "/api/submit-inquiry",
+      "methods": ["GET", "PUT", "PATCH", "DELETE", "OPTIONS", "TRACE", "CONNECT"],
+      "statusCode": 404
+    },
+    {
+      "route": "/api/*",
+      "headers": {
+        "Cache-Control": "no-store"
+      }
+    },
+    {
+      "route": "/assets/*",
+      "headers": {
+        "Cache-Control": "public, max-age=31536000, immutable"
+      }
+    },
+    {
+      "route": "/images/*",
+      "headers": {
+        "Cache-Control": "public, max-age=604800"
+      }
+    }
+  ],
+  "globalHeaders": {
+    "Content-Security-Policy": "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; form-action 'self'; img-src 'self' data: https:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://www.googleadservices.com https://googleads.g.doubleclick.net https://unpkg.com https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://stats.g.doubleclick.net https://www.googleadservices.com https://googleads.g.doubleclick.net; upgrade-insecure-requests",
+    "Referrer-Policy": "strict-origin-when-cross-origin",
+    "Permissions-Policy": "camera=(), microphone=(), geolocation=(), payment=(), usb=(), fullscreen=(self)",
+    "X-Content-Type-Options": "nosniff",
+    "X-Frame-Options": "DENY",
+    "X-Permitted-Cross-Domain-Policies": "none",
+    "Cross-Origin-Opener-Policy": "same-origin",
+    "Strict-Transport-Security": "max-age=31536000; includeSubDomains; preload"
+  },
+  "platform": {
+    "apiRuntime": "node:20"
+  },
+  "forwardingGateway": {
+    "allowedForwardedHosts": [
+      "atlanta-robotics.org",
+      "www.atlanta-robotics.org"
+    ]
+  }
+}

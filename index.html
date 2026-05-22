@@ -127,6 +127,17 @@
             line-height: 1.5;
         }
         .form-confirmation.visible { display: block; }
+        .form-error {
+            display: none;
+            border: 1px solid rgba(248, 113, 113, 0.35);
+            background: rgba(127, 29, 29, 0.28);
+            color: #fee2e2;
+            border-radius: 0.9rem;
+            padding: 1rem;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+        .form-error.visible { display: block; }
         .nav-link {
             color: #cbd5e1;
             font-size: 0.75rem;
@@ -679,12 +690,13 @@
                                 <p class="text-sm text-slatebrand-400 mt-3 leading-relaxed">Serious inquiries only. AARI reviews partnership, funding, student, and media inquiries based on mission fit, timing, and capacity.</p>
                             </div>
                             <div class="intake-honeypot" aria-hidden="true">
-                                <label>Company website confirmation
-                                    <input type="text" name="company_website_confirm" tabindex="-1" autocomplete="off">
+                                <label>Company website
+                                    <input type="text" name="company_website" tabindex="-1" autocomplete="off">
                                 </label>
                             </div>
                             <input type="hidden" name="page_url">
                             <input type="hidden" name="timestamp">
+                            <input type="hidden" name="form_rendered_at">
                             <input type="hidden" name="form_name" value="Partnership inquiry">
                             <input type="hidden" name="utm_source">
                             <input type="hidden" name="utm_medium">
@@ -693,7 +705,7 @@
                             <input type="hidden" name="utm_content">
                             <label class="block">
                                 <span class="text-sm text-slatebrand-300">Full name</span>
-                                <input class="mt-2 w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder:text-slatebrand-500" type="text" name="full_name" autocomplete="name" required>
+                                <input class="mt-2 w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder:text-slatebrand-500" type="text" name="full_name" autocomplete="name" minlength="2" maxlength="80" required>
                             </label>
                             <label class="block">
                                 <span class="text-sm text-slatebrand-300">Email</span>
@@ -742,13 +754,14 @@
                             </label>
                             <label class="block">
                                 <span class="text-sm text-slatebrand-300">Message</span>
-                                <textarea class="mt-2 w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder:text-slatebrand-500" name="message" rows="5" required></textarea>
+                                <textarea class="mt-2 w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder:text-slatebrand-500" name="message" rows="5" minlength="20" maxlength="2000" required></textarea>
                             </label>
                             <label class="flex items-start gap-3 rounded-2xl border border-white/10 bg-white/5 p-4">
                                 <input class="mt-1 h-4 w-4 rounded border-white/20 bg-navy-900 text-electric-400" type="checkbox" name="contact_policy_confirm" value="yes" required>
                                 <span class="text-sm text-slatebrand-300 leading-relaxed">I confirm this message is related to AARI programming, partnership, sponsorship, student opportunity, media, volunteer, or community engagement. I understand unsolicited vendor, SEO, lead-generation, investor-introduction, or marketing outreach may not receive a response.</span>
                             </label>
                             <div class="form-confirmation" role="status" aria-live="polite"></div>
+                            <div class="form-error" role="alert" aria-live="polite"></div>
                             <button type="submit" class="w-full bg-white text-navy-950 font-semibold px-6 py-3 rounded-xl hover:bg-slate-200 transition-colors">Send Partnership Inquiry</button>
                             <p class="text-xs text-slatebrand-500">By submitting this form, you agree to be contacted by AARI regarding your inquiry. We use analytics to understand site traffic and improve programs. We do not sell contact information.</p>
                         </form>
@@ -760,12 +773,13 @@
                                 <p class="text-sm text-slatebrand-400 mt-3 leading-relaxed">Use this form if you are exploring support for AI infrastructure workforce development, HBCU talent, robotics, edge AI, quantum education, or data center workforce programming.</p>
                             </div>
                             <div class="intake-honeypot" aria-hidden="true">
-                                <label>Website URL confirmation
-                                    <input type="text" name="website_url_confirm" tabindex="-1" autocomplete="off">
+                                <label>Fax number
+                                    <input type="text" name="fax_number" tabindex="-1" autocomplete="off">
                                 </label>
                             </div>
                             <input type="hidden" name="page_url">
                             <input type="hidden" name="timestamp">
+                            <input type="hidden" name="form_rendered_at">
                             <input type="hidden" name="form_name" value="Funder inquiry">
                             <input type="hidden" name="utm_source">
                             <input type="hidden" name="utm_medium">
@@ -774,7 +788,7 @@
                             <input type="hidden" name="utm_content">
                             <label class="block">
                                 <span class="text-sm text-slatebrand-300">Full name</span>
-                                <input class="mt-2 w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder:text-slatebrand-500" type="text" name="full_name" autocomplete="name" required>
+                                <input class="mt-2 w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder:text-slatebrand-500" type="text" name="full_name" autocomplete="name" minlength="2" maxlength="80" required>
                             </label>
                             <label class="block">
                                 <span class="text-sm text-slatebrand-300">Email</span>
@@ -823,13 +837,14 @@
                             </label>
                             <label class="block">
                                 <span class="text-sm text-slatebrand-300">Message</span>
-                                <textarea class="mt-2 w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder:text-slatebrand-500" name="message" rows="5" required></textarea>
+                                <textarea class="mt-2 w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder:text-slatebrand-500" name="message" rows="5" minlength="20" maxlength="2000" required></textarea>
                             </label>
                             <label class="flex items-start gap-3 rounded-2xl border border-white/10 bg-white/5 p-4">
                                 <input class="mt-1 h-4 w-4 rounded border-white/20 bg-navy-900 text-electric-400" type="checkbox" name="contact_policy_confirm" value="yes" required>
                                 <span class="text-sm text-slatebrand-300 leading-relaxed">I confirm this message is related to AARI programming, partnership, sponsorship, student opportunity, media, volunteer, or community engagement. I understand unsolicited vendor, SEO, lead-generation, investor-introduction, or marketing outreach may not receive a response.</span>
                             </label>
                             <div class="form-confirmation" role="status" aria-live="polite"></div>
+                            <div class="form-error" role="alert" aria-live="polite"></div>
                             <button type="submit" class="w-full bg-white text-navy-950 font-semibold px-6 py-3 rounded-xl hover:bg-slate-200 transition-colors">Send Funder Inquiry</button>
                             <p class="text-xs text-slatebrand-500">By submitting this form, you agree to be contacted by AARI regarding your inquiry. We use analytics to understand site traffic and improve programs. We do not sell contact information.</p>
                         </form>
@@ -892,32 +907,15 @@
             observer.observe(el);
         });
 
-        const disposableEmailDomains = new Set([
-            '10minutemail.com', 'guerrillamail.com', 'mailinator.com', 'tempmail.com',
-            'temp-mail.org', 'throwawaymail.com', 'yopmail.com', 'sharklasers.com',
-            'getnada.com', 'trashmail.com'
-        ]);
-        const spamPatterns = [
-            'crypto', 'forex', 'casino', 'gambling', 'seo backlinks', 'guest post',
-            'adult', 'pills', 'loan offer', 'click here', 'whatsapp only',
-            'investment guaranteed'
-        ];
-        const linkAllowedTypes = new Set(['Partnership', 'Sponsorship', 'Media']);
-        const confirmationText = 'Thank you. Your inquiry has been received. AARI reviews partnership and funding inquiries based on mission fit, urgency, and program capacity.';
+        const confirmationText = 'Thanks. Your message has been received.';
 
         const isValidEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i.test(email);
-        const countLinks = (value) => (value.match(/https?:\/\/|www\.|[a-z0-9-]+\.[a-z]{2,}(\/|\b)/gi) || []).length;
-        const hasSpamPattern = (value) => {
-            const normalized = value.toLowerCase();
-            return spamPatterns.some((pattern) => normalized.includes(pattern));
-        };
-        const titleCaseInquiry = (value) => value.replace(/\b\w/g, (char) => char.toUpperCase());
-
         const populateSourceFields = (form) => {
             const params = new URLSearchParams(window.location.search);
             const fields = {
                 page_url: window.location.href,
                 timestamp: new Date().toISOString(),
+                form_rendered_at: form.dataset.loadedAt || String(Date.now()),
                 utm_source: params.get('utm_source') || '',
                 utm_medium: params.get('utm_medium') || '',
                 utm_campaign: params.get('utm_campaign') || '',
@@ -930,61 +928,31 @@
             });
         };
 
-        const scoreInquiry = ({ data, message, honeypotFilled, submittedTooFast, linkCount, spamFound }) => {
-            let score = 0;
-            const inquiryType = data.get('inquiry_type') || '';
-            if (inquiryType === 'Partnership') score += 3;
-            if (inquiryType === 'Sponsorship') score += 3;
-            if (inquiryType === 'Student Program') score += 2;
-            if ((data.get('organization') || '').trim()) score += 2;
-            if (message.length > 150) score += 2;
-            if ((data.get('budget_range') || '').trim()) score += 2;
-            if (spamFound) score -= 5;
-            if (submittedTooFast) score -= 3;
-            if (linkCount > 1) score -= 3;
-            if (honeypotFilled) score -= 10;
-            return score;
+        const showFormMessage = (element, message) => {
+            if (!element) return;
+            element.textContent = message;
+            element.classList.add('visible');
         };
 
-        const buildMailBody = (data, score, linkCount) => {
-            const labels = {
-                form_name: 'Form',
-                full_name: 'Full name',
-                email: 'Email',
-                organization: 'Organization / affiliation',
-                inquiry_type: 'Inquiry type',
-                reason_for_inquiry: 'Reason for inquiry',
-                goal: 'What they hope to accomplish',
-                timeline: 'Timeline for engagement',
-                budget_range: 'Estimated budget or funding range',
-                message: 'Message',
-                page_url: 'Page URL',
-                timestamp: 'Timestamp',
-                utm_source: 'UTM source',
-                utm_medium: 'UTM medium',
-                utm_campaign: 'UTM campaign',
-                utm_term: 'UTM term',
-                utm_content: 'UTM content'
-            };
-            const lines = [
-                `Lead quality score: ${score}`,
-                `Detected links: ${linkCount}`,
-                ''
-            ];
-            Object.entries(labels).forEach(([key, label]) => {
-                const value = (data.get(key) || '').toString().trim();
-                if (value) lines.push(`${label}: ${value}`);
+        const formDataToPayload = (formData) => {
+            const payload = {};
+            formData.forEach((value, key) => {
+                payload[key] = value.toString();
             });
-            return lines.join('\n');
+            return payload;
         };
 
         const installSecureIntakeForms = () => {
             document.querySelectorAll('form[data-secure-intake]').forEach((form) => {
                 form.dataset.loadedAt = String(Date.now());
-                form.addEventListener('submit', (event) => {
+                populateSourceFields(form);
+                form.addEventListener('submit', async (event) => {
                     event.preventDefault();
                     const confirmation = form.querySelector('.form-confirmation');
+                    const errorMessage = form.querySelector('.form-error');
+                    const submitButton = form.querySelector('button[type="submit"]');
                     confirmation?.classList.remove('visible');
+                    errorMessage?.classList.remove('visible');
                     const formName = form.dataset.formName || form.querySelector('[name="form_name"]')?.value || 'Inquiry form';
 
                     const emailInput = form.querySelector('[name="email"]');
@@ -994,65 +962,49 @@
 
                     const data = new FormData(form);
                     const email = (data.get('email') || '').toString().trim();
-                    const emailDomain = email.split('@').pop()?.toLowerCase() || '';
+                    const message = (data.get('message') || '').toString().trim();
 
-                    if (!isValidEmail(email) || disposableEmailDomains.has(emailDomain)) {
+                    if (!isValidEmail(email)) {
                         window.AARIAnalytics?.trackFormBlocked({ formName, blockReason: 'invalid_email' });
-                        emailInput?.setCustomValidity('Please use a valid organizational or personal email address.');
+                        emailInput?.setCustomValidity('Please enter a valid email address.');
                         emailInput?.reportValidity();
                         return;
                     }
 
-                    const honeypotFilled = Boolean(
-                        (data.get('company_website_confirm') || '').toString().trim() ||
-                        (data.get('website_url_confirm') || '').toString().trim()
-                    );
-                    const submittedTooFast = Date.now() - Number(form.dataset.loadedAt || Date.now()) < 4000;
-                    const inquiryType = (data.get('inquiry_type') || '').toString();
-                    const message = [
-                        data.get('reason_for_inquiry') || '',
-                        data.get('goal') || '',
-                        data.get('message') || ''
-                    ].join(' ').trim();
-                    const linkCount = countLinks(message);
-                    const spamFound = hasSpamPattern(message);
-                    const linksNotAllowed = linkCount > 0 && !linkAllowedTypes.has(inquiryType);
-
-                    if (honeypotFilled) {
-                        window.AARIAnalytics?.trackFormBlocked({ formName, blockReason: 'honeypot' });
-                        return;
-                    }
-                    if (submittedTooFast) {
-                        window.AARIAnalytics?.trackFormBlocked({ formName, blockReason: 'too_fast' });
-                        return;
-                    }
-                    if (spamFound) {
-                        window.AARIAnalytics?.trackFormBlocked({ formName, blockReason: 'spam_keyword' });
-                        return;
-                    }
-                    if (linksNotAllowed) {
-                        window.AARIAnalytics?.trackFormBlocked({ formName, blockReason: 'low_score' });
+                    if (message.length < 20 || message.length > 2000) {
+                        showFormMessage(errorMessage, 'Please enter a message between 20 and 2000 characters.');
                         return;
                     }
 
-                    const score = scoreInquiry({ data, message, honeypotFilled, submittedTooFast, linkCount, spamFound });
-                    if (score < 3) {
-                        window.AARIAnalytics?.trackFormBlocked({ formName, blockReason: 'low_score' });
-                        return;
-                    }
+                    submitButton.disabled = true;
+                    submitButton.textContent = 'Sending...';
 
-                    if (confirmation) {
-                        confirmation.textContent = confirmationText;
-                        confirmation.classList.add('visible');
-                    }
-                    window.AARIAnalytics?.trackFormSubmit({ formName, inquiryType, score });
+                    try {
+                        const response = await fetch('/api/submit-inquiry', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify(formDataToPayload(data))
+                        });
+                        const result = await response.json().catch(() => ({}));
 
-                    const organization = (data.get('organization') || 'Unknown organization').toString().trim();
-                    const subject = `AARI Inquiry: ${titleCaseInquiry(inquiryType)} — ${organization}`;
-                    const body = encodeURIComponent(buildMailBody(data, score, linkCount));
-                    const contactMailbox = ['nolan', 'atlanta-robotics.org'].join('@');
-                    const mailScheme = ['mail', 'to:'].join('');
-                    window.location.href = `${mailScheme}${contactMailbox}?subject=${encodeURIComponent(subject)}&body=${body}`;
+                        if (!response.ok && result.message) {
+                            if (result.code) window.AARIAnalytics?.trackFormBlocked({ formName, blockReason: result.code });
+                            showFormMessage(errorMessage, result.message);
+                            return;
+                        }
+
+                        showFormMessage(confirmation, result.message || confirmationText);
+                        window.AARIAnalytics?.trackFormSubmit({ formName, inquiryType: data.get('inquiry_type') || '' });
+                        if (result.mailto) window.location.href = result.mailto;
+                        form.reset();
+                        form.dataset.loadedAt = String(Date.now());
+                        populateSourceFields(form);
+                    } catch (error) {
+                        showFormMessage(errorMessage, 'We could not send your message right now. Please try the contact form again later.');
+                    } finally {
+                        submitButton.disabled = false;
+                        submitButton.textContent = form.id === 'funder-form' ? 'Send Funder Inquiry' : 'Send Partnership Inquiry';
+                    }
                 });
             });
         };
