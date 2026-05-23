@@ -1031,31 +1031,36 @@
                 name: 'Morehouse College',
                 category: 'Strategic Anchor (Academic)',
                 status: 'Active - anchor institution',
-                role: "Core academic anchor for AARI's AUC student pipeline, faculty collaboration, and hybrid quantum curriculum."
+                role: "Core academic anchor for AARI's AUC student pipeline, faculty collaboration, and hybrid quantum curriculum.",
+                logo: 'images/logo-morehouse.png'
             },
             {
                 name: 'Cisco',
                 category: 'Pilot Partner',
                 status: 'Closed - funded',
-                role: 'Funded AARI through a $25K community grant and validates the networking layer of the infrastructure model.'
+                role: 'Funded AARI through a $25K community grant and validates the networking layer of the infrastructure model.',
+                logo: 'images/logo-cisco.svg'
             },
             {
                 name: 'Rose-Hulman Institute of Technology',
                 category: 'Pilot Partner (Academic)',
                 status: 'Active - Co-PI engaged',
-                role: "Adds nationally recognized robotics curriculum depth through Dr. Carlotta A. Berry's NSF Co-PI engagement."
+                role: "Adds nationally recognized robotics curriculum depth through Dr. Carlotta A. Berry's NSF Co-PI engagement.",
+                logo: 'images/logo-rose-hulman.svg'
             },
             {
                 name: 'ATDC / Georgia Tech',
                 category: 'Community Sponsor',
                 status: 'Active - ongoing',
-                role: "Connects AARI to Atlanta's tech ecosystem and supports curriculum review through the ATDC network."
+                role: "Connects AARI to Atlanta's tech ecosystem and supports curriculum review through the ATDC network.",
+                logo: 'images/logo-atdc.webp'
             },
             {
                 name: 'Google Cloud',
                 category: 'Community Sponsor',
                 status: 'Early - partnership established',
-                role: "Supports AARI's multi-cloud posture and future AI services, credits, and lab integration pathways."
+                role: "Supports AARI's multi-cloud posture and future AI services, credits, and lab integration pathways.",
+                logo: 'images/logo-google-cloud.png'
             },
             {
                 name: 'Smart Illuminating Helmet',
@@ -1067,7 +1072,8 @@
                 name: 'Benevity',
                 category: 'Platform',
                 status: 'Active - approved',
-                role: 'Enables corporate matching and donor platform access across Microsoft, NVIDIA, AWS, and partner employers.'
+                role: 'Enables corporate matching and donor platform access across Microsoft, NVIDIA, AWS, and partner employers.',
+                logo: 'images/logo-benevity.svg'
             }
         ];
 
@@ -1102,7 +1108,7 @@
                         const category = escapePartnerText(partner.category);
                         const role = escapePartnerText(partner.role);
                         const mark = partner.logo
-                            ? `<div class="partner-logo-box" data-logo-box><img src="${escapePartnerText(partner.logo)}" alt="${name} logo" loading="lazy" data-logo-fallback="${name}"></div>`
+                            ? `<div class="partner-logo-box" data-logo-box><img src="${escapePartnerText(partner.logo)}" alt="${name}" loading="lazy" data-logo-fallback="${name}"></div>`
                             : `<div class="partner-text-mark"><span>${name}</span></div>`;
                         return `
                             <article class="partner-slide" aria-label="${name}, ${category}">
