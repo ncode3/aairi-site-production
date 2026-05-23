@@ -93,6 +93,61 @@ Manual test checklist:
 - Message with more than 2 links returns the neutral success message and logs `too_many_links`.
 - Direct API posts that bypass Azure Front Door return the neutral success message and log `frontdoor_header_failed` once `AZURE_FRONT_DOOR_ID` is configured.
 
+## Impact Dashboard
+
+The homepage Impact section keeps static fallback values in `index.html` and hydrates the six visible numbers from `/api/impact` when the API is available.
+
+Architecture:
+
+- **Read endpoint:** `GET /api/impact`
+- **Azure Static Web Apps API runtime:** Node 20
+- **Backing store:** Azure Table Storage table `AARIImpactMetrics`
+- **Storage account:** `staariwebsiteprod001`
+- **Resource group:** `rg-aari-website-prod`
+- **Application Insights:** `appi-aari-website-prod`
+- **Write path:** Azure Portal only for now; there is no public write endpoint.
+
+Required production settings:
+
+```bash
+AARI_IMPACT_STORAGE_CONNECTION_STRING="<storage-connection-string>"
+APPLICATIONINSIGHTS_CONNECTION_STRING="<application-insights-connection-string>"
+```
+
+Table rows use `PartitionKey=impact` and these `RowKey` values:
+
+- `students_trained`
+- `workshops_delivered`
+- `partners_engaged`
+- `first_placement`
+- `active_projects`
+- `footprint_sqft`
+
+Each row stores:
+
+- `Value`
+- `Prefix`
+- `Suffix`
+- `DisplayOrder`
+- `Label`
+- `Description`
+- `UpdatedAt`
+
+### Updating Impact Metrics in Azure Portal
+
+1. Open Azure Portal.
+2. Go to `Storage accounts`.
+3. Open `staariwebsiteprod001`.
+4. In the left navigation, open `Storage browser`.
+5. Open `Tables`.
+6. Open `AARIImpactMetrics`.
+7. Select the row with `PartitionKey` set to `impact` and the metric `RowKey` you want to change.
+8. Update `Value`, `Prefix`, `Suffix`, and `UpdatedAt` as needed.
+9. Save the row.
+10. Wait up to 60 seconds for `/api/impact` edge cache to refresh.
+
+Do not change `RowKey` values unless the matching element IDs in `index.html` are updated too.
+
 ## Site Security Headers
 
 `staticwebapp.config.json` adds global browser security headers:

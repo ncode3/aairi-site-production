@@ -545,36 +545,37 @@
                 <div class="grid sm:grid-cols-2 xl:grid-cols-3 gap-5">
                     <article class="metric-card glass-panel rounded-3xl p-7 border border-white/10">
                         <p class="text-sm uppercase tracking-[0.22em] text-slatebrand-500 mb-4">Students trained</p>
-                        <p class="text-4xl font-bold mb-3" data-metric="students-trained">40+</p>
+                        <p class="text-4xl font-bold mb-3" data-metric="students-trained"><span id="metric-students_trained">40+</span></p>
                         <p class="text-sm text-slatebrand-300">Distinct students reached through AARI workshops, labs, and cohort programming.</p>
                     </article>
                     <article class="metric-card glass-panel rounded-3xl p-7 border border-white/10">
                         <p class="text-sm uppercase tracking-[0.22em] text-slatebrand-500 mb-4">Workshops delivered</p>
-                        <p class="text-4xl font-bold mb-3" data-metric="workshops-delivered">3+</p>
+                        <p class="text-4xl font-bold mb-3" data-metric="workshops-delivered"><span id="metric-workshops_delivered">3+</span></p>
                         <p class="text-sm text-slatebrand-300">Hands-on technical sessions delivered across physical AI, cloud, edge deployment, and quantum literacy.</p>
                     </article>
                     <article class="metric-card glass-panel rounded-3xl p-7 border border-white/10">
                         <p class="text-sm uppercase tracking-[0.22em] text-slatebrand-500 mb-4">Industry partners engaged</p>
-                        <p class="text-4xl font-bold mb-3" data-metric="partners-engaged">10+</p>
+                        <p class="text-4xl font-bold mb-3" data-metric="partners-engaged"><span id="metric-partners_engaged">10+</span></p>
                         <p class="text-sm text-slatebrand-300">Organizations engaged through workshops, technical conversations, workforce planning, or program development.</p>
                     </article>
                     <article class="metric-card glass-panel rounded-3xl p-7 border border-white/10">
                         <p class="text-sm uppercase tracking-[0.22em] text-slatebrand-500 mb-4">First student placement</p>
-                        <p class="text-4xl font-bold mb-3" data-metric="first-placement">$115K</p>
+                        <p class="text-4xl font-bold mb-3" data-metric="first-placement"><span id="metric-first_placement">$115K</span></p>
                         <p class="text-sm text-slatebrand-300">First documented operator outcome from the early AARI model.</p>
                     </article>
                     <article class="metric-card glass-panel rounded-3xl p-7 border border-white/10">
                         <p class="text-sm uppercase tracking-[0.22em] text-slatebrand-500 mb-4">Active technical projects</p>
-                        <p class="text-4xl font-bold mb-3" data-metric="active-projects">5</p>
+                        <p class="text-4xl font-bold mb-3" data-metric="active-projects"><span id="metric-active_projects">5</span></p>
                         <p class="text-sm text-slatebrand-300">Current workstreams across Smart Illuminating Helmets, edge AI, robotics, quantum lockbox, and AI infrastructure/data center curriculum.</p>
                     </article>
                     <article class="metric-card glass-panel rounded-3xl p-7 border border-white/10">
                         <p class="text-sm uppercase tracking-[0.22em] text-slatebrand-500 mb-4">Campus / lab footprint</p>
-                        <p class="text-4xl font-bold mb-3" data-metric="campus-footprint">100K+ sq ft</p>
+                        <p class="text-4xl font-bold mb-3" data-metric="campus-footprint"><span id="metric-footprint_sqft">100K+ sq ft</span></p>
                         <p class="text-sm text-slatebrand-300">Interim robotics and AI workforce training footprint tied to Summer 2026 activation, plus AUC lab-based programming.</p>
                     </article>
                 </div>
                 <p class="text-xs text-slatebrand-500 mt-6">Metrics reflect current internal tracking and partner-facing program development as of 2026. Formal annual reporting is in development.</p>
+                <p id="impact-live-updated" class="hidden text-xs text-slatebrand-500 mt-2" aria-live="polite"></p>
             </div>
         </section>
 
@@ -1196,6 +1197,56 @@
             });
         };
         installPartnerCarousels();
+
+        const formatImpactUpdatedAt = (isoValue) => {
+            const updatedAt = new Date(isoValue);
+            if (Number.isNaN(updatedAt.getTime())) return '';
+            const elapsedSeconds = Math.max(0, Math.round((Date.now() - updatedAt.getTime()) / 1000));
+            if (elapsedSeconds < 60) return 'Updated just now';
+            const elapsedMinutes = Math.round(elapsedSeconds / 60);
+            if (elapsedMinutes < 60) return `Updated ${elapsedMinutes} minute${elapsedMinutes === 1 ? '' : 's'} ago`;
+            const elapsedHours = Math.round(elapsedMinutes / 60);
+            if (elapsedHours < 24) return `Updated ${elapsedHours} hour${elapsedHours === 1 ? '' : 's'} ago`;
+            const elapsedDays = Math.round(elapsedHours / 24);
+            return `Updated ${elapsedDays} day${elapsedDays === 1 ? '' : 's'} ago`;
+        };
+
+        const hydrateImpactMetrics = async () => {
+            try {
+                const response = await fetch('/api/impact', {
+                    headers: { Accept: 'application/json' }
+                });
+                if (!response.ok) return;
+                const payload = await response.json();
+                if (!Array.isArray(payload.metrics)) return;
+
+                payload.metrics.forEach((metric) => {
+                    if (!metric || !metric.id || typeof metric.display !== 'string') return;
+                    const target = document.getElementById(`metric-${metric.id}`);
+                    if (target) target.textContent = metric.display;
+                });
+
+                const latestUpdatedAt = payload.metrics
+                    .map((metric) => metric.updated_at)
+                    .filter(Boolean)
+                    .sort()
+                    .at(-1);
+                const indicator = document.getElementById('impact-live-updated');
+                const updatedText = latestUpdatedAt ? formatImpactUpdatedAt(latestUpdatedAt) : '';
+                if (indicator && updatedText) {
+                    indicator.textContent = `${updatedText} from AARIImpactMetrics.`;
+                    indicator.classList.remove('hidden');
+                }
+            } catch (error) {
+                // Static fallback values remain visible if the API or backing store is unavailable.
+            }
+        };
+
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', hydrateImpactMetrics, { once: true });
+        } else {
+            hydrateImpactMetrics();
+        }
 
         const confirmationText = 'Thanks. Your message has been received.';
 
