@@ -106,6 +106,71 @@
             font-weight: 600;
             background: rgba(15,23,42,0.65);
         }
+        .partner-carousel-viewport {
+            overflow: hidden;
+        }
+        .partner-carousel-track {
+            display: flex;
+            gap: 1rem;
+            transition: transform 0.35s ease;
+            will-change: transform;
+        }
+        .partner-slide {
+            flex: 0 0 calc((100% - 2rem) / 3);
+            min-width: 0;
+        }
+        .partner-story-card {
+            min-height: 19rem;
+            display: flex;
+            flex-direction: column;
+        }
+        .partner-logo-box {
+            width: 100%;
+            min-height: 5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 1rem;
+            border: 1px solid rgba(255,255,255,0.1);
+            background: rgba(255,255,255,0.96);
+            padding: 0.9rem;
+        }
+        .partner-logo-box img {
+            max-height: 2.75rem;
+            max-width: 11rem;
+            object-fit: contain;
+        }
+        .partner-text-mark {
+            min-height: 5rem;
+            border-radius: 1rem;
+            border: 1px solid rgba(96,165,250,0.22);
+            background: linear-gradient(135deg, rgba(30,41,59,0.92), rgba(15,23,42,0.92));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 1rem;
+            font-weight: 800;
+            color: #f8fafc;
+        }
+        .partner-arrow, .partner-dot {
+            transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease, color 0.2s ease;
+        }
+        .partner-arrow:hover {
+            transform: translateY(-1px);
+        }
+        .partner-dot[aria-current="true"] {
+            width: 2rem;
+            background: #60a5fa;
+            border-color: #93c5fd;
+        }
+        @media (max-width: 1024px) {
+            .partner-slide { flex-basis: calc((100% - 1rem) / 2); }
+        }
+        @media (max-width: 640px) {
+            .partner-slide { flex-basis: 100%; }
+            .partner-story-card { min-height: 18rem; }
+        }
         .intake-honeypot {
             position: absolute;
             left: -10000px;
@@ -442,21 +507,26 @@
                     </article>
                 </div>
 
-                <div class="grid xl:grid-cols-[1fr_auto] gap-8 items-start">
-                    <div class="flex flex-wrap gap-3">
-                        <span class="partner-badge">Workshop with Microsoft</span>
-                        <span class="partner-badge">Workshop with NVIDIA</span>
-                        <span class="partner-badge">Workshop with Red Hat</span>
-                        <span class="partner-badge">Supported by QTS engagement</span>
-                        <span class="partner-badge">Engaged with Cisco</span>
-                        <span class="partner-badge">Accepted into AWS-MLU Transformation Alliance cohort</span>
+                <div class="glass-panel rounded-3xl p-6 md:p-8 border border-white/10" data-partner-carousel>
+                    <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-7">
+                        <div class="max-w-3xl">
+                            <p class="text-xs uppercase tracking-[0.22em] text-electric-400 mb-3">Our Partners</p>
+                            <h3 class="text-3xl md:text-4xl font-bold mb-4">Our Partners</h3>
+                            <p class="text-slatebrand-300 leading-relaxed">AARI works across the infrastructure stack with partners in cloud, edge AI, robotics, data centers, quantum, education, and workforce development.</p>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <button type="button" class="partner-arrow inline-flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-slatebrand-200 hover:border-electric-400/50 hover:text-white" data-carousel-prev aria-label="Previous partner">
+                                <i data-lucide="chevron-left" class="h-5 w-5"></i>
+                            </button>
+                            <button type="button" class="partner-arrow inline-flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-slatebrand-200 hover:border-electric-400/50 hover:text-white" data-carousel-next aria-label="Next partner">
+                                <i data-lucide="chevron-right" class="h-5 w-5"></i>
+                            </button>
+                        </div>
                     </div>
-                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 w-full xl:w-auto">
-                        <div class="proof-logo"><img src="images/logo-microsoft.webp" alt="Microsoft reference" class="max-h-10 w-auto"></div>
-                        <div class="proof-logo"><img src="images/logo-nvidia.png" alt="NVIDIA reference" class="max-h-10 w-auto"></div>
-                        <div class="proof-logo"><img src="images/logo-redhat.png" alt="Red Hat reference" class="max-h-10 w-auto"></div>
-                        <div class="proof-logo"><img src="images/logo-qts.png" alt="QTS reference" class="max-h-10 w-auto"></div>
+                    <div class="partner-carousel-viewport" tabindex="0" aria-label="AARI partner carousel. Use left and right arrow keys to move through partners.">
+                        <div class="partner-carousel-track" data-carousel-track></div>
                     </div>
+                    <div class="flex items-center justify-center gap-2 mt-6" data-carousel-dots aria-label="Partner carousel progress"></div>
                 </div>
             </div>
         </section>
@@ -917,6 +987,191 @@
             el.classList.add('fade-in-up');
             observer.observe(el);
         });
+
+        const partnerEcosystem = [
+            {
+                name: 'QTS Data Centers',
+                category: 'Data Center Infrastructure',
+                role: "Supports AARI's infrastructure pathway for AI-ready facilities and critical environments.",
+                logo: 'images/logo-qts.png'
+            },
+            {
+                name: 'NVIDIA',
+                category: 'Edge AI & Robotics Compute',
+                role: 'Supports hands-on learning across GPU computing, edge AI, robotics, and quantum-adjacent workflows.',
+                logo: 'images/logo-nvidia.png'
+            },
+            {
+                name: 'AWS',
+                category: 'Cloud-to-Edge Infrastructure',
+                role: 'Supports scalable cloud training, storage, and deployment patterns for student-built AI systems.'
+            },
+            {
+                name: 'Microsoft Quantum',
+                category: 'Quantum & Hybrid Systems',
+                role: 'Targeted partner for quantum learning, hybrid systems, and future-ready technical curriculum.',
+                logo: 'images/logo-microsoft.webp'
+            },
+            {
+                name: 'Cisco',
+                category: 'Networking & Smart Infrastructure',
+                role: 'Targeted partner for networking, security, and smart infrastructure education.'
+            },
+            {
+                name: 'Red Hat',
+                category: 'Open Infrastructure',
+                role: 'Supports open-source infrastructure, Linux, containers, and enterprise platform learning.',
+                logo: 'images/logo-redhat.png'
+            },
+            {
+                name: 'IBM',
+                category: 'Quantum / Enterprise AI',
+                role: 'Supports exposure to enterprise AI, quantum tools, and technical career pathways.'
+            },
+            {
+                name: 'Ten Sparrows',
+                category: 'Commercial Collaborator',
+                role: 'Collaborates on private-network and edge-connected proof-of-concept work.'
+            },
+            {
+                name: 'Morehouse College',
+                category: 'Academic / Workforce Partner',
+                role: "Core academic anchor for AARI's student pipeline and technical programming."
+            },
+            {
+                name: 'Spelman College',
+                category: 'Academic / Workforce Partner',
+                role: 'Part of the AUC talent pipeline for AI, robotics, infrastructure, and technical leadership.'
+            },
+            {
+                name: 'Clark Atlanta University',
+                category: 'Academic / Workforce Partner',
+                role: 'Part of the AUC ecosystem connecting students to applied AI and robotics opportunities.'
+            },
+            {
+                name: 'Georgia Tech',
+                category: 'Academic / Research Connector',
+                role: "Supports technical depth, research adjacency, and Atlanta's broader engineering ecosystem."
+            },
+            {
+                name: 'ROBOKONG / Kidd Facility',
+                category: 'Community / Program Partner',
+                role: 'Connects APS robotics students to the scholar-to-mentor model and Summer 2026 activation site.'
+            }
+        ];
+
+        const escapePartnerText = (value) => String(value).replace(/[&<>"']/g, (char) => ({
+            '&': '&amp;',
+            '<': '&lt;',
+            '>': '&gt;',
+            '"': '&quot;',
+            "'": '&#39;'
+        }[char]));
+
+        const installPartnerCarousels = () => {
+            document.querySelectorAll('[data-partner-carousel]').forEach((carousel) => {
+                const track = carousel.querySelector('[data-carousel-track]');
+                const dots = carousel.querySelector('[data-carousel-dots]');
+                const viewport = carousel.querySelector('.partner-carousel-viewport');
+                const prev = carousel.querySelector('[data-carousel-prev]');
+                const next = carousel.querySelector('[data-carousel-next]');
+                let index = 0;
+                let cardsPerView = 3;
+                let startX = 0;
+
+                const getCardsPerView = () => {
+                    if (window.matchMedia('(max-width: 640px)').matches) return 1;
+                    if (window.matchMedia('(max-width: 1024px)').matches) return 2;
+                    return 3;
+                };
+
+                const renderCards = () => {
+                    track.innerHTML = partnerEcosystem.map((partner) => {
+                        const name = escapePartnerText(partner.name);
+                        const category = escapePartnerText(partner.category);
+                        const role = escapePartnerText(partner.role);
+                        const mark = partner.logo
+                            ? `<div class="partner-logo-box"><img src="${escapePartnerText(partner.logo)}" alt="${name} logo" loading="lazy"></div>`
+                            : `<div class="partner-text-mark" aria-hidden="true">${name}</div>`;
+                        return `
+                            <article class="partner-slide" aria-label="${name}, ${category}">
+                                <div class="partner-story-card glass-panel rounded-3xl p-5 border border-white/10">
+                                    ${mark}
+                                    <p class="mt-5 text-xs uppercase tracking-[0.2em] text-electric-400 font-bold">${category}</p>
+                                    <h4 class="mt-3 text-xl font-bold text-white">${name}</h4>
+                                    <p class="mt-3 text-sm leading-relaxed text-slatebrand-300">${role}</p>
+                                </div>
+                            </article>`;
+                    }).join('');
+                };
+
+                const maxIndex = () => Math.max(partnerEcosystem.length - cardsPerView, 0);
+
+                const renderDots = () => {
+                    const pageCount = Math.ceil(partnerEcosystem.length / cardsPerView);
+                    const activePage = Math.min(Math.floor(index / cardsPerView), pageCount - 1);
+                    dots.innerHTML = Array.from({ length: pageCount }, (_, page) => `
+                        <button type="button" class="partner-dot h-2.5 w-2.5 rounded-full border border-white/20 bg-white/20" data-carousel-dot="${page}" aria-label="Show partner group ${page + 1}" aria-current="${page === activePage ? 'true' : 'false'}"></button>
+                    `).join('');
+                    dots.querySelectorAll('[data-carousel-dot]').forEach((dot) => {
+                        dot.addEventListener('click', () => {
+                            const page = Number(dot.dataset.carouselDot);
+                            index = page === pageCount - 1 ? maxIndex() : Math.min(page * cardsPerView, maxIndex());
+                            update();
+                        });
+                    });
+                };
+
+                const update = () => {
+                    cardsPerView = getCardsPerView();
+                    index = Math.min(index, maxIndex());
+                    const slide = track.querySelector('.partner-slide');
+                    if (!slide) return;
+                    const gap = parseFloat(getComputedStyle(track).columnGap || getComputedStyle(track).gap) || 0;
+                    const offset = index * (slide.getBoundingClientRect().width + gap);
+                    track.style.transform = `translateX(-${offset}px)`;
+                    prev.disabled = index === 0;
+                    next.disabled = index >= maxIndex();
+                    prev.classList.toggle('opacity-40', prev.disabled);
+                    next.classList.toggle('opacity-40', next.disabled);
+                    renderDots();
+                };
+
+                renderCards();
+                renderDots();
+                update();
+
+                prev.addEventListener('click', () => {
+                    index = Math.max(index - cardsPerView, 0);
+                    update();
+                });
+                next.addEventListener('click', () => {
+                    index = Math.min(index + cardsPerView, maxIndex());
+                    update();
+                });
+                viewport.addEventListener('keydown', (event) => {
+                    if (event.key === 'ArrowLeft') {
+                        event.preventDefault();
+                        prev.click();
+                    }
+                    if (event.key === 'ArrowRight') {
+                        event.preventDefault();
+                        next.click();
+                    }
+                });
+                viewport.addEventListener('touchstart', (event) => {
+                    startX = event.touches[0].clientX;
+                }, { passive: true });
+                viewport.addEventListener('touchend', (event) => {
+                    const delta = event.changedTouches[0].clientX - startX;
+                    if (Math.abs(delta) < 40) return;
+                    if (delta < 0) next.click();
+                    if (delta > 0) prev.click();
+                });
+                window.addEventListener('resize', update);
+            });
+        };
+        installPartnerCarousels();
 
         const confirmationText = 'Thanks. Your message has been received.';
 
