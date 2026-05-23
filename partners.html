@@ -48,9 +48,10 @@
         .partner-carousel-track { display: flex; gap: 1rem; transition: transform 0.35s ease; will-change: transform; }
         .partner-slide { flex: 0 0 calc((100% - 2rem) / 3); min-width: 0; }
         .partner-story-card { min-height: 19rem; display: flex; flex-direction: column; }
-        .partner-logo-box { width: 100%; min-height: 5rem; display: flex; align-items: center; justify-content: center; border-radius: 1rem; border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.96); padding: 0.9rem; }
-        .partner-logo-box img { max-height: 2.75rem; max-width: 11rem; object-fit: contain; }
-        .partner-text-mark { min-height: 5rem; border-radius: 1rem; border: 1px solid rgba(96,165,250,0.22); background: linear-gradient(135deg, rgba(30,41,59,0.92), rgba(15,23,42,0.92)); display: flex; align-items: center; justify-content: center; text-align: center; padding: 1rem; font-weight: 800; color: #f8fafc; }
+        .partner-logo-box { width: 100%; min-height: 6rem; display: flex; align-items: center; justify-content: center; border-radius: 1rem; border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.96); padding: 0.9rem; }
+        .partner-logo-box img { max-height: 3.35rem; max-width: 100%; object-fit: contain; }
+        .partner-text-mark { min-height: 6rem; border-radius: 1rem; border: 1px solid rgba(96,165,250,0.22); background: linear-gradient(135deg, rgba(30,41,59,0.92), rgba(15,23,42,0.92)); display: flex; align-items: center; justify-content: center; text-align: center; padding: 1rem; font-weight: 800; color: #f8fafc; line-height: 1.15; }
+        .partner-text-mark span { max-width: 12rem; }
         .partner-arrow, .partner-dot { transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease, color 0.2s ease; }
         .partner-arrow:hover { transform: translateY(-1px); }
         .partner-dot[aria-current="true"] { width: 2rem; background: #60a5fa; border-color: #93c5fd; }
@@ -570,8 +571,8 @@
                         const category = escapePartnerText(partner.category);
                         const role = escapePartnerText(partner.role);
                         const mark = partner.logo
-                            ? `<div class="partner-logo-box"><img src="${escapePartnerText(partner.logo)}" alt="${name} logo" loading="lazy"></div>`
-                            : `<div class="partner-text-mark" aria-hidden="true">${name}</div>`;
+                            ? `<div class="partner-logo-box" data-logo-box><img src="${escapePartnerText(partner.logo)}" alt="${name} logo" loading="lazy" data-logo-fallback="${name}"></div>`
+                            : `<div class="partner-text-mark"><span>${name}</span></div>`;
                         return `
                             <article class="partner-slide" aria-label="${name}, ${category}">
                                 <div class="partner-story-card glass-panel rounded-3xl p-5 border border-white/10">
@@ -582,6 +583,12 @@
                                 </div>
                             </article>`;
                     }).join('');
+                    track.querySelectorAll('[data-logo-fallback]').forEach((img) => {
+                        img.addEventListener('error', () => {
+                            const fallbackName = escapePartnerText(img.dataset.logoFallback || 'Partner');
+                            img.closest('[data-logo-box]').outerHTML = `<div class="partner-text-mark"><span>${fallbackName}</span></div>`;
+                        }, { once: true });
+                    });
                 };
                 const renderDots = () => {
                     const pageCount = Math.ceil(partnerEcosystem.length / cardsPerView);
