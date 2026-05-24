@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17997086735"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-17997086735');
+    </script>
+    <script src="assets/js/analytics-config.js"></script>
+    <script src="assets/js/analytics.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AARI Impact Gallery | Atlanta AI &amp; Robotics Initiative</title>
+    <meta name="description" content="Photos from AARI student workshops, corporate exposure, robotics and edge AI labs, Smart Illuminating Helmet work, and leadership sessions.">
+    <meta property="og:title" content="AARI Impact Gallery | Atlanta AI &amp; Robotics Initiative">
+    <meta property="og:description" content="See AARI students in workshops, labs, partner visits, and applied AI infrastructure sessions.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://atlanta-robotics.org/impact">
+    <meta property="og:image" content="https://atlanta-robotics.org/images/aari-action/auc-students-microsoft-exposure.jpg">
+    <meta name="theme-color" content="#020617">
+    <link rel="icon" type="image/png" href="images/header-logo.png">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: { 950: '#020617', 900: '#0b1120', 800: '#0f172a', 700: '#1e293b' },
+                        slatebrand: { 300: '#cbd5e1', 400: '#94a3b8', 500: '#64748b' },
+                        electric: { 400: '#60a5fa', 500: '#3b82f6' }
+                    },
+                    fontFamily: { sans: ['Inter', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; background: #020617; color: #f8fafc; }
+        .glass-panel { background: rgba(15, 23, 42, 0.72); backdrop-filter: blur(14px); border: 1px solid rgba(148, 163, 184, 0.16); }
+        .section-shell { max-width: 80rem; margin: 0 auto; padding-left: 1.5rem; padding-right: 1.5rem; }
+        .section-kicker { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.4rem 0.8rem; border-radius: 999px; border: 1px solid rgba(96, 165, 250, 0.28); background: rgba(30, 41, 59, 0.72); color: #93c5fd; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; }
+        .gradient-text { background: linear-gradient(135deg, #f8fafc 0%, #93c5fd 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .nav-link { color: #cbd5e1; font-size: 0.75rem; font-weight: 700; white-space: nowrap; transition: color 0.2s ease; }
+        .nav-link:hover { color: #fff; }
+        .gallery-card { transition: transform 0.28s ease, border-color 0.28s ease; }
+        .gallery-card:hover { transform: translateY(-4px); border-color: rgba(96, 165, 250, 0.28); }
+        .gallery-card img { transition: transform 0.45s ease, filter 0.45s ease; }
+        .gallery-card:hover img { transform: scale(1.035); filter: saturate(1.08) contrast(1.03); }
+        .fade-in-up { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+        .fade-in-up.visible { opacity: 1; transform: translateY(0); }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #020617; }
+        ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 999px; }
+    </style>
+</head>
+<body class="antialiased selection:bg-electric-500 selection:text-white">
+    <nav class="fixed inset-x-0 top-0 z-50 glass-panel border-b border-white/5">
+        <div class="max-w-[92rem] mx-auto px-6 h-20 flex items-center justify-between gap-6">
+            <a href="index.html" class="flex items-center gap-3">
+                <div class="bg-white/90 p-1.5 rounded-lg">
+                    <img src="images/header-logo.png" alt="AARI logo" class="h-10 w-auto object-contain">
+                </div>
+                <div class="hidden lg:block">
+                    <p class="text-sm font-semibold text-white">Atlanta AI &amp; Robotics Initiative</p>
+                    <p class="text-xs text-slatebrand-400">Impact gallery</p>
+                </div>
+            </a>
+            <div class="hidden md:flex items-center gap-5">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="index.html#aari-action" class="nav-link">Action</a>
+                <a href="partners.html" class="nav-link">Partners</a>
+                <a href="index.html#contact" class="bg-white text-navy-950 font-semibold px-4 py-2.5 rounded-xl hover:bg-slate-200 transition-colors whitespace-nowrap">Partner With AARI</a>
+            </div>
+            <button id="mobile-toggle" class="md:hidden text-slatebrand-200" type="button" aria-expanded="false" aria-controls="mobile-menu">
+                <i data-lucide="menu" class="w-8 h-8"></i>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden border-t border-white/10 bg-navy-900/95">
+            <div class="section-shell py-4 flex flex-col gap-3 text-sm font-medium text-slatebrand-300">
+                <a href="index.html" class="py-2">Home</a>
+                <a href="index.html#aari-action" class="py-2">Action</a>
+                <a href="partners.html" class="py-2">Partners</a>
+                <a href="index.html#contact" class="bg-white text-navy-950 font-semibold px-5 py-3 rounded-xl text-center hover:bg-slate-200 transition-colors">Partner With AARI</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="relative pt-32 pb-16 md:pt-44 md:pb-24 overflow-hidden">
+            <div class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top,_rgba(59,130,246,0.16),_transparent_34%),radial-gradient(circle_at_bottom_right,_rgba(15,23,42,0.9),_transparent_45%)]"></div>
+            <div class="section-shell">
+                <div class="max-w-4xl">
+                    <div class="section-kicker mb-6"><i data-lucide="images" class="w-4 h-4"></i>AARI Impact Gallery</div>
+                    <h1 class="text-5xl md:text-7xl font-extrabold leading-tight tracking-tight mb-6">Proof from the rooms where <span class="gradient-text">students build.</span></h1>
+                    <p class="text-xl text-slatebrand-300 leading-relaxed max-w-3xl">AARI's work is visible in student sessions, partner visits, lab tables, data center discussions, Smart Illuminating Helmet reviews, and applied AI infrastructure presentations.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-12 md:py-16 bg-navy-900">
+            <div class="section-shell space-y-16">
+                <section>
+                    <h2 class="text-2xl md:text-3xl font-bold mb-6">Student Workshops</h2>
+                    <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
+                        <article class="gallery-card glass-panel rounded-3xl overflow-hidden border border-white/10"><div class="overflow-hidden"><img src="images/aari-action/morehouse-technical-lab-session.jpg" alt="Students in technical lab sessions at Morehouse" class="w-full aspect-[4/3] object-cover" loading="lazy"></div><p class="p-5 text-sm text-slatebrand-200 leading-relaxed">Students in technical lab sessions at Morehouse</p></article>
+                        <article class="gallery-card glass-panel rounded-3xl overflow-hidden border border-white/10"><div class="overflow-hidden"><img src="images/aari-action/partner-student-workshop.jpg" alt="AARI partner and student workshop" class="w-full aspect-[4/3] object-cover" loading="lazy"></div><p class="p-5 text-sm text-slatebrand-200 leading-relaxed">AARI partner and student workshop</p></article>
+                        <article class="gallery-card glass-panel rounded-3xl overflow-hidden border border-white/10"><div class="overflow-hidden"><img src="images/aari-action/student-workshop-table-session.jpg" alt="Students collaborating during an AARI workshop table session" class="w-full aspect-[4/3] object-cover" loading="lazy"></div><p class="p-5 text-sm text-slatebrand-200 leading-relaxed">Students collaborating during an AARI workshop table session</p></article>
+                    </div>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl md:text-3xl font-bold mb-6">Corporate Exposure</h2>
+                    <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
+                        <article class="gallery-card glass-panel rounded-3xl overflow-hidden border border-white/10"><div class="overflow-hidden"><img src="images/aari-action/auc-students-microsoft-exposure.jpg" alt="AUC students visiting Microsoft for applied AI and infrastructure exposure" class="w-full aspect-[4/3] object-cover" loading="eager" fetchpriority="high"></div><p class="p-5 text-sm text-slatebrand-200 leading-relaxed">AUC students visiting Microsoft for applied AI and infrastructure exposure</p></article>
+                        <article class="gallery-card glass-panel rounded-3xl overflow-hidden border border-white/10"><div class="overflow-hidden"><img src="images/aari-action/aari-cohort-microsoft-atlanta.jpg" alt="AARI student cohort at Microsoft Atlanta" class="w-full aspect-[4/3] object-cover" loading="lazy"></div><p class="p-5 text-sm text-slatebrand-200 leading-relaxed">AARI student cohort at Microsoft Atlanta</p></article>
+                        <article class="gallery-card glass-panel rounded-3xl overflow-hidden border border-white/10"><div class="overflow-hidden"><img src="images/aari-action/student-led-microsoft-discussion.jpg" alt="Student-led discussion during Microsoft session" class="w-full aspect-[4/3] object-cover" loading="lazy"></div><p class="p-5 text-sm text-slatebrand-200 leading-relaxed">Student-led discussion during Microsoft session</p></article>
+                    </div>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl md:text-3xl font-bold mb-6">Robotics and Edge AI Labs</h2>
+                    <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
+                        <article class="gallery-card glass-panel rounded-3xl overflow-hidden border border-white/10"><div class="overflow-hidden"><img src="images/aari-action/garage-data-center-work-session.jpg" alt="Garage Data Center work session with students" class="w-full aspect-[4/3] object-cover" loading="lazy"></div><p class="p-5 text-sm text-slatebrand-200 leading-relaxed">Garage Data Center work session with students</p></article>
+                        <article class="gallery-card glass-panel rounded-3xl overflow-hidden border border-white/10"><div class="overflow-hidden"><img src="images/aari-action/garage-data-center-live-systems.jpg" alt="Students reviewing live systems inside the Garage Data Center" class="w-full aspect-[4/3] object-cover" loading="lazy"></div><p class="p-5 text-sm text-slatebrand-200 leading-relaxed">Students reviewing live systems inside the Garage Data Center</p></article>
+                        <article class="gallery-card glass-panel rounded-3xl overflow-hidden border border-white/10"><div class="overflow-hidden"><img src="images/aari-action/aari-infrastructure-visual.jpg" alt="AARI applied infrastructure visual for robotics and edge AI development" class="w-full aspect-[4/3] object-cover" loading="lazy"></div><p class="p-5 text-sm text-slatebrand-200 leading-relaxed">Applied infrastructure visual for robotics and edge AI development</p></article>
+                    </div>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl md:text-3xl font-bold mb-6">Smart Illuminating Helmet</h2>
+                    <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
+                        <article class="gallery-card glass-panel rounded-3xl overflow-hidden border border-white/10"><div class="overflow-hidden"><img src="images/aari-action/sih-product-review-session.jpg" alt="Smart Illuminating Helmet product review session" class="w-full aspect-[4/3] object-cover" loading="lazy"></div><p class="p-5 text-sm text-slatebrand-200 leading-relaxed">Smart Illuminating Helmet product review session</p></article>
+                        <article class="gallery-card glass-panel rounded-3xl overflow-hidden border border-white/10"><div class="overflow-hidden"><img src="images/aari-action/sih-development-screenshot.jpg" alt="Smart Illuminating Helmet development work shown on a technical screen" class="w-full aspect-[4/3] object-cover" loading="lazy"></div><p class="p-5 text-sm text-slatebrand-200 leading-relaxed">Smart Illuminating Helmet development work session</p></article>
+                    </div>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl md:text-3xl font-bold mb-6">AARI Leadership</h2>
+                    <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
+                        <article class="gallery-card glass-panel rounded-3xl overflow-hidden border border-white/10"><div class="overflow-hidden"><img src="images/aari-action/aari-leadership-ai-infrastructure.jpg" alt="AARI leadership presenting applied AI infrastructure work" class="w-full aspect-[4/3] object-cover" loading="lazy"></div><p class="p-5 text-sm text-slatebrand-200 leading-relaxed">AARI leadership presenting applied AI infrastructure work</p></article>
+                    </div>
+                </section>
+
+                <div class="glass-panel rounded-3xl p-8 md:p-10 border border-white/10 flex flex-col lg:flex-row gap-6 lg:items-center lg:justify-between">
+                    <div>
+                        <h2 class="text-2xl md:text-3xl font-bold mb-3">Proof, Not Theater</h2>
+                        <p class="text-slatebrand-300 leading-relaxed max-w-3xl">Students do not just hear about AI, robotics, cloud, edge computing, and infrastructure. They see it, touch it, question it, and build with it.</p>
+                    </div>
+                    <a href="index.html#contact" class="bg-white text-navy-950 font-semibold px-7 py-4 rounded-xl hover:bg-slate-200 transition-colors text-center shrink-0">Partner With AARI</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="py-10 border-t border-white/10 bg-navy-950">
+        <div class="section-shell flex flex-col md:flex-row justify-between gap-6">
+            <div>
+                <p class="text-white font-semibold">Atlanta AI &amp; Robotics Initiative</p>
+                <p class="text-slatebrand-400 text-sm mt-2 max-w-xl">AARI trains HBCU students and underrepresented learners to operate the infrastructure stack underneath modern AI.</p>
+            </div>
+            <div class="flex flex-wrap gap-4 text-sm text-slatebrand-400">
+                <a href="index.html" class="hover:text-white transition-colors">Home</a>
+                <a href="index.html#aari-action" class="hover:text-white transition-colors">AARI in Action</a>
+                <a href="partners.html" class="hover:text-white transition-colors">Partners</a>
+                <a href="donate.html" class="hover:text-white transition-colors font-semibold text-emerald-300">Donate</a>
+                <a href="index.html#contact" class="hover:text-white transition-colors">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+        const mobileToggle = document.getElementById('mobile-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileToggle?.addEventListener('click', () => {
+            const expanded = mobileToggle.getAttribute('aria-expanded') === 'true';
+            mobileToggle.setAttribute('aria-expanded', String(!expanded));
+            mobileMenu.classList.toggle('hidden');
+        });
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.12 });
+        document.querySelectorAll('.glass-panel, .gallery-card').forEach((el) => {
+            el.classList.add('fade-in-up');
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>

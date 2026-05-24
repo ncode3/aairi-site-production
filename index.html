@@ -81,12 +81,19 @@
             opacity: 1;
             transform: translateY(0);
         }
-        .doctrine-card, .lane-card, .proof-card, .metric-card, .profile-card, .trust-card, .fund-card, .contact-card {
+        .doctrine-card, .lane-card, .proof-card, .metric-card, .profile-card, .trust-card, .fund-card, .contact-card, .action-card {
             transition: transform 0.28s ease, border-color 0.28s ease, box-shadow 0.28s ease;
         }
-        .doctrine-card:hover, .lane-card:hover, .proof-card:hover, .metric-card:hover, .profile-card:hover, .trust-card:hover, .fund-card:hover, .contact-card:hover {
+        .doctrine-card:hover, .lane-card:hover, .proof-card:hover, .metric-card:hover, .profile-card:hover, .trust-card:hover, .fund-card:hover, .contact-card:hover, .action-card:hover {
             transform: translateY(-4px);
             border-color: rgba(96, 165, 250, 0.28);
+        }
+        .action-card img {
+            transition: transform 0.45s ease, filter 0.45s ease;
+        }
+        .action-card:hover img {
+            transform: scale(1.035);
+            filter: saturate(1.08) contrast(1.03);
         }
         .proof-logo {
             background: rgba(255,255,255,0.97);
@@ -295,7 +302,9 @@
                 <a href="#programs" class="nav-link">Programs</a>
                 <a href="scholars.html" class="nav-link">Scholarship</a>
                 <a href="#proof" class="nav-link">Proof</a>
+                <a href="#aari-action" class="nav-link">Action</a>
                 <a href="#impact" class="nav-link">Impact</a>
+                <a href="impact.html" class="nav-link">Gallery</a>
                 <a href="#leadership" class="nav-link">Leadership</a>
                 <a href="#funders" class="nav-link">Funders</a>
                 <a href="partners.html" class="nav-link">Partners</a>
@@ -319,7 +328,9 @@
                 <a href="#programs" class="py-2">Programs</a>
                 <a href="scholars.html" class="py-2">Scholarship</a>
                 <a href="#proof" class="py-2">Proof</a>
+                <a href="#aari-action" class="py-2">Action</a>
                 <a href="#impact" class="py-2">Impact</a>
+                <a href="impact.html" class="py-2">Gallery</a>
                 <a href="#leadership" class="py-2">Leadership</a>
                 <a href="#funders" class="py-2">Funders</a>
                 <a href="partners.html" class="py-2">Partners</a>
@@ -378,6 +389,80 @@
                         <p class="text-lg text-slatebrand-200 leading-relaxed">AI literacy without infrastructure literacy creates dependency. AARI trains students to operate what others only consume.</p>
                     </div>
                 </aside>
+            </div>
+        </section>
+
+        <section id="aari-action" class="py-20 md:py-24 bg-navy-900 scroll-mt-24">
+            <div class="section-shell">
+                <div class="grid lg:grid-cols-[0.9fr_1.1fr] gap-8 items-end mb-12">
+                    <div>
+                        <div class="section-kicker mb-5"><i data-lucide="camera" class="w-4 h-4"></i>AARI in Action</div>
+                        <h2 class="text-3xl md:text-5xl font-bold leading-tight mb-4">We are not building a brochure. We are building operators.</h2>
+                    </div>
+                    <p class="text-lg text-slatebrand-300 leading-relaxed">From student workshops and corporate site visits to robotics labs, edge AI development, and Smart Illuminating Helmet sessions, AARI gives students hands-on access to the infrastructure, tools, and rooms where the future is being built.</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
+                    <article class="action-card glass-panel rounded-3xl overflow-hidden border border-white/10">
+                        <div class="overflow-hidden">
+                            <img src="images/aari-action/auc-students-microsoft-exposure.jpg" alt="AUC students visiting Microsoft for applied AI and infrastructure exposure" class="w-full aspect-[4/3] object-cover" loading="eager" fetchpriority="high">
+                        </div>
+                        <p class="p-5 text-sm text-slatebrand-200 leading-relaxed">AUC students visiting Microsoft for applied AI and infrastructure exposure</p>
+                    </article>
+                    <article class="action-card glass-panel rounded-3xl overflow-hidden border border-white/10">
+                        <div class="overflow-hidden">
+                            <img src="images/aari-action/aari-cohort-microsoft-atlanta.jpg" alt="AARI student cohort at Microsoft Atlanta" class="w-full aspect-[4/3] object-cover" loading="lazy">
+                        </div>
+                        <p class="p-5 text-sm text-slatebrand-200 leading-relaxed">AARI student cohort at Microsoft Atlanta</p>
+                    </article>
+                    <article class="action-card glass-panel rounded-3xl overflow-hidden border border-white/10">
+                        <div class="overflow-hidden">
+                            <img src="images/aari-action/morehouse-technical-lab-session.jpg" alt="Students in technical lab sessions at Morehouse" class="w-full aspect-[4/3] object-cover" loading="lazy">
+                        </div>
+                        <p class="p-5 text-sm text-slatebrand-200 leading-relaxed">Students in technical lab sessions at Morehouse</p>
+                    </article>
+                    <article class="action-card glass-panel rounded-3xl overflow-hidden border border-white/10">
+                        <div class="overflow-hidden">
+                            <img src="images/aari-action/garage-data-center-work-session.jpg" alt="Garage Data Center work session with students" class="w-full aspect-[4/3] object-cover" loading="lazy">
+                        </div>
+                        <p class="p-5 text-sm text-slatebrand-200 leading-relaxed">Garage Data Center work session with students</p>
+                    </article>
+                    <article class="action-card glass-panel rounded-3xl overflow-hidden border border-white/10">
+                        <div class="overflow-hidden">
+                            <img src="images/aari-action/garage-data-center-live-systems.jpg" alt="Students reviewing live systems inside the Garage Data Center" class="w-full aspect-[4/3] object-cover" loading="lazy">
+                        </div>
+                        <p class="p-5 text-sm text-slatebrand-200 leading-relaxed">Students reviewing live systems inside the Garage Data Center</p>
+                    </article>
+                    <article class="action-card glass-panel rounded-3xl overflow-hidden border border-white/10">
+                        <div class="overflow-hidden">
+                            <img src="images/aari-action/sih-product-review-session.jpg" alt="Smart Illuminating Helmet product review session" class="w-full aspect-[4/3] object-cover" loading="lazy">
+                        </div>
+                        <p class="p-5 text-sm text-slatebrand-200 leading-relaxed">Smart Illuminating Helmet product review session</p>
+                    </article>
+                    <article class="action-card glass-panel rounded-3xl overflow-hidden border border-white/10">
+                        <div class="overflow-hidden">
+                            <img src="images/aari-action/partner-student-workshop.jpg" alt="AARI partner and student workshop" class="w-full aspect-[4/3] object-cover" loading="lazy">
+                        </div>
+                        <p class="p-5 text-sm text-slatebrand-200 leading-relaxed">AARI partner and student workshop</p>
+                    </article>
+                    <article class="action-card glass-panel rounded-3xl overflow-hidden border border-white/10">
+                        <div class="overflow-hidden">
+                            <img src="images/aari-action/student-led-microsoft-discussion.jpg" alt="Student-led discussion during Microsoft session" class="w-full aspect-[4/3] object-cover" loading="lazy">
+                        </div>
+                        <p class="p-5 text-sm text-slatebrand-200 leading-relaxed">Student-led discussion during Microsoft session</p>
+                    </article>
+                    <article class="action-card glass-panel rounded-3xl overflow-hidden border border-white/10">
+                        <div class="overflow-hidden">
+                            <img src="images/aari-action/aari-leadership-ai-infrastructure.jpg" alt="AARI leadership presenting applied AI infrastructure work" class="w-full aspect-[4/3] object-cover" loading="lazy">
+                        </div>
+                        <p class="p-5 text-sm text-slatebrand-200 leading-relaxed">AARI leadership presenting applied AI infrastructure work</p>
+                    </article>
+                </div>
+
+                <div class="mt-10 flex flex-col sm:flex-row gap-4">
+                    <a href="#contact" class="bg-white text-navy-950 font-semibold px-7 py-4 rounded-xl hover:bg-slate-200 transition-colors text-center">Partner With AARI</a>
+                    <a href="impact.html" class="glass-panel text-white font-semibold px-7 py-4 rounded-xl hover:bg-white/5 transition-colors text-center">See Our Work</a>
+                </div>
             </div>
         </section>
 
@@ -531,6 +616,18 @@
                         <div class="partner-carousel-track" data-carousel-track></div>
                     </div>
                     <div class="flex items-center justify-center gap-2 mt-6" data-carousel-dots aria-label="Partner carousel progress"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="proof-not-theater" class="py-16 md:py-20 bg-navy-900 scroll-mt-24">
+            <div class="section-shell">
+                <div class="glass-panel rounded-3xl p-8 md:p-10 border border-white/10 grid lg:grid-cols-[0.75fr_1.25fr] gap-6 items-center">
+                    <div>
+                        <div class="section-kicker mb-5"><i data-lucide="badge-check" class="w-4 h-4"></i>Proof, Not Theater</div>
+                        <h2 class="text-3xl md:text-4xl font-bold">Real exposure, real tools, real technical development.</h2>
+                    </div>
+                    <p class="text-lg text-slatebrand-300 leading-relaxed">AARI is built around real exposure, real tools, and real technical development. Students do not just hear about AI, robotics, cloud, edge computing, and infrastructure. They see it, touch it, question it, and build with it.</p>
                 </div>
             </div>
         </section>
@@ -941,7 +1038,9 @@
                 <a href="#programs" class="hover:text-white transition-colors">Programs</a>
                 <a href="scholars.html" class="hover:text-white transition-colors">Scholarship</a>
                 <a href="#proof" class="hover:text-white transition-colors">Proof</a>
+                <a href="#aari-action" class="hover:text-white transition-colors">Action</a>
                 <a href="#impact" class="hover:text-white transition-colors">Impact</a>
+                <a href="impact.html" class="hover:text-white transition-colors">Gallery</a>
                 <a href="#leadership" class="hover:text-white transition-colors">Leadership</a>
                 <a href="#funders" class="hover:text-white transition-colors">Funders</a>
                 <a href="partners.html" class="hover:text-white transition-colors">Partners</a>

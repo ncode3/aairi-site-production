@@ -1,6 +1,10 @@
 {
   "routes": [
     {
+      "route": "/impact",
+      "rewrite": "/impact.html"
+    },
+    {
       "route": "/api/submit-inquiry",
       "methods": ["GET", "PUT", "PATCH", "DELETE", "OPTIONS", "TRACE", "CONNECT"],
       "statusCode": 404
