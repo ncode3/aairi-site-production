@@ -104,7 +104,8 @@ function normalizeMetric(entity) {
   const value = Number(entity.Value);
   const prefix = String(entity.Prefix || '');
   const suffix = String(entity.Suffix || '');
-  const display = `${prefix}${Number.isFinite(value) ? value : entity.Value}${suffix}`;
+  const displayCount = typeof entity.DisplayCount === 'string' ? entity.DisplayCount.trim() : '';
+  const display = displayCount || `${prefix}${Number.isFinite(value) ? value : entity.Value}${suffix}`;
   return {
     id: entity.rowKey,
     value,

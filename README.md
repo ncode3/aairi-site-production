@@ -128,10 +128,72 @@ Each row stores:
 - `Value`
 - `Prefix`
 - `Suffix`
+- `DisplayCount`
 - `DisplayOrder`
 - `Label`
 - `Description`
 - `UpdatedAt`
+
+`DisplayCount` is the admin-editable display string used by `/api/impact` when present. The older `Value`, `Prefix`, and `Suffix` fields remain in the table for compatibility and fallback.
+
+### Admin-Only Impact Metric Update Script
+
+The repository includes a local admin script at:
+
+```bash
+api/scripts/update-impact-metric.js
+```
+
+It updates only these rows in `AARIImpactMetrics` with `PartitionKey=impact`:
+
+- `active_projects`
+- `first_placement`
+- `footprint_sqft`
+- `partners_engaged`
+- `students_trained`
+- `workshops_delivered`
+
+Editable fields:
+
+- `DisplayCount`
+- `Description`
+- `UpdatedAt`
+
+The script does not expose a public write endpoint. It uses environment variables for Azure credentials and must be run by an operator with access to the storage account.
+
+Local setup:
+
+```bash
+cd api
+npm install
+export AARI_IMPACT_STORAGE_CONNECTION_STRING="<storage-account-connection-string>"
+```
+
+List current rows:
+
+```bash
+npm run impact:list
+```
+
+Update one metric:
+
+```bash
+npm run impact:update -- --row-key students_trained --display-count "42+" --description "Distinct students reached through AARI workshops, labs, and cohort programming."
+```
+
+Set an explicit timestamp:
+
+```bash
+npm run impact:update -- --row-key active_projects --display-count "6" --updated-at "2026-05-23T21:00:00Z"
+```
+
+If `--updated-at` is omitted, the script writes the current UTC time. After an update, wait up to 60 seconds for `/api/impact` cache to refresh.
+
+Deployment note:
+
+- The script is deployed with the repository for operator use, but it is not wired to a route.
+- Production read access still uses `/api/impact`.
+- Production write access remains local/admin-only through this script or the Azure Portal.
 
 ### Updating Impact Metrics in Azure Portal
 
@@ -142,7 +204,7 @@ Each row stores:
 5. Open `Tables`.
 6. Open `AARIImpactMetrics`.
 7. Select the row with `PartitionKey` set to `impact` and the metric `RowKey` you want to change.
-8. Update `Value`, `Prefix`, `Suffix`, and `UpdatedAt` as needed.
+8. Update `DisplayCount`, `Description`, and `UpdatedAt` as needed.
 9. Save the row.
 10. Wait up to 60 seconds for `/api/impact` edge cache to refresh.
 

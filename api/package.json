@@ -2,6 +2,10 @@
   "name": "aari-contact-api",
   "private": true,
   "version": "1.0.0",
+  "scripts": {
+    "impact:list": "node scripts/update-impact-metric.js --list",
+    "impact:update": "node scripts/update-impact-metric.js"
+  },
   "engines": {
     "node": "20.x"
   },
