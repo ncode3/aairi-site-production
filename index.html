@@ -20,7 +20,7 @@
     <meta property="og:url" content="https://atlanta-robotics.org/">
     <meta property="og:image" content="https://atlanta-robotics.org/images/nolan-headshot.jpg">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="theme-color" content="#020617">
+    <meta name="theme-color" content="#f8fafc">
     <link rel="icon" type="image/png" href="images/header-logo.png">
 
     <script src="https://cdn.tailwindcss.com"></script>
@@ -45,13 +45,37 @@
     <script src="https://unpkg.com/lucide@latest"></script>
 
     <style>
-        body { font-family: 'Inter', sans-serif; background: #020617; color: #f8fafc; }
+        body { font-family: 'Inter', sans-serif; background: #f8fafc; color: #0f172a; overflow-x: hidden; }
         .glass-panel {
-            background: rgba(15, 23, 42, 0.72);
+            background: rgba(255, 255, 255, 0.86);
             backdrop-filter: blur(14px);
-            border: 1px solid rgba(148, 163, 184, 0.16);
+            border: 1px solid rgba(15, 23, 42, 0.08);
+            box-shadow: 0 20px 55px rgba(15, 23, 42, 0.08);
         }
         .section-shell { max-width: 80rem; margin: 0 auto; padding-left: 1.5rem; padding-right: 1.5rem; }
+        main section.bg-navy-900 { background: #f1f5f9 !important; }
+        main .text-slatebrand-200,
+        main .text-slatebrand-300,
+        main .text-slatebrand-400 { color: #475569 !important; }
+        main .text-slatebrand-500 { color: #64748b !important; }
+        .bright-section {
+            position: relative;
+            background:
+                radial-gradient(circle at top left, rgba(59, 130, 246, 0.13), transparent 30%),
+                radial-gradient(circle at bottom right, rgba(34, 197, 94, 0.12), transparent 28%),
+                #f8fafc;
+        }
+        .maroon-band {
+            background:
+                linear-gradient(135deg, rgba(92, 18, 31, 0.95), rgba(15, 23, 42, 0.92)),
+                radial-gradient(circle at top right, rgba(251, 191, 36, 0.28), transparent 36%);
+            color: #fff;
+        }
+        .bright-card {
+            background: #fff;
+            border: 1px solid rgba(15, 23, 42, 0.08);
+            box-shadow: 0 18px 45px rgba(15, 23, 42, 0.08);
+        }
         .section-kicker {
             display: inline-flex;
             align-items: center;
@@ -59,15 +83,15 @@
             padding: 0.4rem 0.8rem;
             border-radius: 999px;
             border: 1px solid rgba(96, 165, 250, 0.28);
-            background: rgba(30, 41, 59, 0.72);
-            color: #93c5fd;
+            background: rgba(219, 234, 254, 0.86);
+            color: #1d4ed8;
             font-size: 0.75rem;
             font-weight: 700;
             letter-spacing: 0.06em;
             text-transform: uppercase;
         }
         .gradient-text {
-            background: linear-gradient(135deg, #f8fafc 0%, #93c5fd 100%);
+            background: linear-gradient(135deg, #1d4ed8 0%, #16a34a 48%, #f59e0b 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -81,6 +105,31 @@
             opacity: 1;
             transform: translateY(0);
         }
+        .reveal-sequence > * {
+            opacity: 0;
+            transform: translateY(18px);
+            transition: opacity 0.55s ease, transform 0.55s ease;
+        }
+        .reveal-sequence.visible > * {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-sequence.visible > *:nth-child(2) { transition-delay: 0.08s; }
+        .reveal-sequence.visible > *:nth-child(3) { transition-delay: 0.16s; }
+        .reveal-sequence.visible > *:nth-child(4) { transition-delay: 0.24s; }
+        .reveal-sequence.visible > *:nth-child(5) { transition-delay: 0.32s; }
+        .reveal-sequence.visible > *:nth-child(6) { transition-delay: 0.40s; }
+        .reveal-sequence.visible > *:nth-child(7) { transition-delay: 0.48s; }
+        .reveal-sequence.visible > *:nth-child(8) { transition-delay: 0.56s; }
+        .reveal-sequence.visible > *:nth-child(9) { transition-delay: 0.64s; }
+        .glass-panel .text-white,
+        .glass-panel h2,
+        .glass-panel h3,
+        .glass-panel h4 { color: #0f172a !important; }
+        .glass-panel .text-slatebrand-200,
+        .glass-panel .text-slatebrand-300,
+        .glass-panel .text-slatebrand-400 { color: #475569 !important; }
+        .glass-panel .text-slatebrand-500 { color: #64748b !important; }
         .doctrine-card, .lane-card, .proof-card, .metric-card, .profile-card, .trust-card, .fund-card, .contact-card, .action-card {
             transition: transform 0.28s ease, border-color 0.28s ease, box-shadow 0.28s ease;
         }
@@ -108,10 +157,10 @@
             border: 1px solid rgba(148,163,184,0.16);
             border-radius: 999px;
             padding: 0.5rem 0.85rem;
-            color: #cbd5e1;
+            color: #334155;
             font-size: 0.8rem;
             font-weight: 600;
-            background: rgba(15,23,42,0.65);
+            background: rgba(255,255,255,0.72);
         }
         .partner-carousel-viewport {
             overflow: hidden;
@@ -130,6 +179,27 @@
             min-height: 19rem;
             display: flex;
             flex-direction: column;
+            position: relative;
+            overflow: hidden;
+        }
+        .partner-story-card::after {
+            content: attr(data-role);
+            position: absolute;
+            inset: auto 1rem 1rem 1rem;
+            transform: translateY(115%);
+            opacity: 0;
+            transition: transform 0.25s ease, opacity 0.25s ease;
+            border-radius: 1rem;
+            padding: 0.8rem;
+            background: rgba(15, 23, 42, 0.92);
+            color: #f8fafc;
+            font-size: 0.78rem;
+            line-height: 1.45;
+        }
+        .partner-story-card:hover::after,
+        .partner-story-card:focus-within::after {
+            opacity: 1;
+            transform: translateY(0);
         }
         .partner-logo-box {
             width: 100%;
@@ -167,6 +237,60 @@
         .partner-arrow, .partner-dot {
             transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease, color 0.2s ease;
         }
+        .stack-card, .timeline-card, .field-card, .qual-stat {
+            transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+        }
+        .stack-card:hover, .stack-card:focus,
+        .timeline-card:hover, .field-card:hover, .qual-stat:hover {
+            transform: translateY(-5px);
+            border-color: rgba(37, 99, 235, 0.24);
+            box-shadow: 0 24px 60px rgba(37, 99, 235, 0.12);
+        }
+        .stack-card[aria-expanded="true"] {
+            background: linear-gradient(135deg, #ffffff 0%, #eff6ff 58%, #ecfdf5 100%);
+            border-color: rgba(22, 163, 74, 0.35);
+        }
+        .stack-detail {
+            display: grid;
+            grid-template-rows: 0fr;
+            transition: grid-template-rows 0.25s ease;
+        }
+        .stack-card[aria-expanded="true"] .stack-detail,
+        .stack-card:hover .stack-detail,
+        .stack-card:focus .stack-detail {
+            grid-template-rows: 1fr;
+        }
+        .stack-detail > div { overflow: hidden; }
+        .timeline-line {
+            background: linear-gradient(180deg, #2563eb, #16a34a, #f59e0b);
+        }
+        .photo-float {
+            transition: transform 0.45s ease, box-shadow 0.45s ease;
+        }
+        .photo-float:hover {
+            transform: scale(1.025) rotate(-0.4deg);
+            box-shadow: 0 28px 70px rgba(15, 23, 42, 0.18);
+        }
+        .nav-link { color: #334155; }
+        .nav-link:hover { color: #0f172a; }
+        nav.glass-panel {
+            background: rgba(255,255,255,0.88);
+            border-color: rgba(15,23,42,0.08);
+        }
+        #mobile-menu {
+            background: rgba(255,255,255,0.97) !important;
+            color: #0f172a;
+        }
+        #mobile-toggle { color: #0f172a; }
+        #mobile-menu a:not(.donate-cta) { color: #334155; }
+        input, select, textarea {
+            color: #0f172a !important;
+            background: rgba(255,255,255,0.88) !important;
+            border-color: rgba(15,23,42,0.14) !important;
+        }
+        input::placeholder, textarea::placeholder { color: #64748b !important; }
+        footer .glass-panel,
+        footer { color: #f8fafc; }
         .partner-arrow:hover {
             transform: translateY(-1px);
         }
@@ -181,6 +305,8 @@
         @media (max-width: 640px) {
             .partner-slide { flex-basis: 100%; }
             .partner-story-card { min-height: 18rem; }
+            .section-shell { padding-left: 1rem; padding-right: 1rem; }
+            h1 { overflow-wrap: anywhere; }
         }
         .intake-honeypot {
             position: absolute;
@@ -215,14 +341,14 @@
         }
         .form-error.visible { display: block; }
         .nav-link {
-            color: #cbd5e1;
+            color: #334155;
             font-size: 0.75rem;
             font-weight: 700;
             letter-spacing: 0.01em;
             white-space: nowrap;
             transition: color 0.2s ease;
         }
-        .nav-link:hover { color: #fff; }
+        .nav-link:hover { color: #0f172a; }
         .donate-cta {
             position: relative;
             overflow: hidden;
@@ -283,6 +409,18 @@
             object-fit: contain;
         }
         @media (min-width: 1024px) { .hero-grid { grid-template-columns: 1.25fr 0.75fr; align-items: center; } }
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                scroll-behavior: auto !important;
+                transition-duration: 0.01ms !important;
+            }
+            .fade-in-up, .reveal-sequence > * {
+                opacity: 1 !important;
+                transform: none !important;
+            }
+        }
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: #020617; }
         ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 999px; }
@@ -351,8 +489,8 @@
     </nav>
 
     <main id="top">
-        <section class="relative pt-32 pb-20 md:pt-44 md:pb-28 overflow-hidden">
-            <div class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top,_rgba(59,130,246,0.16),_transparent_34%),radial-gradient(circle_at_bottom_right,_rgba(15,23,42,0.9),_transparent_45%)]"></div>
+        <section class="bright-section relative pt-32 pb-20 md:pt-44 md:pb-28 overflow-hidden">
+            <div class="absolute inset-0 -z-10 bg-[linear-gradient(135deg,_rgba(255,255,255,0.9),_rgba(239,246,255,0.88)_45%,_rgba(236,253,245,0.72))]"></div>
             <div class="section-shell hero-grid">
                 <div class="max-w-4xl">
                     <div class="section-kicker mb-6">
@@ -360,41 +498,78 @@
                         National workforce initiative
                     </div>
                     <h1 class="text-5xl md:text-7xl font-extrabold leading-tight tracking-tight mb-6">The next civil rights gap is <span class="gradient-text">infrastructure access.</span></h1>
-                    <p class="text-xl md:text-2xl text-slatebrand-300 leading-relaxed max-w-3xl mb-8">AARI trains HBCU students and underrepresented learners to operate the full AI infrastructure stack, from energy and chips to data centers, GPUs, edge robotics, quantum systems, and production AI.</p>
+                    <p class="text-xl md:text-2xl text-slate-700 leading-relaxed max-w-3xl mb-8">AARI trains HBCU students and underrepresented learners to operate the full AI infrastructure stack, from energy and chips to data centers, GPUs, edge robotics, quantum systems, and production AI.</p>
                     <div class="flex flex-col sm:flex-row gap-4 mb-8">
-                        <a href="#contact" class="bg-white text-navy-950 font-semibold px-7 py-4 rounded-xl hover:bg-slate-200 transition-colors text-center">Partner With AARI</a>
-                        <a href="#proof" class="glass-panel text-white font-semibold px-7 py-4 rounded-xl hover:bg-white/5 transition-colors text-center">View Our Work</a>
+                        <a href="#contact" class="bg-navy-950 text-white font-semibold px-7 py-4 rounded-xl hover:bg-navy-800 transition-colors text-center">Partner With AARI</a>
+                        <a href="#stack" class="glass-panel font-semibold px-7 py-4 rounded-xl hover:bg-blue-50 transition-colors text-center">Explore the Stack</a>
                         <a href="donate.html" class="donate-cta font-extrabold px-7 py-4 rounded-xl text-center inline-flex items-center justify-center gap-2">
                             <i data-lucide="heart" class="w-5 h-5"></i>
                             Donate
                         </a>
                     </div>
                     <div class="flex flex-col sm:flex-row gap-4 mb-8">
-                        <a href="funder-brief.html" class="text-sm text-slatebrand-200 underline underline-offset-4 hover:text-white transition-colors">View Funder Brief</a>
-                        <a href="partner-brief.html" class="text-sm text-slatebrand-200 underline underline-offset-4 hover:text-white transition-colors">View Partner Brief</a>
+                        <a href="funder-brief.html" class="text-sm text-blue-700 underline underline-offset-4 hover:text-blue-900 transition-colors">View Funder Brief</a>
+                        <a href="partner-brief.html" class="text-sm text-blue-700 underline underline-offset-4 hover:text-blue-900 transition-colors">View Partner Brief</a>
                     </div>
                     <div class="grid md:grid-cols-3 gap-4 text-sm">
                         <div class="glass-panel rounded-2xl p-4 border border-white/10">
-                            <p class="text-slatebrand-500 uppercase tracking-[0.2em] text-[11px] mb-2">Focus</p>
-                            <p class="text-slatebrand-200">Infrastructure-first AI, not app-first AI.</p>
+                            <p class="text-slate-500 uppercase tracking-[0.2em] text-[11px] mb-2">Focus</p>
+                            <p class="text-slate-700">Infrastructure-first AI, not app-first AI.</p>
                         </div>
                         <div class="glass-panel rounded-2xl p-4 border border-white/10">
-                            <p class="text-slatebrand-500 uppercase tracking-[0.2em] text-[11px] mb-2">Cohort Base</p>
-                            <p class="text-slatebrand-200">HBCU students, AUC learners, and underrepresented technical talent.</p>
+                            <p class="text-slate-500 uppercase tracking-[0.2em] text-[11px] mb-2">Cohort Base</p>
+                            <p class="text-slate-700">HBCU students, AUC learners, and underrepresented technical talent.</p>
                         </div>
                         <div class="glass-panel rounded-2xl p-4 border border-white/10">
-                            <p class="text-slatebrand-500 uppercase tracking-[0.2em] text-[11px] mb-2">Outcome</p>
-                            <p class="text-slatebrand-200">Operators who can run the systems underneath modern AI.</p>
+                            <p class="text-slate-500 uppercase tracking-[0.2em] text-[11px] mb-2">Outcome</p>
+                            <p class="text-slate-700">Operators who can run the systems underneath modern AI.</p>
                         </div>
                     </div>
                 </div>
                 <aside class="glass-panel rounded-[2rem] p-6 md:p-8 border border-white/10">
                     <img src="images/nolan-headshot.jpg" alt="Nolan S. Code, founder of AARI" class="w-full rounded-[1.5rem] object-cover aspect-[4/5] border border-white/10">
                     <div class="mt-6 soft-rule pt-5">
-                        <p class="text-xs uppercase tracking-[0.24em] text-slatebrand-500 mb-3">Founder thesis</p>
-                        <p class="text-lg text-slatebrand-200 leading-relaxed">AI literacy without infrastructure literacy creates dependency. AARI trains students to operate what others only consume.</p>
+                        <p class="text-xs uppercase tracking-[0.24em] text-slate-500 mb-3">Founder thesis</p>
+                        <p class="text-lg text-slate-700 leading-relaxed">AI literacy without infrastructure literacy creates dependency. AARI trains students to operate what others only consume.</p>
                     </div>
                 </aside>
+            </div>
+        </section>
+
+        <section id="stack" class="py-20 md:py-24 bg-white scroll-mt-24">
+            <div class="section-shell">
+                <div class="grid lg:grid-cols-[0.85fr_1.15fr] gap-10 items-end mb-12">
+                    <div>
+                        <div class="section-kicker mb-5"><i data-lucide="layers-3" class="w-4 h-4"></i>The AARI Infrastructure Stack</div>
+                        <h2 class="text-3xl md:text-5xl font-extrabold leading-tight mb-4">AI is not one layer. It is a living stack.</h2>
+                    </div>
+                    <p class="text-lg text-slate-700 leading-relaxed">AARI teaches the systems beneath AI, from power and compute to edge deployment and embodied robotics. As students move through the stack, they learn how each layer shapes what can be built.</p>
+                </div>
+                <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 reveal-sequence" data-reveal-sequence>
+                    <button type="button" class="stack-card text-left bright-card rounded-3xl p-5" aria-expanded="false"><span class="text-xs font-bold text-amber-600 uppercase tracking-[0.18em]">01</span><h3 class="mt-3 text-xl font-bold">Energy</h3><div class="stack-detail"><div><p class="mt-3 text-sm text-slate-600">Power, cooling, resiliency, and the operating reality behind compute.</p></div></div></button>
+                    <button type="button" class="stack-card text-left bright-card rounded-3xl p-5" aria-expanded="false"><span class="text-xs font-bold text-amber-600 uppercase tracking-[0.18em]">02</span><h3 class="mt-3 text-xl font-bold">Data Centers</h3><div class="stack-detail"><div><p class="mt-3 text-sm text-slate-600">Critical environments, uptime, facilities, and AI-ready operations.</p></div></div></button>
+                    <button type="button" class="stack-card text-left bright-card rounded-3xl p-5" aria-expanded="false"><span class="text-xs font-bold text-amber-600 uppercase tracking-[0.18em]">03</span><h3 class="mt-3 text-xl font-bold">Networking</h3><div class="stack-detail"><div><p class="mt-3 text-sm text-slate-600">Connectivity, security, traffic flow, and distributed systems fundamentals.</p></div></div></button>
+                    <button type="button" class="stack-card text-left bright-card rounded-3xl p-5" aria-expanded="false"><span class="text-xs font-bold text-amber-600 uppercase tracking-[0.18em]">04</span><h3 class="mt-3 text-xl font-bold">Cloud</h3><div class="stack-detail"><div><p class="mt-3 text-sm text-slate-600">Storage, deployment, identity, observability, and scalable training environments.</p></div></div></button>
+                    <button type="button" class="stack-card text-left bright-card rounded-3xl p-5" aria-expanded="false"><span class="text-xs font-bold text-amber-600 uppercase tracking-[0.18em]">05</span><h3 class="mt-3 text-xl font-bold">GPUs</h3><div class="stack-detail"><div><p class="mt-3 text-sm text-slate-600">Accelerated compute, edge hardware, and model performance tradeoffs.</p></div></div></button>
+                    <button type="button" class="stack-card text-left bright-card rounded-3xl p-5" aria-expanded="false"><span class="text-xs font-bold text-emerald-600 uppercase tracking-[0.18em]">06</span><h3 class="mt-3 text-xl font-bold">Edge AI</h3><div class="stack-detail"><div><p class="mt-3 text-sm text-slate-600">Local inference, sensors, latency, and deployment outside the data center.</p></div></div></button>
+                    <button type="button" class="stack-card text-left bright-card rounded-3xl p-5" aria-expanded="false"><span class="text-xs font-bold text-emerald-600 uppercase tracking-[0.18em]">07</span><h3 class="mt-3 text-xl font-bold">Robotics</h3><div class="stack-detail"><div><p class="mt-3 text-sm text-slate-600">Embodied systems, autonomy, controls, perception, and physical-world testing.</p></div></div></button>
+                    <button type="button" class="stack-card text-left bright-card rounded-3xl p-5" aria-expanded="false"><span class="text-xs font-bold text-blue-600 uppercase tracking-[0.18em]">08</span><h3 class="mt-3 text-xl font-bold">Quantum</h3><div class="stack-detail"><div><p class="mt-3 text-sm text-slate-600">Quantum literacy, hybrid workflows, and next-generation compute awareness.</p></div></div></button>
+                    <button type="button" class="stack-card text-left bright-card rounded-3xl p-5 sm:col-span-2 xl:col-span-2" aria-expanded="false"><span class="text-xs font-bold text-blue-600 uppercase tracking-[0.18em]">09</span><h3 class="mt-3 text-xl font-bold">Production AI</h3><div class="stack-detail"><div><p class="mt-3 text-sm text-slate-600">The final layer: deployed systems students can explain, monitor, improve, and defend.</p></div></div></button>
+                </div>
+            </div>
+        </section>
+
+        <section id="access" class="py-20 md:py-24 bright-section scroll-mt-24">
+            <div class="section-shell grid lg:grid-cols-[1fr_1fr] gap-10 items-center">
+                <div>
+                    <div class="section-kicker mb-5"><i data-lucide="building-2" class="w-4 h-4"></i>Infrastructure Access Statement</div>
+                    <h2 class="text-3xl md:text-5xl font-extrabold leading-tight mb-5">Students cannot become operators in rooms they never enter.</h2>
+                    <p class="text-lg text-slate-700 leading-relaxed">AARI connects AUC and HBCU learners to labs, data centers, cloud systems, robotics work, partner workshops, and demo environments so the infrastructure behind AI becomes visible, teachable, and buildable.</p>
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <img src="images/aari-action/garage-data-center-live-systems.jpg" alt="Students observing live data center systems" class="photo-float rounded-3xl object-cover aspect-[4/5] w-full" loading="lazy">
+                    <img src="images/aari-action/morehouse-technical-lab-session.jpg" alt="Morehouse technical lab session" class="photo-float rounded-3xl object-cover aspect-[4/5] w-full mt-10" loading="lazy">
+                </div>
             </div>
         </section>
 
@@ -472,6 +647,82 @@
             </div>
         </section>
 
+        <section id="pipeline" class="py-20 md:py-24 bg-white scroll-mt-24">
+            <div class="section-shell">
+                <div class="max-w-4xl mb-14">
+                    <div class="section-kicker mb-5"><i data-lucide="route" class="w-4 h-4"></i>From Exposure to Execution</div>
+                    <h2 class="text-3xl md:text-5xl font-extrabold mb-4">AARI turns access into technical agency.</h2>
+                    <p class="text-lg text-slate-700">The pipeline is intentionally sequential: students first see real technical environments, then learn the stack, build systems, prove the work, and move toward market outcomes.</p>
+                </div>
+                <div class="relative">
+                    <div class="hidden md:block absolute left-1/2 top-4 bottom-4 w-1 rounded-full timeline-line -translate-x-1/2"></div>
+                    <div class="space-y-8">
+                        <article class="timeline-card bright-card rounded-3xl p-6 md:w-[47%]">
+                            <p class="text-sm font-extrabold text-blue-700 uppercase tracking-[0.2em]">01</p>
+                            <h3 class="mt-3 text-2xl font-bold">See the Room</h3>
+                            <p class="mt-3 text-slate-600">Students visit labs, data centers, corporate campuses, and technical environments.</p>
+                        </article>
+                        <article class="timeline-card bright-card rounded-3xl p-6 md:w-[47%] md:ml-auto">
+                            <p class="text-sm font-extrabold text-emerald-700 uppercase tracking-[0.2em]">02</p>
+                            <h3 class="mt-3 text-2xl font-bold">Learn the Stack</h3>
+                            <p class="mt-3 text-slate-600">Students study cloud, robotics, edge AI, infrastructure, networking, and quantum foundations.</p>
+                        </article>
+                        <article class="timeline-card bright-card rounded-3xl p-6 md:w-[47%]">
+                            <p class="text-sm font-extrabold text-amber-700 uppercase tracking-[0.2em]">03</p>
+                            <h3 class="mt-3 text-2xl font-bold">Build the System</h3>
+                            <p class="mt-3 text-slate-600">Students work on applied labs, demos, and product-oriented projects.</p>
+                        </article>
+                        <article class="timeline-card bright-card rounded-3xl p-6 md:w-[47%] md:ml-auto">
+                            <p class="text-sm font-extrabold text-blue-700 uppercase tracking-[0.2em]">04</p>
+                            <h3 class="mt-3 text-2xl font-bold">Prove the Work</h3>
+                            <p class="mt-3 text-slate-600">Students present, demo, benchmark, and explain what they built.</p>
+                        </article>
+                        <article class="timeline-card bright-card rounded-3xl p-6 md:w-[47%]">
+                            <p class="text-sm font-extrabold text-emerald-700 uppercase tracking-[0.2em]">05</p>
+                            <h3 class="mt-3 text-2xl font-bold">Enter the Market</h3>
+                            <p class="mt-3 text-slate-600">Students move toward internships, jobs, ventures, research, and leadership roles.</p>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="operator-pipeline" class="maroon-band py-16 md:py-20 scroll-mt-24">
+            <div class="section-shell">
+                <div class="grid lg:grid-cols-[0.85fr_1.15fr] gap-10 items-center">
+                    <div>
+                        <div class="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] text-amber-200 mb-5">
+                            <i data-lucide="activity" class="w-4 h-4"></i>
+                            Building the Operator Pipeline
+                        </div>
+                        <h2 class="text-3xl md:text-5xl font-extrabold leading-tight">A bright, AUC-rooted model for infrastructure fluency.</h2>
+                    </div>
+                    <div class="grid sm:grid-cols-2 gap-4 reveal-sequence" data-reveal-sequence>
+                        <article class="qual-stat rounded-3xl border border-white/15 bg-white/10 p-5">
+                            <p class="text-2xl font-extrabold text-amber-200">AUC-centered</p>
+                            <p class="mt-2 text-sm text-white/78">Built from Atlanta’s HBCU talent base outward.</p>
+                        </article>
+                        <article class="qual-stat rounded-3xl border border-white/15 bg-white/10 p-5">
+                            <p class="text-2xl font-extrabold text-emerald-200">Cloud-to-edge</p>
+                            <p class="mt-2 text-sm text-white/78">Students connect cloud systems to devices, robotics, and live environments.</p>
+                        </article>
+                        <article class="qual-stat rounded-3xl border border-white/15 bg-white/10 p-5">
+                            <p class="text-2xl font-extrabold text-blue-200">Lab-based</p>
+                            <p class="mt-2 text-sm text-white/78">Robotics and AI infrastructure labs reinforce hands-on execution.</p>
+                        </article>
+                        <article class="qual-stat rounded-3xl border border-white/15 bg-white/10 p-5">
+                            <p class="text-2xl font-extrabold text-amber-200">Partner-exposed</p>
+                            <p class="mt-2 text-sm text-white/78">Students see corporate, data center, and ecosystem pathways early.</p>
+                        </article>
+                        <article class="qual-stat rounded-3xl border border-white/15 bg-white/10 p-5 sm:col-span-2">
+                            <p class="text-2xl font-extrabold text-emerald-200">Demo pipeline</p>
+                            <p class="mt-2 text-sm text-white/78">Students build toward visible demos, technical explanations, and market-ready proof.</p>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section id="problem" class="py-20 md:py-24 bg-navy-900 scroll-mt-24">
             <div class="section-shell grid lg:grid-cols-[0.8fr_1.2fr] gap-10 items-start">
                 <div>
@@ -497,7 +748,7 @@
         <section id="doctrine" class="py-20 md:py-24 scroll-mt-24">
             <div class="section-shell">
                 <div class="max-w-4xl mb-12">
-                    <div class="section-kicker mb-5"><i data-lucide="workflow" class="w-4 h-4"></i>AARI doctrine</div>
+                    <div class="section-kicker mb-5"><i data-lucide="workflow" class="w-4 h-4"></i>Our Operating Model</div>
                     <h2 class="text-3xl md:text-4xl font-bold mb-4">Energy &rarr; Chips &rarr; Infrastructure &rarr; Models &rarr; Applications</h2>
                     <p class="text-lg text-slatebrand-300 max-w-3xl">This is the AARI learning chain. Students learn how AI systems are powered, built, deployed, secured, optimized, and operated.</p>
                 </div>
@@ -605,9 +856,9 @@
                 <div class="glass-panel rounded-3xl p-6 md:p-8 border border-white/10" data-partner-carousel>
                     <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-7">
                         <div class="max-w-3xl">
-                            <p class="text-xs uppercase tracking-[0.22em] text-electric-400 mb-3">Our Partners</p>
+                            <p class="text-xs uppercase tracking-[0.22em] text-electric-400 mb-3">Ecosystem / Partner Network</p>
                             <h3 class="text-3xl md:text-4xl font-bold mb-4">Our Partners</h3>
-                            <p class="text-slatebrand-300 leading-relaxed">AARI works across the infrastructure stack with partners in cloud, edge AI, robotics, data centers, quantum, education, and workforce development.</p>
+                            <p class="text-slatebrand-300 leading-relaxed">AARI groups partners by the role they play in the infrastructure pipeline: facilities, cloud, AI compute, robotics, academics, community, and giving platforms.</p>
                         </div>
                         <div class="flex items-center gap-3">
                             <button type="button" class="partner-arrow inline-flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-slatebrand-200 hover:border-electric-400/50 hover:text-white" data-carousel-prev aria-label="Previous partner">
@@ -820,6 +1071,78 @@
                             <h3 class="text-xl font-semibold mb-3">Curriculum, technical staff, and program operations</h3>
                             <p class="text-slatebrand-300 leading-relaxed">The people, documentation, and operating support required to convert a promising cohort into a repeatable workforce pipeline.</p>
                         </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="field-notes" class="py-20 md:py-24 bg-white scroll-mt-24">
+            <div class="section-shell">
+                <div class="grid lg:grid-cols-[0.85fr_1.15fr] gap-8 items-end mb-12">
+                    <div>
+                        <div class="section-kicker mb-5"><i data-lucide="newspaper" class="w-4 h-4"></i>Field Notes</div>
+                        <h2 class="text-3xl md:text-5xl font-extrabold leading-tight">Latest work from the AARI ecosystem.</h2>
+                    </div>
+                    <p class="text-lg text-slate-700 leading-relaxed">AARI’s story is told through workshops, lab work, student demos, and partner exposure, not static claims. These field notes show where the operator pipeline is moving next.</p>
+                </div>
+                <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-6 reveal-sequence" data-reveal-sequence>
+                    <article class="field-card bright-card rounded-3xl overflow-hidden">
+                        <img src="images/aari-action/aari-cohort-microsoft-atlanta.jpg" alt="AARI students at Microsoft Atlanta" class="w-full aspect-[16/10] object-cover" loading="lazy">
+                        <div class="p-6">
+                            <p class="text-xs font-extrabold text-blue-700 uppercase tracking-[0.18em]">Workshop</p>
+                            <h3 class="mt-3 text-2xl font-bold">Microsoft Garage student workshop</h3>
+                            <p class="mt-3 text-sm text-slate-600">Students engaged the systems mindset behind AI, cloud, quantum literacy, and applied technical execution.</p>
+                        </div>
+                    </article>
+                    <article class="field-card bright-card rounded-3xl overflow-hidden">
+                        <img src="images/aari-action/sih-development-screenshot.jpg" alt="Smart Illuminating Helmet development review" class="w-full aspect-[16/10] object-cover" loading="lazy">
+                        <div class="p-6">
+                            <p class="text-xs font-extrabold text-emerald-700 uppercase tracking-[0.18em]">Physical AI</p>
+                            <h3 class="mt-3 text-2xl font-bold">Smart Illuminating Helmet development</h3>
+                            <p class="mt-3 text-sm text-slate-600">The SIH workstream helps students connect sensors, edge intelligence, safety, and real product constraints.</p>
+                        </div>
+                    </article>
+                    <article class="field-card bright-card rounded-3xl overflow-hidden">
+                        <img src="images/aari-action/garage-data-center-work-session.jpg" alt="Garage Data Center lab work" class="w-full aspect-[16/10] object-cover" loading="lazy">
+                        <div class="p-6">
+                            <p class="text-xs font-extrabold text-amber-700 uppercase tracking-[0.18em]">Infrastructure</p>
+                            <h3 class="mt-3 text-2xl font-bold">Garage Data Center lab work</h3>
+                            <p class="mt-3 text-sm text-slate-600">Students see how compute environments, operations, and data center realities shape production AI.</p>
+                        </div>
+                    </article>
+                    <article class="field-card bright-card rounded-3xl p-6">
+                        <p class="text-xs font-extrabold text-blue-700 uppercase tracking-[0.18em]">Quantum</p>
+                        <h3 class="mt-3 text-2xl font-bold">Quantum study group</h3>
+                        <p class="mt-3 text-sm text-slate-600">AARI’s quantum pathway introduces hybrid thinking, compute literacy, and future-ready technical vocabulary.</p>
+                        <a href="impact.html" class="mt-5 inline-flex text-sm font-bold text-blue-700 hover:text-blue-900">Learn more</a>
+                    </article>
+                    <article class="field-card bright-card rounded-3xl p-6">
+                        <p class="text-xs font-extrabold text-emerald-700 uppercase tracking-[0.18em]">Curriculum</p>
+                        <h3 class="mt-3 text-2xl font-bold">Robotics and edge AI curriculum</h3>
+                        <p class="mt-3 text-sm text-slate-600">Hands-on training connects robotics, inference, data, and deployment discipline into one learning model.</p>
+                        <a href="#programs" class="mt-5 inline-flex text-sm font-bold text-blue-700 hover:text-blue-900">View programs</a>
+                    </article>
+                    <article class="field-card bright-card rounded-3xl p-6">
+                        <p class="text-xs font-extrabold text-amber-700 uppercase tracking-[0.18em]">Demo Pipeline</p>
+                        <h3 class="mt-3 text-2xl font-bold">Upcoming demo day / pitch competition</h3>
+                        <p class="mt-3 text-sm text-slate-600">The next milestone is giving students a visible room to demo, explain, and defend what they built.</p>
+                        <a href="#contact" class="mt-5 inline-flex text-sm font-bold text-blue-700 hover:text-blue-900">Partner with AARI</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="cta" class="py-16 md:py-20 bright-section scroll-mt-24">
+            <div class="section-shell">
+                <div class="rounded-[2rem] bg-navy-950 p-8 md:p-12 text-white grid lg:grid-cols-[1fr_auto] gap-8 items-center overflow-hidden relative">
+                    <div class="absolute -right-20 -top-20 h-56 w-56 rounded-full bg-emerald-400/20 blur-3xl"></div>
+                    <div class="relative">
+                        <p class="text-xs uppercase tracking-[0.22em] text-amber-300 font-bold mb-4">Call to Action</p>
+                        <h2 class="text-3xl md:text-5xl font-extrabold leading-tight">Help AARI build the infrastructure access layer for Atlanta’s next operators.</h2>
+                    </div>
+                    <div class="relative flex flex-col sm:flex-row lg:flex-col gap-4">
+                        <a href="#contact" class="bg-white text-navy-950 font-semibold px-7 py-4 rounded-xl hover:bg-slate-200 transition-colors text-center">Partner With AARI</a>
+                        <a href="donate.html" class="donate-cta font-extrabold px-7 py-4 rounded-xl text-center inline-flex items-center justify-center gap-2"><i data-lucide="heart" class="w-5 h-5"></i>Donate</a>
                     </div>
                 </div>
             </div>
@@ -1085,98 +1408,142 @@
             });
         });
 
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const animateMetricValue = (card) => {
+            if (prefersReducedMotion || card.dataset.metricAnimated === 'true') return;
+            const span = card.querySelector('[id^="metric-"]');
+            if (!span) return;
+            const finalText = span.textContent.trim();
+            const numberMatch = finalText.match(/[\d,.]+/);
+            if (!numberMatch) return;
+            const finalNumber = Number(numberMatch[0].replace(/,/g, ''));
+            if (!Number.isFinite(finalNumber)) return;
+            const prefix = finalText.slice(0, numberMatch.index);
+            const suffix = finalText.slice((numberMatch.index || 0) + numberMatch[0].length);
+            const duration = 900;
+            const startedAt = performance.now();
+            card.dataset.metricAnimated = 'true';
+            const tick = (now) => {
+                const progress = Math.min((now - startedAt) / duration, 1);
+                const eased = 1 - Math.pow(1 - progress, 3);
+                span.textContent = `${prefix}${Math.round(finalNumber * eased).toLocaleString()}${suffix}`;
+                if (progress < 1) requestAnimationFrame(tick);
+                else span.textContent = finalText;
+            };
+            requestAnimationFrame(tick);
+        };
+
         const observer = new IntersectionObserver((entries) => {
             entries.forEach((entry) => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('visible');
+                    if (entry.target.classList.contains('metric-card')) {
+                        animateMetricValue(entry.target);
+                    }
                     observer.unobserve(entry.target);
                 }
             });
         }, { threshold: 0.12 });
-        document.querySelectorAll('.glass-panel, .doctrine-card, .lane-card, .proof-card, .metric-card, .profile-card, .trust-card, .fund-card').forEach((el) => {
+        document.querySelectorAll('.glass-panel, .doctrine-card, .lane-card, .proof-card, .metric-card, .profile-card, .trust-card, .fund-card, .stack-card, .timeline-card, .field-card, .qual-stat, [data-reveal-sequence]').forEach((el) => {
             el.classList.add('fade-in-up');
             observer.observe(el);
+        });
+
+        document.querySelectorAll('.stack-card').forEach((card) => {
+            card.addEventListener('click', () => {
+                const expanded = card.getAttribute('aria-expanded') === 'true';
+                document.querySelectorAll('.stack-card[aria-expanded="true"]').forEach((openCard) => {
+                    if (openCard !== card) openCard.setAttribute('aria-expanded', 'false');
+                });
+                card.setAttribute('aria-expanded', String(!expanded));
+            });
+            card.addEventListener('keydown', (event) => {
+                if (event.key === 'Enter' || event.key === ' ') {
+                    event.preventDefault();
+                    card.click();
+                }
+            });
         });
 
         const partnerEcosystem = [
             {
                 name: 'NVIDIA',
-                category: 'Strategic Anchor',
+                category: 'Cloud and AI Partners',
                 status: 'Active - relationship deepening',
                 role: "Supports AARI's compute, CUDA-Q, Jetson edge AI, Omniverse, and quantum curriculum pathway.",
                 logo: 'images/logo-nvidia.png'
             },
             {
                 name: 'Microsoft',
-                category: 'Strategic Anchor',
+                category: 'Cloud and AI Partners',
                 status: 'Active - workshop delivered',
                 role: "Microsoft Garage hosted AARI's VQE workshop; Azure Quantum is part of the hybrid quantum-to-edge learning pipeline.",
                 logo: 'images/logo-microsoft.webp'
             },
             {
                 name: 'Red Hat',
-                category: 'Strategic Anchor',
+                category: 'Cloud and AI Partners',
                 status: 'Active - internal champion in place',
                 role: 'Supports open infrastructure learning across OpenShift, Linux, containers, automation, and certification pathways.',
                 logo: 'images/logo-redhat.png'
             },
             {
                 name: 'AWS',
-                category: 'Strategic Anchor',
+                category: 'Cloud and AI Partners',
                 status: 'Active - alliance accepted',
                 role: "Supports AARI's cloud and ML pathway through AWS-MLU alignment, lab infrastructure, and Nexus deployment patterns."
             },
             {
                 name: 'QTS Data Centers',
-                category: 'Strategic Anchor',
+                category: 'Infrastructure Partners',
                 status: 'Active - Phase 1 pending',
                 role: "Supports AARI's data center workforce pathway and critical operations fellowship strategy.",
                 logo: 'images/logo-qts.png'
             },
             {
                 name: 'Morehouse College',
-                category: 'Strategic Anchor (Academic)',
+                category: 'Academic Partners',
                 status: 'Active - anchor institution',
                 role: "Core academic anchor for AARI's AUC student pipeline, faculty collaboration, and hybrid quantum curriculum.",
                 logo: 'images/logo-morehouse.png'
             },
             {
                 name: 'Cisco',
-                category: 'Pilot Partner',
+                category: 'Infrastructure Partners',
                 status: 'Closed - funded',
                 role: 'Funded AARI through a $25K community grant and validates the networking layer of the infrastructure model.',
                 logo: 'images/logo-cisco.svg'
             },
             {
                 name: 'Rose-Hulman Institute of Technology',
-                category: 'Pilot Partner (Academic)',
+                category: 'Academic Partners',
                 status: 'Active - Co-PI engaged',
                 role: "Adds nationally recognized robotics curriculum depth through Dr. Carlotta A. Berry's NSF Co-PI engagement.",
                 logo: 'images/logo-rose-hulman.svg'
             },
             {
                 name: 'ATDC / Georgia Tech',
-                category: 'Community Sponsor',
+                category: 'Community and Ecosystem Partners',
                 status: 'Active - ongoing',
                 role: "Connects AARI to Atlanta's tech ecosystem and supports curriculum review through the ATDC network.",
                 logo: 'images/logo-atdc.webp'
             },
             {
                 name: 'Google Cloud',
-                category: 'Community Sponsor',
+                category: 'Cloud and AI Partners',
                 status: 'Early - partnership established',
                 role: "Supports AARI's multi-cloud posture and future AI services, credits, and lab integration pathways.",
                 logo: 'images/logo-google-cloud.png'
             },
             {
                 name: 'Smart Illuminating Helmet',
-                category: 'Equity Advisory',
+                category: 'Robotics and Edge Partners',
                 status: 'Active - advisory relationship',
                 role: "Extends AARI's edge AI methodology into commercial hardware, telemetry, and Jetson-enabled proof-of-concept work."
             },
             {
                 name: 'Benevity',
-                category: 'Platform',
+                category: 'Community and Ecosystem Partners',
                 status: 'Active - approved',
                 role: 'Enables corporate matching and donor platform access across Microsoft, NVIDIA, AWS, and partner employers.',
                 logo: 'images/logo-benevity.svg'
@@ -1218,7 +1585,7 @@
                             : `<div class="partner-text-mark"><span>${name}</span></div>`;
                         return `
                             <article class="partner-slide" aria-label="${name}, ${category}">
-                                <div class="partner-story-card glass-panel rounded-3xl p-5 border border-white/10">
+                                <div class="partner-story-card glass-panel rounded-3xl p-5 border border-white/10" tabindex="0" data-role="${role}">
                                     ${mark}
                                     <p class="mt-5 text-xs uppercase tracking-[0.2em] text-electric-400 font-bold">${category}</p>
                                     <p class="mt-2 text-xs text-slatebrand-500">${escapePartnerText(partner.status || '')}</p>
