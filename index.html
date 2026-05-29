@@ -432,7 +432,10 @@
         <div class="max-w-[92rem] mx-auto px-6 h-20 flex items-center justify-between gap-6">
             <a href="#top" class="flex items-center gap-3">
                 <div class="bg-white/90 p-1.5 rounded-lg">
-                    <img src="images/header-logo.png" alt="AARI logo" class="site-logo h-10 w-auto object-contain" onerror="this.onerror=null;this.src='/images/header-logo.png';">
+                    <picture>
+                        <source media="(max-width: 767px)" srcset="images/header-logo-mobile.png">
+                        <img src="images/header-logo.png" alt="AARI logo" class="site-logo h-10 w-auto object-contain" onerror="this.onerror=null;this.src='/images/header-logo-mobile.png';">
+                    </picture>
                 </div>
                 <div class="hidden 2xl:block">
                     <p class="text-sm font-semibold text-white">Atlanta AI &amp; Robotics Initiative</p>
