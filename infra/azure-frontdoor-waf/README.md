@@ -1,5 +1,7 @@
 # Azure Front Door WAF
 
+> Cost status: do not redeploy this stack by default. The May 2026 website cost audit found that `afd-aari-website-prod` on `Premium_AzureFrontDoor` was responsible for about `$120.24` of `$122.15` month-to-date website spend. The production cost-control path is to route DNS directly to Azure Static Web Apps and delete this Front Door profile unless AARI intentionally approves paid WAF/edge protection.
+
 This template puts Azure Front Door Premium in front of the Azure Static Web App and attaches an Azure WAF policy.
 
 It adds:
