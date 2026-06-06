@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17997086735"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-17997086735');
+    </script>
+    <script src="assets/js/analytics-config.js"></script>
+    <script src="assets/js/analytics.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fund AI Infrastructure Access | Atlanta AI &amp; Robotics Initiative</title>
+    <meta name="description" content="Fund AARI's AI infrastructure access work for HBCU students, underrepresented learners, robotics, edge AI, data centers, cloud, quantum, and workforce development.">
+    <meta property="og:title" content="Fund AI Infrastructure Access | AARI">
+    <meta property="og:description" content="AI wealth is being created now. AARI is making sure Black students and underrepresented learners have access to the infrastructure behind that wealth.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://atlanta-robotics.org/fund-ai-access.html">
+    <meta property="og:image" content="https://atlanta-robotics.org/images/aari-action/aari-cohort-microsoft-atlanta.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" type="image/png" href="images/header-logo.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: { 950: '#020617', 900: '#0b1120', 800: '#0f172a' },
+                        slatebrand: { 300: '#cbd5e1', 400: '#94a3b8', 500: '#64748b' },
+                        electric: { 400: '#60a5fa', 500: '#3b82f6' },
+                        gold: { 400: '#fbbf24' }
+                    },
+                    fontFamily: { sans: ['Inter', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; background: #f8fafc; color: #0f172a; }
+        .shell { max-width: 80rem; margin: 0 auto; padding-left: 1.5rem; padding-right: 1.5rem; }
+        .kicker {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.45rem 0.85rem;
+            border-radius: 999px;
+            border: 1px solid rgba(37, 99, 235, 0.22);
+            background: rgba(219, 234, 254, 0.86);
+            color: #1d4ed8;
+            font-size: 0.75rem;
+            font-weight: 800;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+        }
+        .donor-card {
+            background: rgba(255, 255, 255, 0.92);
+            border: 1px solid rgba(15, 23, 42, 0.08);
+            box-shadow: 0 22px 60px rgba(15, 23, 42, 0.08);
+            transition: transform 0.24s ease, box-shadow 0.24s ease, border-color 0.24s ease;
+        }
+        .donor-card:hover {
+            transform: translateY(-3px);
+            border-color: rgba(37, 99, 235, 0.22);
+            box-shadow: 0 26px 70px rgba(15, 23, 42, 0.12);
+        }
+        .stack-pill {
+            border: 1px solid rgba(37, 99, 235, 0.16);
+            background: linear-gradient(135deg, rgba(239, 246, 255, 0.95), rgba(240, 253, 244, 0.95));
+        }
+        .donate-cta {
+            position: relative;
+            overflow: hidden;
+            isolation: isolate;
+            background: linear-gradient(135deg, #84cc16 0%, #22c55e 36%, #00e676 68%, #14b8a6 100%);
+            color: #ffffff;
+            text-shadow: 0 1px 1px rgba(2, 44, 34, 0.45);
+            border: 1px solid rgba(220, 252, 231, 0.72);
+            box-shadow: 0 0 0 1px rgba(20, 184, 166, 0.38), 0 12px 28px rgba(34, 197, 94, 0.42), 0 0 42px rgba(0, 230, 118, 0.46), inset 0 1px 0 rgba(255, 255, 255, 0.45);
+            cursor: pointer;
+            transition: transform 0.22s ease, box-shadow 0.22s ease, filter 0.22s ease, border-color 0.22s ease;
+            animation: donateFlash 1.45s ease-in-out infinite;
+        }
+        .donate-cta::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            z-index: -1;
+            background: linear-gradient(115deg, rgba(255,255,255,0.45) 0%, rgba(255,255,255,0.16) 26%, transparent 52%);
+            animation: donateSheen 2.2s ease-in-out infinite;
+        }
+        .donate-cta:hover {
+            transform: translateY(-2px);
+            filter: brightness(1.16) saturate(1.18);
+            box-shadow: 0 0 0 1px rgba(220, 252, 231, 0.75), 0 16px 34px rgba(34, 197, 94, 0.58), 0 0 52px rgba(0, 230, 118, 0.72), inset 0 1px 0 rgba(255, 255, 255, 0.62);
+        }
+        .donate-cta:active { transform: translateY(0); }
+        @keyframes donateFlash {
+            0%, 100% { filter: brightness(1) saturate(1); }
+            50% { filter: brightness(1.16) saturate(1.2); }
+        }
+        @keyframes donateSheen {
+            0%, 42% { transform: translateX(-38%); opacity: 0.45; }
+            58% { transform: translateX(18%); opacity: 1; }
+            100% { transform: translateX(42%); opacity: 0.55; }
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <nav class="sticky top-0 z-40 bg-white/92 backdrop-blur border-b border-slate-200">
+        <div class="shell h-20 flex items-center justify-between gap-6">
+            <a href="index.html" class="flex items-center gap-3">
+                <img src="images/header-logo.png" alt="AARI logo" class="h-11 w-auto object-contain">
+                <div class="hidden sm:block">
+                    <p class="text-sm font-bold text-slate-950">Atlanta AI &amp; Robotics Initiative</p>
+                    <p class="text-xs text-slate-500">AI infrastructure access fund</p>
+                </div>
+            </a>
+            <div class="hidden md:flex items-center gap-5 text-sm font-semibold text-slate-600">
+                <a href="index.html" class="hover:text-slate-950">Home</a>
+                <a href="funder-brief.html" data-analytics-event="funder_brief_download" data-analytics-location="fund_ai_access_nav" class="hover:text-slate-950">Funder Brief</a>
+                <a href="scholars.html#david-mykel-taylor" data-analytics-event="scholarship_click" data-analytics-location="fund_ai_access_nav" class="hover:text-slate-950">Scholarship</a>
+                <a href="index.html#contact" data-analytics-event="funder_cta_click" data-analytics-location="fund_ai_access_nav" class="hover:text-slate-950">Contact</a>
+                <a href="donate.html" class="donate-cta px-5 py-3 rounded-xl font-extrabold inline-flex items-center gap-2"><i data-lucide="heart" class="w-4 h-4"></i> Donate</a>
+            </div>
+            <a href="donate.html" class="md:hidden donate-cta px-4 py-2.5 rounded-xl font-extrabold inline-flex items-center gap-2"><i data-lucide="heart" class="w-4 h-4"></i> Donate</a>
+        </div>
+    </nav>
+
+    <main>
+        <section class="relative overflow-hidden bg-gradient-to-br from-white via-blue-50 to-emerald-50 py-20 md:py-28">
+            <div class="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-white to-transparent"></div>
+            <div class="shell relative">
+                <div class="grid lg:grid-cols-[1.05fr_0.95fr] gap-10 items-center">
+                    <div>
+                        <div class="kicker mb-6"><span class="w-2 h-2 rounded-full bg-emerald-500"></span> AI philanthropy moment</div>
+                        <h1 class="text-5xl md:text-7xl font-black tracking-tight leading-[0.95] mb-6">New AI wealth should build new AI access.</h1>
+                        <p class="text-xl text-slate-700 leading-relaxed mb-6">AI wealth is being created now. AARI is making sure Black students and underrepresented learners have access to the infrastructure behind that wealth.</p>
+                        <p class="text-lg text-slate-600 leading-relaxed mb-8">The next wave of value is being created by chips, cloud, data centers, robotics, energy, and automation. AARI exists to make sure students from historically excluded communities are not just watching that future get built. They are learning to operate it, secure it, and lead it.</p>
+                        <div class="flex flex-col sm:flex-row gap-4">
+                            <a href="donate.html" data-analytics-event="donate_click" data-analytics-location="fund_ai_access_hero" class="donate-cta px-7 py-4 rounded-xl font-extrabold inline-flex items-center justify-center gap-2"><i data-lucide="heart" class="w-5 h-5"></i> Fund AI Infrastructure Access</a>
+                            <a href="index.html#contact" data-analytics-event="funder_cta_click" data-analytics-location="fund_ai_access_hero" data-analytics-cta="Become a Funder Partner" class="bg-slate-950 text-white px-7 py-4 rounded-xl font-bold hover:bg-slate-800 transition-colors inline-flex items-center justify-center gap-2">Become a Funder Partner <i data-lucide="arrow-up-right" class="w-5 h-5"></i></a>
+                        </div>
+                    </div>
+                    <div class="donor-card rounded-[2rem] p-5">
+                        <img src="images/aari-action/aari-cohort-microsoft-atlanta.jpg" alt="AARI student cohort at Microsoft Atlanta" class="w-full rounded-[1.5rem] aspect-[4/3] object-cover">
+                        <div class="grid grid-cols-2 gap-3 mt-4">
+                            <div class="rounded-2xl bg-blue-50 p-4"><p class="text-xs uppercase tracking-[0.18em] text-blue-700 font-bold mb-2">Base</p><p class="font-bold">Atlanta and AUC</p></div>
+                            <div class="rounded-2xl bg-emerald-50 p-4"><p class="text-xs uppercase tracking-[0.18em] text-emerald-700 font-bold mb-2">Model</p><p class="font-bold">Operators, not observers</p></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-18 md:py-24 bg-white">
+            <div class="shell">
+                <div class="max-w-3xl mb-10">
+                    <div class="kicker mb-5"><i data-lucide="layers" class="w-4 h-4"></i> Why now</div>
+                    <h2 class="text-3xl md:text-5xl font-black tracking-tight mb-4">The opportunity gap is moving deeper into the stack.</h2>
+                    <p class="text-lg text-slate-600 leading-relaxed">Most AI education teaches students to use tools. AARI teaches the systems underneath AI: energy, compute, networks, deployment, robotics, security, and production operations.</p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-5">
+                    <article class="donor-card rounded-3xl p-7"><h3 class="text-xl font-bold mb-3">Infrastructure access</h3><p class="text-slate-600 leading-relaxed">Students need access to the rooms, labs, hardware, and systems where AI is actually produced.</p></article>
+                    <article class="donor-card rounded-3xl p-7"><h3 class="text-xl font-bold mb-3">HBCU talent</h3><p class="text-slate-600 leading-relaxed">AARI is rooted in Atlanta and the AUC, connecting Black technical talent to high-growth infrastructure pathways.</p></article>
+                    <article class="donor-card rounded-3xl p-7"><h3 class="text-xl font-bold mb-3">Platform impact</h3><p class="text-slate-600 leading-relaxed">Support funds a repeatable model: cohorts, labs, scholarships, technical staff, partner exposure, and measurable outcomes.</p></article>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-18 md:py-24 bg-slate-50">
+            <div class="shell">
+                <div class="grid lg:grid-cols-[0.85fr_1.15fr] gap-10 items-start">
+                    <div>
+                        <div class="kicker mb-5"><i data-lucide="server" class="w-4 h-4"></i> What funding unlocks</div>
+                        <h2 class="text-3xl md:text-5xl font-black tracking-tight mb-5">Fund the stack students need to touch.</h2>
+                        <p class="text-lg text-slate-600 leading-relaxed">AARI turns philanthropic capital into equipment, lab access, cohort support, applied projects, and the operating discipline students need to compete in the AI infrastructure economy.</p>
+                    </div>
+                    <div class="grid sm:grid-cols-2 gap-4">
+                        <div class="stack-pill rounded-2xl p-5"><p class="font-black text-2xl mb-1">$10K</p><p class="text-sm text-slate-600">Funds a student technical lab cohort.</p></div>
+                        <div class="stack-pill rounded-2xl p-5"><p class="font-black text-2xl mb-1">$25K</p><p class="text-sm text-slate-600">Supports robotics and edge AI workshops.</p></div>
+                        <div class="stack-pill rounded-2xl p-5"><p class="font-black text-2xl mb-1">$50K</p><p class="text-sm text-slate-600">Sponsors a student project sprint.</p></div>
+                        <div class="stack-pill rounded-2xl p-5"><p class="font-black text-2xl mb-1">$100K</p><p class="text-sm text-slate-600">Funds an infrastructure pathway.</p></div>
+                        <div class="stack-pill rounded-2xl p-5"><p class="font-black text-2xl mb-1">$250K+</p><p class="text-sm text-slate-600">Anchors a named workforce initiative.</p></div>
+                        <div class="stack-pill rounded-2xl p-5"><p class="font-black text-2xl mb-1">$500K+</p><p class="text-sm text-slate-600">Supports multi-campus AUC programming.</p></div>
+                    </div>
+                </div>
+                <p class="text-sm text-slate-500 mt-6">Funding levels are illustrative. AARI works with donors and institutional partners to align support with scope, student impact, travel, preparation, deliverables, reporting needs, and strategic value.</p>
+            </div>
+        </section>
+
+        <section class="py-18 md:py-24 bg-white">
+            <div class="shell">
+                <div class="grid lg:grid-cols-[1fr_0.9fr] gap-8 items-center">
+                    <div>
+                        <div class="kicker mb-5"><i data-lucide="graduation-cap" class="w-4 h-4"></i> Memorial scholarship</div>
+                        <h2 class="text-3xl md:text-5xl font-black tracking-tight mb-5">The David Mykel Taylor Scholarship turns memory into access.</h2>
+                        <p class="text-lg text-slate-600 leading-relaxed mb-6">This scholarship supports students who have faced real adversity and chosen to keep building anyway. It connects grit, creativity, and purpose to AI, robotics, and infrastructure opportunity.</p>
+                        <div class="flex flex-col sm:flex-row gap-4">
+                            <a href="scholars.html#david-mykel-taylor" data-analytics-event="scholarship_click" data-analytics-location="fund_ai_access_scholarship" class="bg-amber-400 text-slate-950 px-7 py-4 rounded-xl font-bold hover:bg-amber-300 transition-colors inline-flex items-center justify-center gap-2">Support the Scholarship <i data-lucide="arrow-up-right" class="w-5 h-5"></i></a>
+                            <a href="donate.html" class="donate-cta px-7 py-4 rounded-xl font-extrabold inline-flex items-center justify-center gap-2"><i data-lucide="heart" class="w-5 h-5"></i> Donate</a>
+                        </div>
+                    </div>
+                    <div class="donor-card rounded-[2rem] p-5">
+                        <img src="images/david-mykel-taylor.png" alt="David Mykel Taylor" class="w-full rounded-[1.5rem] aspect-[4/3] object-cover object-top">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-18 md:py-24 bg-navy-950 text-white">
+            <div class="shell">
+                <div class="grid lg:grid-cols-[0.9fr_1.1fr] gap-10 items-start">
+                    <div>
+                        <div class="kicker mb-5 bg-blue-950/70 border-blue-400/30 text-blue-200"><i data-lucide="file-text" class="w-4 h-4"></i> Funder ready</div>
+                        <h2 class="text-3xl md:text-5xl font-black tracking-tight mb-5">For donor-advised funds, family foundations, and corporate philanthropy teams.</h2>
+                        <p class="text-lg text-slatebrand-300 leading-relaxed mb-8">AARI welcomes support for AI infrastructure workforce development, HBCU talent, robotics, edge AI, data centers, cloud systems, quantum education, and emerging technology pathways.</p>
+                        <div class="flex flex-col sm:flex-row gap-4">
+                            <a href="funder-brief.html" data-analytics-event="funder_brief_download" data-analytics-location="fund_ai_access_footer" class="bg-white text-navy-950 px-7 py-4 rounded-xl font-bold hover:bg-slate-200 transition-colors inline-flex items-center justify-center gap-2">Read the Funder Brief <i data-lucide="file-text" class="w-5 h-5"></i></a>
+                            <a href="index.html#contact" data-analytics-event="funder_cta_click" data-analytics-location="fund_ai_access_footer" class="border border-white/20 px-7 py-4 rounded-xl font-bold hover:bg-white/10 transition-colors inline-flex items-center justify-center gap-2">Request a Funder Conversation <i data-lucide="arrow-up-right" class="w-5 h-5"></i></a>
+                        </div>
+                    </div>
+                    <div class="grid sm:grid-cols-2 gap-4">
+                        <div class="rounded-2xl border border-white/10 bg-white/5 p-5"><p class="font-bold mb-2">Proof already exists</p><p class="text-sm text-slatebrand-300">Microsoft workshops, data center exposure, robotics labs, edge AI work, and AUC-centered programming.</p></div>
+                        <div class="rounded-2xl border border-white/10 bg-white/5 p-5"><p class="font-bold mb-2">The model is measurable</p><p class="text-sm text-slatebrand-300">AARI tracks cohorts, labs, projects, partners, placements, and operator outcomes.</p></div>
+                        <div class="rounded-2xl border border-white/10 bg-white/5 p-5"><p class="font-bold mb-2">The timing is urgent</p><p class="text-sm text-slatebrand-300">The AI economy is forming now. Access has to be built while the market is still being shaped.</p></div>
+                        <div class="rounded-2xl border border-white/10 bg-white/5 p-5"><p class="font-bold mb-2">The thesis is clear</p><p class="text-sm text-slatebrand-300">AI literacy without infrastructure literacy creates dependency. AARI builds operators.</p></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-white border-t border-slate-200 py-10">
+        <div class="shell flex flex-col md:flex-row gap-6 justify-between">
+            <div>
+                <p class="font-bold text-slate-950">Atlanta AI &amp; Robotics Initiative</p>
+                <p class="text-sm text-slate-500 mt-2 max-w-xl">AI wealth is being created now. Infrastructure access should create the opportunity.</p>
+            </div>
+            <div class="flex flex-wrap gap-4 text-sm font-semibold text-slate-600">
+                <a href="index.html" class="hover:text-slate-950">Home</a>
+                <a href="funder-brief.html" class="hover:text-slate-950">Funder Brief</a>
+                <a href="scholars.html#david-mykel-taylor" class="hover:text-slate-950">Scholarship</a>
+                <a href="donate.html" class="hover:text-slate-950">Donate</a>
+                <a href="index.html#contact" class="hover:text-slate-950">Contact</a>
+            </div>
+        </div>
+    </footer>
+    <script>
+        if (window.lucide) {
+            window.lucide.createIcons();
+        }
+    </script>
+</body>
+</html>

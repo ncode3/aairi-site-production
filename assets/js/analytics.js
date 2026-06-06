@@ -18,7 +18,9 @@
             'form_name',
             'inquiry_type',
             'lead_score_bucket',
-            'block_reason'
+            'block_reason',
+            'cta',
+            'destination'
         ]);
         return Object.entries(params || {}).reduce((safe, [key, value]) => {
             if (allowed.has(key) && value !== undefined && value !== null && value !== '') {
@@ -56,6 +58,14 @@
         if (!target) return;
         const href = target.getAttribute('href') || '';
         const label = (target.textContent || '').trim().toLowerCase();
+        const configuredEvent = target.dataset.analyticsEvent;
+        if (configuredEvent) {
+            sendEvent(configuredEvent, {
+                location: target.dataset.analyticsLocation || findLocation(target),
+                cta: target.dataset.analyticsCta || label,
+                destination: href
+            });
+        }
         const isDonate = target.classList.contains('donate-cta') ||
             href.includes('donate.html') ||
             href.includes('buy.stripe.com') ||
@@ -70,6 +80,8 @@
             href.includes('#become-partner') ||
             href.includes('subject=Partnership') ||
             label.includes('partner with') ||
+            label.includes('fund ai') ||
+            label.includes('funder brief') ||
             label.includes('become a partner') ||
             label.includes('partnership discussion') ||
             label.includes('funder conversation');
