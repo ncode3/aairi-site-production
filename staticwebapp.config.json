@@ -41,6 +41,18 @@
       "rewrite": "/impact.html"
     },
     {
+      "route": "/fund-ai-access",
+      "rewrite": "/fund-ai-access.html"
+    },
+    {
+      "route": "/fund",
+      "rewrite": "/fund-ai-access.html"
+    },
+    {
+      "route": "/funder-brief",
+      "rewrite": "/funder-brief.html"
+    },
+    {
       "route": "/api/submit-inquiry",
       "methods": ["GET", "PUT", "PATCH", "DELETE", "OPTIONS", "TRACE", "CONNECT"],
       "statusCode": 404
