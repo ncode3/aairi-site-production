@@ -18,9 +18,9 @@
     <meta property="og:description" content="AARI trains HBCU students and underrepresented learners to operate the AI infrastructure stack across data centers, edge AI, robotics, quantum, cloud, and production systems.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://atlanta-robotics.org/">
-    <meta property="og:image" content="https://staariwebsiteprod001.blob.core.windows.net/website-assets/images/nolan-headshot.jpg">
+    <meta property="og:image" content="https://atlanta-robotics.org/images/nolan-headshot.jpg">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="theme-color" content="#f8fafc">
+    <meta name="theme-color" content="#020617">
     <link rel="icon" type="image/png" href="images/header-logo.png">
 
     <script src="https://cdn.tailwindcss.com"></script>
@@ -45,25 +45,33 @@
     <script src="https://unpkg.com/lucide@latest"></script>
 
     <style>
-        body { font-family: 'Inter', sans-serif; background: #f8fafc; color: #0f172a; overflow-x: hidden; }
+        body { font-family: 'Inter', sans-serif; background: #020617; color: #f8fafc; overflow-x: hidden; }
         .glass-panel {
-            background: rgba(255, 255, 255, 0.86);
+            background: rgba(15, 23, 42, 0.78);
             backdrop-filter: blur(14px);
-            border: 1px solid rgba(15, 23, 42, 0.08);
-            box-shadow: 0 20px 55px rgba(15, 23, 42, 0.08);
+            border: 1px solid rgba(251, 191, 36, 0.12);
+            box-shadow: 0 20px 55px rgba(0, 0, 0, 0.24);
         }
         .section-shell { max-width: 80rem; margin: 0 auto; padding-left: 1.5rem; padding-right: 1.5rem; }
-        main section.bg-navy-900 { background: #f1f5f9 !important; }
+        main section.bg-navy-900,
+        main section.bg-white { background: #070b14 !important; }
         main .text-slatebrand-200,
         main .text-slatebrand-300,
-        main .text-slatebrand-400 { color: #475569 !important; }
-        main .text-slatebrand-500 { color: #64748b !important; }
+        main .text-slatebrand-400 { color: #cbd5e1 !important; }
+        main .text-slatebrand-500 { color: #94a3b8 !important; }
+        main .text-slate-900,
+        main .text-slate-800 { color: #f8fafc !important; }
+        main .text-slate-700,
+        main .text-slate-600 { color: #cbd5e1 !important; }
+        main .text-slate-500 { color: #94a3b8 !important; }
+        main .text-blue-700,
+        main .text-blue-900 { color: #fbbf24 !important; }
         .bright-section {
             position: relative;
             background:
-                radial-gradient(circle at top left, rgba(59, 130, 246, 0.13), transparent 30%),
-                radial-gradient(circle at bottom right, rgba(34, 197, 94, 0.12), transparent 28%),
-                #f8fafc;
+                radial-gradient(circle at top left, rgba(92, 18, 31, 0.42), transparent 32%),
+                radial-gradient(circle at bottom right, rgba(251, 191, 36, 0.18), transparent 28%),
+                linear-gradient(135deg, #020617 0%, #0b1120 58%, #16070b 100%);
         }
         .maroon-band {
             background:
@@ -72,9 +80,9 @@
             color: #fff;
         }
         .bright-card {
-            background: #fff;
-            border: 1px solid rgba(15, 23, 42, 0.08);
-            box-shadow: 0 18px 45px rgba(15, 23, 42, 0.08);
+            background: rgba(15, 23, 42, 0.86);
+            border: 1px solid rgba(251, 191, 36, 0.12);
+            box-shadow: 0 18px 45px rgba(0, 0, 0, 0.22);
         }
         .section-kicker {
             display: inline-flex;
@@ -82,20 +90,20 @@
             gap: 0.5rem;
             padding: 0.4rem 0.8rem;
             border-radius: 999px;
-            border: 1px solid rgba(96, 165, 250, 0.28);
-            background: rgba(219, 234, 254, 0.86);
-            color: #1d4ed8;
+            border: 1px solid rgba(251, 191, 36, 0.28);
+            background: rgba(92, 18, 31, 0.42);
+            color: #fbbf24;
             font-size: 0.75rem;
             font-weight: 700;
             letter-spacing: 0.06em;
             text-transform: uppercase;
         }
         .gradient-text {
-            background: linear-gradient(135deg, #1d4ed8 0%, #16a34a 48%, #f59e0b 100%);
+            background: linear-gradient(135deg, #fbbf24 0%, #60a5fa 48%, #f8fafc 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-        .soft-rule { border-top: 1px solid rgba(148, 163, 184, 0.12); }
+        .soft-rule { border-top: 1px solid rgba(251, 191, 36, 0.14); }
         .fade-in-up {
             opacity: 0;
             transform: translateY(20px);
@@ -125,11 +133,11 @@
         .glass-panel .text-white,
         .glass-panel h2,
         .glass-panel h3,
-        .glass-panel h4 { color: #0f172a !important; }
+        .glass-panel h4 { color: #f8fafc !important; }
         .glass-panel .text-slatebrand-200,
         .glass-panel .text-slatebrand-300,
-        .glass-panel .text-slatebrand-400 { color: #475569 !important; }
-        .glass-panel .text-slatebrand-500 { color: #64748b !important; }
+        .glass-panel .text-slatebrand-400 { color: #cbd5e1 !important; }
+        .glass-panel .text-slatebrand-500 { color: #94a3b8 !important; }
         .doctrine-card, .lane-card, .proof-card, .metric-card, .profile-card, .trust-card, .fund-card, .contact-card, .action-card {
             transition: transform 0.28s ease, border-color 0.28s ease, box-shadow 0.28s ease;
         }
@@ -243,12 +251,12 @@
         .stack-card:hover, .stack-card:focus,
         .timeline-card:hover, .field-card:hover, .qual-stat:hover {
             transform: translateY(-5px);
-            border-color: rgba(37, 99, 235, 0.24);
-            box-shadow: 0 24px 60px rgba(37, 99, 235, 0.12);
+            border-color: rgba(251, 191, 36, 0.28);
+            box-shadow: 0 24px 60px rgba(251, 191, 36, 0.08);
         }
         .stack-card[aria-expanded="true"] {
-            background: linear-gradient(135deg, #ffffff 0%, #eff6ff 58%, #ecfdf5 100%);
-            border-color: rgba(22, 163, 74, 0.35);
+            background: linear-gradient(135deg, rgba(92, 18, 31, 0.92) 0%, rgba(15, 23, 42, 0.96) 62%, rgba(2, 6, 23, 0.96) 100%);
+            border-color: rgba(251, 191, 36, 0.36);
         }
         .stack-detail {
             display: grid;
@@ -261,8 +269,22 @@
             grid-template-rows: 1fr;
         }
         .stack-detail > div { overflow: hidden; }
+        .interactive-detail {
+            display: grid;
+            grid-template-rows: 0fr;
+            transition: grid-template-rows 0.24s ease;
+        }
+        .is-expanded .interactive-detail {
+            grid-template-rows: 1fr;
+        }
+        .interactive-detail > div { overflow: hidden; }
+        .filter-button[aria-pressed="true"] {
+            background: rgba(251, 191, 36, 0.18);
+            border-color: rgba(251, 191, 36, 0.55);
+            color: #fef3c7;
+        }
         .timeline-line {
-            background: linear-gradient(180deg, #2563eb, #16a34a, #f59e0b);
+            background: linear-gradient(180deg, #fbbf24, #5c121f, #60a5fa);
         }
         .photo-float {
             transition: transform 0.45s ease, box-shadow 0.45s ease;
@@ -271,18 +293,18 @@
             transform: scale(1.025) rotate(-0.4deg);
             box-shadow: 0 28px 70px rgba(15, 23, 42, 0.18);
         }
-        .nav-link { color: #334155; }
-        .nav-link:hover { color: #0f172a; }
+        .nav-link { color: #cbd5e1; }
+        .nav-link:hover { color: #fbbf24; }
         nav.glass-panel {
-            background: rgba(255,255,255,0.88);
-            border-color: rgba(15,23,42,0.08);
+            background: rgba(2, 6, 23, 0.92);
+            border-color: rgba(251, 191, 36, 0.14);
         }
         #mobile-menu {
-            background: rgba(255,255,255,0.97) !important;
-            color: #0f172a;
+            background: rgba(2, 6, 23, 0.97) !important;
+            color: #f8fafc;
         }
-        #mobile-toggle { color: #0f172a; }
-        #mobile-menu a:not(.donate-cta) { color: #334155; }
+        #mobile-toggle { color: #f8fafc; }
+        #mobile-menu a:not(.donate-cta) { color: #cbd5e1; }
         input, select, textarea {
             color: #0f172a !important;
             background: rgba(255,255,255,0.88) !important;
@@ -432,10 +454,7 @@
         <div class="max-w-[92rem] mx-auto px-6 h-20 flex items-center justify-between gap-6">
             <a href="#top" class="flex items-center gap-3">
                 <div class="bg-white/90 p-1.5 rounded-lg">
-                    <picture>
-                        <source media="(max-width: 767px)" srcset="images/header-logo-mobile.png">
-                        <img src="images/header-logo.png" alt="AARI logo" class="site-logo h-10 w-auto object-contain" onerror="this.onerror=null;this.src='/images/header-logo-mobile.png';">
-                    </picture>
+                    <img src="images/header-logo.png" alt="AARI logo" class="site-logo h-10 w-auto object-contain" onerror="this.onerror=null;this.src='/images/header-logo.png';">
                 </div>
                 <div class="hidden 2xl:block">
                     <p class="text-sm font-semibold text-white">Atlanta AI &amp; Robotics Initiative</p>
@@ -454,14 +473,14 @@
                 <a href="impact.html" class="nav-link">Gallery</a>
                 <a href="#leadership" class="nav-link">Leadership</a>
                 <a href="#funders" class="nav-link">Funders</a>
-                <a href="fund-ai-access.html" class="nav-link">Fund AI Access</a>
                 <a href="partners.html" class="nav-link">Partners</a>
-                <a href="#contact" class="nav-link">Contact</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+                <a href="privacy.html" class="nav-link">Privacy</a>
                 <a href="donate.html" class="donate-cta font-extrabold px-4 py-2.5 rounded-xl inline-flex items-center gap-2">
                     <i data-lucide="heart" class="w-4 h-4"></i>
                     Donate
                 </a>
-                <a href="#contact" class="bg-white text-navy-950 font-semibold px-4 py-2.5 rounded-xl hover:bg-slate-200 transition-colors whitespace-nowrap">Partner With AARI</a>
+                <a href="contact.html" class="bg-white text-navy-950 font-semibold px-4 py-2.5 rounded-xl hover:bg-slate-200 transition-colors whitespace-nowrap">Partner With AARI</a>
             </div>
 
             <button id="mobile-toggle" class="xl:hidden text-slatebrand-200" type="button" aria-expanded="false" aria-controls="mobile-menu">
@@ -481,31 +500,31 @@
                 <a href="impact.html" class="py-2">Gallery</a>
                 <a href="#leadership" class="py-2">Leadership</a>
                 <a href="#funders" class="py-2">Funders</a>
-                <a href="fund-ai-access.html" class="py-2">Fund AI Access</a>
                 <a href="partners.html" class="py-2">Partners</a>
-                <a href="#contact" class="py-2">Contact</a>
+                <a href="contact.html" class="py-2">Contact</a>
+                <a href="privacy.html" class="py-2">Privacy</a>
                 <a href="donate.html" class="donate-cta mt-2 px-5 py-3 rounded-xl font-extrabold inline-flex items-center justify-center gap-2">
                     <i data-lucide="heart" class="w-4 h-4"></i>
                     Donate
                 </a>
-                <a href="#contact" class="bg-white text-navy-950 font-semibold px-5 py-3 rounded-xl text-center hover:bg-slate-200 transition-colors">Partner With AARI</a>
+                <a href="contact.html" class="bg-white text-navy-950 font-semibold px-5 py-3 rounded-xl text-center hover:bg-slate-200 transition-colors">Partner With AARI</a>
             </div>
         </div>
     </nav>
 
     <main id="top">
         <section class="bright-section relative pt-32 pb-20 md:pt-44 md:pb-28 overflow-hidden">
-            <div class="absolute inset-0 -z-10 bg-[linear-gradient(135deg,_rgba(255,255,255,0.9),_rgba(239,246,255,0.88)_45%,_rgba(236,253,245,0.72))]"></div>
+            <div class="absolute inset-0 -z-10 bg-[linear-gradient(135deg,_rgba(2,6,23,0.95),_rgba(15,23,42,0.9)_48%,_rgba(92,18,31,0.58))]"></div>
             <div class="section-shell hero-grid">
                 <div class="max-w-4xl">
                     <div class="section-kicker mb-6">
                         <span class="w-2 h-2 rounded-full bg-electric-400"></span>
-                        National workforce initiative
+                        National infrastructure pipeline. Atlanta first.
                     </div>
-                    <h1 class="text-5xl md:text-7xl font-extrabold leading-tight tracking-tight mb-6">The next civil rights gap is <span class="gradient-text">infrastructure access.</span></h1>
-                    <p class="text-xl md:text-2xl text-slate-700 leading-relaxed max-w-3xl mb-8">AARI trains HBCU students and underrepresented learners to operate the full AI infrastructure stack, from energy and chips to data centers, GPUs, edge robotics, quantum systems, and production AI.</p>
+                    <h1 class="text-5xl md:text-7xl font-extrabold leading-tight tracking-tight mb-6">The next civil rights gap is <span class="gradient-text">infrastructure access.</span> We are closing it before it sets.</h1>
+                    <p class="text-xl md:text-2xl text-slate-700 leading-relaxed max-w-3xl mb-8">AARI trains HBCU students and underrepresented learners to operate the full AI infrastructure stack, from energy and chips to data centers, GPUs, edge robotics, quantum systems, and production AI. The people who run the next decade of AI are being trained right now. Most of the country just has not noticed yet.</p>
                     <div class="flex flex-col sm:flex-row gap-4 mb-8">
-                        <a href="#contact" class="bg-navy-950 text-white font-semibold px-7 py-4 rounded-xl hover:bg-navy-800 transition-colors text-center">Partner With AARI</a>
+                        <a href="contact.html" class="bg-navy-950 text-white font-semibold px-7 py-4 rounded-xl hover:bg-navy-800 transition-colors text-center">Partner With AARI</a>
                         <a href="#stack" class="glass-panel font-semibold px-7 py-4 rounded-xl hover:bg-blue-50 transition-colors text-center">Explore the Stack</a>
                         <a href="donate.html" class="donate-cta font-extrabold px-7 py-4 rounded-xl text-center inline-flex items-center justify-center gap-2">
                             <i data-lucide="heart" class="w-5 h-5"></i>
@@ -513,8 +532,7 @@
                         </a>
                     </div>
                     <div class="flex flex-col sm:flex-row gap-4 mb-8">
-                        <a href="fund-ai-access.html" data-analytics-event="funder_cta_click" data-analytics-location="hero" data-analytics-cta="Fund AI Infrastructure Access" class="text-sm text-blue-700 underline underline-offset-4 hover:text-blue-900 transition-colors">Fund AI Infrastructure Access</a>
-                        <a href="funder-brief.html" data-analytics-event="funder_brief_download" data-analytics-location="hero" data-analytics-cta="View Funder Brief" class="text-sm text-blue-700 underline underline-offset-4 hover:text-blue-900 transition-colors">View Funder Brief</a>
+                        <a href="funder-brief.html" class="text-sm text-blue-700 underline underline-offset-4 hover:text-blue-900 transition-colors">View Funder Brief</a>
                         <a href="partner-brief.html" class="text-sm text-blue-700 underline underline-offset-4 hover:text-blue-900 transition-colors">View Partner Brief</a>
                     </div>
                     <div class="grid md:grid-cols-3 gap-4 text-sm">
@@ -533,10 +551,10 @@
                     </div>
                 </div>
                 <aside class="glass-panel rounded-[2rem] p-6 md:p-8 border border-white/10">
-                    <img src="https://staariwebsiteprod001.blob.core.windows.net/website-assets/images/nolan-headshot.jpg" alt="Nolan S. Code, founder of AARI" class="w-full rounded-[1.5rem] object-cover aspect-[4/5] border border-white/10">
+                    <img src="images/nolan-headshot.jpg" alt="Nolan S. Code, founder of AARI" class="w-full rounded-[1.5rem] object-cover aspect-[4/5] border border-white/10">
                     <div class="mt-6 soft-rule pt-5">
                         <p class="text-xs uppercase tracking-[0.24em] text-slate-500 mb-3">Founder thesis</p>
-                        <p class="text-lg text-slate-700 leading-relaxed">AI literacy without infrastructure literacy creates dependency. AARI trains students to operate what others only consume.</p>
+                        <p class="text-lg text-slate-700 leading-relaxed">AI literacy without infrastructure literacy creates dependency. Everyone is learning to use the tools. Almost no one is being trained to own the systems underneath them. AARI exists to make sure the operators of the AI economy look like the country it serves. That outcome is not a hope. It is a build order.</p>
                     </div>
                 </aside>
             </div>
@@ -552,15 +570,15 @@
                     <p class="text-lg text-slate-700 leading-relaxed">AARI teaches the systems beneath AI, from power and compute to edge deployment and embodied robotics. As students move through the stack, they learn how each layer shapes what can be built.</p>
                 </div>
                 <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 reveal-sequence" data-reveal-sequence>
-                    <button type="button" class="stack-card text-left bright-card rounded-3xl p-5" aria-expanded="false"><span class="text-xs font-bold text-amber-600 uppercase tracking-[0.18em]">01</span><h3 class="mt-3 text-xl font-bold">Energy</h3><div class="stack-detail"><div><p class="mt-3 text-sm text-slate-600">Power, cooling, resiliency, and the operating reality behind compute.</p></div></div></button>
-                    <button type="button" class="stack-card text-left bright-card rounded-3xl p-5" aria-expanded="false"><span class="text-xs font-bold text-amber-600 uppercase tracking-[0.18em]">02</span><h3 class="mt-3 text-xl font-bold">Data Centers</h3><div class="stack-detail"><div><p class="mt-3 text-sm text-slate-600">Critical environments, uptime, facilities, and AI-ready operations.</p></div></div></button>
-                    <button type="button" class="stack-card text-left bright-card rounded-3xl p-5" aria-expanded="false"><span class="text-xs font-bold text-amber-600 uppercase tracking-[0.18em]">03</span><h3 class="mt-3 text-xl font-bold">Networking</h3><div class="stack-detail"><div><p class="mt-3 text-sm text-slate-600">Connectivity, security, traffic flow, and distributed systems fundamentals.</p></div></div></button>
-                    <button type="button" class="stack-card text-left bright-card rounded-3xl p-5" aria-expanded="false"><span class="text-xs font-bold text-amber-600 uppercase tracking-[0.18em]">04</span><h3 class="mt-3 text-xl font-bold">Cloud</h3><div class="stack-detail"><div><p class="mt-3 text-sm text-slate-600">Storage, deployment, identity, observability, and scalable training environments.</p></div></div></button>
-                    <button type="button" class="stack-card text-left bright-card rounded-3xl p-5" aria-expanded="false"><span class="text-xs font-bold text-amber-600 uppercase tracking-[0.18em]">05</span><h3 class="mt-3 text-xl font-bold">GPUs</h3><div class="stack-detail"><div><p class="mt-3 text-sm text-slate-600">Accelerated compute, edge hardware, and model performance tradeoffs.</p></div></div></button>
-                    <button type="button" class="stack-card text-left bright-card rounded-3xl p-5" aria-expanded="false"><span class="text-xs font-bold text-emerald-600 uppercase tracking-[0.18em]">06</span><h3 class="mt-3 text-xl font-bold">Edge AI</h3><div class="stack-detail"><div><p class="mt-3 text-sm text-slate-600">Local inference, sensors, latency, and deployment outside the data center.</p></div></div></button>
-                    <button type="button" class="stack-card text-left bright-card rounded-3xl p-5" aria-expanded="false"><span class="text-xs font-bold text-emerald-600 uppercase tracking-[0.18em]">07</span><h3 class="mt-3 text-xl font-bold">Robotics</h3><div class="stack-detail"><div><p class="mt-3 text-sm text-slate-600">Embodied systems, autonomy, controls, perception, and physical-world testing.</p></div></div></button>
-                    <button type="button" class="stack-card text-left bright-card rounded-3xl p-5" aria-expanded="false"><span class="text-xs font-bold text-blue-600 uppercase tracking-[0.18em]">08</span><h3 class="mt-3 text-xl font-bold">Quantum</h3><div class="stack-detail"><div><p class="mt-3 text-sm text-slate-600">Quantum literacy, hybrid workflows, and next-generation compute awareness.</p></div></div></button>
-                    <button type="button" class="stack-card text-left bright-card rounded-3xl p-5 sm:col-span-2 xl:col-span-2" aria-expanded="false"><span class="text-xs font-bold text-blue-600 uppercase tracking-[0.18em]">09</span><h3 class="mt-3 text-xl font-bold">Production AI</h3><div class="stack-detail"><div><p class="mt-3 text-sm text-slate-600">The final layer: deployed systems students can explain, monitor, improve, and defend.</p></div></div></button>
+                    <button type="button" class="stack-card text-left bright-card rounded-3xl p-5" aria-expanded="false" aria-controls="stack-energy"><span class="text-xs font-bold text-amber-600 uppercase tracking-[0.18em]">01</span><h3 class="mt-3 text-xl font-bold">Energy</h3><div id="stack-energy" class="stack-detail"><div class="mt-3 space-y-2 text-sm text-slate-600"><p><strong>Learn:</strong> power, cooling, resiliency, and operating limits.</p><p><strong>Build:</strong> power maps and uptime scenarios.</p><p><strong>Pathway:</strong> data center operations and facilities engineering.</p></div></div></button>
+                    <button type="button" class="stack-card text-left bright-card rounded-3xl p-5" aria-expanded="false" aria-controls="stack-data-centers"><span class="text-xs font-bold text-amber-600 uppercase tracking-[0.18em]">02</span><h3 class="mt-3 text-xl font-bold">Data Centers</h3><div id="stack-data-centers" class="stack-detail"><div class="mt-3 space-y-2 text-sm text-slate-600"><p><strong>Learn:</strong> critical environments, uptime, racks, cabling, and monitoring.</p><p><strong>Build:</strong> lab diagrams and operational runbooks.</p><p><strong>Pathway:</strong> data center technician and critical operations roles.</p></div></div></button>
+                    <button type="button" class="stack-card text-left bright-card rounded-3xl p-5" aria-expanded="false" aria-controls="stack-networking"><span class="text-xs font-bold text-amber-600 uppercase tracking-[0.18em]">03</span><h3 class="mt-3 text-xl font-bold">Networking</h3><div id="stack-networking" class="stack-detail"><div class="mt-3 space-y-2 text-sm text-slate-600"><p><strong>Learn:</strong> switching, routing, identity, security, and traffic flow.</p><p><strong>Build:</strong> segmented lab networks and connectivity checks.</p><p><strong>Pathway:</strong> network operations and infrastructure support.</p></div></div></button>
+                    <button type="button" class="stack-card text-left bright-card rounded-3xl p-5" aria-expanded="false" aria-controls="stack-cloud"><span class="text-xs font-bold text-amber-600 uppercase tracking-[0.18em]">04</span><h3 class="mt-3 text-xl font-bold">Cloud</h3><div id="stack-cloud" class="stack-detail"><div class="mt-3 space-y-2 text-sm text-slate-600"><p><strong>Learn:</strong> storage, deployment, identity, observability, and cost discipline.</p><p><strong>Build:</strong> cloud-to-edge lab environments.</p><p><strong>Pathway:</strong> cloud operations and platform engineering.</p></div></div></button>
+                    <button type="button" class="stack-card text-left bright-card rounded-3xl p-5" aria-expanded="false" aria-controls="stack-gpus"><span class="text-xs font-bold text-amber-600 uppercase tracking-[0.18em]">05</span><h3 class="mt-3 text-xl font-bold">GPUs</h3><div id="stack-gpus" class="stack-detail"><div class="mt-3 space-y-2 text-sm text-slate-600"><p><strong>Learn:</strong> accelerated compute, edge hardware, and model performance tradeoffs.</p><p><strong>Build:</strong> inference benchmarks and GPU-aware deployment plans.</p><p><strong>Pathway:</strong> AI infrastructure and compute operations.</p></div></div></button>
+                    <button type="button" class="stack-card text-left bright-card rounded-3xl p-5" aria-expanded="false" aria-controls="stack-edge-ai"><span class="text-xs font-bold text-emerald-600 uppercase tracking-[0.18em]">06</span><h3 class="mt-3 text-xl font-bold">Edge AI</h3><div id="stack-edge-ai" class="stack-detail"><div class="mt-3 space-y-2 text-sm text-slate-600"><p><strong>Learn:</strong> local inference, sensors, latency, and constrained deployment.</p><p><strong>Build:</strong> Jetson-class edge demos.</p><p><strong>Pathway:</strong> edge AI technician and field systems roles.</p></div></div></button>
+                    <button type="button" class="stack-card text-left bright-card rounded-3xl p-5" aria-expanded="false" aria-controls="stack-robotics"><span class="text-xs font-bold text-emerald-600 uppercase tracking-[0.18em]">07</span><h3 class="mt-3 text-xl font-bold">Robotics</h3><div id="stack-robotics" class="stack-detail"><div class="mt-3 space-y-2 text-sm text-slate-600"><p><strong>Learn:</strong> controls, perception, autonomy, and physical-world testing.</p><p><strong>Build:</strong> robot workflows and sensor-integrated prototypes.</p><p><strong>Pathway:</strong> robotics technician and automation roles.</p></div></div></button>
+                    <button type="button" class="stack-card text-left bright-card rounded-3xl p-5" aria-expanded="false" aria-controls="stack-quantum"><span class="text-xs font-bold text-blue-600 uppercase tracking-[0.18em]">08</span><h3 class="mt-3 text-xl font-bold">Quantum</h3><div id="stack-quantum" class="stack-detail"><div class="mt-3 space-y-2 text-sm text-slate-600"><p><strong>Learn:</strong> quantum literacy, hybrid workflows, and next-generation compute vocabulary.</p><p><strong>Build:</strong> quantum-classical exercises tied to cloud systems.</p><p><strong>Pathway:</strong> research support and emerging compute roles.</p></div></div></button>
+                    <button type="button" class="stack-card text-left bright-card rounded-3xl p-5 sm:col-span-2 xl:col-span-2" aria-expanded="false" aria-controls="stack-production-ai"><span class="text-xs font-bold text-blue-600 uppercase tracking-[0.18em]">09</span><h3 class="mt-3 text-xl font-bold">Production AI</h3><div id="stack-production-ai" class="stack-detail"><div class="mt-3 space-y-2 text-sm text-slate-600"><p><strong>Learn:</strong> deployment, monitoring, guardrails, and incident response.</p><p><strong>Build:</strong> systems students can explain, monitor, improve, and defend.</p><p><strong>Pathway:</strong> AI operations, platform, and reliability roles.</p></div></div></button>
                 </div>
             </div>
         </section>
@@ -573,8 +591,8 @@
                     <p class="text-lg text-slate-700 leading-relaxed">AARI connects AUC and HBCU learners to labs, data centers, cloud systems, robotics work, partner workshops, and demo environments so the infrastructure behind AI becomes visible, teachable, and buildable.</p>
                 </div>
                 <div class="grid grid-cols-2 gap-4">
-                    <img src="https://staariwebsiteprod001.blob.core.windows.net/website-assets/images/aari-action/garage-data-center-live-systems.jpg" alt="Students observing live data center systems" class="photo-float rounded-3xl object-cover aspect-[4/5] w-full" loading="lazy">
-                    <img src="https://staariwebsiteprod001.blob.core.windows.net/website-assets/images/aari-action/morehouse-technical-lab-session.jpg" alt="Morehouse technical lab session" class="photo-float rounded-3xl object-cover aspect-[4/5] w-full mt-10" loading="lazy">
+                    <img src="images/aari-action/garage-data-center-live-systems.jpg" alt="Students observing live data center systems" class="photo-float rounded-3xl object-cover aspect-[4/5] w-full" loading="lazy">
+                    <img src="images/aari-action/morehouse-technical-lab-session.jpg" alt="Morehouse technical lab session" class="photo-float rounded-3xl object-cover aspect-[4/5] w-full mt-10" loading="lazy">
                 </div>
             </div>
         </section>
@@ -584,70 +602,70 @@
                 <div class="grid lg:grid-cols-[0.9fr_1.1fr] gap-8 items-end mb-12">
                     <div>
                         <div class="section-kicker mb-5"><i data-lucide="camera" class="w-4 h-4"></i>AARI in Action</div>
-                        <h2 class="text-3xl md:text-5xl font-bold leading-tight mb-4">We are not building a brochure. We are building operators.</h2>
+                        <h2 class="text-3xl md:text-5xl font-bold leading-tight mb-4">We are not building a brochure. We are building an ecosystem.</h2>
                     </div>
-                    <p class="text-lg text-slatebrand-300 leading-relaxed">From student workshops and corporate site visits to robotics labs, edge AI development, and Smart Illuminating Helmet sessions, AARI gives students hands-on access to the infrastructure, tools, and rooms where the future is being built.</p>
+                    <p class="text-lg text-slatebrand-300 leading-relaxed">From student workshops and corporate site visits to robotics labs, edge AI development, and Smart Illuminating Helmet sessions, AARI puts students inside the infrastructure, the tools, and the rooms where the future is built. Training, employers, capital, and community do not sit in separate boxes here. They reinforce each other. That is what an operator ecosystem looks like.</p>
                 </div>
 
                 <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
                     <article class="action-card glass-panel rounded-3xl overflow-hidden border border-white/10">
                         <div class="overflow-hidden">
-                            <img src="https://staariwebsiteprod001.blob.core.windows.net/website-assets/images/aari-action/auc-students-microsoft-exposure.jpg" alt="AUC students visiting Microsoft for applied AI and infrastructure exposure" class="w-full aspect-[4/3] object-cover" loading="eager" fetchpriority="high">
+                            <img src="images/aari-action/auc-students-microsoft-exposure.jpg" alt="AUC students visiting Microsoft for applied AI and infrastructure exposure" class="w-full aspect-[4/3] object-cover" loading="eager" fetchpriority="high">
                         </div>
                         <p class="p-5 text-sm text-slatebrand-200 leading-relaxed">AUC students visiting Microsoft for applied AI and infrastructure exposure</p>
                     </article>
                     <article class="action-card glass-panel rounded-3xl overflow-hidden border border-white/10">
                         <div class="overflow-hidden">
-                            <img src="https://staariwebsiteprod001.blob.core.windows.net/website-assets/images/aari-action/aari-cohort-microsoft-atlanta.jpg" alt="AARI student cohort at Microsoft Atlanta" class="w-full aspect-[4/3] object-cover" loading="lazy">
+                            <img src="images/aari-action/aari-cohort-microsoft-atlanta.jpg" alt="AARI student cohort at Microsoft Atlanta" class="w-full aspect-[4/3] object-cover" loading="lazy">
                         </div>
                         <p class="p-5 text-sm text-slatebrand-200 leading-relaxed">AARI student cohort at Microsoft Atlanta</p>
                     </article>
                     <article class="action-card glass-panel rounded-3xl overflow-hidden border border-white/10">
                         <div class="overflow-hidden">
-                            <img src="https://staariwebsiteprod001.blob.core.windows.net/website-assets/images/aari-action/morehouse-technical-lab-session.jpg" alt="Students in technical lab sessions at Morehouse" class="w-full aspect-[4/3] object-cover" loading="lazy">
+                            <img src="images/aari-action/morehouse-technical-lab-session.jpg" alt="Students in technical lab sessions at Morehouse" class="w-full aspect-[4/3] object-cover" loading="lazy">
                         </div>
                         <p class="p-5 text-sm text-slatebrand-200 leading-relaxed">Students in technical lab sessions at Morehouse</p>
                     </article>
                     <article class="action-card glass-panel rounded-3xl overflow-hidden border border-white/10">
                         <div class="overflow-hidden">
-                            <img src="https://staariwebsiteprod001.blob.core.windows.net/website-assets/images/aari-action/garage-data-center-work-session.jpg" alt="Garage Data Center work session with students" class="w-full aspect-[4/3] object-cover" loading="lazy">
+                            <img src="images/aari-action/garage-data-center-work-session.jpg" alt="Garage Data Center work session with students" class="w-full aspect-[4/3] object-cover" loading="lazy">
                         </div>
                         <p class="p-5 text-sm text-slatebrand-200 leading-relaxed">Garage Data Center work session with students</p>
                     </article>
                     <article class="action-card glass-panel rounded-3xl overflow-hidden border border-white/10">
                         <div class="overflow-hidden">
-                            <img src="https://staariwebsiteprod001.blob.core.windows.net/website-assets/images/aari-action/garage-data-center-live-systems.jpg" alt="Students reviewing live systems inside the Garage Data Center" class="w-full aspect-[4/3] object-cover" loading="lazy">
+                            <img src="images/aari-action/garage-data-center-live-systems.jpg" alt="Students reviewing live systems inside the Garage Data Center" class="w-full aspect-[4/3] object-cover" loading="lazy">
                         </div>
                         <p class="p-5 text-sm text-slatebrand-200 leading-relaxed">Students reviewing live systems inside the Garage Data Center</p>
                     </article>
                     <article class="action-card glass-panel rounded-3xl overflow-hidden border border-white/10">
                         <div class="overflow-hidden">
-                            <img src="https://staariwebsiteprod001.blob.core.windows.net/website-assets/images/aari-action/sih-product-review-session.jpg" alt="Smart Illuminating Helmet product review session" class="w-full aspect-[4/3] object-cover" loading="lazy">
+                            <img src="images/aari-action/sih-product-review-session.jpg" alt="Smart Illuminating Helmet product review session" class="w-full aspect-[4/3] object-cover" loading="lazy">
                         </div>
                         <p class="p-5 text-sm text-slatebrand-200 leading-relaxed">Smart Illuminating Helmet product review session</p>
                     </article>
                     <article class="action-card glass-panel rounded-3xl overflow-hidden border border-white/10">
                         <div class="overflow-hidden">
-                            <img src="https://staariwebsiteprod001.blob.core.windows.net/website-assets/images/aari-action/partner-student-workshop.jpg" alt="AARI partner and student workshop" class="w-full aspect-[4/3] object-cover" loading="lazy">
+                            <img src="images/aari-action/partner-student-workshop.jpg" alt="AARI partner and student workshop" class="w-full aspect-[4/3] object-cover" loading="lazy">
                         </div>
                         <p class="p-5 text-sm text-slatebrand-200 leading-relaxed">AARI partner and student workshop</p>
                     </article>
                     <article class="action-card glass-panel rounded-3xl overflow-hidden border border-white/10">
                         <div class="overflow-hidden">
-                            <img src="https://staariwebsiteprod001.blob.core.windows.net/website-assets/images/aari-action/student-led-microsoft-discussion.jpg" alt="Student-led discussion during Microsoft session" class="w-full aspect-[4/3] object-cover" loading="lazy">
+                            <img src="images/aari-action/student-led-microsoft-discussion.jpg" alt="Student-led discussion during Microsoft session" class="w-full aspect-[4/3] object-cover" loading="lazy">
                         </div>
                         <p class="p-5 text-sm text-slatebrand-200 leading-relaxed">Student-led discussion during Microsoft session</p>
                     </article>
                     <article class="action-card glass-panel rounded-3xl overflow-hidden border border-white/10">
                         <div class="overflow-hidden">
-                            <img src="https://staariwebsiteprod001.blob.core.windows.net/website-assets/images/aari-action/aari-leadership-ai-infrastructure.jpg" alt="AARI leadership presenting applied AI infrastructure work" class="w-full aspect-[4/3] object-cover" loading="lazy">
+                            <img src="images/aari-action/aari-leadership-ai-infrastructure.jpg" alt="AARI leadership presenting applied AI infrastructure work" class="w-full aspect-[4/3] object-cover" loading="lazy">
                         </div>
                         <p class="p-5 text-sm text-slatebrand-200 leading-relaxed">AARI leadership presenting applied AI infrastructure work</p>
                     </article>
                 </div>
 
                 <div class="mt-10 flex flex-col sm:flex-row gap-4">
-                    <a href="#contact" class="bg-white text-navy-950 font-semibold px-7 py-4 rounded-xl hover:bg-slate-200 transition-colors text-center">Partner With AARI</a>
+                    <a href="contact.html" class="bg-white text-navy-950 font-semibold px-7 py-4 rounded-xl hover:bg-slate-200 transition-colors text-center">Partner With AARI</a>
                     <a href="impact.html" class="glass-panel text-white font-semibold px-7 py-4 rounded-xl hover:bg-white/5 transition-colors text-center">See Our Work</a>
                 </div>
             </div>
@@ -657,37 +675,112 @@
             <div class="section-shell">
                 <div class="max-w-4xl mb-14">
                     <div class="section-kicker mb-5"><i data-lucide="route" class="w-4 h-4"></i>From Exposure to Execution</div>
-                    <h2 class="text-3xl md:text-5xl font-extrabold mb-4">AARI turns access into technical agency.</h2>
-                    <p class="text-lg text-slate-700">The pipeline is intentionally sequential: students first see real technical environments, then learn the stack, build systems, prove the work, and move toward market outcomes.</p>
+                    <h2 class="text-3xl md:text-5xl font-extrabold mb-4">AARI turns access into ownership.</h2>
+                    <p class="text-lg text-slate-700">The pipeline is sequential by design. Students see real environments, learn the stack, build systems, prove the work, enter the market, and then build companies of their own.</p>
                 </div>
                 <div class="relative">
                     <div class="hidden md:block absolute left-1/2 top-4 bottom-4 w-1 rounded-full timeline-line -translate-x-1/2"></div>
-                    <div class="space-y-8">
-                        <article class="timeline-card bright-card rounded-3xl p-6 md:w-[47%]">
+                    <div class="space-y-8" data-expandable-group>
+                        <article class="timeline-card bright-card rounded-3xl p-6 md:w-[47%]" data-expandable-card>
                             <p class="text-sm font-extrabold text-blue-700 uppercase tracking-[0.2em]">01</p>
                             <h3 class="mt-3 text-2xl font-bold">See the Room</h3>
-                            <p class="mt-3 text-slate-600">Students visit labs, data centers, corporate campuses, and technical environments.</p>
+                            <p class="mt-3 text-slate-600">Students visit labs, data centers, corporate campuses, and live technical environments.</p>
+                            <button type="button" class="mt-5 text-sm font-bold text-gold-400 hover:text-gold-300" aria-expanded="false" aria-controls="journey-see-room">Show detail</button>
+                            <div id="journey-see-room" class="interactive-detail"><div class="pt-4 text-sm text-slate-600">Students learn what real AI infrastructure environments look like before they are asked to choose a pathway.</div></div>
                         </article>
-                        <article class="timeline-card bright-card rounded-3xl p-6 md:w-[47%] md:ml-auto">
+                        <article class="timeline-card bright-card rounded-3xl p-6 md:w-[47%] md:ml-auto" data-expandable-card>
                             <p class="text-sm font-extrabold text-emerald-700 uppercase tracking-[0.2em]">02</p>
                             <h3 class="mt-3 text-2xl font-bold">Learn the Stack</h3>
                             <p class="mt-3 text-slate-600">Students study cloud, robotics, edge AI, infrastructure, networking, and quantum foundations.</p>
+                            <button type="button" class="mt-5 text-sm font-bold text-gold-400 hover:text-gold-300" aria-expanded="false" aria-controls="journey-learn-stack">Show detail</button>
+                            <div id="journey-learn-stack" class="interactive-detail"><div class="pt-4 text-sm text-slate-600">The curriculum connects each layer so learners understand dependencies, not isolated tools.</div></div>
                         </article>
-                        <article class="timeline-card bright-card rounded-3xl p-6 md:w-[47%]">
+                        <article class="timeline-card bright-card rounded-3xl p-6 md:w-[47%]" data-expandable-card>
                             <p class="text-sm font-extrabold text-amber-700 uppercase tracking-[0.2em]">03</p>
                             <h3 class="mt-3 text-2xl font-bold">Build the System</h3>
                             <p class="mt-3 text-slate-600">Students work on applied labs, demos, and product-oriented projects.</p>
+                            <button type="button" class="mt-5 text-sm font-bold text-gold-400 hover:text-gold-300" aria-expanded="false" aria-controls="journey-build-system">Show detail</button>
+                            <div id="journey-build-system" class="interactive-detail"><div class="pt-4 text-sm text-slate-600">Labs move from vocabulary to hands-on work: devices, networks, cloud environments, and technical documentation.</div></div>
                         </article>
-                        <article class="timeline-card bright-card rounded-3xl p-6 md:w-[47%] md:ml-auto">
+                        <article class="timeline-card bright-card rounded-3xl p-6 md:w-[47%] md:ml-auto" data-expandable-card>
                             <p class="text-sm font-extrabold text-blue-700 uppercase tracking-[0.2em]">04</p>
                             <h3 class="mt-3 text-2xl font-bold">Prove the Work</h3>
-                            <p class="mt-3 text-slate-600">Students present, demo, benchmark, and explain what they built.</p>
+                            <p class="mt-3 text-slate-600">Students present, demo, benchmark, and defend what they built.</p>
+                            <button type="button" class="mt-5 text-sm font-bold text-gold-400 hover:text-gold-300" aria-expanded="false" aria-controls="journey-prove-work">Show detail</button>
+                            <div id="journey-prove-work" class="interactive-detail"><div class="pt-4 text-sm text-slate-600">Students explain tradeoffs, show working outputs, and practice the communication expected in technical roles.</div></div>
                         </article>
-                        <article class="timeline-card bright-card rounded-3xl p-6 md:w-[47%]">
+                        <article class="timeline-card bright-card rounded-3xl p-6 md:w-[47%]" data-expandable-card>
                             <p class="text-sm font-extrabold text-emerald-700 uppercase tracking-[0.2em]">05</p>
                             <h3 class="mt-3 text-2xl font-bold">Enter the Market</h3>
-                            <p class="mt-3 text-slate-600">Students move toward internships, jobs, ventures, research, and leadership roles.</p>
+                            <p class="mt-3 text-slate-600">Students move into internships, jobs, research, and leadership roles.</p>
+                            <button type="button" class="mt-5 text-sm font-bold text-gold-400 hover:text-gold-300" aria-expanded="false" aria-controls="journey-enter-market">Show detail</button>
+                            <div id="journey-enter-market" class="interactive-detail"><div class="pt-4 text-sm text-slate-600">AARI frames outcomes around readiness, placement, research, and leadership opportunities tied to real operator work.</div></div>
                         </article>
+                        <article class="timeline-card bright-card rounded-3xl p-6 md:w-[47%] md:ml-auto" data-expandable-card>
+                            <p class="text-sm font-extrabold text-blue-700 uppercase tracking-[0.2em]">06</p>
+                            <h3 class="mt-3 text-2xl font-bold">Own the Company</h3>
+                            <p class="mt-3 text-slate-600">The strongest operators get backed as founders. Training creates operators. Capital makes them owners.</p>
+                            <button type="button" class="mt-5 text-sm font-bold text-gold-400 hover:text-gold-300" aria-expanded="false" aria-controls="journey-own-company">Show detail</button>
+                            <div id="journey-own-company" class="interactive-detail"><div class="pt-4 text-sm text-slate-600">The long-term model connects training, founder readiness, and capital so operators can become owners.</div></div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="national-footprint" class="py-20 md:py-24 bright-section scroll-mt-24">
+            <div class="section-shell">
+                <div class="grid lg:grid-cols-[0.85fr_1.15fr] gap-10 items-start mb-12">
+                    <div>
+                        <div class="section-kicker mb-5"><i data-lucide="map" class="w-4 h-4"></i>The build order</div>
+                        <h2 class="text-3xl md:text-5xl font-extrabold leading-tight mb-5">Atlanta is the prototype. The grid is national.</h2>
+                    </div>
+                    <div class="space-y-5 text-lg text-slate-700 leading-relaxed">
+                        <p>AARI was built in Atlanta on purpose, rooted in one of the most important Black academic ecosystems in the country. Atlanta proved the model travels. The next sites are Orlando, Brooklyn, and Houston, each chosen for the same reason: talent density, an employer base that needs operators, and infrastructure demand that is not slowing down.</p>
+                        <p>Each city gets a full local engine, not a satellite classroom. Same standard, same doctrine, four cities.</p>
+                        <p class="font-semibold text-slate-900">Access and excellence are not regional. They scale together, or they do not scale at all.</p>
+                    </div>
+                </div>
+                <div class="grid md:grid-cols-3 gap-5">
+                    <article class="bright-card rounded-3xl p-7">
+                        <h3 class="text-2xl font-bold mb-3">Orlando</h3>
+                        <p class="text-slate-600 leading-relaxed">Simulation, robotics, and a defense and aerospace corridor that runs on infrastructure talent.</p>
+                    </article>
+                    <article class="bright-card rounded-3xl p-7">
+                        <h3 class="text-2xl font-bold mb-3">Brooklyn</h3>
+                        <p class="text-slate-600 leading-relaxed">Dense talent, a growing tech base, and the clearest case that the operator pipeline belongs in the Northeast.</p>
+                    </article>
+                    <article class="bright-card rounded-3xl p-7">
+                        <h3 class="text-2xl font-bold mb-3">Houston</h3>
+                        <p class="text-slate-600 leading-relaxed">Energy, compute, and the front line of where power and AI meet.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="sixteen-to-twenty" class="py-20 md:py-24 bg-navy-900 scroll-mt-24">
+            <div class="section-shell grid lg:grid-cols-[0.8fr_1.2fr] gap-10 items-start">
+                <div>
+                    <div class="section-kicker mb-5"><i data-lucide="wrench" class="w-4 h-4"></i>Catching them early</div>
+                    <h2 class="text-3xl md:text-5xl font-bold leading-tight">The engineers who will fix the robots are sixteen right now.</h2>
+                </div>
+                <div class="glass-panel rounded-3xl p-8 md:p-10 border border-white/10 space-y-5">
+                    <p class="text-lg text-slatebrand-300 leading-relaxed">Most AI workforce programs aim at adults who already have degrees. AARI goes earlier, into the gap nobody trains for: the sixteen to twenty year olds who will become the technicians and engineers who repair the robotics on a factory floor and raise the data centers the entire AI economy runs on. These are not entry-level jobs. They are the backbone.</p>
+                    <p class="text-lg text-slatebrand-300 leading-relaxed">By the time most programs reach a young person, the system has already decided robotics and data centers are not for them. We reach them first, put their hands on real hardware, and show them the work is technical, durable, and theirs to own. That is where the gap is. That is where we close it.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="operators-to-owners" class="py-20 md:py-24 bright-section scroll-mt-24">
+            <div class="section-shell">
+                <div class="rounded-[2rem] bg-navy-950 p-8 md:p-12 text-white grid lg:grid-cols-[0.85fr_1.15fr] gap-8 items-start">
+                    <div>
+                        <p class="text-xs uppercase tracking-[0.22em] text-amber-300 font-bold mb-4">The flywheel</p>
+                        <h2 class="text-3xl md:text-5xl font-extrabold leading-tight">From operators, to owners.</h2>
+                    </div>
+                    <div class="space-y-5 text-lg text-slatebrand-300 leading-relaxed">
+                        <p>AARI's founding line has always been operators, not observers. The next evolution of that line is ownership. We are building the capital layer that backs the founders who come out of our pipeline, people who understand the infrastructure stack from the inside because they were trained to build it.</p>
+                        <p>This is what closes the loop. The pipeline produces operators. The operators become founders. The capital backs the founders. The companies they build hire the next cohort coming up behind them. That is not a program. That is an ecosystem, and once it spins, it does not stop.</p>
                     </div>
                 </div>
             </div>
@@ -794,26 +887,46 @@
                     <div class="section-kicker mb-5"><i data-lucide="cpu" class="w-4 h-4"></i>Programs</div>
                     <h2 class="text-3xl md:text-4xl font-bold mb-4">Our core training lanes</h2>
                 </div>
-                <div class="grid md:grid-cols-2 xl:grid-cols-5 gap-5">
-                    <article class="lane-card glass-panel rounded-3xl p-6 border border-white/10">
+                <div class="grid md:grid-cols-2 xl:grid-cols-5 gap-5" data-expandable-group>
+                    <article class="lane-card glass-panel rounded-3xl p-6 border border-white/10" data-expandable-card>
                         <h3 class="text-xl font-semibold mb-3">AI Infrastructure &amp; Data Centers</h3>
                         <p class="text-sm text-slatebrand-300 leading-relaxed">Compute, networking, power, storage, systems operations, and the environments where production AI actually runs.</p>
+                        <button type="button" class="mt-5 text-sm font-bold text-gold-400 hover:text-gold-300" aria-expanded="false" aria-controls="program-data-centers">Learn more</button>
+                        <div id="program-data-centers" class="interactive-detail">
+                            <div class="pt-4 text-sm text-slatebrand-300 space-y-2"><p><strong>Skills:</strong> Linux, cabling, monitoring, uptime, and rack-aware operations.</p><p><strong>Lab:</strong> build a data center operations runbook.</p><p><strong>Pathway:</strong> data center technician and critical facilities support.</p></div>
+                        </div>
                     </article>
-                    <article class="lane-card glass-panel rounded-3xl p-6 border border-white/10">
+                    <article class="lane-card glass-panel rounded-3xl p-6 border border-white/10" data-expandable-card>
                         <h3 class="text-xl font-semibold mb-3">Edge AI &amp; Physical AI</h3>
                         <p class="text-sm text-slatebrand-300 leading-relaxed">Jetson systems, sensor fusion, local inference, and deployment constraints outside the cloud.</p>
+                        <button type="button" class="mt-5 text-sm font-bold text-gold-400 hover:text-gold-300" aria-expanded="false" aria-controls="program-edge-ai">Learn more</button>
+                        <div id="program-edge-ai" class="interactive-detail">
+                            <div class="pt-4 text-sm text-slatebrand-300 space-y-2"><p><strong>Skills:</strong> sensors, local inference, telemetry, and constrained compute.</p><p><strong>Lab:</strong> deploy an edge inference demo on Jetson-class hardware.</p><p><strong>Pathway:</strong> edge AI technician and field systems support.</p></div>
+                        </div>
                     </article>
-                    <article class="lane-card glass-panel rounded-3xl p-6 border border-white/10">
+                    <article class="lane-card glass-panel rounded-3xl p-6 border border-white/10" data-expandable-card>
                         <h3 class="text-xl font-semibold mb-3">Robotics &amp; Autonomous Systems</h3>
                         <p class="text-sm text-slatebrand-300 leading-relaxed">Robotics control, computer vision, autonomy pipelines, and systems integration from hardware to behavior.</p>
+                        <button type="button" class="mt-5 text-sm font-bold text-gold-400 hover:text-gold-300" aria-expanded="false" aria-controls="program-robotics">Learn more</button>
+                        <div id="program-robotics" class="interactive-detail">
+                            <div class="pt-4 text-sm text-slatebrand-300 space-y-2"><p><strong>Skills:</strong> controls, perception, computer vision, and robot safety basics.</p><p><strong>Lab:</strong> assemble and test a sensor-driven robotics workflow.</p><p><strong>Pathway:</strong> robotics technician and automation support roles.</p></div>
+                        </div>
                     </article>
-                    <article class="lane-card glass-panel rounded-3xl p-6 border border-white/10">
+                    <article class="lane-card glass-panel rounded-3xl p-6 border border-white/10" data-expandable-card>
                         <h3 class="text-xl font-semibold mb-3">Quantum-Classical Computing</h3>
                         <p class="text-sm text-slatebrand-300 leading-relaxed">Quantum literacy, hybrid workflows, and operator-level exposure to the next layer of compute.</p>
+                        <button type="button" class="mt-5 text-sm font-bold text-gold-400 hover:text-gold-300" aria-expanded="false" aria-controls="program-quantum">Learn more</button>
+                        <div id="program-quantum" class="interactive-detail">
+                            <div class="pt-4 text-sm text-slatebrand-300 space-y-2"><p><strong>Skills:</strong> hybrid systems vocabulary, cloud quantum access, and experiment framing.</p><p><strong>Lab:</strong> run a quantum-classical learning exercise.</p><p><strong>Pathway:</strong> research support and emerging compute literacy.</p></div>
+                        </div>
                     </article>
-                    <article class="lane-card glass-panel rounded-3xl p-6 border border-white/10">
+                    <article class="lane-card glass-panel rounded-3xl p-6 border border-white/10" data-expandable-card>
                         <h3 class="text-xl font-semibold mb-3">Cloud, Security &amp; Production AI</h3>
                         <p class="text-sm text-slatebrand-300 leading-relaxed">Containers, cloud systems, guardrails, identity, observability, and deployment discipline.</p>
+                        <button type="button" class="mt-5 text-sm font-bold text-gold-400 hover:text-gold-300" aria-expanded="false" aria-controls="program-cloud-security">Learn more</button>
+                        <div id="program-cloud-security" class="interactive-detail">
+                            <div class="pt-4 text-sm text-slatebrand-300 space-y-2"><p><strong>Skills:</strong> containers, identity, deployment, observability, and secure operations.</p><p><strong>Lab:</strong> ship and monitor a small production-style service.</p><p><strong>Pathway:</strong> cloud operations, platform support, and AI reliability roles.</p></div>
+                        </div>
                     </article>
                 </div>
             </div>
@@ -859,12 +972,26 @@
                     </article>
                 </div>
 
+                <div class="glass-panel rounded-3xl overflow-hidden border border-white/10 mb-10 grid lg:grid-cols-[0.95fr_1.05fr]">
+                    <div class="p-7 md:p-9 flex flex-col justify-center">
+                        <p class="text-xs uppercase tracking-[0.2em] text-gold-400 mb-3">Student testimonial</p>
+                        <h3 class="text-3xl md:text-4xl font-bold mb-4">Students are seeing the pathway from infrastructure access to operator confidence.</h3>
+                        <p class="text-slatebrand-300 leading-relaxed">This student testimonial belongs in the Proof section because it shows the work landing with the people AARI exists to train.</p>
+                    </div>
+                    <div class="bg-black">
+                        <video class="w-full h-full min-h-[22rem] object-cover" controls preload="metadata" playsinline aria-label="AARI student testimonial video">
+                            <source src="assets/video/student-testimonial.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+
                 <div class="glass-panel rounded-3xl p-6 md:p-8 border border-white/10" data-partner-carousel>
                     <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-7">
                         <div class="max-w-3xl">
                             <p class="text-xs uppercase tracking-[0.22em] text-electric-400 mb-3">Ecosystem / Partner Network</p>
                             <h3 class="text-3xl md:text-4xl font-bold mb-4">Our Partners</h3>
-                            <p class="text-slatebrand-300 leading-relaxed">AARI groups partners by the role they play in the infrastructure pipeline: facilities, cloud, AI compute, robotics, academics, community, and giving platforms.</p>
+                            <p class="text-slatebrand-300 leading-relaxed">AARI groups organizations by their role in the infrastructure pipeline, including confirmed collaborations, active conversations, curriculum alignment, prospective partner relationships, and giving platforms.</p>
                         </div>
                         <div class="flex items-center gap-3">
                             <button type="button" class="partner-arrow inline-flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-slatebrand-200 hover:border-electric-400/50 hover:text-white" data-carousel-prev aria-label="Previous partner">
@@ -874,6 +1001,15 @@
                                 <i data-lucide="chevron-right" class="h-5 w-5"></i>
                             </button>
                         </div>
+                    </div>
+                    <div class="flex flex-wrap gap-3 mb-6" data-partner-filters aria-label="Filter partner and funder cards">
+                        <button type="button" class="filter-button rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-semibold text-slatebrand-300" data-filter="All" aria-pressed="true">All</button>
+                        <button type="button" class="filter-button rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-semibold text-slatebrand-300" data-filter="Cloud" aria-pressed="false">Cloud</button>
+                        <button type="button" class="filter-button rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-semibold text-slatebrand-300" data-filter="Data Centers" aria-pressed="false">Data Centers</button>
+                        <button type="button" class="filter-button rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-semibold text-slatebrand-300" data-filter="Robotics" aria-pressed="false">Robotics</button>
+                        <button type="button" class="filter-button rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-semibold text-slatebrand-300" data-filter="Academic" aria-pressed="false">Academic</button>
+                        <button type="button" class="filter-button rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-semibold text-slatebrand-300" data-filter="Philanthropy" aria-pressed="false">Philanthropy</button>
+                        <button type="button" class="filter-button rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-semibold text-slatebrand-300" data-filter="Community" aria-pressed="false">Community</button>
                     </div>
                     <div class="partner-carousel-viewport" tabindex="0" aria-label="AARI partner carousel. Use left and right arrow keys to move through partners.">
                         <div class="partner-carousel-track" data-carousel-track></div>
@@ -899,10 +1035,15 @@
             <div class="section-shell">
                 <div class="max-w-3xl mb-12">
                     <div class="section-kicker mb-5"><i data-lucide="bar-chart-3" class="w-4 h-4"></i>Impact</div>
-                    <h2 class="text-3xl md:text-4xl font-bold mb-4">Early traction</h2>
-                    <p class="text-lg text-slatebrand-300">Early indicators from AARI's emerging AI infrastructure workforce model.</p>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4">Seven months in. This is the floor, not the ceiling.</h2>
+                    <p class="text-lg text-slatebrand-300">AARI started in November 2025. Here is the traction since.</p>
                 </div>
                 <div class="grid sm:grid-cols-2 xl:grid-cols-3 gap-5">
+                    <article class="metric-card glass-panel rounded-3xl p-7 border border-white/10">
+                        <p class="text-sm uppercase tracking-[0.22em] text-slatebrand-500 mb-4">Raised to date</p>
+                        <p class="text-4xl font-bold mb-3"><span>$100K+</span></p>
+                        <p class="text-sm text-slatebrand-300">Committed funding secured in our first seven months, including corporate, grant, and philanthropic support.</p>
+                    </article>
                     <article class="metric-card glass-panel rounded-3xl p-7 border border-white/10">
                         <p class="text-sm uppercase tracking-[0.22em] text-slatebrand-500 mb-4">Students trained</p>
                         <p class="text-4xl font-bold mb-3" data-metric="students-trained"><span id="metric-students_trained">40+</span></p>
@@ -931,11 +1072,53 @@
                     <article class="metric-card glass-panel rounded-3xl p-7 border border-white/10">
                         <p class="text-sm uppercase tracking-[0.22em] text-slatebrand-500 mb-4">Campus / lab footprint</p>
                         <p class="text-4xl font-bold mb-3" data-metric="campus-footprint"><span id="metric-footprint_sqft">100K+ sq ft</span></p>
-                        <p class="text-sm text-slatebrand-300">Interim robotics and AI workforce training footprint tied to Summer 2026 activation, plus AUC lab-based programming.</p>
+                        <p class="text-sm text-slatebrand-300">Applied robotics and AI workforce training campus, Summer 2026 activation.</p>
                     </article>
                 </div>
-                <p class="text-xs text-slatebrand-500 mt-6">Metrics reflect current internal tracking and partner-facing program development as of 2026. Formal annual reporting is in development.</p>
+                <p class="text-xs text-slatebrand-500 mt-6">Metrics reflect current internal tracking as of 2026. Formal annual reporting is in development. We report in cohorts, labs, placements, and operator outcomes, not slogans. <a href="impact-methodology.html" class="text-blue-700 font-semibold underline underline-offset-4 hover:text-blue-900">How we track impact</a></p>
                 <p id="impact-live-updated" class="hidden text-xs text-slatebrand-500 mt-2" aria-live="polite"></p>
+            </div>
+        </section>
+
+        <section id="recognition-support" class="py-20 md:py-24 bright-section scroll-mt-24">
+            <div class="section-shell">
+                <div class="grid lg:grid-cols-[0.85fr_1.15fr] gap-10 items-end mb-12">
+                    <div>
+                        <div class="section-kicker mb-5"><i data-lucide="award" class="w-4 h-4"></i>Recognition &amp; Support</div>
+                        <h2 class="text-3xl md:text-5xl font-extrabold leading-tight mb-4">Recognition that strengthens the operator pipeline.</h2>
+                    </div>
+                    <p class="text-lg text-slate-700 leading-relaxed">Industry and ecosystem support helps AARI turn infrastructure access into hands-on training, student projects, and workforce pathways.</p>
+                </div>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <article class="glass-panel rounded-3xl p-7 border border-white/10">
+                        <div class="mb-5 flex h-16 items-center rounded-2xl bg-white px-5">
+                            <img src="assets/logos/qts-logo.svg" alt="QTS logo" class="max-h-9 w-auto">
+                        </div>
+                        <div class="flex flex-wrap items-center gap-3 mb-4">
+                            <h3 class="text-2xl font-bold">QTS</h3>
+                            <span class="rounded-full border border-amber-400/30 bg-amber-400/10 px-3 py-1 text-xs font-bold uppercase tracking-[0.16em] text-gold-400">2026 Grant Partner</span>
+                            <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-sm font-bold text-slatebrand-200">$15,000</span>
+                        </div>
+                        <p class="text-slatebrand-300 leading-relaxed mb-4">QTS awarded AARI a $15,000 grant in 2026 to support general operations and strengthen AARI's work preparing students for data center and AI infrastructure roles.</p>
+                        <p class="text-sm text-slatebrand-400">General operating support for AARI's AI infrastructure and data center workforce pathway.</p>
+                    </article>
+                    <article class="glass-panel rounded-3xl p-7 border border-white/10">
+                        <div class="mb-5 overflow-hidden rounded-2xl border border-white/10 bg-white/5">
+                            <img src="assets/logos/a16z-clf-card.png" alt="a16z Cultural Leadership Fund graphic" class="h-24 w-full object-cover">
+                        </div>
+                        <div class="flex flex-wrap items-center gap-3 mb-4">
+                            <h3 class="text-2xl font-bold">a16z Cultural Leadership Fund</h3>
+                            <span class="rounded-full border border-amber-400/30 bg-amber-400/10 px-3 py-1 text-xs font-bold uppercase tracking-[0.16em] text-gold-400">Ecosystem Partner Program</span>
+                            <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-sm font-bold text-slatebrand-200">Renewable Support</span>
+                        </div>
+                        <p class="text-slatebrand-300 leading-relaxed mb-4">AARI was selected for renewable support through the a16z Cultural Leadership Fund's Ecosystem Partner Program, recognizing AARI's work at the infrastructure layer of AI: systems, compute, networking, cloud, data centers, robotics, and production environments.</p>
+                        <p class="text-sm text-slatebrand-400">Renewable support recognizing AARI's work expanding access to the infrastructure layer of AI for HBCU students and underrepresented technical talent.</p>
+                    </article>
+                </div>
+                <div class="mt-10 flex flex-col sm:flex-row gap-4">
+                    <a href="contact.html" class="bg-white text-navy-950 font-semibold px-7 py-4 rounded-xl hover:bg-slate-200 transition-colors text-center">Partner With AARI</a>
+                    <a href="donate.html" class="donate-cta font-extrabold px-7 py-4 rounded-xl text-center inline-flex items-center justify-center gap-2"><i data-lucide="heart" class="w-5 h-5"></i>Fund Infrastructure Access</a>
+                </div>
             </div>
         </section>
 
@@ -947,16 +1130,16 @@
                 </div>
                 <div class="grid md:grid-cols-2 gap-6 mb-14">
                     <article class="profile-card glass-panel rounded-3xl p-7 border border-white/10 flex flex-col md:flex-row gap-6">
-                        <img src="https://staariwebsiteprod001.blob.core.windows.net/website-assets/images/nolan-headshot.jpg" alt="Nolan S. Code" class="w-32 h-32 rounded-2xl object-cover border border-white/10">
+                        <img src="images/nolan-headshot.jpg" alt="Nolan S. Code" class="w-32 h-32 rounded-2xl object-cover border border-white/10">
                         <div>
                             <h3 class="text-2xl font-semibold mb-2">Nolan S. Code</h3>
-                            <p class="text-electric-400 font-medium mb-3">Founder &amp; CEO</p>
+                            <p class="text-electric-400 font-medium mb-3">Founder &amp; Executive Director</p>
                             <p class="text-slatebrand-300 leading-relaxed mb-4">Morehouse College Alumnus. MBA. Systems infrastructure and platform strategy.</p>
                             <a href="https://www.linkedin.com/in/nolan-s-code-mba/" target="_blank" rel="noreferrer" class="text-sm text-slatebrand-400 hover:text-electric-300 transition-colors">LinkedIn</a>
                         </div>
                     </article>
                     <article class="profile-card glass-panel rounded-3xl p-7 border border-white/10 flex flex-col md:flex-row gap-6">
-                        <img src="https://staariwebsiteprod001.blob.core.windows.net/website-assets/images/dorian-person.jpg" alt="Dorian Person" class="w-32 h-32 rounded-2xl object-cover border border-white/10">
+                        <img src="images/dorian-person.jpg" alt="Dorian Person" class="w-32 h-32 rounded-2xl object-cover border border-white/10">
                         <div>
                             <h3 class="text-2xl font-semibold mb-2">Dorian Person</h3>
                             <p class="text-electric-400 font-medium mb-3">CTO</p>
@@ -965,7 +1148,7 @@
                         </div>
                     </article>
                     <article class="profile-card glass-panel rounded-3xl p-7 border border-white/10 flex flex-col md:flex-row gap-6">
-                        <img src="https://staariwebsiteprod001.blob.core.windows.net/website-assets/images/david-taylor.jpg" alt="David Taylor" class="w-32 h-32 rounded-2xl object-cover border border-white/10">
+                        <img src="images/david-taylor.jpg" alt="David Taylor" class="w-32 h-32 rounded-2xl object-cover border border-white/10">
                         <div>
                             <h3 class="text-2xl font-semibold mb-2">David Taylor</h3>
                             <p class="text-electric-400 font-medium mb-3">COO</p>
@@ -974,7 +1157,7 @@
                         </div>
                     </article>
                     <article class="profile-card glass-panel rounded-3xl p-7 border border-white/10 flex flex-col md:flex-row gap-6">
-                        <img src="https://staariwebsiteprod001.blob.core.windows.net/website-assets/images/leslie-nicholson.jpg" alt="Leslie Nicholson" class="w-32 h-32 rounded-2xl object-cover border border-white/10">
+                        <img src="images/leslie-nicholson.jpg" alt="Leslie Nicholson" class="w-32 h-32 rounded-2xl object-cover border border-white/10">
                         <div>
                             <h3 class="text-2xl font-semibold mb-2">Leslie Nicholson</h3>
                             <p class="text-electric-400 font-medium mb-3">VP, Partnerships</p>
@@ -988,7 +1171,7 @@
                 </div>
                 <div class="grid md:grid-cols-2 gap-6 mb-14">
                     <article class="profile-card glass-panel rounded-3xl p-7 border border-white/10 flex flex-col md:flex-row gap-6">
-                        <img src="https://staariwebsiteprod001.blob.core.windows.net/website-assets/images/dwayne-joseph.webp" alt="Dwayne Joseph, PhD" class="w-32 h-32 rounded-2xl object-cover border border-white/10">
+                        <img src="images/dwayne-joseph.webp" alt="Dwayne Joseph, PhD" class="w-32 h-32 rounded-2xl object-cover border border-white/10">
                         <div>
                             <h3 class="text-2xl font-semibold mb-2">Dwayne Joseph, PhD</h3>
                             <p class="text-electric-400 font-medium mb-3">Strategic Advisor</p>
@@ -996,7 +1179,7 @@
                         </div>
                     </article>
                     <article class="profile-card glass-panel rounded-3xl p-7 border border-white/10 flex flex-col md:flex-row gap-6">
-                        <img src="https://staariwebsiteprod001.blob.core.windows.net/website-assets/images/carlotta-berry.jpg" alt="Carlotta A. Berry, PhD" class="w-32 h-32 rounded-2xl object-cover border border-white/10">
+                        <img src="images/carlotta-berry.jpg" alt="Carlotta A. Berry, PhD" class="w-32 h-32 rounded-2xl object-cover border border-white/10">
                         <div>
                             <h3 class="text-2xl font-semibold mb-2">Carlotta A. Berry, PhD</h3>
                             <p class="text-electric-400 font-medium mb-3">Robotics &amp; Systems Engineering Advisor</p>
@@ -1010,17 +1193,17 @@
                 </div>
                 <div class="grid md:grid-cols-3 gap-6">
                     <article class="profile-card glass-panel rounded-3xl p-6 border border-white/10">
-                        <img src="https://staariwebsiteprod001.blob.core.windows.net/website-assets/images/nolan-headshot.jpg" alt="Nolan S. Code" class="w-24 h-24 rounded-2xl object-cover border border-white/10 mb-5">
+                        <img src="images/nolan-headshot.jpg" alt="Nolan S. Code" class="w-24 h-24 rounded-2xl object-cover border border-white/10 mb-5">
                         <h3 class="text-xl font-semibold mb-2">Nolan S. Code</h3>
-                        <p class="text-electric-400 font-medium mb-3">Founder &amp; CEO</p>
+                        <p class="text-electric-400 font-medium mb-3">Founder &amp; Executive Director</p>
                     </article>
                     <article class="profile-card glass-panel rounded-3xl p-6 border border-white/10">
-                        <img src="https://staariwebsiteprod001.blob.core.windows.net/website-assets/images/dwayne-joseph.webp" alt="Dwayne Joseph, PhD" class="w-24 h-24 rounded-2xl object-cover border border-white/10 mb-5">
+                        <img src="images/dwayne-joseph.webp" alt="Dwayne Joseph, PhD" class="w-24 h-24 rounded-2xl object-cover border border-white/10 mb-5">
                         <h3 class="text-xl font-semibold mb-2">Dwayne Joseph, PhD</h3>
                         <p class="text-electric-400 font-medium mb-3">Board Advisor</p>
                     </article>
                     <article class="profile-card glass-panel rounded-3xl p-6 border border-white/10">
-                        <img src="https://staariwebsiteprod001.blob.core.windows.net/website-assets/images/carlotta-berry.jpg" alt="Carlotta A. Berry, PhD" class="w-24 h-24 rounded-2xl object-cover border border-white/10 mb-5">
+                        <img src="images/carlotta-berry.jpg" alt="Carlotta A. Berry, PhD" class="w-24 h-24 rounded-2xl object-cover border border-white/10 mb-5">
                         <h3 class="text-xl font-semibold mb-2">Carlotta A. Berry, PhD</h3>
                         <p class="text-electric-400 font-medium mb-3">Board Advisor</p>
                     </article>
@@ -1048,81 +1231,35 @@
 
         <section id="funders" class="py-20 md:py-24 scroll-mt-24">
             <div class="section-shell">
-                <div class="grid lg:grid-cols-[0.95fr_1.05fr] gap-8 items-start mb-12">
+                <div class="grid lg:grid-cols-[0.95fr_1.05fr] gap-8 items-start">
                     <div>
                         <div class="section-kicker mb-5"><i data-lucide="banknote" class="w-4 h-4"></i>Funders</div>
-                        <h2 class="text-3xl md:text-5xl font-bold mb-4">New AI wealth should build new AI access.</h2>
-                        <p class="text-lg text-slatebrand-300 leading-relaxed mb-5">As AI companies create historic market value, AARI is building the student pipeline that gives underrepresented learners access to the infrastructure behind that value: data centers, GPUs, cloud, robotics, edge AI, networking, and quantum systems.</p>
-                        <p class="text-lg text-slatebrand-200 leading-relaxed mb-8">AI created the wealth. Infrastructure access should create the opportunity.</p>
+                        <h2 class="text-3xl md:text-4xl font-bold mb-4">New AI wealth should build new AI access.</h2>
+                        <p class="text-lg text-slatebrand-300 leading-relaxed mb-8">As AI creates historic market value, AARI is building the pipeline that gives underrepresented learners access to the infrastructure behind that value: data centers, GPUs, cloud, robotics, edge AI, networking, and quantum systems. AI created the wealth. Infrastructure access will create the opportunity. We raised our first $100K in seven months. The $10M build comes next, and it scales this across four cities.</p>
                         <div class="flex flex-col sm:flex-row gap-4">
-                            <a href="fund-ai-access.html" data-analytics-event="funder_cta_click" data-analytics-location="funders" data-analytics-cta="Fund Infrastructure Access" class="bg-white text-navy-950 font-semibold px-7 py-4 rounded-xl hover:bg-slate-200 transition-colors inline-flex items-center gap-2">
-                                Fund Infrastructure Access
-                                <i data-lucide="arrow-up-right" class="w-5 h-5"></i>
-                            </a>
-                            <a href="funder-brief.html" data-analytics-event="funder_brief_download" data-analytics-location="funders" data-analytics-cta="Read Funder Brief" class="glass-panel text-white font-semibold px-7 py-4 rounded-xl hover:bg-white/5 transition-colors inline-flex items-center gap-2">
-                                Read the Funder Brief
-                                <i data-lucide="file-text" class="w-5 h-5"></i>
-                            </a>
+                        <a href="contact.html" class="bg-white text-navy-950 font-semibold px-7 py-4 rounded-xl hover:bg-slate-200 transition-colors inline-flex items-center gap-2">
+                            Request the AARI Funder Brief
+                            <i data-lucide="arrow-up-right" class="w-5 h-5"></i>
+                        </a>
+                        <a href="funder-brief.html" class="glass-panel text-white font-semibold px-7 py-4 rounded-xl hover:bg-white/5 transition-colors inline-flex items-center gap-2">
+                            Read the brief
+                            <i data-lucide="file-text" class="w-5 h-5"></i>
+                        </a>
                         </div>
                     </div>
                     <div class="grid gap-5">
                         <article class="fund-card glass-panel rounded-3xl p-7 border border-white/10">
-                            <h3 class="text-xl font-semibold mb-3">Infrastructure, not inspiration</h3>
-                            <p class="text-slatebrand-300 leading-relaxed">Students learn the systems beneath AI: power, compute, networks, cloud, edge deployment, robotics, and operating discipline.</p>
+                            <h3 class="text-xl font-semibold mb-3">Student operator fellowships</h3>
+                            <p class="text-slatebrand-300 leading-relaxed">Direct support for cohort stipends, scholarships, and the time required for students to train as operators rather than casual participants.</p>
                         </article>
                         <article class="fund-card glass-panel rounded-3xl p-7 border border-white/10">
-                            <h3 class="text-xl font-semibold mb-3">Operators, not observers</h3>
-                            <p class="text-slatebrand-300 leading-relaxed">AARI moves students from exposure to execution through labs, projects, site visits, demos, and partner-facing technical work.</p>
+                            <h3 class="text-xl font-semibold mb-3">Lab equipment and edge AI hardware</h3>
+                            <p class="text-slatebrand-300 leading-relaxed">Jetson-class systems, robotics components, networking gear, test infrastructure, and the tools required for real deployment practice.</p>
                         </article>
                         <article class="fund-card glass-panel rounded-3xl p-7 border border-white/10">
-                            <h3 class="text-xl font-semibold mb-3">Atlanta and AUC rooted</h3>
-                            <p class="text-slatebrand-300 leading-relaxed">The work is grounded in one of the country's most important Black academic ecosystems and tied to Atlanta's infrastructure economy.</p>
+                            <h3 class="text-xl font-semibold mb-3">Curriculum, technical staff, and program operations</h3>
+                            <p class="text-slatebrand-300 leading-relaxed">The people, documentation, and operating support required to convert a promising cohort into a repeatable workforce pipeline.</p>
                         </article>
-                    </div>
-                </div>
-                <div class="grid lg:grid-cols-[1fr_0.9fr] gap-6 mb-12">
-                    <div class="glass-panel rounded-3xl p-8 border border-emerald-400/20">
-                        <p class="text-xs uppercase tracking-[0.22em] text-emerald-300 mb-3">What your gift builds</p>
-                        <h3 class="text-2xl md:text-3xl font-bold mb-5">Funding levels tied to real program work.</h3>
-                        <div class="grid sm:grid-cols-2 gap-4">
-                            <div class="rounded-2xl border border-white/10 bg-white/5 p-5"><p class="text-2xl font-bold text-emerald-300 mb-1">$10K</p><p class="text-sm text-slatebrand-300">Funds a student technical lab cohort.</p></div>
-                            <div class="rounded-2xl border border-white/10 bg-white/5 p-5"><p class="text-2xl font-bold text-emerald-300 mb-1">$25K</p><p class="text-sm text-slatebrand-300">Supports applied robotics and edge AI workshops.</p></div>
-                            <div class="rounded-2xl border border-white/10 bg-white/5 p-5"><p class="text-2xl font-bold text-emerald-300 mb-1">$50K</p><p class="text-sm text-slatebrand-300">Sponsors a student project sprint.</p></div>
-                            <div class="rounded-2xl border border-white/10 bg-white/5 p-5"><p class="text-2xl font-bold text-emerald-300 mb-1">$100K</p><p class="text-sm text-slatebrand-300">Funds an AARI infrastructure pathway.</p></div>
-                            <div class="rounded-2xl border border-white/10 bg-white/5 p-5"><p class="text-2xl font-bold text-emerald-300 mb-1">$250K+</p><p class="text-sm text-slatebrand-300">Anchors a named workforce initiative.</p></div>
-                            <div class="rounded-2xl border border-white/10 bg-white/5 p-5"><p class="text-2xl font-bold text-emerald-300 mb-1">$500K+</p><p class="text-sm text-slatebrand-300">Supports multi-campus AUC infrastructure programming.</p></div>
-                        </div>
-                        <p class="text-xs text-slatebrand-500 mt-5 leading-relaxed">Funding levels are illustrative. AARI works with donors and institutional partners to align support with program scope, student impact, strategic value, and reporting needs.</p>
-                    </div>
-                    <div class="glass-panel rounded-3xl p-8 border border-gold-400/20">
-                        <p class="text-xs uppercase tracking-[0.22em] text-gold-400 mb-3">Scholarship fund</p>
-                        <h3 class="text-2xl md:text-3xl font-bold mb-4">The David Mykel Taylor Scholarship</h3>
-                        <p class="text-slatebrand-300 leading-relaxed mb-6">A direct way to turn memory into access. The scholarship supports students who have faced real adversity and chosen to keep building through AI, robotics, and infrastructure training.</p>
-                        <div class="flex flex-col gap-3">
-                            <a href="scholars.html#david-mykel-taylor" data-analytics-event="scholarship_click" data-analytics-location="funders" data-analytics-cta="Support the Scholarship" class="bg-gold-400 text-navy-950 font-semibold px-6 py-3 rounded-xl hover:bg-amber-300 transition-colors inline-flex items-center justify-center gap-2">
-                                Support the Scholarship
-                                <i data-lucide="arrow-up-right" class="w-5 h-5"></i>
-                            </a>
-                            <a href="donate.html" data-analytics-event="donate_click" data-analytics-location="funders" data-analytics-cta="Donate to AARI" class="donate-cta font-extrabold px-6 py-3 rounded-xl inline-flex items-center justify-center gap-2">
-                                <i data-lucide="heart" class="w-5 h-5"></i>
-                                Donate to AARI
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="glass-panel rounded-3xl p-8 border border-white/10">
-                    <div class="grid lg:grid-cols-[0.8fr_1.2fr] gap-8 items-center">
-                        <div>
-                            <p class="text-xs uppercase tracking-[0.22em] text-electric-400 mb-3">Donor-advised funds and foundations</p>
-                            <h3 class="text-2xl md:text-3xl font-bold mb-4">Built for donors who want durable AI access, not one-off inspiration.</h3>
-                            <p class="text-slatebrand-300 leading-relaxed">AARI welcomes support from donor-advised funds, family foundations, corporate philanthropy teams, and institutional funders interested in AI infrastructure workforce development, HBCU talent, robotics, edge AI, data centers, and emerging technology education.</p>
-                        </div>
-                        <div class="grid sm:grid-cols-2 gap-4">
-                            <div class="rounded-2xl border border-white/10 bg-white/5 p-5"><p class="font-semibold mb-2">Partner-ready</p><p class="text-sm text-slatebrand-300">AARI works across cloud, AI, data centers, robotics, and workforce development.</p></div>
-                            <div class="rounded-2xl border border-white/10 bg-white/5 p-5"><p class="font-semibold mb-2">Measurable</p><p class="text-sm text-slatebrand-300">Impact metrics are tracked and backed by live infrastructure.</p></div>
-                            <div class="rounded-2xl border border-white/10 bg-white/5 p-5"><p class="font-semibold mb-2">Student-centered</p><p class="text-sm text-slatebrand-300">Funding converts directly into cohorts, labs, project work, and pathways.</p></div>
-                            <div class="rounded-2xl border border-white/10 bg-white/5 p-5"><p class="font-semibold mb-2">Strategic</p><p class="text-sm text-slatebrand-300">AARI sits where AI infrastructure, national competitiveness, and HBCU talent meet.</p></div>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -1139,7 +1276,7 @@
                 </div>
                 <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-6 reveal-sequence" data-reveal-sequence>
                     <article class="field-card bright-card rounded-3xl overflow-hidden">
-                        <img src="https://staariwebsiteprod001.blob.core.windows.net/website-assets/images/aari-action/aari-cohort-microsoft-atlanta.jpg" alt="AARI students at Microsoft Atlanta" class="w-full aspect-[16/10] object-cover" loading="lazy">
+                        <img src="images/aari-action/aari-cohort-microsoft-atlanta.jpg" alt="AARI students at Microsoft Atlanta" class="w-full aspect-[16/10] object-cover" loading="lazy">
                         <div class="p-6">
                             <p class="text-xs font-extrabold text-blue-700 uppercase tracking-[0.18em]">Workshop</p>
                             <h3 class="mt-3 text-2xl font-bold">Microsoft Garage student workshop</h3>
@@ -1147,7 +1284,7 @@
                         </div>
                     </article>
                     <article class="field-card bright-card rounded-3xl overflow-hidden">
-                        <img src="https://staariwebsiteprod001.blob.core.windows.net/website-assets/images/aari-action/sih-development-screenshot.jpg" alt="Smart Illuminating Helmet development review" class="w-full aspect-[16/10] object-cover" loading="lazy">
+                        <img src="images/aari-action/sih-development-screenshot.jpg" alt="Smart Illuminating Helmet development review" class="w-full aspect-[16/10] object-cover" loading="lazy">
                         <div class="p-6">
                             <p class="text-xs font-extrabold text-emerald-700 uppercase tracking-[0.18em]">Physical AI</p>
                             <h3 class="mt-3 text-2xl font-bold">Smart Illuminating Helmet development</h3>
@@ -1155,7 +1292,7 @@
                         </div>
                     </article>
                     <article class="field-card bright-card rounded-3xl overflow-hidden">
-                        <img src="https://staariwebsiteprod001.blob.core.windows.net/website-assets/images/aari-action/garage-data-center-work-session.jpg" alt="Garage Data Center lab work" class="w-full aspect-[16/10] object-cover" loading="lazy">
+                        <img src="images/aari-action/garage-data-center-work-session.jpg" alt="Garage Data Center lab work" class="w-full aspect-[16/10] object-cover" loading="lazy">
                         <div class="p-6">
                             <p class="text-xs font-extrabold text-amber-700 uppercase tracking-[0.18em]">Infrastructure</p>
                             <h3 class="mt-3 text-2xl font-bold">Garage Data Center lab work</h3>
@@ -1178,7 +1315,7 @@
                         <p class="text-xs font-extrabold text-amber-700 uppercase tracking-[0.18em]">Demo Pipeline</p>
                         <h3 class="mt-3 text-2xl font-bold">Upcoming demo day / pitch competition</h3>
                         <p class="mt-3 text-sm text-slate-600">The next milestone is giving students a visible room to demo, explain, and defend what they built.</p>
-                        <a href="#contact" class="mt-5 inline-flex text-sm font-bold text-blue-700 hover:text-blue-900">Partner with AARI</a>
+                        <a href="contact.html" class="mt-5 inline-flex text-sm font-bold text-blue-700 hover:text-blue-900">Partner with AARI</a>
                     </article>
                 </div>
             </div>
@@ -1190,10 +1327,10 @@
                     <div class="absolute -right-20 -top-20 h-56 w-56 rounded-full bg-emerald-400/20 blur-3xl"></div>
                     <div class="relative">
                         <p class="text-xs uppercase tracking-[0.22em] text-amber-300 font-bold mb-4">Call to Action</p>
-                        <h2 class="text-3xl md:text-5xl font-extrabold leading-tight">Help AARI build the infrastructure access layer for Atlanta’s next operators.</h2>
+                        <h2 class="text-3xl md:text-5xl font-extrabold leading-tight">The operators of the AI economy are being chosen right now. Help us choose more of them.</h2>
                     </div>
                     <div class="relative flex flex-col sm:flex-row lg:flex-col gap-4">
-                        <a href="#contact" class="bg-white text-navy-950 font-semibold px-7 py-4 rounded-xl hover:bg-slate-200 transition-colors text-center">Partner With AARI</a>
+                        <a href="contact.html" class="bg-white text-navy-950 font-semibold px-7 py-4 rounded-xl hover:bg-slate-200 transition-colors text-center">Partner With AARI</a>
                         <a href="donate.html" class="donate-cta font-extrabold px-7 py-4 rounded-xl text-center inline-flex items-center justify-center gap-2"><i data-lucide="heart" class="w-5 h-5"></i>Donate</a>
                     </div>
                 </div>
@@ -1410,8 +1547,9 @@
     <footer class="py-10 border-t border-white/10 bg-navy-950">
         <div class="section-shell flex flex-col md:flex-row justify-between gap-6">
             <div>
-                <p class="text-white font-semibold">Atlanta AI &amp; Robotics Initiative</p>
+                <p class="text-white font-semibold">Atlanta AI &amp; Robotics Initiative, Inc.</p>
                 <p class="text-slatebrand-400 text-sm mt-2 max-w-xl">AARI trains HBCU students and underrepresented learners to operate the infrastructure stack underneath modern AI.</p>
+                <p class="text-slatebrand-400 text-sm mt-2">501(c)(3) nonprofit organization. EIN: 41-2742893. Atlanta, Georgia.</p>
             </div>
             <div class="flex flex-wrap gap-4 text-sm text-slatebrand-400">
                 <a href="#problem" class="hover:text-white transition-colors">Problem</a>
@@ -1424,10 +1562,10 @@
                 <a href="impact.html" class="hover:text-white transition-colors">Gallery</a>
                 <a href="#leadership" class="hover:text-white transition-colors">Leadership</a>
                 <a href="#funders" class="hover:text-white transition-colors">Funders</a>
-                <a href="fund-ai-access.html" class="hover:text-white transition-colors">Fund AI Access</a>
                 <a href="partners.html" class="hover:text-white transition-colors">Partners</a>
                 <a href="donate.html" class="hover:text-white transition-colors font-semibold text-emerald-300">Donate</a>
-                <a href="#contact" class="hover:text-white transition-colors">Contact</a>
+                <a href="contact.html" class="hover:text-white transition-colors">Contact</a>
+                <a href="privacy.html" class="hover:text-white transition-colors">Privacy Policy</a>
             </div>
             <div class="flex items-center gap-3">
                 <a href="https://www.linkedin.com/company/atlanta-ai-robotics-initiative/" target="_blank" rel="noopener noreferrer" aria-label="AARI on LinkedIn" class="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-slatebrand-300 transition-colors hover:border-electric-400/50 hover:text-white">
@@ -1518,88 +1656,117 @@
             });
         });
 
+        document.querySelectorAll('[data-expandable-card]').forEach((card) => {
+            const button = card.querySelector('button[aria-expanded][aria-controls]');
+            if (!button) return;
+            const collapsedLabel = button.textContent;
+            button.dataset.collapsedLabel = collapsedLabel;
+            button.addEventListener('click', () => {
+                const expanded = button.getAttribute('aria-expanded') === 'true';
+                const group = card.closest('[data-expandable-group]');
+                group?.querySelectorAll('[data-expandable-card].is-expanded').forEach((openCard) => {
+                    if (openCard === card) return;
+                    openCard.classList.remove('is-expanded');
+                    const openButton = openCard.querySelector('button[aria-expanded]');
+                    if (!openButton) return;
+                    openButton.setAttribute('aria-expanded', 'false');
+                    openButton.textContent = openButton.dataset.collapsedLabel || 'Learn more';
+                });
+                card.classList.toggle('is-expanded', !expanded);
+                button.setAttribute('aria-expanded', String(!expanded));
+                button.textContent = expanded ? button.dataset.collapsedLabel : 'Show less';
+            });
+        });
+
         const partnerEcosystem = [
             {
                 name: 'NVIDIA',
-                category: 'Cloud and AI Partners',
+                category: 'Cloud',
                 status: 'Active - relationship deepening',
                 role: "Supports AARI's compute, CUDA-Q, Jetson edge AI, Omniverse, and quantum curriculum pathway.",
-                logo: 'https://staariwebsiteprod001.blob.core.windows.net/website-assets/images/logo-nvidia.png'
+                logo: 'images/logo-nvidia.png'
             },
             {
                 name: 'Microsoft',
-                category: 'Cloud and AI Partners',
+                category: 'Cloud',
                 status: 'Active - workshop delivered',
                 role: "Microsoft Garage hosted AARI's VQE workshop; Azure Quantum is part of the hybrid quantum-to-edge learning pipeline.",
-                logo: 'https://staariwebsiteprod001.blob.core.windows.net/website-assets/images/logo-microsoft.webp'
+                logo: 'images/logo-microsoft.webp'
             },
             {
                 name: 'Red Hat',
-                category: 'Cloud and AI Partners',
+                category: 'Cloud',
                 status: 'Active - internal champion in place',
                 role: 'Supports open infrastructure learning across OpenShift, Linux, containers, automation, and certification pathways.',
-                logo: 'https://staariwebsiteprod001.blob.core.windows.net/website-assets/images/logo-redhat.png'
+                logo: 'images/logo-redhat.png'
             },
             {
                 name: 'AWS',
-                category: 'Cloud and AI Partners',
+                category: 'Cloud',
                 status: 'Active - alliance accepted',
                 role: "Supports AARI's cloud and ML pathway through AWS-MLU alignment, lab infrastructure, and Nexus deployment patterns."
             },
             {
                 name: 'QTS Data Centers',
-                category: 'Infrastructure Partners',
-                status: 'Active - Phase 1 pending',
-                role: "Supports AARI's data center workforce pathway and critical operations fellowship strategy.",
-                logo: 'https://staariwebsiteprod001.blob.core.windows.net/website-assets/images/logo-qts.png'
+                category: 'Data Centers',
+                status: '2026 Grant Partner - $15,000',
+                role: "QTS awarded AARI a $15,000 grant in 2026 to support general operations and strengthen AARI's data center and AI infrastructure workforce pathway.",
+                logo: 'assets/logos/qts-logo.svg'
             },
             {
                 name: 'Morehouse College',
-                category: 'Academic Partners',
+                category: 'Academic',
                 status: 'Active - anchor institution',
                 role: "Core academic anchor for AARI's AUC student pipeline, faculty collaboration, and hybrid quantum curriculum.",
-                logo: 'https://staariwebsiteprod001.blob.core.windows.net/website-assets/images/logo-morehouse.png'
+                logo: 'images/logo-morehouse.png'
             },
             {
                 name: 'Cisco',
-                category: 'Infrastructure Partners',
+                category: 'Cloud',
                 status: 'Closed - funded',
                 role: 'Funded AARI through a $25K community grant and validates the networking layer of the infrastructure model.',
-                logo: 'https://staariwebsiteprod001.blob.core.windows.net/website-assets/images/logo-cisco.svg'
+                logo: 'images/logo-cisco.svg'
             },
             {
                 name: 'Rose-Hulman Institute of Technology',
-                category: 'Academic Partners',
+                category: 'Academic',
                 status: 'Active - Co-PI engaged',
                 role: "Adds nationally recognized robotics curriculum depth through Dr. Carlotta A. Berry's NSF Co-PI engagement.",
-                logo: 'https://staariwebsiteprod001.blob.core.windows.net/website-assets/images/logo-rose-hulman.svg'
+                logo: 'images/logo-rose-hulman.svg'
             },
             {
                 name: 'ATDC / Georgia Tech',
-                category: 'Community and Ecosystem Partners',
+                category: 'Community',
                 status: 'Active - ongoing',
                 role: "Connects AARI to Atlanta's tech ecosystem and supports curriculum review through the ATDC network.",
-                logo: 'https://staariwebsiteprod001.blob.core.windows.net/website-assets/images/logo-atdc.webp'
+                logo: 'images/logo-atdc.webp'
             },
             {
                 name: 'Google Cloud',
-                category: 'Cloud and AI Partners',
-                status: 'Early - partnership established',
+                category: 'Cloud',
+                status: 'Early discussion',
                 role: "Supports AARI's multi-cloud posture and future AI services, credits, and lab integration pathways.",
-                logo: 'https://staariwebsiteprod001.blob.core.windows.net/website-assets/images/logo-google-cloud.png'
+                logo: 'images/logo-google-cloud.png'
             },
             {
                 name: 'Smart Illuminating Helmet',
-                category: 'Robotics and Edge Partners',
+                category: 'Robotics',
                 status: 'Active - advisory relationship',
                 role: "Extends AARI's edge AI methodology into commercial hardware, telemetry, and Jetson-enabled proof-of-concept work."
             },
             {
                 name: 'Benevity',
-                category: 'Community and Ecosystem Partners',
+                category: 'Philanthropy',
                 status: 'Active - approved',
-                role: 'Enables corporate matching and donor platform access across Microsoft, NVIDIA, AWS, and partner employers.',
-                logo: 'https://staariwebsiteprod001.blob.core.windows.net/website-assets/images/logo-benevity.svg'
+                role: 'Supports corporate matching and donor platform access where employer programs make AARI eligible.',
+                logo: 'images/logo-benevity.svg'
+            },
+            {
+                name: 'a16z Cultural Leadership Fund',
+                category: 'Philanthropy',
+                status: 'Ecosystem Partner Program - renewable support',
+                role: "Renewable support recognizing AARI's work expanding access to the infrastructure layer of AI for HBCU students and underrepresented technical talent.",
+                logo: 'assets/logos/a16z-logo.svg'
             }
         ];
 
@@ -1615,12 +1782,14 @@
             document.querySelectorAll('[data-partner-carousel]').forEach((carousel) => {
                 const track = carousel.querySelector('[data-carousel-track]');
                 const dots = carousel.querySelector('[data-carousel-dots]');
+                const filters = carousel.querySelector('[data-partner-filters]');
                 const viewport = carousel.querySelector('.partner-carousel-viewport');
                 const prev = carousel.querySelector('[data-carousel-prev]');
                 const next = carousel.querySelector('[data-carousel-next]');
                 let index = 0;
                 let cardsPerView = 3;
                 let startX = 0;
+                let activeFilter = 'All';
 
                 const getCardsPerView = () => {
                     if (window.matchMedia('(max-width: 640px)').matches) return 1;
@@ -1629,7 +1798,10 @@
                 };
 
                 const renderCards = () => {
-                    track.innerHTML = partnerEcosystem.map((partner) => {
+                    const filteredPartners = activeFilter === 'All'
+                        ? partnerEcosystem
+                        : partnerEcosystem.filter((partner) => partner.category === activeFilter);
+                    track.innerHTML = filteredPartners.map((partner) => {
                         const name = escapePartnerText(partner.name);
                         const category = escapePartnerText(partner.category);
                         const role = escapePartnerText(partner.role);
@@ -1655,10 +1827,14 @@
                     });
                 };
 
-                const maxIndex = () => Math.max(partnerEcosystem.length - cardsPerView, 0);
+                const visiblePartners = () => activeFilter === 'All'
+                    ? partnerEcosystem
+                    : partnerEcosystem.filter((partner) => partner.category === activeFilter);
+
+                const maxIndex = () => Math.max(visiblePartners().length - cardsPerView, 0);
 
                 const renderDots = () => {
-                    const pageCount = Math.ceil(partnerEcosystem.length / cardsPerView);
+                    const pageCount = Math.max(Math.ceil(visiblePartners().length / cardsPerView), 1);
                     const activePage = Math.min(Math.floor(index / cardsPerView), pageCount - 1);
                     dots.innerHTML = Array.from({ length: pageCount }, (_, page) => `
                         <button type="button" class="partner-dot h-2.5 w-2.5 rounded-full border border-white/20 bg-white/20" data-carousel-dot="${page}" aria-label="Show partner group ${page + 1}" aria-current="${page === activePage ? 'true' : 'false'}"></button>
@@ -1690,6 +1866,17 @@
                 renderCards();
                 renderDots();
                 update();
+                filters?.querySelectorAll('[data-filter]').forEach((button) => {
+                    button.addEventListener('click', () => {
+                        activeFilter = button.dataset.filter || 'All';
+                        index = 0;
+                        filters.querySelectorAll('[data-filter]').forEach((filterButton) => {
+                            filterButton.setAttribute('aria-pressed', String(filterButton === button));
+                        });
+                        renderCards();
+                        update();
+                    });
+                });
 
                 prev.addEventListener('click', () => {
                     index = Math.max(index - cardsPerView, 0);
