@@ -9,6 +9,13 @@ Budget amount: `$150.00` monthly
 Budget current spend at audit: `$122.15`  
 Forecast spend at audit: `$130.25`
 
+July 2026 budget alert follow-up:
+
+- Budget current spend on 2026-07-02: `$13.36`
+- Budget forecast spend on 2026-07-02: `$346.29`
+- Month-to-date cost query on 2026-07-02 showed `Microsoft.Cdn/profiles/afd-aari-website-prod` at `$14.20`, storage at `$0.42`, scheduled query rules at `$0.13`, and Static Web Apps at `$0.00`.
+- `law-aari-website-prod` still had `90` day retention and no daily ingestion cap.
+
 ## Finding
 
 The AARI website is already hosted as an Azure Static Web App. The budget alert was caused by Azure Front Door Premium, not by the website host.
@@ -201,3 +208,66 @@ az rest --method get \
   -o table
 ```
 
+## Repeatable scripts
+
+Run the production cost audit:
+
+```bash
+scripts/azure-cost-audit.sh
+```
+
+List non-production/orphan cleanup candidates without deleting anything:
+
+```bash
+scripts/azure-cleanup-nonprod.sh
+```
+
+Delete only an explicitly named non-production resource group after reviewing the dry run:
+
+```bash
+TARGET_RESOURCE_GROUPS='rg-aari-website-dev' \
+CONFIRM_RESOURCE_GROUPS='rg-aari-website-dev' \
+CONFIRM_NONPROD_DELETE='delete nonprod only' \
+DRY_RUN=false \
+scripts/azure-cleanup-nonprod.sh
+```
+
+The cleanup script refuses production-looking resource group names and any group tagged `Environment=prod`.
+
+## Budget guardrails deployment
+
+Preview:
+
+```bash
+az deployment sub what-if \
+  --location eastus2 \
+  --template-file infra/azure-cost-guardrails/main.bicep
+```
+
+Deploy:
+
+```bash
+az deployment sub create \
+  --location eastus2 \
+  --template-file infra/azure-cost-guardrails/main.bicep
+```
+
+Verify after deployment:
+
+```bash
+az rest --method get \
+  --url 'https://management.azure.com/subscriptions/af2f3627-aeb0-40f2-845e-a21ec822c492/resourceGroups/rg-aari-website-prod/providers/Microsoft.Consumption/budgets/budget-aari-website-prod?api-version=2023-05-01' \
+  --query "{amount:properties.amount,notifications:properties.notifications}" \
+  -o json
+
+az monitor log-analytics workspace show \
+  -g rg-aari-website-prod \
+  -n law-aari-website-prod \
+  --query "{name:name,retentionInDays:retentionInDays,dailyQuotaGb:workspaceCapping.dailyQuotaGb}" \
+  -o table
+
+az resource list \
+  -g rg-aari-website-prod \
+  --query "[].{name:name,type:type,tags:tags}" \
+  -o table
+```
