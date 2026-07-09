@@ -81,17 +81,6 @@ resource budget 'Microsoft.Consumption/budgets@2023-05-01' = {
       endDate: budgetEndDate
     }
     notifications: {
-      Actual_GreaterThan_50_Percent: {
-        enabled: true
-        operator: 'GreaterThan'
-        threshold: 50
-        thresholdType: 'Actual'
-        contactEmails: budgetContactEmails
-        contactRoles: [
-          'Owner'
-          'Contributor'
-        ]
-      }
       Actual_GreaterThan_80_Percent: {
         enabled: true
         operator: 'GreaterThan'
@@ -107,6 +96,17 @@ resource budget 'Microsoft.Consumption/budgets@2023-05-01' = {
         enabled: true
         operator: 'GreaterThan'
         threshold: 100
+        thresholdType: 'Actual'
+        contactEmails: budgetContactEmails
+        contactRoles: [
+          'Owner'
+          'Contributor'
+        ]
+      }
+      Actual_GreaterThan_125_Percent: {
+        enabled: true
+        operator: 'GreaterThan'
+        threshold: 125
         thresholdType: 'Actual'
         contactEmails: budgetContactEmails
         contactRoles: [

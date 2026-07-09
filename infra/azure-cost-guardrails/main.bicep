@@ -20,10 +20,10 @@ param budgetStartDate string = '2026-05-01T00:00:00Z'
 @description('Budget end date.')
 param budgetEndDate string = '2027-05-01T00:00:00Z'
 
-@description('Log Analytics retention in days for website production telemetry.')
-@minValue(7)
+@description('Log Analytics retention in days for website production telemetry. PerGB2018 workspaces require at least 30 days.')
+@minValue(30)
 @maxValue(30)
-param logAnalyticsRetentionInDays int = 14
+param logAnalyticsRetentionInDays int = 30
 
 @description('Daily Log Analytics ingestion cap in GB. Use a small cap for the website because it is static-first.')
 @minValue(0)

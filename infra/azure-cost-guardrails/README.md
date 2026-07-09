@@ -6,10 +6,12 @@ It configures:
 
 - required cost tags: `Environment=prod`, `Owner=AARI`, `CostCenter=aari-website`
 - monthly budget `budget-aari-website-prod` at `$150`
-- actual budget notifications at `50%`, `80%`, and `100%`
+- actual budget notifications at `80%`, `100%`, and `125%`
 - forecasted budget notification at `100%`
-- Log Analytics retention at `14` days
+- Log Analytics retention at `30` days, the minimum valid retention for this workspace SKU
 - Log Analytics daily ingestion cap at `1` GB
+
+The retired `$75` / `50%` actual alert is intentionally omitted.
 
 Deploy from the repo root:
 
