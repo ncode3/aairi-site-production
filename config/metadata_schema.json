@@ -1,0 +1,28 @@
+{
+  "required": [
+    "source",
+    "source_subject",
+    "source_date",
+    "original_filename",
+    "sha256",
+    "category",
+    "sensitivity",
+    "index_allowed",
+    "document_type"
+  ],
+  "sensitivity_values": ["internal", "restricted"],
+  "categories": [
+    "01_org_governance",
+    "02_grants_funding",
+    "03_partnerships_agreements",
+    "04_curriculum_training",
+    "05_plans_budgets_architecture",
+    "99_restricted"
+  ],
+  "restricted_invariants": {
+    "blob_prefix": "raw/99_restricted/",
+    "sensitivity": "restricted",
+    "index_allowed": "false",
+    "ai_processing_allowed": false
+  }
+}

@@ -1,0 +1,11 @@
+item,classification,handling
+Student resumes,restricted,Upload only to 99_restricted; default ML index disabled
+Signed student cohort agreements,restricted,Contains signatures and student details; default ML index disabled
+W-9 forms and remittance notices,restricted,Tax/banking-related data; default ML index disabled
+Invoices,restricted,Financial records; index only in a separate finance workflow
+TECHMi Sports operating/equity documents,separate_scope,Not part of the core AARI knowledge base
+Eventbrite ticket PDFs,excluded,Transactional noise
+Email signature images and Outlook assets,excluded,Non-document clutter
+Calendar .ics files,excluded,"Handled by calendar workflow, not document ML"
+Launch photos and screenshots,excluded_default,Preserve separately only when needed for communications/evidence
+Duplicate attachment versions,deduplicated,Pipeline deduplicates by SHA-256

@@ -39,6 +39,12 @@ The site is configured for Azure Static Web Apps with GitHub as source control.
 - `thank-you.html` - Thank-you page
 - `images/` - Site imagery and logos
 
+## Gmail to Azure document workflow
+
+The repository also contains a private, non-web document pipeline under `src/`, `config/`, `inventory/`, and `scripts/`. It uses Gmail read-only access, Microsoft Entra/managed identity, private Blob storage, SHA-256 deduplication, native Office extraction, Document Intelligence `prebuilt-layout`, and Azure OpenAI reporting. Restricted records never enter extraction, AI Search, Azure OpenAI, the public website, or content-bearing logs.
+
+Start with [RUN_ME_FIRST.md](RUN_ME_FIRST.md) for the Avaron invoices and [docs/document-workflow-architecture.md](docs/document-workflow-architecture.md) for the general pipeline.
+
 ## Contact Form Anti-Spam Flow
 
 Current form handling:

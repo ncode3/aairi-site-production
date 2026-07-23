@@ -1,0 +1,34 @@
+filename,category,source_subject,source_date,mime_type,size_bytes,sensitivity,index_allowed,status,notes
+AARI_ATC_Applied_Infrastructure_Lab.pdf,03_partnerships_agreements,Proposal for Atlanta Robotics to share space,2026-07-13,application/pdf,105967,internal,true,canonical,ATC applied infrastructure lab one-pager
+AARI_CLF_Brief.pdf,02_grants_funding,Welcome to the CLF Ecosystem Partner Program,2026-06-04,application/pdf,398214,internal,true,canonical,AARI brief used for a16z CLF packet
+AARI-Deck.pptx,03_partnerships_agreements,Quick reset since we last spoke,2026-04-16,application/vnd.openxmlformats-officedocument.presentationml.presentation,5730494,internal,true,canonical,Core AARI presentation deck
+Nonprofit Articles.pdf,01_org_governance,Welcome to the CLF Ecosystem Partner Program,2026-06-04,application/pdf,136648,internal,true,canonical,Georgia nonprofit formation document
+Tax Exempt Organization Search Details | Internal Revenue Service.pdf,01_org_governance,Welcome to the CLF Ecosystem Partner Program,2026-06-04,application/pdf,25441,internal,true,canonical,IRS tax-exempt organization search confirmation
+AARI_IRS_501c3_Tax_Exempt_Confirmation.pdf.jpeg,01_org_governance,QTS Grant Award Notification for AARI,2026-06-21,image/jpeg,3404007,restricted,false,restricted,IRS determination/confirmation image; keep out of default index
+Grant 376701 - Award Letter - GB-1644330 - 2026-05-21 09-05.pdf,02_grants_funding,Grant Award Letter,2026-05-28,application/pdf,101294,internal,true,canonical,Silicon Valley Community Foundation/Cisco award letter
+2026-06-17 - QTS Grant Award Notification for AARI.md,02_grants_funding,QTS Grant Award Notification for AARI,2026-06-17,text/markdown,0,internal,true,email_export,Award terms are in the email body; pipeline exports to Markdown
+2026-06 - a16z CLF Ecosystem Partner Acceptance.md,02_grants_funding,Welcome to the CLF Ecosystem Partner Program,2026-06,text/markdown,0,internal,true,email_export,Pipeline exports acceptance/payment thread to Markdown
+SolarSiteColoAgreement_Completed.pdf,03_partnerships_agreements,Everyone has successfully completed SolarSiteColoAgreement,2026-07-13,application/pdf,222639,internal,true,canonical,Executed colocation agreement
+SolarSiteColoAgreement_AuditTrail.pdf,99_restricted,Everyone has successfully completed SolarSiteColoAgreement,2026-07-13,application/pdf,115078,restricted,false,restricted,Signature audit trail
+AARI_Data_Center_Curriculum_Microsoft_Proposal.pdf,04_curriculum_training,ATC Site Visit: Datacenter Academy Mock Lab Tour,2026-07-01,application/pdf,100563,internal,true,canonical,Microsoft/ATC curriculum proposal
+Proposal_ AARI Data Center Curriculum (1).pdf,04_curriculum_training,Microsoft proposal,2026-07-01,application/pdf,120842,internal,true,version_candidate,Alternate proposal version; compare for drift
+AARI_Data_Centers_Cohort_Curriculum_v2_3 (1).docx,04_curriculum_training,Sharing AARI Data Centers Cohort Curriculum,2026-06-23,application/vnd.openxmlformats-officedocument.wordprocessingml.document,36770,internal,true,canonical_candidate,Newest editable data center cohort curriculum found
+AARI_Data_Centers_Cohort_Curriculum_v2_2-2.pdf,04_curriculum_training,Summer Data Center Cohort Curriculum,2026-06-19,application/pdf,200051,internal,true,version_candidate,Prior PDF curriculum version
+Data Center Cohort Electrical Engineer Curriculum .pdf,04_curriculum_training,Proposal,2026-06-29,application/pdf,207081,internal,true,canonical,Electrical engineering track
+Data Center Cohort Orchestration Curriculum .pdf,04_curriculum_training,Proposal,2026-06-29,application/pdf,218597,internal,true,canonical,Orchestration track
+Data Center Cohort Network Security Curriculum .pdf,04_curriculum_training,Proposal,2026-06-29,application/pdf,189673,internal,true,canonical,Network security track
+Data Center Cohort Cloud Curriculum .pdf,04_curriculum_training,Proposal,2026-06-29,application/pdf,203100,internal,true,canonical,Cloud track
+AARI Computer Science Curriculum.pdf,04_curriculum_training,Budget and Curriculums,2026-06-05,application/pdf,126552,internal,true,canonical,Computer science curriculum
+AARI Math Curriculum.pdf,04_curriculum_training,Budget and Curriculums,2026-06-05,application/pdf,112050,internal,true,canonical,Math curriculum
+AARI Robotics Curriculum.pdf,04_curriculum_training,Budget and Curriculums,2026-06-05,application/pdf,118625,internal,true,canonical,Robotics curriculum
+Splunk for AI Resilience - GenAI MCP - Lab Guide - Jun 2026.pdf,04_curriculum_training,Early ATL Future Builders Splunk Student Outcome,2026-07-13,application/pdf,3283821,internal,true,canonical,Splunk GenAI/MCP workshop guide
+Splunk Assignment.pdf,04_curriculum_training,Garage Data Center Follow-Up,2026-06-08,application/pdf,67999,internal,true,canonical,Student Splunk assignment
+thermal-pilot-architecture-v2.pdf,05_plans_budgets_architecture,AARI Thermal Intelligence Pilot: Splunk + AWS,2026-07-14,application/pdf,179578,internal,true,canonical,Thermal intelligence architecture
+GDC_Phase1_10_Week_Build_Plan.xlsx,05_plans_budgets_architecture,AARI - MSFT Hardware Donations,2026-06-22,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,45623,internal,true,canonical_candidate,Latest larger build-plan workbook found
+Data Center Budget (7).xlsx,05_plans_budgets_architecture,Data center budget,2026-06-12,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,19962,internal,true,canonical,Primary data center budget version
+AARI_Cisco_Hardware_Wishlist.docx,05_plans_budgets_architecture,AARI hardware wishlist + valuation for the Cisco grant,2026-05-21,application/vnd.openxmlformats-officedocument.wordprocessingml.document,1410322,internal,true,canonical,Cisco hardware wishlist and valuation
+Mbot Budget.xlsx,05_plans_budgets_architecture,MBot Budget,2026-06-09,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,19767,internal,true,canonical,Robotics/MBot budget
+SOW_Security_Plus_BHS-2026-0001.pdf,03_partnerships_agreements,BHS Summer Cohort for Security+,2026-06-10,application/pdf,57403,internal,true,canonical,Security+ training statement of work
+BlackHack_Society_W9_2026-06-10.pdf,99_restricted,BHS Summer Cohort for Security+,2026-06-10,application/pdf,89299,restricted,false,restricted,Vendor tax form
+Invoice_Security_Plus_Cohort_BHS-2026-0001.pdf,99_restricted,BHS Summer Cohort for Security+,2026-06-10,application/pdf,51257,restricted,false,restricted,Vendor invoice
+market_validation_1.pptx,04_curriculum_training,slides for today,2026-06-23,application/vnd.openxmlformats-officedocument.presentationml.presentation,40536,internal,true,reference,Roger Murff market validation slides

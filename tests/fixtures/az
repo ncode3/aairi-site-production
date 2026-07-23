@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+set -euo pipefail
+if [[ "$1 $2" == "account show" ]]; then
+  exit 0
+fi
+if [[ "$1 $2 $3" == "storage blob exists" ]]; then
+  echo false
+  exit 0
+fi
+if [[ "$1 $2 $3" == "storage blob upload" ]]; then
+  printf '%s\n' "$*" >> "${MOCK_AZ_LOG:?}"
+  exit 0
+fi
+exit 0

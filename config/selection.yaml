@@ -1,0 +1,152 @@
+version: 1
+organization: Atlanta AI & Robotics Initiative
+blob_root: aari-knowledge-base
+
+deduplication:
+  algorithm: sha256
+  scope: container
+  on_duplicate: reject
+
+processing:
+  document_intelligence_model: prebuilt-layout
+  raw_prefix: raw/
+  processed_prefix: processed/
+  manifest_prefix: manifests/
+  insights_prefix: insights/
+  index_requires:
+    sensitivity_not: restricted
+    index_allowed: true
+
+reports:
+  - executive_brief.md
+  - funding_summary.csv
+  - partner_map.json
+  - action_register.csv
+  - risk_register.csv
+  - curriculum_gap_analysis.csv
+  - document_conflicts.csv
+
+restricted_sources:
+  senders:
+    - '*@avaron.*'
+  document_categories:
+    - invoice
+    - receipt
+    - banking_record
+    - tax_record
+    - signed_agreement
+    - resume
+  forced_prefix: raw/99_restricted/
+
+# Searches are intentionally broad. The filename/subject filters below do the real selection.
+queries:
+  - 'newer_than:30m (AARI OR "Atlanta AI" OR "Atlanta Robotics") has:attachment'
+  - 'newer_than:30m (subject:"Grant Award" OR subject:"Congratulations" OR subject:"You''re In" OR subject:"Remittance")'
+  - 'newer_than:30m (subject:proposal OR subject:curriculum OR subject:agreement OR subject:budget OR subject:resume) has:attachment'
+  - 'newer_than:30m (QTS OR Cisco OR a16z OR Splunk OR Microsoft OR Waymo OR "Atlanta Technical College") has:attachment'
+
+allowed_extensions:
+  - .pdf
+  - .docx
+  - .xlsx
+  - .pptx
+  - .csv
+  - .txt
+  - .md
+  - .zip
+  - .jpeg
+  - .jpg
+  - .png
+
+# Canonical and high-value working documents discovered in the mailbox.
+include_filename_patterns:
+  - 'AARI*'
+  - '*Data Center*Curriculum*'
+  - '*Data Center*Budget*'
+  - 'GDC_Phase1*'
+  - '*Hardware*Wishlist*'
+  - '*Mbot Budget*'
+  - '*Splunk*Lab Guide*'
+  - '*Splunk Assignment*'
+  - '*thermal-pilot-architecture*'
+  - '*SolarSiteColoAgreement*'
+  - '*Grant*Award Letter*'
+  - '*Nonprofit Articles*'
+  - '*Tax Exempt Organization Search Details*'
+  - '*IRS*501c3*'
+  - '*Security_Plus*'
+  - '*SOW_Security_Plus*'
+  - '*market_validation*'
+  - '*Resume*'
+  - '*resume*'
+  - '*Agreement*'
+  - '*Invoice*'
+  - '*Receipt*'
+
+# Email bodies that should be preserved as Markdown because they contain award terms or commitments.
+include_subject_patterns:
+  - '*QTS Grant Award Notification*'
+  - '*Grant Award Letter*'
+  - '*Welcome to the CLF Ecosystem Partner Program*'
+  - '*Cisco Grant*'
+  - '*SolarSiteColoAgreement*'
+  - '*Proposal for Atlanta Robotics to share space*'
+
+# Junk and non-knowledge-base artifacts.
+exclude_filename_patterns:
+  - '*ticket.pdf'
+  - 'invite.ics'
+  - '*.ics'
+  - 'image00*.png'
+  - 'image00*.jpg'
+  - 'Outlook-*'
+  - '*signature*'
+  - 'Screenshot_*'
+  - '100001*.jpg'
+  - 'PXL_*.jpg'
+  - 'IMG_*.heic'
+
+restricted_patterns:
+  - '*W9*'
+  - '*W-9*'
+  - '*Remittance*'
+  - '*Invoice*'
+  - '*Signed Agreement*'
+  - '*Agreement_Combined*'
+  - '*Resume*'
+  - '*resume*'
+  - '*Operating Agreement*'
+  - '*Equity Incentive*'
+  - '*Restricted Unit*'
+  - '*AuditTrail*'
+
+category_rules:
+  01_org_governance:
+    - '*Nonprofit Articles*'
+    - '*Tax Exempt*'
+    - '*IRS*501c3*'
+    - '*990*'
+    - '*audit*'
+  02_grants_funding:
+    - '*Grant*'
+    - '*Award Letter*'
+    - '*CLF*'
+    - '*Budget*'
+    - '*Invoice*'
+    - '*Remittance*'
+  03_partnerships_agreements:
+    - '*Agreement*'
+    - '*Proposal*'
+    - '*ATC*'
+    - '*SolarSite*'
+  04_curriculum_training:
+    - '*Curriculum*'
+    - '*Lab Guide*'
+    - '*Assignment*'
+    - '*Resume*'
+  05_plans_budgets_architecture:
+    - '*Build_Plan*'
+    - '*architecture*'
+    - '*Wishlist*'
+    - '*Mbot Budget*'
+    - '*Data Center Budget*'

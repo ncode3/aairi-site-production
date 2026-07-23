@@ -1,3 +1,13 @@
 tmpclaude-*
 __pycache__/
-.venv/
+.venv*/
+.env
+config/azure.env
+secrets/
+restricted_inputs/
+run_output/
+*.pem
+*.p12
+token.json
+client_secret*.json
+google-service-account*.json
