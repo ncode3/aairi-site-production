@@ -48,6 +48,19 @@ Review `run_output/ingestion_manifest.csv` against `inventory/curated_manifest.c
 
 For local OAuth, create a Google Cloud desktop OAuth client with Gmail API enabled and the read-only Gmail scope. Save its JSON as `secrets/client_secret.json`; the first run opens the consent flow and writes `secrets/token.json`. Neither file may be committed.
 
+If the OAuth files already exist elsewhere, do not move them. Set `GMAIL_CREDENTIALS_PATH` and `GMAIL_TOKEN_PATH` in ignored `config/azure.env` to their existing absolute paths. Prepare the default local directory with:
+
+```bash
+mkdir -p secrets
+chmod 700 secrets
+```
+
+After the first consent run:
+
+```bash
+chmod 600 secrets/client_secret.json secrets/token.json
+```
+
 For a scheduled Azure job, use a secret-mounted OAuth token or a Workspace service account with administrator-approved domain-wide delegation. Set `GMAIL_AUTH_MODE=service_account`, `GOOGLE_APPLICATION_CREDENTIALS`, and `GMAIL_IMPERSONATE_USER`.
 
 ## Azure deployment
