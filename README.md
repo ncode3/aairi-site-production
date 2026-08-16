@@ -1,8 +1,8 @@
-# AAIRI Official Website
+# AARI Production Website
 
 [![Azure Static Web Apps CI/CD](https://github.com/ncode3/aairi-site-production/actions/workflows/azure-static-web-apps-polite-tree-06850430f.yml/badge.svg)](https://github.com/ncode3/aairi-site-production/actions/workflows/azure-static-web-apps-polite-tree-06850430f.yml)
 
-Official website for the **Atlanta AI & Robotics Initiative (AARI)**, a 501(c)(3) nonprofit organization providing hands-on AI and robotics education to students, veterans, and underserved communities in Atlanta.
+Official website for the **Atlanta AI & Robotics Initiative (AARI)**, an Atlanta nonprofit organization providing hands-on AI and robotics education to students, veterans, and underserved communities in Atlanta.
 
 ## Framework
 
