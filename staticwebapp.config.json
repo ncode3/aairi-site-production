@@ -53,6 +53,22 @@
       "rewrite": "/funder-brief.html"
     },
     {
+      "route": "/partner-brief",
+      "rewrite": "/partner-brief.html"
+    },
+    {
+      "route": "/contact",
+      "rewrite": "/contact.html"
+    },
+    {
+      "route": "/privacy",
+      "rewrite": "/privacy.html"
+    },
+    {
+      "route": "/impact-methodology",
+      "rewrite": "/impact-methodology.html"
+    },
+    {
       "route": "/api/submit-inquiry",
       "methods": ["GET", "PUT", "PATCH", "DELETE", "OPTIONS", "TRACE", "CONNECT"],
       "statusCode": 404
