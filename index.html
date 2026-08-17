@@ -19,8 +19,7 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://atlanta-robotics.org/">
     <meta property="og:image" content="https://atlanta-robotics.org/images/nolan-headshot.jpg">
-    <meta name="twitter:card" content="summary_large_image">
-    <link rel="canonical" href="https://atlanta-robotics.org/">
+    <meta name="twitter:card" content="summary_large_image">\n    <link rel="canonical" href="https://atlanta-robotics.org/">
     <meta name="theme-color" content="#020617">
     <link rel="icon" type="image/png" href="images/header-logo.png">
 
@@ -152,6 +151,22 @@
         .action-card:hover img {
             transform: scale(1.035);
             filter: saturate(1.08) contrast(1.03);
+        }
+        .progress-metric {
+            position: relative;
+            overflow: hidden;
+        }
+        .progress-metric::after {
+            content: '';
+            position: absolute;
+            inset: auto 1.5rem 0 1.5rem;
+            height: 2px;
+            background: linear-gradient(90deg, #fbbf24, #60a5fa);
+            opacity: 0.72;
+        }
+        .artifact-link:focus-visible {
+            outline: 3px solid #fbbf24;
+            outline-offset: 4px;
         }
         .proof-logo {
             background: rgba(255,255,255,0.97);
@@ -484,7 +499,7 @@
                 <a href="contact.html" class="bg-white text-navy-950 font-semibold px-4 py-2.5 rounded-xl hover:bg-slate-200 transition-colors whitespace-nowrap">Partner With AARI</a>
             </div>
 
-            <button id="mobile-toggle" class="xl:hidden text-slatebrand-200" type="button" aria-expanded="false" aria-controls="mobile-menu">
+            <button id="mobile-toggle" class="xl:hidden text-slatebrand-200" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open navigation menu">
                 <i data-lucide="menu" class="w-8 h-8"></i>
             </button>
         </div>
@@ -551,13 +566,35 @@
                         </div>
                     </div>
                 </div>
-                <aside class="glass-panel rounded-[2rem] p-6 md:p-8 border border-white/10">
+                <aside class="glass-panel rounded-[2rem] p-6 md:p-8 border border-white/10" aria-label="Founder thesis">
                     <img src="images/nolan-headshot.jpg" alt="Nolan S. Code, founder of AARI" class="w-full rounded-[1.5rem] object-cover aspect-[4/5] border border-white/10">
                     <div class="mt-6 soft-rule pt-5">
                         <p class="text-xs uppercase tracking-[0.24em] text-slate-500 mb-3">Founder thesis</p>
                         <p class="text-lg text-slate-700 leading-relaxed">AI literacy without infrastructure literacy creates dependency. Everyone is learning to use the tools. Almost no one is being trained to own the systems underneath them. AARI exists to make sure the operators of the AI economy look like the country it serves. That outcome is not a hope. It is a build order.</p>
                     </div>
                 </aside>
+            </div>
+        </section>
+
+        <section id="site-2-progress" class="py-20 md:py-24 bg-navy-900 scroll-mt-24">
+            <div class="section-shell grid lg:grid-cols-[1.05fr_0.95fr] gap-10 items-center">
+                <div>
+                    <div class="section-kicker mb-5"><i data-lucide="hard-hat" class="w-4 h-4"></i>Summer 2026 program progress</div>
+                    <h2 class="text-3xl md:text-5xl font-bold leading-tight mb-5">Data Center Site #2 Is Under Construction</h2>
+                    <div class="space-y-4 text-lg text-slatebrand-300 leading-relaxed">
+                        <p>AARI scholars and technical mentors have begun racking and staging systems at our solar-powered Data Center Site #2 co-location facility in Atlanta. The new environment expands our ability to teach physical infrastructure, Linux, networking, virtualization, cloud architecture, cybersecurity, observability, and AI infrastructure through real equipment.</p>
+                        <p>Scholars are handling servers, assembling racks, tracing cables, documenting systems, and learning how modern computing environments are built from the floor up.</p>
+                    </div>
+                    <a href="infrastructure.html#site-2" class="mt-7 inline-flex items-center gap-2 bg-electric-500 hover:bg-electric-400 text-white font-bold px-6 py-3 rounded-xl transition-colors">See What We Are Building <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+                </div>
+                <figure class="glass-panel rounded-3xl overflow-hidden border border-white/10">
+                    <img src="images/data-center-site-2/aari-solar-colocation-team.webp" alt="AARI scholars and partners gathered around the secured server cage at the solar-powered Data Center Site #2 co-location facility." class="w-full h-[26rem] object-cover object-center" width="1050" height="1400" loading="lazy">
+                    <div class="grid sm:grid-cols-2 gap-px border-t border-white/10 bg-white/10">
+                        <div class="bg-navy-900 p-4"><p class="text-2xl font-extrabold text-gold-400">2</p><p class="mt-1 text-xs text-slatebrand-300">Active training sites</p></div>
+                        <div class="bg-navy-900 p-4"><p class="font-bold text-sm">Build in progress</p><p class="mt-1 text-xs text-slatebrand-300">Racking, staging, and documentation</p></div>
+                    </div>
+                    <figcaption class="p-5 text-sm text-slatebrand-300 leading-relaxed">AARI scholars and partners at the solar-powered Site #2 co-location facility during the data-center buildout.</figcaption>
+                </figure>
             </div>
         </section>
 
@@ -605,7 +642,7 @@
                         <div class="section-kicker mb-5"><i data-lucide="camera" class="w-4 h-4"></i>AARI in Action</div>
                         <h2 class="text-3xl md:text-5xl font-bold leading-tight mb-4">We are not building a brochure. We are building an ecosystem.</h2>
                     </div>
-                    <p class="text-lg text-slatebrand-300 leading-relaxed">From student workshops and corporate site visits to robotics labs, edge AI development, and Smart Illuminating Helmet sessions, AARI puts students inside the infrastructure, the tools, and the rooms where the future is built. Training, employers, capital, and community do not sit in separate boxes here. They reinforce each other. That is what an operator ecosystem looks like.</p>
+                    <p class="text-lg text-slatebrand-300 leading-relaxed">From student workshops and corporate site visits to robotics labs, edge AI development, and data-center buildouts, AARI puts students inside the infrastructure, the tools, and the rooms where the future is built. Training, employers, capital, and community do not sit in separate boxes here. They reinforce each other. That is what an operator ecosystem looks like.</p>
                 </div>
 
                 <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
@@ -638,12 +675,6 @@
                             <img src="images/aari-action/garage-data-center-live-systems.jpg" alt="Students reviewing live systems inside the Garage Data Center" class="w-full aspect-[4/3] object-cover" loading="lazy">
                         </div>
                         <p class="p-5 text-sm text-slatebrand-200 leading-relaxed">Students reviewing live systems inside the Garage Data Center</p>
-                    </article>
-                    <article class="action-card glass-panel rounded-3xl overflow-hidden border border-white/10">
-                        <div class="overflow-hidden">
-                            <img src="images/aari-action/sih-product-review-session.jpg" alt="Smart Illuminating Helmet product review session" class="w-full aspect-[4/3] object-cover" loading="lazy">
-                        </div>
-                        <p class="p-5 text-sm text-slatebrand-200 leading-relaxed">Smart Illuminating Helmet product review session</p>
                     </article>
                     <article class="action-card glass-panel rounded-3xl overflow-hidden border border-white/10">
                         <div class="overflow-hidden">
@@ -887,48 +918,116 @@
                 <div class="max-w-3xl mb-12">
                     <div class="section-kicker mb-5"><i data-lucide="cpu" class="w-4 h-4"></i>Programs</div>
                     <h2 class="text-3xl md:text-4xl font-bold mb-4">Our core training lanes</h2>
+                    <p class="text-lg text-slatebrand-300 leading-relaxed">AARI delivers year-round data-center and robotics education through workshops, technical labs, build sessions, industry exposure, mentorship and applied projects. The summer internship gives selected students an intensive paid opportunity to deepen that work and produce workforce-ready technical evidence.</p>
                 </div>
                 <div class="grid md:grid-cols-2 xl:grid-cols-5 gap-5" data-expandable-group>
                     <article class="lane-card glass-panel rounded-3xl p-6 border border-white/10" data-expandable-card>
-                        <h3 class="text-xl font-semibold mb-3">AI Infrastructure &amp; Data Centers</h3>
-                        <p class="text-sm text-slatebrand-300 leading-relaxed">Compute, networking, power, storage, systems operations, and the environments where production AI actually runs.</p>
+                        <h3 class="text-xl font-semibold mb-3">Data Center Dojo</h3>
+                        <p class="text-sm text-slatebrand-300 leading-relaxed">Server installation, rack layout, cabling, imaging, Linux, networking, storage, virtualization, Kubernetes, logging, and operating documentation.</p>
                         <button type="button" class="mt-5 text-sm font-bold text-gold-400 hover:text-gold-300" aria-expanded="false" aria-controls="program-data-centers">Learn more</button>
                         <div id="program-data-centers" class="interactive-detail">
-                            <div class="pt-4 text-sm text-slatebrand-300 space-y-2"><p><strong>Skills:</strong> Linux, cabling, monitoring, uptime, and rack-aware operations.</p><p><strong>Lab:</strong> build a data center operations runbook.</p><p><strong>Pathway:</strong> data center technician and critical facilities support.</p></div>
+                            <div class="pt-4 text-sm text-slatebrand-300 space-y-2"><p><strong>Skills:</strong> rack-and-stack, VLANs, DHCP/DNS, virtualization, monitoring, and uptime.</p><p><strong>Lab:</strong> stage a system and build its operations runbook.</p><p><strong>Model:</strong> test, development, and production operating practices.</p></div>
                         </div>
                     </article>
                     <article class="lane-card glass-panel rounded-3xl p-6 border border-white/10" data-expandable-card>
-                        <h3 class="text-xl font-semibold mb-3">Edge AI &amp; Physical AI</h3>
-                        <p class="text-sm text-slatebrand-300 leading-relaxed">Jetson systems, sensor fusion, local inference, and deployment constraints outside the cloud.</p>
+                        <h3 class="text-xl font-semibold mb-3">Robotics &amp; Edge AI</h3>
+                        <p class="text-sm text-slatebrand-300 leading-relaxed">ROS 2, autonomous navigation, Jetson edge computing, sensors, computer vision, and physical AI projects that move from simulation to hardware.</p>
                         <button type="button" class="mt-5 text-sm font-bold text-gold-400 hover:text-gold-300" aria-expanded="false" aria-controls="program-edge-ai">Learn more</button>
                         <div id="program-edge-ai" class="interactive-detail">
                             <div class="pt-4 text-sm text-slatebrand-300 space-y-2"><p><strong>Skills:</strong> sensors, local inference, telemetry, and constrained compute.</p><p><strong>Lab:</strong> deploy an edge inference demo on Jetson-class hardware.</p><p><strong>Pathway:</strong> edge AI technician and field systems support.</p></div>
                         </div>
                     </article>
                     <article class="lane-card glass-panel rounded-3xl p-6 border border-white/10" data-expandable-card>
-                        <h3 class="text-xl font-semibold mb-3">Robotics &amp; Autonomous Systems</h3>
-                        <p class="text-sm text-slatebrand-300 leading-relaxed">Robotics control, computer vision, autonomy pipelines, and systems integration from hardware to behavior.</p>
+                        <h3 class="text-xl font-semibold mb-3">Cybersecurity &amp; Observability</h3>
+                        <p class="text-sm text-slatebrand-300 leading-relaxed">Security fundamentals, SIEM, incident response, vulnerability assessment, Splunk dashboards, alerts, and infrastructure telemetry.</p>
                         <button type="button" class="mt-5 text-sm font-bold text-gold-400 hover:text-gold-300" aria-expanded="false" aria-controls="program-robotics">Learn more</button>
                         <div id="program-robotics" class="interactive-detail">
-                            <div class="pt-4 text-sm text-slatebrand-300 space-y-2"><p><strong>Skills:</strong> controls, perception, computer vision, and robot safety basics.</p><p><strong>Lab:</strong> assemble and test a sensor-driven robotics workflow.</p><p><strong>Pathway:</strong> robotics technician and automation support roles.</p></div>
+                            <div class="pt-4 text-sm text-slatebrand-300 space-y-2"><p><strong>Skills:</strong> security monitoring, SIEM, incident response, vulnerability assessment, and telemetry.</p><p><strong>Lab:</strong> build Splunk dashboards and investigate an infrastructure alert.</p><p><strong>Pathway:</strong> security operations and observability roles.</p></div>
                         </div>
                     </article>
                     <article class="lane-card glass-panel rounded-3xl p-6 border border-white/10" data-expandable-card>
-                        <h3 class="text-xl font-semibold mb-3">Quantum-Classical Computing</h3>
-                        <p class="text-sm text-slatebrand-300 leading-relaxed">Quantum literacy, hybrid workflows, and operator-level exposure to the next layer of compute.</p>
+                        <h3 class="text-xl font-semibold mb-3">Cloud Architecture &amp; Certification</h3>
+                        <p class="text-sm text-slatebrand-300 leading-relaxed">AWS architecture training toward a September 2026 Solutions Architect target, grounded in real hybrid infrastructure.</p>
                         <button type="button" class="mt-5 text-sm font-bold text-gold-400 hover:text-gold-300" aria-expanded="false" aria-controls="program-quantum">Learn more</button>
                         <div id="program-quantum" class="interactive-detail">
-                            <div class="pt-4 text-sm text-slatebrand-300 space-y-2"><p><strong>Skills:</strong> hybrid systems vocabulary, cloud quantum access, and experiment framing.</p><p><strong>Lab:</strong> run a quantum-classical learning exercise.</p><p><strong>Pathway:</strong> research support and emerging compute literacy.</p></div>
+                            <div class="pt-4 text-sm text-slatebrand-300 space-y-2"><p><strong>Skills:</strong> AWS architecture, identity, networking, storage, reliability, and cost-aware design.</p><p><strong>Lab:</strong> map the physical Site #2 stack into a hybrid cloud architecture.</p><p><strong>Target:</strong> AWS Solutions Architect in September 2026.</p></div>
                         </div>
                     </article>
                     <article class="lane-card glass-panel rounded-3xl p-6 border border-white/10" data-expandable-card>
-                        <h3 class="text-xl font-semibold mb-3">Cloud, Security &amp; Production AI</h3>
-                        <p class="text-sm text-slatebrand-300 leading-relaxed">Containers, cloud systems, guardrails, identity, observability, and deployment discipline.</p>
+                        <h3 class="text-xl font-semibold mb-3">Quantum Computing</h3>
+                        <p class="text-sm text-slatebrand-300 leading-relaxed">Qiskit, CUDA-Q, Q#, linear algebra, quantum circuits, VQE experiments, and the connection between classical infrastructure and future systems.</p>
                         <button type="button" class="mt-5 text-sm font-bold text-gold-400 hover:text-gold-300" aria-expanded="false" aria-controls="program-cloud-security">Learn more</button>
                         <div id="program-cloud-security" class="interactive-detail">
-                            <div class="pt-4 text-sm text-slatebrand-300 space-y-2"><p><strong>Skills:</strong> containers, identity, deployment, observability, and secure operations.</p><p><strong>Lab:</strong> ship and monitor a small production-style service.</p><p><strong>Pathway:</strong> cloud operations, platform support, and AI reliability roles.</p></div>
+                            <div class="pt-4 text-sm text-slatebrand-300 space-y-2"><p><strong>Skills:</strong> Qiskit, CUDA-Q, Q#, linear algebra, circuits, and hybrid workflows.</p><p><strong>Lab:</strong> run and document a VQE experiment.</p><p><strong>Pathway:</strong> quantum research support and emerging compute literacy.</p></div>
                         </div>
                     </article>
+                </div>
+                <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-3 text-sm text-slatebrand-300" role="group" aria-label="AARI twelve-month program model">
+                    <p class="glass-panel rounded-xl p-4">Year-round data-center instruction</p><p class="glass-panel rounded-xl p-4">Year-round robotics and physical AI instruction</p><p class="glass-panel rounded-xl p-4">Technical workshops and build sessions</p><p class="glass-panel rounded-xl p-4">Industry and facility exposure</p><p class="glass-panel rounded-xl p-4">Certification preparation</p><p class="glass-panel rounded-xl p-4">Student artifact production</p><p class="glass-panel rounded-xl p-4">Paid summer internships</p><p class="glass-panel rounded-xl p-4">Internship, research and employment pathways</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="proof-of-progress" class="py-20 md:py-24 bright-section scroll-mt-24" aria-labelledby="proof-of-progress-heading">
+            <div class="section-shell">
+                <div class="max-w-4xl mb-12">
+                    <div class="section-kicker mb-5"><i data-lucide="chart-no-axes-combined" class="w-4 h-4"></i>Proof of Progress</div>
+                    <h2 id="proof-of-progress-heading" class="text-3xl md:text-5xl font-bold mb-5">Access Is Only the Beginning. We Measure What Students Build.</h2>
+                    <p class="text-lg text-slatebrand-300 leading-relaxed">AARI documented 234 hours of hands-on technical participation across 61 participant-days during the first three reporting weeks. Students began with a self-reported technical-readiness baseline of 29.8 out of 100. They are now producing data-center orchestration code, technical curriculum, cloud-security work, database designs, application prototypes, and documentation.</p>
+                </div>
+
+                <div class="grid sm:grid-cols-2 xl:grid-cols-5 gap-5 reveal-sequence" role="group" aria-label="Summer 2026 impact metrics">
+                    <article class="progress-metric metric-card glass-panel rounded-3xl p-6 border border-white/10"><p class="text-4xl font-extrabold text-gold-400 mb-3">234</p><h3 class="text-base font-semibold leading-snug">Hands-on training and work hours</h3></article>
+                    <article class="progress-metric metric-card glass-panel rounded-3xl p-6 border border-white/10"><p class="text-4xl font-extrabold text-gold-400 mb-3">61</p><h3 class="text-base font-semibold leading-snug">Participant-days</h3></article>
+                    <article class="progress-metric metric-card glass-panel rounded-3xl p-6 border border-white/10"><p class="text-4xl font-extrabold text-gold-400 mb-3">93.3%</p><h3 class="text-base font-semibold leading-snug">Weekly reporting completion</h3></article>
+                    <article class="progress-metric metric-card glass-panel rounded-3xl p-6 border border-white/10"><p class="text-4xl font-extrabold text-gold-400 mb-3">33</p><h3 class="text-base font-semibold leading-snug">Baseline technical assessments</h3></article>
+                    <article class="progress-metric metric-card glass-panel rounded-3xl p-6 border border-white/10 sm:col-span-2 xl:col-span-1"><p class="text-4xl font-extrabold text-gold-400 mb-3">20</p><h3 class="text-base font-semibold leading-snug">Linked technical artifacts and learning resources in the latest data-center reports</h3></article>
+                </div>
+                <p class="mt-5 text-sm text-slatebrand-400">Summer 2026 reporting through Week 3.</p>
+
+                <div class="mt-14 grid lg:grid-cols-[1.15fr_0.85fr] gap-6 items-stretch">
+                    <div class="glass-panel rounded-3xl p-7 md:p-9 border border-white/10">
+                        <p class="text-xs uppercase tracking-[0.22em] text-electric-400 mb-3">What Students Are Building</p>
+                        <h3 class="text-2xl md:text-3xl font-bold mb-7">Evidence from current program reports</h3>
+                        <ul class="grid sm:grid-cols-2 gap-4">
+                            <li><a class="artifact-link flex items-start gap-3 rounded-2xl border border-white/10 bg-white/5 p-4 hover:border-gold-400/40 transition-colors" href="https://github.com/ahmedkielkamil-commits/DataCenterOrch/commit/3994027fef5b494b1d80795a07a57f1aad996dc4" target="_blank" rel="noopener noreferrer"><i data-lucide="external-link" class="w-5 h-5 text-gold-400 shrink-0" aria-hidden="true"></i><span>Data-center orchestration code<span class="block mt-1 text-xs text-slatebrand-400">View public GitHub commit</span></span></a></li>
+                            <li><a class="artifact-link flex items-start gap-3 rounded-2xl border border-white/10 bg-white/5 p-4 hover:border-gold-400/40 transition-colors" href="https://docs.google.com/document/d/1eEVFo-5hThkqof1-9vpteiAPGWCvoqGKVtFV5ieSdWk/edit?usp=sharing" target="_blank" rel="noopener noreferrer"><i data-lucide="external-link" class="w-5 h-5 text-gold-400 shrink-0" aria-hidden="true"></i><span>Linux and networking curriculum<span class="block mt-1 text-xs text-slatebrand-400">View public networking lesson</span></span></a></li>
+                            <li class="flex items-start gap-3 rounded-2xl border border-white/10 bg-white/5 p-4"><i data-lucide="shield-check" class="w-5 h-5 text-gold-400 shrink-0" aria-hidden="true"></i><span>Cloud-security projects</span></li>
+                            <li><a class="artifact-link flex items-start gap-3 rounded-2xl border border-white/10 bg-white/5 p-4 hover:border-gold-400/40 transition-colors" href="https://drawsql.app/teams/ahmed-halen/diagrams/datacenterdashboard-2" target="_blank" rel="noopener noreferrer"><i data-lucide="external-link" class="w-5 h-5 text-gold-400 shrink-0" aria-hidden="true"></i><span>Database designs<span class="block mt-1 text-xs text-slatebrand-400">View public data-center design</span></span></a></li>
+                            <li class="flex items-start gap-3 rounded-2xl border border-white/10 bg-white/5 p-4"><i data-lucide="panels-top-left" class="w-5 h-5 text-gold-400 shrink-0" aria-hidden="true"></i><span>Application prototypes</span></li>
+                            <li class="flex items-start gap-3 rounded-2xl border border-white/10 bg-white/5 p-4"><i data-lucide="file-text" class="w-5 h-5 text-gold-400 shrink-0" aria-hidden="true"></i><span>Technical documentation</span></li>
+                            <li><a class="artifact-link flex items-start gap-3 rounded-2xl border border-white/10 bg-white/5 p-4 hover:border-gold-400/40 transition-colors" href="https://docs.google.com/document/d/1SvBShv71EYAfDwQOF2xl2dSGuAcPrZzI2blXeg7UrOo/edit?usp=sharing" target="_blank" rel="noopener noreferrer"><i data-lucide="external-link" class="w-5 h-5 text-gold-400 shrink-0" aria-hidden="true"></i><span>Computer architecture lessons<span class="block mt-1 text-xs text-slatebrand-400">View public lesson</span></span></a></li>
+                            <li><a class="artifact-link flex items-start gap-3 rounded-2xl border border-white/10 bg-white/5 p-4 hover:border-gold-400/40 transition-colors" href="https://github.com/ahmedkielkamil-commits/AARIEdu/commit/d6fce2af93835c5980c40ca1bcf84336de796cb1" target="_blank" rel="noopener noreferrer"><i data-lucide="external-link" class="w-5 h-5 text-gold-400 shrink-0" aria-hidden="true"></i><span>AARI educational-suite code<span class="block mt-1 text-xs text-slatebrand-400">View public GitHub commit</span></span></a></li>
+                        </ul>
+                    </div>
+
+                    <div class="grid gap-6">
+                        <article class="glass-panel rounded-3xl p-7 border border-white/10"><p class="text-xs uppercase tracking-[0.22em] text-gold-400 mb-3">Rasheed Jeheeb · Scholar Growth</p><p class="text-xl font-semibold leading-relaxed">Weekly participation increased from 8.5 to 18 hours, a 112% increase, alongside 11 submitted technical artifacts across three weeks.</p><p class="mt-4 text-sm text-slatebrand-400">Submitted links are evidence of work produced; they are not described as 11 independently verified completed projects.</p></article>
+                        <aside class="maroon-band rounded-3xl p-7 border border-gold-400/20" aria-label="Curriculum development highlight"><i data-lucide="book-open-check" class="w-8 h-8 text-gold-400 mb-4" aria-hidden="true"></i><p class="text-xl font-semibold leading-relaxed">AARI students are not only learning technical infrastructure. They are building reusable curriculum that can train the next cohort.</p></aside>
+                    </div>
+                </div>
+
+                <div id="rasheed-case-study" class="mt-10 glass-panel rounded-3xl overflow-hidden border border-white/10 grid lg:grid-cols-[0.95fr_1.05fr] scroll-mt-24">
+                    <div class="p-7 md:p-9 flex flex-col justify-center">
+                        <p class="text-xs uppercase tracking-[0.2em] text-gold-400 mb-3">Summer 2026 Scholar Case Study</p>
+                        <h3 class="text-3xl md:text-4xl font-bold mb-5">Rasheed Jeheeb: participation becomes technical evidence.</h3>
+                        <div class="grid grid-cols-3 gap-3 mb-6"><div class="rounded-xl bg-white/5 p-3"><strong class="block text-2xl text-gold-400">8.5→18</strong><span class="text-xs text-slatebrand-400">weekly hours</span></div><div class="rounded-xl bg-white/5 p-3"><strong class="block text-2xl text-gold-400">112%</strong><span class="text-xs text-slatebrand-400">increase</span></div><div class="rounded-xl bg-white/5 p-3"><strong class="block text-2xl text-gold-400">11</strong><span class="text-xs text-slatebrand-400">submitted artifacts</span></div></div>
+                        <blockquote class="text-xl leading-relaxed text-white border-l-4 border-gold-400 pl-5">“Because of AARI, I can see myself becoming a successful and passionate expert in robotics and a practicing engineer.”</blockquote>
+                        <p class="mt-5 text-slatebrand-300">His reflection connects robotics, data-center infrastructure, mentorship and technical evidence to an engineering career direction.</p>
+                        <div class="mt-6 flex flex-wrap gap-4"><a href="https://docs.google.com/document/d/19UXlGKUCwnou3IeleZJKoLCoZ09jbXx83ThKquM2R7A/edit?usp=sharing" target="_blank" rel="noopener noreferrer" class="text-sm font-bold text-gold-400 hover:text-gold-300">View a submitted artifact</a><a href="infrastructure.html#rasheed-jeheeb" class="text-sm font-bold text-gold-400 hover:text-gold-300">Read the full reflection</a></div>
+                    </div>
+                    <div class="bg-black flex flex-col justify-center"><video class="w-full h-auto max-h-[42rem] object-contain" controls preload="metadata" playsinline aria-label="Rasheed Jeheeb shares his experience as an AARI Scholar"><source src="assets/video/rasheed-jeheeb-aari-testimonial.mp4" type="video/mp4">Your browser does not support HTML5 video. Read Rasheed Jeheeb’s written testimonial on the AARI infrastructure page.</video><p class="px-5 py-4 text-sm text-slatebrand-300"><strong class="text-white">Video summary:</strong> Rasheed reflects on practical robotics, data-center and hardware experience, mentorship, certifications and his future as an engineer.</p></div>
+                </div>
+
+                <div class="mt-10 glass-panel rounded-3xl p-6 md:p-8 border border-white/10">
+                    <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4 mb-6"><div><p class="text-xs uppercase tracking-[0.22em] text-electric-400 mb-2">Outcomes by reporting period</p><h3 class="text-2xl md:text-3xl font-bold">Completed results stay separate from future goals.</h3></div><p class="text-xs text-slatebrand-400">Last updated: August 10, 2026</p></div>
+                    <div class="overflow-x-auto"><table class="w-full min-w-[48rem] text-left text-sm"><thead class="text-slatebrand-400"><tr class="border-b border-white/10"><th scope="col" class="p-3">Period</th><th scope="col" class="p-3">Participation</th><th scope="col" class="p-3">Assessment</th><th scope="col" class="p-3">Evidence and outcomes</th></tr></thead><tbody class="text-slatebrand-300"><tr class="border-b border-white/10"><th scope="row" class="p-3 text-white">Summer 2026 · completed through Week 3</th><td class="p-3">234 hours · 61 participant-days · paid internship participation tracked</td><td class="p-3">33 baseline assessments; midpoint and final pending</td><td class="p-3">20 linked artifacts/resources; certifications, placements and cost metrics reported only when verified</td></tr><tr class="border-b border-white/10"><th scope="row" class="p-3 text-white">Fall 2026</th><td class="p-3">Year-round data-center, robotics, workshops and partner engagement</td><td class="p-3">Reporting scheduled</td><td class="p-3">Results published after the period closes</td></tr><tr class="border-b border-white/10"><th scope="row" class="p-3 text-white">Spring 2027</th><td class="p-3">Year-round instruction, labs and certification preparation</td><td class="p-3">Reporting scheduled</td><td class="p-3">Results published after the period closes</td></tr><tr><th scope="row" class="p-3 text-white">Summer 2027 · fundraising goal</th><td class="p-3">$6,200 stipend target per selected intern</td><td class="p-3">Baseline, midpoint and final planned</td><td class="p-3">Artifacts, certifications, internships, placements, partner and cost metrics tracked without presenting goals as outcomes</td></tr></tbody></table></div>
+                    <p class="mt-5 text-xs text-slatebrand-400">Dashboard categories include data-center and robotics participation, workshops, assessments, verified artifacts, certifications, paid internships, placements, partner engagements, cost per scholar and cost per verified outcome. Unknown or unverified values remain unpublished.</p>
+                </div>
+
+                <div class="mt-10 glass-panel rounded-3xl p-7 md:p-9 border border-white/10 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-7">
+                    <div class="max-w-3xl"><p class="text-xs uppercase tracking-[0.22em] text-electric-400 mb-3">Invest in documented outcomes</p><h3 class="text-3xl md:text-4xl font-bold mb-4">Fund the Next Verified Artifact</h3><p class="text-slatebrand-300 leading-relaxed">Your investment provides students with equipment, certifications, mentorship, and the opportunity to turn technical learning into documented, workforce-ready experience.</p></div>
+                    <a href="donate.html" class="donate-cta shrink-0 font-extrabold px-7 py-4 rounded-xl text-center inline-flex items-center justify-center gap-2"><i data-lucide="heart" class="w-5 h-5" aria-hidden="true"></i>Fund Infrastructure Access</a>
                 </div>
             </div>
         </section>
@@ -941,11 +1040,6 @@
                     <p class="text-lg text-slatebrand-300">AARI is not built around speculative brand language. It is built around labs, workshops, systems exposure, and operator training.</p>
                 </div>
                 <div class="grid lg:grid-cols-2 gap-6 mb-10">
-                    <article class="proof-card glass-panel rounded-3xl p-7 border border-white/10">
-                        <p class="text-xs uppercase tracking-[0.2em] text-electric-400 mb-3">Physical AI project</p>
-                        <h3 class="text-2xl font-semibold mb-3">Smart Illuminating Helmet</h3>
-                        <p class="text-slatebrand-300 leading-relaxed">AARI project work includes physical AI concepts where sensors, safety logic, and embedded intelligence are treated as operational systems, not science fair artifacts.</p>
-                    </article>
                     <article class="proof-card glass-panel rounded-3xl p-7 border border-white/10">
                         <p class="text-xs uppercase tracking-[0.2em] text-electric-400 mb-3">Edge deployment</p>
                         <h3 class="text-2xl font-semibold mb-3">Jetson edge inference</h3>
@@ -973,17 +1067,27 @@
                     </article>
                 </div>
 
-                <div class="glass-panel rounded-3xl overflow-hidden border border-white/10 mb-10 grid lg:grid-cols-[0.95fr_1.05fr]">
+                <figure class="glass-panel rounded-3xl overflow-hidden border border-white/10 mb-10 grid lg:grid-cols-[1.15fr_0.85fr] items-stretch">
+                    <img src="images/aari-action/aari-aws-learning-session.webp" alt="AARI students, mentors, and partners at the Best Buy Teen Tech Center autonomous navigation program." class="w-full h-full min-h-[22rem] object-cover" width="1800" height="1350" loading="lazy">
+                    <figcaption class="p-7 md:p-9 flex flex-col justify-center">
+                        <p class="text-xs uppercase tracking-[0.2em] text-electric-400 mb-3">Autonomous navigation program</p>
+                        <h3 class="text-3xl font-bold mb-4">Young learners build mini Waymos at the Best Buy Teen Tech Center.</h3>
+                        <p class="text-slatebrand-300 leading-relaxed">AARI teaches students ages 11–14 Physical AI and autonomous navigation through hands-on work building mini Waymos with guidance and supervision from Waymo.</p>
+                    </figcaption>
+                </figure>
+
+                <div id="leeland-spotlight" class="glass-panel rounded-3xl overflow-hidden border border-white/10 mb-10 grid lg:grid-cols-[0.85fr_1.15fr] scroll-mt-24">
                     <div class="p-7 md:p-9 flex flex-col justify-center">
-                        <p class="text-xs uppercase tracking-[0.2em] text-gold-400 mb-3">Student testimonial</p>
-                        <h3 class="text-3xl md:text-4xl font-bold mb-4">Students are seeing the pathway from infrastructure access to operator confidence.</h3>
-                        <p class="text-slatebrand-300 leading-relaxed">Hear directly from an AARI scholar about the value of hands-on access, technical mentorship, and learning on real infrastructure.</p>
+                        <p class="text-xs uppercase tracking-[0.2em] text-electric-400 mb-3">Student spotlight</p>
+                        <h3 class="text-3xl md:text-4xl font-bold mb-5">Student Spotlight: Leeland</h3>
+                        <p class="text-lg text-slatebrand-300 leading-relaxed">Leeland shares his perspective on participating in AARI in this student testimonial.</p>
                     </div>
-                    <div class="bg-black">
-                        <video class="w-full h-full min-h-[22rem] object-cover" controls preload="metadata" playsinline aria-label="AARI student testimonial video">
-                            <source src="assets/video/student-testimonial.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
+                    <div class="bg-black flex flex-col justify-center">
+                        <video class="w-full h-auto max-h-[42rem] object-contain" controls preload="metadata" playsinline aria-label="Leeland shares his experience with AARI">
+                            <source src="assets/video/leeland-aari-testimonial.mp4" type="video/mp4">
+                            Your browser does not support HTML5 video. This video contains Leeland’s AARI student testimonial.
                         </video>
+                        <p class="px-5 py-4 text-sm text-slatebrand-300 leading-relaxed"><strong class="text-white">Video summary:</strong> Leeland shares his experience as an AARI student.</p>
                     </div>
                 </div>
 
@@ -992,7 +1096,7 @@
                         <div class="max-w-3xl">
                             <p class="text-xs uppercase tracking-[0.22em] text-electric-400 mb-3">Ecosystem / Partner Network</p>
                             <h3 class="text-3xl md:text-4xl font-bold mb-4">Our Partners</h3>
-                            <p class="text-slatebrand-300 leading-relaxed">AARI groups organizations by their role in the infrastructure pipeline, including confirmed collaborations, active conversations, curriculum alignment, prospective partner relationships, and giving platforms.</p>
+                            <p class="text-slatebrand-300 leading-relaxed">Every card includes a status so confirmed funders and program partners are not confused with technical collaborators, active conversations or prospective relationships.</p>
                         </div>
                         <div class="flex items-center gap-3">
                             <button type="button" class="partner-arrow inline-flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-slatebrand-200 hover:border-electric-400/50 hover:text-white" data-carousel-prev aria-label="Previous partner">
@@ -1003,7 +1107,8 @@
                             </button>
                         </div>
                     </div>
-                    <div class="flex flex-wrap gap-3 mb-6" data-partner-filters aria-label="Filter partner and funder cards">
+                    <div class="flex flex-wrap gap-2 mb-6 text-xs text-slatebrand-300" role="group" aria-label="Partner relationship classifications"><span class="rounded-full border border-white/10 px-3 py-1">Confirmed funder</span><span class="rounded-full border border-white/10 px-3 py-1">Confirmed program partner</span><span class="rounded-full border border-white/10 px-3 py-1">Curriculum or technical collaborator</span><span class="rounded-full border border-white/10 px-3 py-1">Active conversation</span><span class="rounded-full border border-white/10 px-3 py-1">Prospective relationship</span></div>
+                    <div class="flex flex-wrap gap-3 mb-6" role="group" data-partner-filters aria-label="Filter partner and funder cards">
                         <button type="button" class="filter-button rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-semibold text-slatebrand-300" data-filter="All" aria-pressed="true">All</button>
                         <button type="button" class="filter-button rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-semibold text-slatebrand-300" data-filter="Cloud" aria-pressed="false">Cloud</button>
                         <button type="button" class="filter-button rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-semibold text-slatebrand-300" data-filter="Data Centers" aria-pressed="false">Data Centers</button>
@@ -1015,7 +1120,7 @@
                     <div class="partner-carousel-viewport" tabindex="0" aria-label="AARI partner carousel. Use left and right arrow keys to move through partners.">
                         <div class="partner-carousel-track" data-carousel-track></div>
                     </div>
-                    <div class="flex items-center justify-center gap-2 mt-6" data-carousel-dots aria-label="Partner carousel progress"></div>
+                    <div class="flex items-center justify-center gap-2 mt-6" role="group" data-carousel-dots aria-label="Partner carousel progress"></div>
                 </div>
             </div>
         </section>
@@ -1046,9 +1151,9 @@
                         <p class="text-sm text-slatebrand-300">Committed funding secured since launch, including corporate, grant, and philanthropic support.</p>
                     </article>
                     <article class="metric-card glass-panel rounded-3xl p-7 border border-white/10">
-                        <p class="text-sm uppercase tracking-[0.22em] text-slatebrand-500 mb-4">Students trained</p>
+                        <p class="text-sm uppercase tracking-[0.22em] text-slatebrand-500 mb-4">Students reached</p>
                         <p class="text-4xl font-bold mb-3" data-metric="students-trained"><span id="metric-students_trained">40+</span></p>
-                        <p class="text-sm text-slatebrand-300">Distinct students reached through AARI workshops, labs, and cohort programming.</p>
+                        <p class="text-sm text-slatebrand-300">Distinct students reached through AARI workshops, labs, and cohort programming; this is not a count of completed credentials.</p>
                     </article>
                     <article class="metric-card glass-panel rounded-3xl p-7 border border-white/10">
                         <p class="text-sm uppercase tracking-[0.22em] text-slatebrand-500 mb-4">Workshops delivered</p>
@@ -1061,27 +1166,22 @@
                         <p class="text-sm text-slatebrand-300">Organizations engaged through workshops, technical conversations, workforce planning, or program development.</p>
                     </article>
                     <article class="metric-card glass-panel rounded-3xl p-7 border border-white/10">
-                        <p class="text-sm uppercase tracking-[0.22em] text-slatebrand-500 mb-4">First student placement</p>
+                        <p class="text-sm uppercase tracking-[0.22em] text-slatebrand-500 mb-4">Student-reported placement</p>
                         <p class="text-4xl font-bold mb-3" data-metric="first-placement"><span id="metric-first_placement">$115K</span></p>
-                        <p class="text-sm text-slatebrand-300">First documented operator outcome from the early AARI model.</p>
+                        <p class="text-sm text-slatebrand-300">A student-reported compensation outcome from the early AARI model; employer confirmation is not represented here.</p>
                     </article>
                     <article class="metric-card glass-panel rounded-3xl p-7 border border-white/10">
                         <p class="text-sm uppercase tracking-[0.22em] text-slatebrand-500 mb-4">Active technical projects</p>
                         <p class="text-4xl font-bold mb-3" data-metric="active-projects"><span id="metric-active_projects">5</span></p>
-                        <p class="text-sm text-slatebrand-300">Current workstreams across Smart Illuminating Helmets, edge AI, robotics, quantum lockbox, and AI infrastructure/data center curriculum.</p>
+                        <p class="text-sm text-slatebrand-300">Current workstreams across edge AI, robotics, cloud architecture, quantum lockbox, and AI infrastructure/data center curriculum.</p>
                     </article>
                     <article class="metric-card glass-panel rounded-3xl p-7 border border-white/10">
-                        <p class="text-sm uppercase tracking-[0.22em] text-slatebrand-500 mb-4">Campus / lab footprint</p>
+                        <p class="text-sm uppercase tracking-[0.22em] text-slatebrand-500 mb-4">Planned campus footprint</p>
                         <p class="text-4xl font-bold mb-3" data-metric="campus-footprint"><span id="metric-footprint_sqft">100K+ sq ft</span></p>
-                        <p class="text-sm text-slatebrand-300">Planned applied robotics and AI workforce campus footprint, subject to facility readiness and final operating agreements.</p>
+                        <p class="text-sm text-slatebrand-300">Proposed applied robotics and AI workforce-training capacity; this is not current operational square footage.</p>
                     </article>
                 </div>
-                <div class="mt-6 grid md:grid-cols-3 gap-4 text-sm">
-                    <div class="glass-panel rounded-2xl p-5 border border-white/10"><strong class="block text-2xl text-white mb-1">234</strong><span class="text-slatebrand-300">documented training and work hours through Week 3 of the Summer 2026 cohort</span></div>
-                    <div class="glass-panel rounded-2xl p-5 border border-white/10"><strong class="block text-2xl text-white mb-1">61</strong><span class="text-slatebrand-300">documented participant-days through Week 3</span></div>
-                    <div class="glass-panel rounded-2xl p-5 border border-white/10"><strong class="block text-2xl text-white mb-1">93.3%</strong><span class="text-slatebrand-300">weekly student-report completion through Week 3</span></div>
-                </div>
-                <p class="text-xs text-slatebrand-500 mt-6">Metrics reflect current internal tracking as of August 2026. Formal annual reporting is in development. We report in cohorts, labs, placements, and operator outcomes, not slogans. <a href="impact-methodology.html" class="text-blue-700 font-semibold underline underline-offset-4 hover:text-blue-900">How we track impact</a></p>
+                <p class="text-xs text-slatebrand-500 mt-6">Metrics reflect current internal tracking as of 2026. Formal annual reporting is in development. We report in cohorts, labs, placements, and operator outcomes, not slogans. <a href="impact-methodology.html" class="text-blue-700 font-semibold underline underline-offset-4 hover:text-blue-900">How we track impact</a></p>
                 <p id="impact-live-updated" class="hidden text-xs text-slatebrand-500 mt-2" aria-live="polite"></p>
             </div>
         </section>
@@ -1105,8 +1205,8 @@
                             <span class="rounded-full border border-amber-400/30 bg-amber-400/10 px-3 py-1 text-xs font-bold uppercase tracking-[0.16em] text-gold-400">2026 Grant Partner</span>
                             <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-sm font-bold text-slatebrand-200">$15,000</span>
                         </div>
-                        <p class="text-slatebrand-300 leading-relaxed mb-4">QTS awarded AARI a $15,000 grant in 2026 to support general operations and strengthen AARI's work preparing students for data center and AI infrastructure roles.</p>
-                        <p class="text-sm text-slatebrand-400">General operating support for AARI's AI infrastructure and data center workforce pathway.</p>
+                        <p class="text-slatebrand-300 leading-relaxed mb-4">QTS awarded AARI a confirmed $15,000 grant for the 2026 grant period. The award is general operating support, with an organizational and data-center workforce focus.</p>
+                        <dl class="grid gap-2 text-sm text-slatebrand-400"><div><dt class="inline font-semibold text-white">Documented outputs:</dt> <dd class="inline">program-level Summer 2026 participation and technical-evidence records.</dd></div><div><dt class="inline font-semibold text-white">Public evidence:</dt> <dd class="inline">confirmed award amount and purpose.</dd></div><div><dt class="inline font-semibold text-white">Sponsor reporting:</dt> <dd class="inline">aggregate reporting is the supported format; no specific student outcome is attributed to QTS without supporting records.</dd></div></dl>
                     </article>
                     <article class="glass-panel rounded-3xl p-7 border border-white/10">
                         <div class="mb-5 overflow-hidden rounded-2xl border border-white/10 bg-white/5">
@@ -1117,8 +1217,8 @@
                             <span class="rounded-full border border-amber-400/30 bg-amber-400/10 px-3 py-1 text-xs font-bold uppercase tracking-[0.16em] text-gold-400">Ecosystem Partner Program</span>
                             <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-sm font-bold text-slatebrand-200">Renewable Support</span>
                         </div>
-                        <p class="text-slatebrand-300 leading-relaxed mb-4">AARI was selected for renewable support through the a16z Cultural Leadership Fund's Ecosystem Partner Program, recognizing AARI's work at the infrastructure layer of AI: systems, compute, networking, cloud, data centers, robotics, and production environments.</p>
-                        <p class="text-sm text-slatebrand-400">Renewable support recognizing AARI's work expanding access to the infrastructure layer of AI for HBCU students and underrepresented technical talent.</p>
+                        <p class="text-slatebrand-300 leading-relaxed mb-4">AARI was accepted into the a16z Cultural Leadership Fund Ecosystem Partner Program with renewable support recognizing infrastructure-layer AI work across systems, compute, networking, cloud, data centers, robotics and production environments.</p>
+                        <dl class="grid gap-2 text-sm text-slatebrand-400"><div><dt class="inline font-semibold text-white">Support type:</dt> <dd class="inline">renewable ecosystem support; amount not published here.</dd></div><div><dt class="inline font-semibold text-white">Documented outputs:</dt> <dd class="inline">organization-level infrastructure workforce programming and evidence systems.</dd></div><div><dt class="inline font-semibold text-white">Sponsor reporting:</dt> <dd class="inline">aggregate reporting is the supported format; no specific student outcome is attributed without supporting records.</dd></div></dl>
                     </article>
                 </div>
                 <div class="mt-10 flex flex-col sm:flex-row gap-4">
@@ -1232,42 +1332,20 @@
                     <article class="trust-card glass-panel rounded-3xl p-6 border border-white/10"><h3 class="text-xl font-semibold mb-3">Partner reporting</h3><p class="text-sm text-slatebrand-300 leading-relaxed">Partners should expect milestone updates, scope clarity, and outcome framing tied to actual program work.</p></article>
                     <article class="trust-card glass-panel rounded-3xl p-6 border border-white/10"><h3 class="text-xl font-semibold mb-3">Annual impact reporting</h3><p class="text-sm text-slatebrand-300 leading-relaxed">Impact should be reported in cohorts, labs, placements, projects, and operator outcomes, not slogans.</p></article>
                 </div>
+                <a href="trust.html" class="mt-8 inline-flex items-center gap-2 text-gold-400 font-semibold">Visit the AARI Trust Center <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
             </div>
         </section>
 
         <section id="funders" class="py-20 md:py-24 scroll-mt-24">
             <div class="section-shell">
-                <div class="grid lg:grid-cols-[0.95fr_1.05fr] gap-8 items-start">
-                    <div>
-                        <div class="section-kicker mb-5"><i data-lucide="banknote" class="w-4 h-4"></i>Funders</div>
-                        <h2 class="text-3xl md:text-4xl font-bold mb-4">New AI wealth should build new AI access.</h2>
-                        <p class="text-lg text-slatebrand-300 leading-relaxed mb-8">As AI creates historic market value, AARI is building the pipeline that gives underrepresented learners access to the infrastructure behind that value: data centers, GPUs, cloud, robotics, edge AI, networking, and quantum systems. AARI has secured more than $100,000 since launch. The next phase funds student fellowships, technical staff, lab capacity, and a repeatable operating model that can scale beyond Atlanta with disciplined milestones.</p>
-                        <div class="flex flex-col sm:flex-row gap-4">
-                        <a href="contact.html" class="bg-white text-navy-950 font-semibold px-7 py-4 rounded-xl hover:bg-slate-200 transition-colors inline-flex items-center gap-2">
-                            Request the AARI Funder Brief
-                            <i data-lucide="arrow-up-right" class="w-5 h-5"></i>
-                        </a>
-                        <a href="funder-brief.html" class="glass-panel text-white font-semibold px-7 py-4 rounded-xl hover:bg-white/5 transition-colors inline-flex items-center gap-2">
-                            Read the brief
-                            <i data-lucide="file-text" class="w-5 h-5"></i>
-                        </a>
-                        </div>
-                    </div>
-                    <div class="grid gap-5">
-                        <article class="fund-card glass-panel rounded-3xl p-7 border border-white/10">
-                            <h3 class="text-xl font-semibold mb-3">Student operator fellowships</h3>
-                            <p class="text-slatebrand-300 leading-relaxed">Direct support for cohort stipends, scholarships, and the time required for students to train as operators rather than casual participants.</p>
-                        </article>
-                        <article class="fund-card glass-panel rounded-3xl p-7 border border-white/10">
-                            <h3 class="text-xl font-semibold mb-3">Lab equipment and edge AI hardware</h3>
-                            <p class="text-slatebrand-300 leading-relaxed">Jetson-class systems, robotics components, networking gear, test infrastructure, and the tools required for real deployment practice.</p>
-                        </article>
-                        <article class="fund-card glass-panel rounded-3xl p-7 border border-white/10">
-                            <h3 class="text-xl font-semibold mb-3">Curriculum, technical staff, and program operations</h3>
-                            <p class="text-slatebrand-300 leading-relaxed">The people, documentation, and operating support required to convert a promising cohort into a repeatable workforce pipeline.</p>
-                        </article>
-                    </div>
+                <div class="max-w-4xl mb-10"><div class="section-kicker mb-5"><i data-lucide="banknote" class="w-4 h-4"></i>Phased Capital Roadmap</div><h2 class="text-3xl md:text-4xl font-bold mb-4">A bridge from proven Atlanta work to responsible expansion.</h2><p class="text-lg text-slatebrand-300">AARI secured more than $100,000 since launch. Growth now proceeds in phases so charitable program delivery, permanent capacity and future replication are not presented as one undifferentiated ask.</p></div>
+                <div class="grid lg:grid-cols-3 gap-5">
+                    <article class="fund-card glass-panel rounded-3xl p-7 border border-white/10"><p class="text-xs uppercase tracking-[0.2em] text-gold-400 mb-3">Phase 1 · Current</p><h3 class="text-xl font-semibold mb-3">Strengthen the year-round Atlanta model</h3><dl class="grid gap-2 text-sm text-slatebrand-300"><div><dt class="font-semibold text-white">Purpose:</dt><dd>Data-center and robotics instruction, labs, workshops, artifacts and pathways.</dd></div><div><dt class="font-semibold text-white">Capital:</dt><dd>Custom sponsorship under approved annual budgets.</dd></div><div><dt class="font-semibold text-white">Students and outcomes:</dt><dd>Defined by each cohort scope; hours, artifacts, assessments and pathways reported.</dd></div><div><dt class="font-semibold text-white">Timeline:</dt><dd>Year-round.</dd></div></dl></article>
+                    <article class="fund-card glass-panel rounded-3xl p-7 border border-white/10"><p class="text-xs uppercase tracking-[0.2em] text-gold-400 mb-3">Phase 2 · Expansion goal</p><h3 class="text-xl font-semibold mb-3">Permanent Atlanta training capacity</h3><dl class="grid gap-2 text-sm text-slatebrand-300"><div><dt class="font-semibold text-white">Purpose:</dt><dd>Permanent training and technical infrastructure capacity.</dd></div><div><dt class="font-semibold text-white">Capital:</dt><dd>$10 million existing charitable expansion goal; detailed uses require an approved campaign budget.</dd></div><div><dt class="font-semibold text-white">Students and outcomes:</dt><dd>Service targets, infrastructure created and delivery timeline remain subject to the approved capital plan.</dd></div></dl></article>
+                    <article class="fund-card glass-panel rounded-3xl p-7 border border-white/10"><p class="text-xs uppercase tracking-[0.2em] text-gold-400 mb-3">Phase 3 · Future</p><h3 class="text-xl font-semibold mb-3">Replicate in additional cities</h3><dl class="grid gap-2 text-sm text-slatebrand-300"><div><dt class="font-semibold text-white">Purpose:</dt><dd>Replicate only after the Atlanta model is proven.</dd></div><div><dt class="font-semibold text-white">Capital:</dt><dd>Not yet published.</dd></div><div><dt class="font-semibold text-white">Students, infrastructure and timeline:</dt><dd>Not current commitments; defined through future approved plans.</dd></div></dl></article>
                 </div>
+                <p class="mt-6 text-xs text-slatebrand-400">Commercial data-center ownership, real-estate investment and for-profit opportunities are separate from charitable nonprofit funding.</p>
+                <div class="mt-8 flex flex-col sm:flex-row gap-4"><a href="funder-brief.html" class="bg-white text-navy-950 font-semibold px-7 py-4 rounded-xl text-center">Read the Funder Brief</a><a href="donate.html" class="donate-cta font-extrabold px-7 py-4 rounded-xl text-center">View Funding Options</a></div>
             </div>
         </section>
 
@@ -1287,14 +1365,6 @@
                             <p class="text-xs font-extrabold text-blue-700 uppercase tracking-[0.18em]">Workshop</p>
                             <h3 class="mt-3 text-2xl font-bold">Microsoft Garage student workshop</h3>
                             <p class="mt-3 text-sm text-slate-600">Students engaged the systems mindset behind AI, cloud, quantum literacy, and applied technical execution.</p>
-                        </div>
-                    </article>
-                    <article class="field-card bright-card rounded-3xl overflow-hidden">
-                        <img src="images/aari-action/sih-development-screenshot.jpg" alt="Smart Illuminating Helmet development review" class="w-full aspect-[16/10] object-cover" loading="lazy">
-                        <div class="p-6">
-                            <p class="text-xs font-extrabold text-emerald-700 uppercase tracking-[0.18em]">Physical AI</p>
-                            <h3 class="mt-3 text-2xl font-bold">Smart Illuminating Helmet development</h3>
-                            <p class="mt-3 text-sm text-slate-600">The SIH workstream helps students connect sensors, edge intelligence, safety, and real product constraints.</p>
                         </div>
                     </article>
                     <article class="field-card bright-card rounded-3xl overflow-hidden">
@@ -1356,7 +1426,7 @@
                     </div>
                 </div>
                 <div class="grid xl:grid-cols-[0.8fr_1.2fr] gap-6">
-                    <aside class="contact-card glass-panel rounded-3xl p-7 border border-white/10">
+                    <aside class="contact-card glass-panel rounded-3xl p-7 border border-white/10" aria-label="General contact information">
                         <div class="space-y-5">
                             <div>
                                 <p class="text-xs uppercase tracking-[0.22em] text-slatebrand-500 mb-2">General contact</p>
@@ -1569,6 +1639,7 @@
                 <a href="#leadership" class="hover:text-white transition-colors">Leadership</a>
                 <a href="#funders" class="hover:text-white transition-colors">Funders</a>
                 <a href="partners.html" class="hover:text-white transition-colors">Partners</a>
+                <a href="trust.html" class="hover:text-white transition-colors">Trust Center</a>
                 <a href="donate.html" class="hover:text-white transition-colors font-semibold text-emerald-300">Donate</a>
                 <a href="contact.html" class="hover:text-white transition-colors">Contact</a>
                 <a href="privacy.html" class="hover:text-white transition-colors">Privacy Policy</a>
@@ -1755,10 +1826,11 @@
                 logo: 'images/logo-google-cloud.png'
             },
             {
-                name: 'Smart Illuminating Helmet',
+                name: 'Waymo',
                 category: 'Robotics',
-                status: 'Active - advisory relationship',
-                role: "Extends AARI's edge AI methodology into commercial hardware, telemetry, and Jetson-enabled proof-of-concept work."
+                status: 'Active - partner',
+                role: 'Connects AARI students to autonomous vehicle technology, robotics systems, perception, safety, and real-world AI operations. Logo source: Waymo.',
+                logo: 'images/logo-waymo.png'
             },
             {
                 name: 'Benevity',
