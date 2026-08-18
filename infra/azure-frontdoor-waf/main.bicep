@@ -23,11 +23,18 @@ param siteRateLimitPerMinute int = 300
 @description('Stricter per-IP rate limit for contact form API submissions.')
 param formRateLimitPerMinute int = 15
 
+var costTags = {
+  Environment: 'prod'
+  Owner: 'AARI'
+  CostCenter: 'aari-website'
+}
+
 var wafPolicyAssociationId = '/subscriptions/${subscription().subscriptionId}/resourceGroups/${resourceGroup().name}/providers/Microsoft.Network/frontdoorWebApplicationFirewallPolicies/${wafPolicyName}'
 
 resource frontDoorProfile 'Microsoft.Cdn/profiles@2024-02-01' = {
   name: frontDoorProfileName
   location: 'global'
+  tags: costTags
   sku: {
     name: 'Premium_AzureFrontDoor'
   }
@@ -101,6 +108,7 @@ resource route 'Microsoft.Cdn/profiles/afdEndpoints/routes@2024-02-01' = {
 resource wafPolicy 'Microsoft.Network/frontDoorWebApplicationFirewallPolicies@2024-02-01' = {
   name: wafPolicyName
   location: 'global'
+  tags: costTags
   sku: {
     name: 'Premium_AzureFrontDoor'
   }
