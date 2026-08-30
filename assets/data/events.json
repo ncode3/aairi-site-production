@@ -1,0 +1,42 @@
+[
+  {
+    "id": "summer-2026-cohort-closeout",
+    "date": "2026-09-04",
+    "allDay": true,
+    "title": "Summer 2026 Cohort Closeout",
+    "category": "Program milestone",
+    "audience": "Student event",
+    "location": "AARI student program",
+    "description": "Final evidence review for the David Mykel Taylor Scholars Data Center Cohort.",
+    "url": null,
+    "cta": null
+  },
+  {
+    "id": "tag-shift-2026",
+    "date": "2026-09-18",
+    "startTime": "08:00",
+    "endTime": "15:00",
+    "allDay": false,
+    "title": "TAG //SHIFT AI Summit",
+    "category": "Public appearance",
+    "audience": "Registration open",
+    "location": "Southern Company Gas HQ, 725 W Peachtree St NW, Atlanta, GA 30308",
+    "description": "AARI brings the physical AI, energy, and Georgia workforce-development case to TAG’s annual AI summit.",
+    "url": "https://members.tagonline.org/ap/Events/Register/R1Fo7y2FRC0CX",
+    "cta": "Register with TAG"
+  },
+  {
+    "id": "splunk-powered-careers",
+    "date": "2026-09-24",
+    "startTime": "10:00",
+    "endTime": "12:00",
+    "allDay": false,
+    "title": "Splunk-Powered Careers: Resume Review and Demos",
+    "category": "Career event",
+    "audience": "Participant event",
+    "location": "Cisco Systems, 756 W Peachtree St NW, Atlanta, GA 30308",
+    "description": "ATL Future Builders and AARI connect students with Splunk-powered cybersecurity, observability, resume review, and technical demos.",
+    "url": null,
+    "cta": null
+  }
+]
