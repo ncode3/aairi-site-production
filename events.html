@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17997086735"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-17997086735');
+    </script>
+    <script src="assets/js/analytics-config.js"></script>
+    <script src="assets/js/analytics.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events | Atlanta AI &amp; Robotics Initiative</title>
+    <meta name="description" content="See upcoming AARI student programs, public appearances, career events, and partner activations in Atlanta.">
+    <meta property="og:title" content="AARI Events">
+    <meta property="og:description" content="Meet AARI in the room at student programs, public appearances, career events, and partner activations.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://atlanta-robotics.org/events">
+    <link rel="canonical" href="https://atlanta-robotics.org/events">
+    <meta name="theme-color" content="#020617">
+    <link rel="icon" type="image/png" href="images/header-logo.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = { theme: { extend: {
+        colors: {
+          navy: { 950: '#020617', 900: '#0b1120', 800: '#0f172a', 700: '#1e293b' },
+          electric: { 400: '#60a5fa', 500: '#3b82f6' },
+          gold: { 300: '#fcd34d', 400: '#fbbf24' },
+          maroon: { 700: '#5c121f' }
+        },
+        fontFamily: { sans: ['Inter', 'sans-serif'] }
+      } } };
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+      body { font-family: Inter, sans-serif; background: #020617; color: #f8fafc; }
+      .section-shell { max-width: 80rem; margin: 0 auto; padding-left: 1.5rem; padding-right: 1.5rem; }
+      .glass-panel { background: rgba(15,23,42,.82); backdrop-filter: blur(14px); border: 1px solid rgba(251,191,36,.14); }
+      .gradient-text { background: linear-gradient(135deg,#fbbf24 0%,#60a5fa 55%,#f8fafc 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+      .calendar-cell { min-height: 7.75rem; }
+      .event-pill { transition: transform .2s ease, border-color .2s ease; }
+      .event-pill:hover, .event-pill:focus-visible { transform: translateY(-1px); border-color: rgba(251,191,36,.58); }
+      .donate-cta { background: linear-gradient(135deg,#84cc16,#22c55e 42%,#14b8a6); color: #fff; box-shadow: 0 10px 26px rgba(34,197,94,.28); }
+      .skip-link { position: fixed; left: 1rem; top: -5rem; z-index: 100; background: #fbbf24; color: #020617; padding: .7rem 1rem; border-radius: .6rem; font-weight: 800; }
+      .skip-link:focus { top: 1rem; }
+      @media (max-width: 767px) { .calendar-cell { min-height: 5.25rem; } }
+      @media (prefers-reduced-motion: reduce) { *,*::before,*::after { scroll-behavior: auto !important; transition: none !important; } }
+    </style>
+</head>
+<body class="antialiased selection:bg-electric-500 selection:text-white">
+  <a href="#events-content" class="skip-link">Skip to events</a>
+  <nav class="fixed inset-x-0 top-0 z-50 glass-panel border-b border-white/5" aria-label="Main navigation">
+    <div class="max-w-[92rem] mx-auto px-4 sm:px-6 h-20 flex items-center justify-between gap-5">
+      <a href="index.html" class="flex items-center gap-3" aria-label="AARI home">
+        <span class="bg-white/90 p-1.5 rounded-lg"><img src="images/header-logo.png" alt="" class="h-10 w-auto object-contain"></span>
+        <span class="hidden lg:block">
+          <span class="block text-sm font-semibold text-white">Atlanta AI &amp; Robotics Initiative</span>
+          <span class="block text-xs text-slate-400">Infrastructure workforce pipeline</span>
+        </span>
+      </a>
+      <div class="hidden md:flex items-center gap-5 text-sm font-semibold text-slate-300">
+        <a href="index.html#programs" class="hover:text-gold-400">Programs</a>
+        <a href="impact.html" class="hover:text-gold-400">Impact</a>
+        <a href="partners.html" class="hover:text-gold-400">Partners</a>
+        <a href="contact.html" class="hover:text-gold-400">Contact</a>
+        <a href="donate.html" class="donate-cta px-4 py-2.5 rounded-xl font-extrabold">Donate</a>
+      </div>
+      <button id="mobile-toggle" type="button" class="md:hidden text-white p-2" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open navigation menu"><i data-lucide="menu" class="w-7 h-7"></i></button>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden border-t border-white/10 bg-navy-950/95">
+      <div class="section-shell py-4 flex flex-col gap-3 text-sm font-semibold text-slate-300">
+        <a href="index.html#programs" class="py-2">Programs</a>
+        <a href="impact.html" class="py-2">Impact</a>
+        <a href="partners.html" class="py-2">Partners</a>
+        <a href="contact.html" class="py-2">Contact</a>
+        <a href="donate.html" class="donate-cta px-5 py-3 rounded-xl text-center font-extrabold">Donate</a>
+      </div>
+    </div>
+  </nav>
+
+  <main id="events-content">
+    <section class="relative overflow-hidden pt-36 pb-16 md:pt-44 md:pb-20">
+      <div class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_left,_rgba(92,18,31,.56),_transparent_34%),radial-gradient(circle_at_bottom_right,_rgba(96,165,250,.18),_transparent_28%),linear-gradient(135deg,_#020617,_#0b1120_60%,_#16070b)]"></div>
+      <div class="section-shell">
+        <div class="inline-flex items-center gap-2 rounded-full border border-gold-400/30 bg-maroon-700/40 px-4 py-2 text-xs font-extrabold uppercase tracking-[.14em] text-gold-300">
+          <i data-lucide="calendar-days" class="w-4 h-4"></i> AARI Events
+        </div>
+        <h1 class="mt-6 max-w-4xl text-4xl md:text-6xl font-extrabold leading-tight">Meet AARI <span class="gradient-text">in the room.</span></h1>
+        <p class="mt-6 max-w-3xl text-lg md:text-xl leading-relaxed text-slate-300">Student milestones, career events, public appearances, and partner activations. Times below are Eastern.</p>
+      </div>
+    </section>
+
+    <section class="pb-20 md:pb-28">
+      <div class="section-shell grid xl:grid-cols-[1.25fr_.75fr] gap-8 items-start">
+        <div class="glass-panel rounded-3xl overflow-hidden">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 px-5 md:px-7 py-5 border-b border-white/10">
+            <div>
+              <p class="text-xs uppercase tracking-[.16em] font-bold text-gold-300">Monthly calendar</p>
+              <h2 id="calendar-title" class="mt-1 text-2xl font-extrabold">Loading events</h2>
+            </div>
+            <div class="flex gap-2">
+              <button id="previous-month" type="button" class="rounded-xl border border-white/10 bg-white/5 p-2.5 text-slate-200 hover:border-gold-400/50" aria-label="Previous month"><i data-lucide="chevron-left" class="w-5 h-5"></i></button>
+              <button id="next-month" type="button" class="rounded-xl border border-white/10 bg-white/5 p-2.5 text-slate-200 hover:border-gold-400/50" aria-label="Next month"><i data-lucide="chevron-right" class="w-5 h-5"></i></button>
+            </div>
+          </div>
+          <div class="grid grid-cols-7 border-b border-white/10 bg-white/[.025] text-center text-[11px] sm:text-xs font-bold uppercase tracking-wider text-slate-400" aria-hidden="true">
+            <div class="py-3">Sun</div><div class="py-3">Mon</div><div class="py-3">Tue</div><div class="py-3">Wed</div><div class="py-3">Thu</div><div class="py-3">Fri</div><div class="py-3">Sat</div>
+          </div>
+          <div id="calendar-grid" class="grid grid-cols-7" aria-live="polite"></div>
+        </div>
+
+        <aside class="glass-panel rounded-3xl p-6 md:p-7 xl:sticky xl:top-28" aria-labelledby="selected-event-title">
+          <p class="text-xs uppercase tracking-[.16em] font-bold text-gold-300">Event details</p>
+          <div id="selected-event" class="mt-5">
+            <h2 id="selected-event-title" class="text-2xl font-extrabold">Select an event</h2>
+            <p class="mt-3 text-slate-300 leading-relaxed">Choose a highlighted date to see the full details.</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="border-y border-white/10 bg-navy-900 py-20">
+      <div class="section-shell">
+        <div class="grid lg:grid-cols-[.8fr_1.2fr] gap-8 items-end mb-10">
+          <div>
+            <p class="text-xs uppercase tracking-[.16em] font-bold text-gold-300">Upcoming schedule</p>
+            <h2 class="mt-3 text-3xl md:text-5xl font-extrabold">What is next.</h2>
+          </div>
+          <p class="text-slate-300 leading-relaxed">Only confirmed, public-facing dates are listed. Private meetings and tentative partner activations stay off the public calendar.</p>
+        </div>
+        <div id="event-list" class="grid md:grid-cols-2 xl:grid-cols-3 gap-5" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section class="py-20">
+      <div class="section-shell">
+        <div class="rounded-3xl border border-gold-400/20 bg-gradient-to-br from-maroon-700/50 to-navy-800 p-8 md:p-12 flex flex-col lg:flex-row lg:items-center justify-between gap-7">
+          <div>
+            <p class="text-sm font-extrabold uppercase tracking-[.14em] text-gold-300">Bring AARI into the room</p>
+            <h2 class="mt-3 text-3xl md:text-4xl font-extrabold">Host a student event, technical workshop, or public conversation.</h2>
+          </div>
+          <a href="contact.html" class="shrink-0 rounded-xl bg-white px-6 py-4 text-center font-extrabold text-navy-950 hover:bg-slate-100">Contact AARI</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-white/10 bg-navy-950 py-10">
+    <div class="section-shell flex flex-col lg:flex-row justify-between gap-6">
+      <div>
+        <p class="font-semibold text-white">Atlanta AI &amp; Robotics Initiative, Inc.</p>
+        <p class="mt-2 max-w-xl text-sm text-slate-400">AARI trains HBCU students and underrepresented learners to operate the infrastructure stack underneath modern AI.</p>
+        <p class="mt-2 text-sm text-slate-400">501(c)(3) nonprofit organization. EIN: 41-2742893. Atlanta, Georgia.</p>
+      </div>
+      <div class="flex flex-wrap gap-4 text-sm text-slate-400">
+        <a href="index.html" class="hover:text-white">Home</a>
+        <a href="index.html#programs" class="hover:text-white">Programs</a>
+        <a href="impact.html" class="hover:text-white">Impact</a>
+        <a href="partners.html" class="hover:text-white">Partners</a>
+        <a href="trust.html" class="hover:text-white">Trust Center</a>
+        <a href="donate.html" class="font-semibold text-emerald-300 hover:text-white">Donate</a>
+        <a href="contact.html" class="hover:text-white">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const EVENT_DATA_URL = 'assets/data/events.json';
+    const easternDate = (dateString) => new Date(`${dateString}T12:00:00-04:00`);
+    const monthFormatter = new Intl.DateTimeFormat('en-US', { month: 'long', year: 'numeric', timeZone: 'America/New_York' });
+    const dateFormatter = new Intl.DateTimeFormat('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric', timeZone: 'America/New_York' });
+    const shortDateFormatter = new Intl.DateTimeFormat('en-US', { month: 'short', day: 'numeric', timeZone: 'America/New_York' });
+    const timeFormatter = new Intl.DateTimeFormat('en-US', { hour: 'numeric', minute: '2-digit', timeZone: 'America/New_York' });
+    let events = [];
+    let visibleMonth = new Date();
+
+    const escapeHtml = (value = '') => String(value).replace(/[&<>'"]/g, (character) => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', "'":'&#39;', '"':'&quot;' }[character]));
+    const eventDateTime = (event, field = 'startTime') => new Date(`${event.date}T${event[field] || '12:00'}:00-04:00`);
+    const formatTime = (event) => event.allDay ? 'Date only' : `${timeFormatter.format(eventDateTime(event))}–${timeFormatter.format(eventDateTime(event, 'endTime'))} ET`;
+    const calendarUrl = (event) => {
+      const formatStamp = (date) => date.toISOString().replace(/[-:]/g, '').replace(/\.000Z$/, 'Z');
+      const start = event.allDay ? event.date.replaceAll('-', '') : formatStamp(eventDateTime(event));
+      const nextDay = new Date(easternDate(event.date)); nextDay.setDate(nextDay.getDate() + 1);
+      const end = event.allDay ? nextDay.toISOString().slice(0,10).replaceAll('-', '') : formatStamp(eventDateTime(event, 'endTime'));
+      const params = new URLSearchParams({ action: 'TEMPLATE', text: event.title, dates: `${start}/${end}`, details: event.description, location: event.location });
+      return `https://calendar.google.com/calendar/render?${params.toString()}`;
+    };
+
+    function renderSelected(event) {
+      const target = document.getElementById('selected-event');
+      if (!event) return;
+      target.innerHTML = `
+        <div class="flex flex-wrap gap-2"><span class="rounded-full border border-gold-400/25 bg-gold-400/10 px-3 py-1 text-xs font-bold text-gold-300">${escapeHtml(event.category)}</span><span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-bold text-slate-300">${escapeHtml(event.audience)}</span></div>
+        <h2 id="selected-event-title" class="mt-5 text-2xl font-extrabold">${escapeHtml(event.title)}</h2>
+        <div class="mt-5 space-y-3 text-sm text-slate-300">
+          <p class="flex gap-3"><i data-lucide="calendar" class="mt-0.5 h-4 w-4 shrink-0 text-gold-300"></i><span>${escapeHtml(dateFormatter.format(easternDate(event.date)))}</span></p>
+          <p class="flex gap-3"><i data-lucide="clock-3" class="mt-0.5 h-4 w-4 shrink-0 text-gold-300"></i><span>${escapeHtml(formatTime(event))}</span></p>
+          <p class="flex gap-3"><i data-lucide="map-pin" class="mt-0.5 h-4 w-4 shrink-0 text-gold-300"></i><span>${escapeHtml(event.location)}</span></p>
+        </div>
+        <p class="mt-5 leading-relaxed text-slate-300">${escapeHtml(event.description)}</p>
+        <div class="mt-6 flex flex-col sm:flex-row xl:flex-col 2xl:flex-row gap-3">
+          ${event.url ? `<a href="${escapeHtml(event.url)}" target="_blank" rel="noopener noreferrer" class="rounded-xl bg-white px-4 py-3 text-center text-sm font-extrabold text-navy-950 hover:bg-slate-100">${escapeHtml(event.cta || 'Event details')}</a>` : ''}
+          <a href="${escapeHtml(calendarUrl(event))}" target="_blank" rel="noopener noreferrer" class="rounded-xl border border-white/15 bg-white/5 px-4 py-3 text-center text-sm font-bold text-white hover:border-gold-400/50">Add to calendar</a>
+        </div>`;
+      lucide.createIcons();
+    }
+
+    function renderCalendar() {
+      const year = visibleMonth.getFullYear();
+      const month = visibleMonth.getMonth();
+      document.getElementById('calendar-title').textContent = monthFormatter.format(new Date(year, month, 15));
+      const grid = document.getElementById('calendar-grid');
+      const firstDay = new Date(year, month, 1).getDay();
+      const daysInMonth = new Date(year, month + 1, 0).getDate();
+      const previousMonthDays = new Date(year, month, 0).getDate();
+      const cells = [];
+      for (let index = 0; index < 42; index += 1) {
+        let cellDay = index - firstDay + 1;
+        let cellMonth = month;
+        let cellYear = year;
+        let muted = false;
+        if (cellDay < 1) { cellDay = previousMonthDays + cellDay; cellMonth -= 1; muted = true; }
+        if (cellDay > daysInMonth && cellMonth === month) { cellDay -= daysInMonth; cellMonth += 1; muted = true; }
+        if (cellMonth < 0) { cellMonth = 11; cellYear -= 1; }
+        if (cellMonth > 11) { cellMonth = 0; cellYear += 1; }
+        const key = `${cellYear}-${String(cellMonth + 1).padStart(2,'0')}-${String(cellDay).padStart(2,'0')}`;
+        const dayEvents = events.filter((event) => event.date === key);
+        cells.push(`<div class="calendar-cell min-w-0 border-b border-r border-white/[.07] p-2 sm:p-3 ${muted ? 'bg-white/[.015] text-slate-600' : 'text-slate-200'}"><span class="text-xs sm:text-sm font-bold">${cellDay}</span><div class="mt-2 space-y-1">${dayEvents.map((event) => `<button type="button" data-event-id="${escapeHtml(event.id)}" class="event-pill w-full truncate rounded-lg border border-electric-400/30 bg-electric-400/10 px-1.5 sm:px-2 py-1 text-left text-[9px] sm:text-[11px] font-bold text-blue-100" title="${escapeHtml(event.title)}">${escapeHtml(event.title)}</button>`).join('')}</div></div>`);
+      }
+      grid.innerHTML = cells.join('');
+      grid.querySelectorAll('[data-event-id]').forEach((button) => button.addEventListener('click', () => renderSelected(events.find((event) => event.id === button.dataset.eventId))));
+    }
+
+    function renderList() {
+      const target = document.getElementById('event-list');
+      if (!events.length) { target.innerHTML = '<p class="text-slate-300">New dates will be added soon.</p>'; return; }
+      target.innerHTML = events.map((event) => `
+        <article class="rounded-3xl border border-white/10 bg-white/[.035] p-6">
+          <div class="flex items-start justify-between gap-4"><div><p class="text-sm font-extrabold uppercase tracking-[.12em] text-gold-300">${escapeHtml(shortDateFormatter.format(easternDate(event.date)))}</p><p class="mt-1 text-xs font-semibold text-slate-400">${escapeHtml(formatTime(event))}</p></div><span class="rounded-full border border-white/10 px-3 py-1 text-[11px] font-bold text-slate-300">${escapeHtml(event.audience)}</span></div>
+          <h3 class="mt-5 text-xl font-extrabold">${escapeHtml(event.title)}</h3>
+          <p class="mt-3 text-sm leading-relaxed text-slate-300">${escapeHtml(event.description)}</p>
+          <p class="mt-5 flex gap-2 text-sm text-slate-400"><i data-lucide="map-pin" class="mt-0.5 h-4 w-4 shrink-0"></i><span>${escapeHtml(event.location)}</span></p>
+          <button type="button" data-list-event-id="${escapeHtml(event.id)}" class="mt-6 text-sm font-extrabold text-gold-300 hover:text-gold-400">View event details →</button>
+        </article>`).join('');
+      target.querySelectorAll('[data-list-event-id]').forEach((button) => button.addEventListener('click', () => { const event = events.find((item) => item.id === button.dataset.listEventId); visibleMonth = easternDate(event.date); renderCalendar(); renderSelected(event); document.getElementById('calendar-title').scrollIntoView({ behavior: 'smooth', block: 'center' }); }));
+      lucide.createIcons();
+    }
+
+    async function loadEvents() {
+      try {
+        const response = await fetch(EVENT_DATA_URL, { cache: 'no-store' });
+        if (!response.ok) throw new Error('Events could not be loaded');
+        events = (await response.json()).sort((a,b) => a.date.localeCompare(b.date));
+        const today = new Date().toLocaleDateString('en-CA', { timeZone: 'America/New_York' });
+        const firstUpcoming = events.find((event) => event.date >= today) || events[events.length - 1];
+        if (firstUpcoming) { visibleMonth = easternDate(firstUpcoming.date); renderSelected(firstUpcoming); }
+        renderCalendar(); renderList();
+      } catch (error) {
+        document.getElementById('calendar-title').textContent = 'Events calendar';
+        document.getElementById('calendar-grid').innerHTML = '<p class="col-span-7 p-8 text-slate-300">The calendar is temporarily unavailable. Please check back shortly.</p>';
+        document.getElementById('event-list').innerHTML = '<p class="text-slate-300">The event list is temporarily unavailable.</p>';
+      }
+    }
+
+    document.getElementById('previous-month').addEventListener('click', () => { visibleMonth = new Date(visibleMonth.getFullYear(), visibleMonth.getMonth() - 1, 1); renderCalendar(); });
+    document.getElementById('next-month').addEventListener('click', () => { visibleMonth = new Date(visibleMonth.getFullYear(), visibleMonth.getMonth() + 1, 1); renderCalendar(); });
+    const mobileToggle = document.getElementById('mobile-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileToggle.addEventListener('click', () => { const expanded = mobileToggle.getAttribute('aria-expanded') === 'true'; mobileToggle.setAttribute('aria-expanded', String(!expanded)); mobileMenu.classList.toggle('hidden'); });
+    document.querySelectorAll('#mobile-menu a').forEach((link) => link.addEventListener('click', () => { mobileMenu.classList.add('hidden'); mobileToggle.setAttribute('aria-expanded', 'false'); }));
+    lucide.createIcons();
+    loadEvents();
+  </script>
+</body>
+</html>
