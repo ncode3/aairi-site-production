@@ -17,13 +17,13 @@
     "startTime": "12:30",
     "endTime": "13:30",
     "allDay": false,
-    "title": "Nolan Code Keynote at TAG //SHIFT: AI",
+    "title": "State of the Shift: Moving AI from Experimentation to Enterprise Execution",
     "category": "Keynote",
-    "audience": "Registration open",
+    "audience": "Public summit",
     "location": "Southern Company Gas HQ, 725 W Peachtree St NW, Atlanta, GA 30308",
-    "description": "Nolan S. Code opens TAG’s inaugural //SHIFT: AI with AARI’s case for physical AI, energy, infrastructure, Georgia workforce development, and community ownership.",
-    "url": "https://members.tagonline.org/ap/Events/Register/R1Fo7y2FRC0CX",
-    "cta": "Register with TAG"
+    "description": "Nolan S. Code delivers the featured opening keynote at TAG //SHIFT: AI 2026 on moving AI from experimentation into enterprise execution—and the infrastructure, energy, workforce, and ownership required to scale it.",
+    "url": "https://www.tagonline.org/events/signature-events/shift/",
+    "cta": "View TAG //SHIFT"
   },
   {
     "id": "splunk-powered-careers",
