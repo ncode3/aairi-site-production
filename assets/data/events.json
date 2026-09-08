@@ -38,5 +38,19 @@
     "description": "ATL Future Builders and AARI connect students with Splunk-powered cybersecurity, observability, resume review, and technical demos.",
     "url": null,
     "cta": null
+  },
+  {
+    "id": "home-depot-resume-review",
+    "date": "2026-09-28",
+    "startTime": "16:30",
+    "endTime": "17:30",
+    "allDay": false,
+    "title": "AARI Student Resume Review with The Home Depot",
+    "category": "Career event",
+    "audience": "Participant event",
+    "location": "Morehouse College, 830 Westview Drive SW, Atlanta, GA 30314",
+    "description": "AARI students receive live resume feedback and recruiting guidance from The Home Depot, with in-person and virtual participation.",
+    "url": null,
+    "cta": null
   }
 ]
