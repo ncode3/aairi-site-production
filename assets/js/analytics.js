@@ -117,3 +117,10 @@
         })
     };
 }());
+
+(function loadCohortProofLayer() {
+    const script = document.createElement('script');
+    script.src = 'assets/js/cohort-proof.js';
+    script.async = false;
+    document.head.appendChild(script);
+}());
