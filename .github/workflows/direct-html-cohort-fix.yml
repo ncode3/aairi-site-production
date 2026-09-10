@@ -1,0 +1,89 @@
+name: Direct cohort HTML patch
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/direct-html-cohort-fix.yml
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - name: Patch stale cohort sections
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re
+
+          index = Path('index.html')
+          text = index.read_text()
+          new = '''<section id="site-2-progress" class="py-20 md:py-24 bg-navy-900 scroll-mt-24" aria-labelledby="summer-2026-proof-summary">
+            <div class="section-shell grid lg:grid-cols-[1.05fr_0.95fr] gap-10 items-center">
+                <div>
+                    <div class="section-kicker mb-5"><i data-lucide="badge-check" class="w-4 h-4"></i>Summer 2026 cohort complete</div>
+                    <h2 id="summer-2026-proof-summary" class="text-3xl md:text-5xl font-bold leading-tight mb-5">From Training Activity to Documented Proof</h2>
+                    <div class="space-y-4 text-lg text-slatebrand-300 leading-relaxed">
+                        <p>The Summer 2026 cohort is closed. AARI's six-participant weekly ledger documents <strong class="text-white">483 participant-hours</strong> across <strong class="text-white">at least 150 participant-days</strong> and 35 of 42 expected weekly entries, including the September 4 closeout submission. These are documented minimums because five of six expected final-week reports were not present in the reviewed closeout record.</p>
+                        <p>Students produced work across Linux, networking, cloud services, infrastructure monitoring, cybersecurity, ROS 2 and robot integration, curriculum development, database design, application prototypes, and technical handoff. The next standard is stricter: every cohort closes with verified artifacts, resume evidence, demos, and handoff documentation.</p>
+                    </div>
+                    <div class="mt-7 flex flex-wrap gap-3">
+                        <a href="impact.html#summer-2026-results" class="inline-flex items-center gap-2 bg-electric-500 hover:bg-electric-400 text-white font-bold px-6 py-3 rounded-xl transition-colors">Review Full Cohort Results <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+                        <a href="impact-methodology.html" class="inline-flex items-center gap-2 border border-white/15 hover:border-gold-400/40 text-white font-semibold px-6 py-3 rounded-xl transition-colors">See Measurement Method</a>
+                    </div>
+                </div>
+                <figure class="glass-panel rounded-3xl overflow-hidden border border-white/10">
+                    <img src="images/data-center-site-2/aari-solar-colocation-team.webp" alt="AARI scholars and partners during Summer 2026 hands-on data-center infrastructure work." class="w-full h-[26rem] object-cover object-center" width="1050" height="1400" loading="lazy">
+                    <div class="grid sm:grid-cols-3 gap-px border-t border-white/10 bg-white/10">
+                        <div class="bg-navy-900 p-4"><p class="text-2xl font-extrabold text-gold-400">483</p><p class="mt-1 text-xs text-slatebrand-300">Documented participant-hours</p></div>
+                        <div class="bg-navy-900 p-4"><p class="text-2xl font-extrabold text-gold-400">150+</p><p class="mt-1 text-xs text-slatebrand-300">Recorded participant-days</p></div>
+                        <div class="bg-navy-900 p-4"><p class="text-2xl font-extrabold text-gold-400">$115K</p><p class="mt-1 text-xs text-slatebrand-300">Student-reported infrastructure placement*</p></div>
+                    </div>
+                    <figcaption class="p-5 text-sm text-slatebrand-300 leading-relaxed">Summer 2026 infrastructure work is now reported as outcomes, artifacts, and operating lessons rather than work in progress. <span class="text-xs text-slatebrand-400">*Student-reported compensation; employer confirmation is not represented.</span></figcaption>
+                </figure>
+            </div>
+        </section>'''
+          text, count = re.subn(r'<section id="site-2-progress"\b.*?</section>', new, text, count=1, flags=re.S)
+          if count != 1:
+              raise SystemExit('Could not replace homepage section')
+          index.write_text(text)
+
+          infra = Path('infrastructure.html')
+          text = infra.read_text()
+          new = '''<section id="site-2" class="py-24 bg-navy-900 scroll-mt-24" aria-labelledby="infrastructure-cohort-proof-heading">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-4xl mx-auto mb-14 fade-in-up">
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-green-900/30 border border-green-500/30 text-green-300 text-sm font-medium mb-6"><i data-lucide="badge-check" class="w-4 h-4"></i>Summer 2026 Cohort Complete</div>
+                <h2 id="infrastructure-cohort-proof-heading" class="text-3xl md:text-4xl font-bold mb-4">Students Built Across the Infrastructure Stack</h2>
+                <p class="text-slate-400 text-lg leading-relaxed">The summer program is closed. The record now shows what students actually did: 483 documented participant-hours, at least 150 participant-days, cross-layer technical work, public artifacts, and operating lessons for the next cohort.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+                <article class="glass-panel rounded-2xl p-7 border-t-4 border-blue-500"><h3 class="text-xl font-bold mb-4">Infrastructure-Up Work</h3><ul class="space-y-3 text-sm text-slate-300"><li>Linux, SSH, Git, networking, and systems documentation</li><li>Data-center orchestration and database design</li><li>Cloud services, infrastructure monitoring, and cybersecurity</li><li>ROS 2, robot integration, and physical-system troubleshooting</li></ul></article>
+                <article class="glass-panel rounded-2xl p-7 border-t-4 border-amber-500"><h3 class="text-xl font-bold mb-4">Evidence Produced</h3><ul class="space-y-3 text-sm text-slate-300"><li>Data-center orchestration and educational-suite code</li><li>Linux, networking, and computer-architecture curriculum</li><li>Cloud-security projects and application prototypes</li><li>21 of 35 weekly entries included labeled evidence</li></ul></article>
+                <article class="glass-panel rounded-2xl p-7 border-t-4 border-green-500"><h3 class="text-xl font-bold mb-4">What Changes Next</h3><ul class="space-y-3 text-sm text-slate-300"><li>One verified roster and access record from day one</li><li>Weekly artifact gates instead of end-of-cohort reconstruction</li><li>Earlier README, demo, resume, and technical-handoff reviews</li><li>Completed results stay separate from future goals</li></ul></article>
+            </div>
+            <div class="mt-10 max-w-6xl mx-auto glass-panel rounded-2xl p-6 md:p-7 border border-white/10 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-5"><div><p class="text-sm uppercase tracking-[0.18em] text-green-300 mb-2">Workforce signal</p><p class="text-lg text-slate-300"><strong class="text-white">$115,000 student-reported infrastructure placement.</strong> AARI reports this as student-reported compensation and does not represent employer confirmation.</p></div><a href="impact.html#summer-2026-results" class="shrink-0 inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-500 text-white font-bold px-6 py-3 rounded-xl transition-colors">View Cohort Results <i data-lucide="arrow-right" class="w-4 h-4"></i></a></div>
+        </div>
+    </section>'''
+          text, count = re.subn(r'<section id="site-2"\b.*?</section>', new, text, count=1, flags=re.S)
+          if count != 1:
+              raise SystemExit('Could not replace infrastructure section')
+          infra.write_text(text)
+
+          for path in (index, infra):
+              data = path.read_text()
+              assert 'Data Center Site #2 Is Under Construction' not in data
+              assert 'Summer 2026 Program Progress' not in data
+              assert 'Summer 2026 program progress' not in data
+          PY
+      - name: Commit fix
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html infrastructure.html
+          git commit -m "Replace stale cohort progress HTML"
+          git push origin main
