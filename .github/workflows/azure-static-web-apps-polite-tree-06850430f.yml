@@ -21,7 +21,7 @@ jobs:
           lfs: false
 
       - name: Apply completed-cohort source patch
-        run: python scripts/patch_completed_cohort_sections.py
+        run: python scripts/patch_completed_cohort_sections_v2.py
 
       - name: Build and Deploy
         uses: Azure/static-web-apps-deploy@v1
