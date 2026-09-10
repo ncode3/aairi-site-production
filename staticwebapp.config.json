@@ -69,6 +69,20 @@
       "rewrite": "/impact-methodology.html"
     },
     {
+      "route": "/index.html",
+      "headers": {
+        "Cache-Control": "no-store",
+        "Clear-Site-Data": "\"cache\""
+      }
+    },
+    {
+      "route": "/infrastructure.html",
+      "headers": {
+        "Cache-Control": "no-store",
+        "Clear-Site-Data": "\"cache\""
+      }
+    },
+    {
       "route": "/api/submit-inquiry",
       "methods": ["GET", "PUT", "PATCH", "DELETE", "OPTIONS", "TRACE", "CONNECT"],
       "statusCode": 404
@@ -89,7 +103,7 @@
     {
       "route": "/assets/*",
       "headers": {
-        "Cache-Control": "public, max-age=31536000, immutable"
+        "Cache-Control": "public, max-age=300, must-revalidate"
       }
     },
     {
