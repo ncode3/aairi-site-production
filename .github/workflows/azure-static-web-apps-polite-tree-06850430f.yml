@@ -20,6 +20,9 @@ jobs:
           submodules: true
           lfs: false
 
+      - name: Apply completed-cohort source patch
+        run: python scripts/patch_completed_cohort_sections.py
+
       - name: Build and Deploy
         uses: Azure/static-web-apps-deploy@v1
         with:
