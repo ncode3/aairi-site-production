@@ -52,5 +52,19 @@
     "description": "AARI students receive live resume feedback and recruiting guidance from The Home Depot, with in-person and virtual participation.",
     "url": null,
     "cta": null
+  },
+  {
+    "id": "qts-talent-acquisition-2026-10-01",
+    "date": "2026-10-01",
+    "startTime": "13:00",
+    "endTime": "14:00",
+    "allDay": false,
+    "title": "AARI at QTS: Meet the Talent Acquisition Team",
+    "category": "Career event",
+    "audience": "Participant event",
+    "location": "QTS Atlanta Metro, West Midtown, Atlanta, GA",
+    "description": "Join AARI at QTS for student career conversations, interview practice, and networking with the Talent Acquisition team. Bring your ID and a copy of your resume. Request an invitation to attend. Building and check-in details will follow. The 2 p.m. end time is tentative.",
+    "url": "mailto:nolan@atlanta-robotics.org?subject=QTS%20visit%20October%201%20-%20Invitation%20request",
+    "cta": "Request an invitation"
   }
 ]
