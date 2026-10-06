@@ -9,9 +9,22 @@ Budget amount: `$150.00` monthly
 Budget current spend at audit: `$122.15`  
 Forecast spend at audit: `$130.25`
 
+July 2026 budget alert follow-up:
+
+- Budget current spend on 2026-07-02: `$13.36`
+- Budget forecast spend on 2026-07-02: `$346.29`
+- Budget current spend on 2026-07-09: `$92.71`
+- Budget forecast spend on 2026-07-09: `$343.32`
+- Month-to-date cost query on 2026-07-02 showed `Microsoft.Cdn/profiles/afd-aari-website-prod` at `$14.20`, storage at `$0.42`, scheduled query rules at `$0.13`, and Static Web Apps at `$0.00`.
+- Month-to-date cost query on 2026-07-09 showed `Microsoft.Cdn/profiles/afd-aari-website-prod` at `$89.22`, storage at `$2.68`, scheduled query rules at `$0.81` combined, Log Analytics at `< $0.01`, and Static Web Apps at `$0.00`.
+- `law-aari-website-prod` still had `90` day retention and no daily ingestion cap.
+- The active budget on 2026-07-09 still included the unwanted `50%` actual alert and was missing the `100%` and `125%` actual alerts.
+
 ## Finding
 
 The AARI website is already hosted as an Azure Static Web App. The budget alert was caused by Azure Front Door Premium, not by the website host.
+
+No App Service Plan, Azure SQL, Cosmos DB, Azure AI Search, Azure OpenAI, Redis, NAT Gateway, or Azure Function App was found in `rg-aari-website-prod`.
 
 May 2026 actual cost through the audit window:
 
@@ -149,6 +162,27 @@ The Static Web Apps app setting `AZURE_FRONT_DOOR_ID` was removed on 2026-05-31.
 
 No production hosting resource was deleted during this audit because DNS still points at Front Door.
 
+On 2026-07-09, the safe budget and telemetry controls were prepared in `infra/azure-cost-guardrails` and `infra/scripts/update-aari-website-prod-budget.sh`:
+
+- remove the `$75` / `50%` actual budget alert
+- keep the monthly budget at `$150`
+- add actual budget alerts at `80%` (`$120`), `100%` (`$150`), and `125%` (`$187.50`)
+- add forecasted `100%` (`$150 forecast`) alert
+- reduce `law-aari-website-prod` retention from `90` days to `30` days, the minimum valid retention for this Log Analytics workspace SKU
+- cap `law-aari-website-prod` ingestion at `1` GB/day
+
+These changes do not delete resources or alter the production website runtime path.
+
+Live verification on 2026-07-09 showed:
+
+- `budget-aari-website-prod` amount: `$150`
+- active notification keys: `actual_GreaterThan_80_Percent`, `actual_GreaterThan_100_Percent`, `actual_GreaterThan_125_Percent`, `forecasted_GreaterThan_100_Percent`
+- no `50%` notification key
+- `law-aari-website-prod` retention: `30` days
+- `law-aari-website-prod` daily quota: `1` GB
+- `https://atlanta-robotics.org/` returned `HTTP/2 200`
+- response headers still included Azure Front Door, so Front Door remains the primary cost driver until DNS is moved and the profile is explicitly deleted
+
 ## Follow-up risk
 
 During the audit, `GET /api/impact` returned `404` from the Static Web Apps function endpoint. The public homepage remains online and still has static fallback impact numbers, but the live dashboard API should be repaired separately before using impact telemetry as a production proof point.
@@ -201,3 +235,77 @@ az rest --method get \
   -o table
 ```
 
+## Repeatable scripts
+
+Run the production cost audit:
+
+```bash
+scripts/azure-cost-audit.sh
+```
+
+List non-production/orphan cleanup candidates without deleting anything:
+
+```bash
+scripts/azure-cleanup-nonprod.sh
+```
+
+Delete only an explicitly named non-production resource group after reviewing the dry run:
+
+```bash
+TARGET_RESOURCE_GROUPS='rg-aari-website-dev' \
+CONFIRM_RESOURCE_GROUPS='rg-aari-website-dev' \
+CONFIRM_NONPROD_DELETE='delete nonprod only' \
+DRY_RUN=false \
+scripts/azure-cleanup-nonprod.sh
+```
+
+The cleanup script refuses production-looking resource group names and any group tagged `Environment=prod`.
+
+## Budget guardrails deployment
+
+Apply the budget correction and safe Log Analytics controls directly:
+
+```bash
+infra/scripts/update-aari-website-prod-budget.sh
+```
+
+Preview:
+
+```bash
+az deployment sub what-if \
+  --location eastus2 \
+  --template-file infra/azure-cost-guardrails/main.bicep
+```
+
+Deploy:
+
+```bash
+az deployment sub create \
+  --location eastus2 \
+  --template-file infra/azure-cost-guardrails/main.bicep
+```
+
+Verify after deployment:
+
+```bash
+az rest --method get \
+  --url 'https://management.azure.com/subscriptions/af2f3627-aeb0-40f2-845e-a21ec822c492/resourceGroups/rg-aari-website-prod/providers/Microsoft.Consumption/budgets/budget-aari-website-prod?api-version=2023-05-01' \
+  --query "{amount:properties.amount,notifications:properties.notifications}" \
+  -o json
+
+az rest --method get \
+  --url 'https://management.azure.com/subscriptions/af2f3627-aeb0-40f2-845e-a21ec822c492/resourceGroups/rg-aari-website-prod/providers/Microsoft.Consumption/budgets/budget-aari-website-prod?api-version=2023-05-01' \
+  --query "keys(properties.notifications)" \
+  -o table
+
+az monitor log-analytics workspace show \
+  -g rg-aari-website-prod \
+  -n law-aari-website-prod \
+  --query "{name:name,retentionInDays:retentionInDays,dailyQuotaGb:workspaceCapping.dailyQuotaGb}" \
+  -o table
+
+az resource list \
+  -g rg-aari-website-prod \
+  --query "[].{name:name,type:type,tags:tags}" \
+  -o table
+```
