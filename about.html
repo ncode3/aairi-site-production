@@ -1,36 +1,18 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17997086735"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'AW-17997086735');
-    </script>
-    <script src="assets/js/analytics-config.js"></script>
-    <script src="assets/js/analytics.js" defer></script>
+
+
+
+    <script src="assets/js/cohort-proof.js" defer></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us | Atlanta AI &amp; Robotics Initiative</title>
     <meta name="description" content="Learn about AARI founder Nolan S. Code, U.S. Army veteran, former Microsoft Cloud Solution Architect, and Georgia Tech Black Alumni Entrepreneur of the Year.">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        navy: { 900: '#020617', 800: '#0f172a', 700: '#1e293b' },
-                        electric: { 500: '#3b82f6', 400: '#60a5fa' },
-                    },
-                    fontFamily: { sans: ['Inter', 'sans-serif'] }
-                }
-            }
-        }
-    </script>
+    <link rel="stylesheet" href="assets/css/pages/about.css">
+
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="assets/vendor/lucide.min.js"></script>
     <style>
         body { font-family: 'Inter', sans-serif; background: #020617; color: #f8fafc; }
         .glass-panel { background: rgba(15,23,42,0.7); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.1); }
@@ -42,6 +24,7 @@
         .fade-in-up { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
         .fade-in-up.visible { opacity: 1; transform: translateY(0); }
     </style>
+    <script src="assets/js/ui.js" defer></script>
 </head>
 <body class="antialiased">
 
@@ -65,7 +48,7 @@
                     Donate
                 </a>
             </div>
-            <button class="md:hidden text-slate-300" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+            <button class="md:hidden text-slate-300" data-mobile-menu-toggle>
                 <i data-lucide="menu" class="w-8 h-8"></i>
             </button>
         </div>
@@ -142,7 +125,7 @@
                     <h3 class="text-xl font-bold mb-6 text-center">Background &amp; Credentials</h3>
                     <div class="space-y-5">
                         <div class="flex items-start gap-4">
-                            <div class="w-12 h-12 bg-green-500/10 rounded-xl flex items-center justify-center border border-green-500/30 flex-shrink-0">
+                            <div class="w-12 h-12 bg-green-500/10 rounded-xl flex items-center justify-center border border-green-500/30 shrink-0">
                                 <i data-lucide="shield" class="text-green-400 w-6 h-6"></i>
                             </div>
                             <div>
@@ -151,7 +134,7 @@
                             </div>
                         </div>
                         <div class="flex items-start gap-4">
-                            <div class="w-12 h-12 bg-blue-500/10 rounded-xl flex items-center justify-center border border-blue-500/30 flex-shrink-0">
+                            <div class="w-12 h-12 bg-blue-500/10 rounded-xl flex items-center justify-center border border-blue-500/30 shrink-0">
                                 <i data-lucide="cloud" class="text-blue-400 w-6 h-6"></i>
                             </div>
                             <div>
@@ -160,7 +143,7 @@
                             </div>
                         </div>
                         <div class="flex items-start gap-4">
-                            <div class="w-12 h-12 bg-yellow-500/10 rounded-xl flex items-center justify-center border border-yellow-500/30 flex-shrink-0">
+                            <div class="w-12 h-12 bg-yellow-500/10 rounded-xl flex items-center justify-center border border-yellow-500/30 shrink-0">
                                 <i data-lucide="award" class="text-yellow-400 w-6 h-6"></i>
                             </div>
                             <div>
@@ -169,7 +152,7 @@
                             </div>
                         </div>
                         <div class="flex items-start gap-4">
-                            <div class="w-12 h-12 bg-purple-500/10 rounded-xl flex items-center justify-center border border-purple-500/30 flex-shrink-0">
+                            <div class="w-12 h-12 bg-purple-500/10 rounded-xl flex items-center justify-center border border-purple-500/30 shrink-0">
                                 <i data-lucide="map-pin" class="text-purple-400 w-6 h-6"></i>
                             </div>
                             <div>
@@ -288,13 +271,6 @@
         </div>
     </footer>
 
-    <script>
-        lucide.createIcons();
-        const fadeElements = document.querySelectorAll('.fade-in-up');
-        const fadeObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
-        }, { threshold: 0.1 });
-        fadeElements.forEach(el => fadeObserver.observe(el));
-    </script>
+    <script src="assets/js/pages/about-1.js"></script>
 </body>
 </html>

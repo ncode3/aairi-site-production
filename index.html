@@ -1,15 +1,10 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17997086735"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'AW-17997086735');
-    </script>
-    <script src="assets/js/analytics-config.js"></script>
-    <script src="assets/js/analytics.js" defer></script>
+
+
+
+    <script src="assets/js/cohort-proof.js" defer></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Atlanta AI &amp; Robotics Initiative | Hands-On AI Infrastructure Training</title>
@@ -24,26 +19,10 @@
     <meta name="theme-color" content="#020617">
     <link rel="icon" type="image/png" href="images/header-logo.png">
 
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        navy: { 950: '#020617', 900: '#0b1120', 800: '#0f172a', 700: '#1e293b' },
-                        slatebrand: { 300: '#cbd5e1', 400: '#94a3b8', 500: '#64748b' },
-                        electric: { 400: '#60a5fa', 500: '#3b82f6' },
-                        gold: { 400: '#fbbf24' }
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    }
-                }
-            }
-        }
-    </script>
+    <link rel="stylesheet" href="assets/css/pages/index.css">
+
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="assets/vendor/lucide.min.js"></script>
 
     <style>
         body { font-family: 'Inter', sans-serif; background: #020617; color: #f8fafc; overflow-x: hidden; }
@@ -465,13 +444,14 @@
         ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 999px; }
         ::-webkit-scrollbar-thumb:hover { background: #3b82f6; }
     </style>
+    <script src="assets/js/ui.js" defer></script>
 </head>
 <body class="antialiased selection:bg-electric-500 selection:text-white">
     <nav class="fixed inset-x-0 top-0 z-50 glass-panel border-b border-white/5">
         <div class="max-w-[92rem] mx-auto px-6 h-20 flex items-center justify-between gap-6">
             <a href="#top" class="flex items-center gap-3">
                 <div class="bg-white/90 p-1.5 rounded-lg">
-                    <img src="images/header-logo.png" alt="AARI logo" class="site-logo h-10 w-auto object-contain" onerror="this.onerror=null;this.src='/images/header-logo.png';">
+                    <img src="images/header-logo.png" alt="AARI logo" class="site-logo h-10 w-auto object-contain" data-fallback-src="/images/header-logo.png">
                 </div>
                 <div class="hidden 2xl:block">
                     <p class="text-sm font-semibold text-white">Atlanta AI &amp; Robotics Initiative</p>
@@ -647,24 +627,28 @@
             </div>
         </section>
 
-        <section id="site-2-progress" class="py-20 md:py-24 bg-navy-900 scroll-mt-24">
+        <section id="site-2-progress" class="py-20 md:py-24 bg-navy-900 scroll-mt-24" aria-labelledby="summer-2026-proof-summary">
             <div class="section-shell grid lg:grid-cols-[1.05fr_0.95fr] gap-10 items-center">
                 <div>
-                    <div class="section-kicker mb-5"><i data-lucide="hard-hat" class="w-4 h-4"></i>Summer 2026 program progress</div>
-                    <h2 class="text-3xl md:text-5xl font-bold leading-tight mb-5">Data Center Site #2 Is Under Construction</h2>
+                    <div class="section-kicker mb-5"><i data-lucide="badge-check" class="w-4 h-4"></i>Summer 2026 cohort complete</div>
+                    <h2 id="summer-2026-proof-summary" class="text-3xl md:text-5xl font-bold leading-tight mb-5">From Training Activity to Documented Proof</h2>
                     <div class="space-y-4 text-lg text-slatebrand-300 leading-relaxed">
-                        <p>AARI scholars and technical mentors have begun racking and staging systems at our solar-powered Data Center Site #2 co-location facility in Atlanta. The new environment expands our ability to teach physical infrastructure, Linux, networking, virtualization, cloud architecture, cybersecurity, observability, and AI infrastructure through real equipment.</p>
-                        <p>Scholars are handling servers, assembling racks, tracing cables, documenting systems, and learning how modern computing environments are built from the floor up.</p>
+                        <p>The Summer 2026 cohort is closed. AARI's six-participant weekly ledger documents <strong class="text-white">483 participant-hours</strong> across <strong class="text-white">at least 150 participant-days</strong> and 35 of 42 expected weekly entries, including the September 4 closeout submission. These are documented minimums because five of six expected final-week reports were not present in the reviewed closeout record.</p>
+                        <p>Students produced work across Linux, networking, cloud services, infrastructure monitoring, cybersecurity, ROS 2 and robot integration, curriculum development, database design, application prototypes, and technical handoff. The next standard is stricter: every cohort closes with verified artifacts, resume evidence, demos, and handoff documentation.</p>
                     </div>
-                    <a href="infrastructure.html#site-2" class="mt-7 inline-flex items-center gap-2 bg-electric-500 hover:bg-electric-400 text-white font-bold px-6 py-3 rounded-xl transition-colors">See What We Are Building <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+                    <div class="mt-7 flex flex-wrap gap-3">
+                        <a href="impact.html#summer-2026-results" class="inline-flex items-center gap-2 bg-electric-500 hover:bg-electric-400 text-white font-bold px-6 py-3 rounded-xl transition-colors">Review Full Cohort Results <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+                        <a href="impact-methodology.html" class="inline-flex items-center gap-2 border border-white/15 hover:border-gold-400/40 text-white font-semibold px-6 py-3 rounded-xl transition-colors">See Measurement Method</a>
+                    </div>
                 </div>
                 <figure class="glass-panel rounded-3xl overflow-hidden border border-white/10">
-                    <img src="images/data-center-site-2/aari-solar-colocation-team.webp" alt="AARI scholars and partners gathered around the secured server cage at the solar-powered Data Center Site #2 co-location facility." class="w-full h-[26rem] object-cover object-center" width="1050" height="1400" loading="lazy">
-                    <div class="grid sm:grid-cols-2 gap-px border-t border-white/10 bg-white/10">
-                        <div class="bg-navy-900 p-4"><p class="text-2xl font-extrabold text-gold-400">2</p><p class="mt-1 text-xs text-slatebrand-300">Active training sites</p></div>
-                        <div class="bg-navy-900 p-4"><p class="font-bold text-sm">Build in progress</p><p class="mt-1 text-xs text-slatebrand-300">Racking, staging, and documentation</p></div>
+                    <img src="images/data-center-site-2/aari-solar-colocation-team.webp" alt="AARI scholars and partners during Summer 2026 hands-on data-center infrastructure work." class="w-full h-[26rem] object-cover object-center" width="1050" height="1400" loading="lazy">
+                    <div class="grid sm:grid-cols-3 gap-px border-t border-white/10 bg-white/10">
+                        <div class="bg-navy-900 p-4"><p class="text-2xl font-extrabold text-gold-400">483</p><p class="mt-1 text-xs text-slatebrand-300">Documented participant-hours</p></div>
+                        <div class="bg-navy-900 p-4"><p class="text-2xl font-extrabold text-gold-400">150+</p><p class="mt-1 text-xs text-slatebrand-300">Recorded participant-days</p></div>
+                        <div class="bg-navy-900 p-4"><p class="text-2xl font-extrabold text-gold-400">$115K</p><p class="mt-1 text-xs text-slatebrand-300">Student-reported infrastructure placement*</p></div>
                     </div>
-                    <figcaption class="p-5 text-sm text-slatebrand-300 leading-relaxed">AARI scholars and partners at the solar-powered Site #2 co-location facility during the data-center buildout.</figcaption>
+                    <figcaption class="p-5 text-sm text-slatebrand-300 leading-relaxed">Summer 2026 infrastructure work is now reported as outcomes, artifacts, and operating lessons rather than work in progress. <span class="text-xs text-slatebrand-400">*Student-reported compensation; employer confirmation is not represented.</span></figcaption>
                 </figure>
             </div>
         </section>
@@ -1770,523 +1754,6 @@
         </div>
     </footer>
 
-    <script>
-        lucide.createIcons();
-
-        const mobileToggle = document.getElementById('mobile-toggle');
-        const mobileMenu = document.getElementById('mobile-menu');
-        mobileToggle?.addEventListener('click', () => {
-            const expanded = mobileToggle.getAttribute('aria-expanded') === 'true';
-            mobileToggle.setAttribute('aria-expanded', String(!expanded));
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        document.querySelectorAll('#mobile-menu a').forEach((link) => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-                mobileToggle?.setAttribute('aria-expanded', 'false');
-            });
-        });
-
-        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-        const animateMetricValue = (card) => {
-            if (prefersReducedMotion || card.dataset.metricAnimated === 'true') return;
-            const span = card.querySelector('[id^="metric-"]');
-            if (!span) return;
-            const finalText = span.textContent.trim();
-            const numberMatch = finalText.match(/[\d,.]+/);
-            if (!numberMatch) return;
-            const finalNumber = Number(numberMatch[0].replace(/,/g, ''));
-            if (!Number.isFinite(finalNumber)) return;
-            const prefix = finalText.slice(0, numberMatch.index);
-            const suffix = finalText.slice((numberMatch.index || 0) + numberMatch[0].length);
-            const duration = 900;
-            const startedAt = performance.now();
-            card.dataset.metricAnimated = 'true';
-            const tick = (now) => {
-                const progress = Math.min((now - startedAt) / duration, 1);
-                const eased = 1 - Math.pow(1 - progress, 3);
-                span.textContent = `${prefix}${Math.round(finalNumber * eased).toLocaleString()}${suffix}`;
-                if (progress < 1) requestAnimationFrame(tick);
-                else span.textContent = finalText;
-            };
-            requestAnimationFrame(tick);
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    if (entry.target.classList.contains('metric-card')) {
-                        animateMetricValue(entry.target);
-                    }
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.12 });
-        document.querySelectorAll('.glass-panel, .doctrine-card, .lane-card, .proof-card, .metric-card, .profile-card, .trust-card, .fund-card, .stack-card, .timeline-card, .field-card, .qual-stat, [data-reveal-sequence]').forEach((el) => {
-            el.classList.add('fade-in-up');
-            observer.observe(el);
-        });
-
-        document.querySelectorAll('.stack-card').forEach((card) => {
-            card.addEventListener('click', () => {
-                const expanded = card.getAttribute('aria-expanded') === 'true';
-                document.querySelectorAll('.stack-card[aria-expanded="true"]').forEach((openCard) => {
-                    if (openCard !== card) openCard.setAttribute('aria-expanded', 'false');
-                });
-                card.setAttribute('aria-expanded', String(!expanded));
-            });
-            card.addEventListener('keydown', (event) => {
-                if (event.key === 'Enter' || event.key === ' ') {
-                    event.preventDefault();
-                    card.click();
-                }
-            });
-        });
-
-        document.querySelectorAll('[data-expandable-card]').forEach((card) => {
-            const button = card.querySelector('button[aria-expanded][aria-controls]');
-            if (!button) return;
-            const collapsedLabel = button.textContent;
-            button.dataset.collapsedLabel = collapsedLabel;
-            button.addEventListener('click', () => {
-                const expanded = button.getAttribute('aria-expanded') === 'true';
-                const group = card.closest('[data-expandable-group]');
-                group?.querySelectorAll('[data-expandable-card].is-expanded').forEach((openCard) => {
-                    if (openCard === card) return;
-                    openCard.classList.remove('is-expanded');
-                    const openButton = openCard.querySelector('button[aria-expanded]');
-                    if (!openButton) return;
-                    openButton.setAttribute('aria-expanded', 'false');
-                    openButton.textContent = openButton.dataset.collapsedLabel || 'Learn more';
-                });
-                card.classList.toggle('is-expanded', !expanded);
-                button.setAttribute('aria-expanded', String(!expanded));
-                button.textContent = expanded ? button.dataset.collapsedLabel : 'Show less';
-            });
-        });
-
-        const partnerEcosystem = [
-            {
-                name: 'NVIDIA',
-                category: 'Cloud',
-                status: 'Active - relationship deepening',
-                role: "Supports AARI's compute, CUDA-Q, Jetson edge AI, Omniverse, and quantum curriculum pathway.",
-                logo: 'images/logo-nvidia.png'
-            },
-            {
-                name: 'Microsoft',
-                category: 'Cloud',
-                status: 'Active - workshop delivered',
-                role: "Microsoft Garage hosted AARI's VQE workshop; Azure Quantum is part of the hybrid quantum-to-edge learning pipeline.",
-                logo: 'images/logo-microsoft.webp'
-            },
-            {
-                name: 'Red Hat',
-                category: 'Cloud',
-                status: 'Active - internal champion in place',
-                role: 'Supports open infrastructure learning across OpenShift, Linux, containers, automation, and certification pathways.',
-                logo: 'images/logo-redhat.png'
-            },
-            {
-                name: 'AWS',
-                category: 'Cloud',
-                status: 'Active - alliance accepted',
-                role: "Supports AARI's cloud and ML pathway through AWS-MLU alignment, lab infrastructure, and Nexus deployment patterns."
-            },
-            {
-                name: 'QTS Data Centers',
-                category: 'Data Centers',
-                status: '2026 Grant Partner - $15,000',
-                role: "QTS awarded AARI a $15,000 grant in 2026 to support general operations and strengthen AARI's data center and AI infrastructure workforce pathway.",
-                logo: 'assets/logos/qts-logo.svg'
-            },
-            {
-                name: 'Morehouse College',
-                category: 'Academic',
-                status: 'Active - anchor institution',
-                role: "Core academic anchor for AARI's AUC student pipeline, faculty collaboration, and hybrid quantum curriculum.",
-                logo: 'images/logo-morehouse.png'
-            },
-            {
-                name: 'Cisco',
-                category: 'Cloud',
-                status: 'Closed - funded',
-                role: 'Funded AARI through a $25K community grant and validates the networking layer of the infrastructure model.',
-                logo: 'images/logo-cisco.svg'
-            },
-            {
-                name: 'Rose-Hulman Institute of Technology',
-                category: 'Academic',
-                status: 'Active - Co-PI engaged',
-                role: "Adds nationally recognized robotics curriculum depth through Dr. Carlotta A. Berry's NSF Co-PI engagement.",
-                logo: 'images/logo-rose-hulman.svg'
-            },
-            {
-                name: 'ATDC / Georgia Tech',
-                category: 'Community',
-                status: 'Active - ongoing',
-                role: "Connects AARI to Atlanta's tech ecosystem and supports curriculum review through the ATDC network.",
-                logo: 'images/logo-atdc.webp'
-            },
-            {
-                name: 'Google Cloud',
-                category: 'Cloud',
-                status: 'Early discussion',
-                role: "Supports AARI's multi-cloud posture and future AI services, credits, and lab integration pathways.",
-                logo: 'images/logo-google-cloud.png'
-            },
-            {
-                name: 'Waymo',
-                category: 'Robotics',
-                status: 'Active - partner',
-                role: 'Connects AARI students to autonomous vehicle technology, robotics systems, perception, safety, and real-world AI operations. Logo source: Waymo.',
-                logo: 'images/logo-waymo.png'
-            },
-            {
-                name: 'Benevity',
-                category: 'Philanthropy',
-                status: 'Active - approved',
-                role: 'Supports corporate matching and donor platform access where employer programs make AARI eligible.',
-                logo: 'images/logo-benevity.svg'
-            },
-            {
-                name: 'a16z Cultural Leadership Fund',
-                category: 'Philanthropy',
-                status: 'Ecosystem Partner Program - renewable support',
-                role: "Renewable support recognizing AARI's work expanding access to the infrastructure layer of AI for HBCU students and underrepresented technical talent.",
-                logo: 'assets/logos/a16z-logo.svg'
-            }
-        ];
-
-        const escapePartnerText = (value) => String(value).replace(/[&<>"']/g, (char) => ({
-            '&': '&amp;',
-            '<': '&lt;',
-            '>': '&gt;',
-            '"': '&quot;',
-            "'": '&#39;'
-        }[char]));
-
-        const installPartnerCarousels = () => {
-            document.querySelectorAll('[data-partner-carousel]').forEach((carousel) => {
-                const track = carousel.querySelector('[data-carousel-track]');
-                const dots = carousel.querySelector('[data-carousel-dots]');
-                const filters = carousel.querySelector('[data-partner-filters]');
-                const viewport = carousel.querySelector('.partner-carousel-viewport');
-                const prev = carousel.querySelector('[data-carousel-prev]');
-                const next = carousel.querySelector('[data-carousel-next]');
-                let index = 0;
-                let cardsPerView = 3;
-                let startX = 0;
-                let activeFilter = 'All';
-
-                const getCardsPerView = () => {
-                    if (window.matchMedia('(max-width: 640px)').matches) return 1;
-                    if (window.matchMedia('(max-width: 1024px)').matches) return 2;
-                    return 3;
-                };
-
-                const renderCards = () => {
-                    const filteredPartners = activeFilter === 'All'
-                        ? partnerEcosystem
-                        : partnerEcosystem.filter((partner) => partner.category === activeFilter);
-                    track.innerHTML = filteredPartners.map((partner) => {
-                        const name = escapePartnerText(partner.name);
-                        const category = escapePartnerText(partner.category);
-                        const role = escapePartnerText(partner.role);
-                        const mark = partner.logo
-                            ? `<div class="partner-logo-box" data-logo-box><img src="${escapePartnerText(partner.logo)}" alt="${name}" loading="lazy" data-logo-fallback="${name}"></div>`
-                            : `<div class="partner-text-mark"><span>${name}</span></div>`;
-                        return `
-                            <article class="partner-slide" aria-label="${name}, ${category}">
-                                <div class="partner-story-card glass-panel rounded-3xl p-5 border border-white/10" tabindex="0" data-role="${role}">
-                                    ${mark}
-                                    <p class="mt-5 text-xs uppercase tracking-[0.2em] text-electric-400 font-bold">${category}</p>
-                                    <p class="mt-2 text-xs text-slatebrand-500">${escapePartnerText(partner.status || '')}</p>
-                                    <h4 class="mt-3 text-xl font-bold text-white">${name}</h4>
-                                    <p class="mt-3 text-sm leading-relaxed text-slatebrand-300">${role}</p>
-                                </div>
-                            </article>`;
-                    }).join('');
-                    track.querySelectorAll('[data-logo-fallback]').forEach((img) => {
-                        img.addEventListener('error', () => {
-                            const fallbackName = escapePartnerText(img.dataset.logoFallback || 'Partner');
-                            img.closest('[data-logo-box]').outerHTML = `<div class="partner-text-mark"><span>${fallbackName}</span></div>`;
-                        }, { once: true });
-                    });
-                };
-
-                const visiblePartners = () => activeFilter === 'All'
-                    ? partnerEcosystem
-                    : partnerEcosystem.filter((partner) => partner.category === activeFilter);
-
-                const maxIndex = () => Math.max(visiblePartners().length - cardsPerView, 0);
-
-                const renderDots = () => {
-                    const pageCount = Math.max(Math.ceil(visiblePartners().length / cardsPerView), 1);
-                    const activePage = Math.min(Math.floor(index / cardsPerView), pageCount - 1);
-                    dots.innerHTML = Array.from({ length: pageCount }, (_, page) => `
-                        <button type="button" class="partner-dot h-2.5 w-2.5 rounded-full border border-white/20 bg-white/20" data-carousel-dot="${page}" aria-label="Show partner group ${page + 1}" aria-current="${page === activePage ? 'true' : 'false'}"></button>
-                    `).join('');
-                    dots.querySelectorAll('[data-carousel-dot]').forEach((dot) => {
-                        dot.addEventListener('click', () => {
-                            const page = Number(dot.dataset.carouselDot);
-                            index = page === pageCount - 1 ? maxIndex() : Math.min(page * cardsPerView, maxIndex());
-                            update();
-                        });
-                    });
-                };
-
-                const update = () => {
-                    cardsPerView = getCardsPerView();
-                    index = Math.min(index, maxIndex());
-                    const slide = track.querySelector('.partner-slide');
-                    if (!slide) return;
-                    const gap = parseFloat(getComputedStyle(track).columnGap || getComputedStyle(track).gap) || 0;
-                    const offset = index * (slide.getBoundingClientRect().width + gap);
-                    track.style.transform = `translateX(-${offset}px)`;
-                    prev.disabled = index === 0;
-                    next.disabled = index >= maxIndex();
-                    prev.classList.toggle('opacity-40', prev.disabled);
-                    next.classList.toggle('opacity-40', next.disabled);
-                    renderDots();
-                };
-
-                renderCards();
-                renderDots();
-                update();
-                filters?.querySelectorAll('[data-filter]').forEach((button) => {
-                    button.addEventListener('click', () => {
-                        activeFilter = button.dataset.filter || 'All';
-                        index = 0;
-                        filters.querySelectorAll('[data-filter]').forEach((filterButton) => {
-                            filterButton.setAttribute('aria-pressed', String(filterButton === button));
-                        });
-                        renderCards();
-                        update();
-                    });
-                });
-
-                prev.addEventListener('click', () => {
-                    index = Math.max(index - cardsPerView, 0);
-                    update();
-                });
-                next.addEventListener('click', () => {
-                    index = Math.min(index + cardsPerView, maxIndex());
-                    update();
-                });
-                viewport.addEventListener('keydown', (event) => {
-                    if (event.key === 'ArrowLeft') {
-                        event.preventDefault();
-                        prev.click();
-                    }
-                    if (event.key === 'ArrowRight') {
-                        event.preventDefault();
-                        next.click();
-                    }
-                });
-                viewport.addEventListener('touchstart', (event) => {
-                    startX = event.touches[0].clientX;
-                }, { passive: true });
-                viewport.addEventListener('touchend', (event) => {
-                    const delta = event.changedTouches[0].clientX - startX;
-                    if (Math.abs(delta) < 40) return;
-                    if (delta < 0) next.click();
-                    if (delta > 0) prev.click();
-                });
-                window.addEventListener('resize', update);
-            });
-        };
-        installPartnerCarousels();
-
-        const formatImpactUpdatedAt = (isoValue) => {
-            const updatedAt = new Date(isoValue);
-            if (Number.isNaN(updatedAt.getTime())) return '';
-            const elapsedSeconds = Math.max(0, Math.round((Date.now() - updatedAt.getTime()) / 1000));
-            if (elapsedSeconds < 60) return 'Updated just now';
-            const elapsedMinutes = Math.round(elapsedSeconds / 60);
-            if (elapsedMinutes < 60) return `Updated ${elapsedMinutes} minute${elapsedMinutes === 1 ? '' : 's'} ago`;
-            const elapsedHours = Math.round(elapsedMinutes / 60);
-            if (elapsedHours < 24) return `Updated ${elapsedHours} hour${elapsedHours === 1 ? '' : 's'} ago`;
-            const elapsedDays = Math.round(elapsedHours / 24);
-            return `Updated ${elapsedDays} day${elapsedDays === 1 ? '' : 's'} ago`;
-        };
-
-        const hydrateImpactMetrics = async () => {
-            try {
-                const response = await fetch('/api/impact', {
-                    headers: { Accept: 'application/json' }
-                });
-                if (!response.ok) return;
-                const payload = await response.json();
-                if (!Array.isArray(payload.metrics)) return;
-
-                payload.metrics.forEach((metric) => {
-                    if (!metric || !metric.id || typeof metric.display !== 'string') return;
-                    const target = document.getElementById(`metric-${metric.id}`);
-                    if (target) target.textContent = metric.display;
-                });
-
-                const latestUpdatedAt = payload.metrics
-                    .map((metric) => metric.updated_at)
-                    .filter(Boolean)
-                    .sort()
-                    .at(-1);
-                const indicator = document.getElementById('impact-live-updated');
-                const updatedText = latestUpdatedAt ? formatImpactUpdatedAt(latestUpdatedAt) : '';
-                if (indicator && updatedText) {
-                    indicator.textContent = `${updatedText} from AARIImpactMetrics.`;
-                    indicator.classList.remove('hidden');
-                }
-            } catch (error) {
-                // Static fallback values remain visible if the API or backing store is unavailable.
-            }
-        };
-
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', hydrateImpactMetrics, { once: true });
-        } else {
-            hydrateImpactMetrics();
-        }
-
-        const confirmationText = 'Thanks. Your message has been received.';
-
-        const isValidEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i.test(email);
-        const populateSourceFields = (form) => {
-            const params = new URLSearchParams(window.location.search);
-            const fields = {
-                page_url: window.location.href,
-                timestamp: new Date().toISOString(),
-                form_rendered_at: form.dataset.loadedAt || String(Date.now()),
-                utm_source: params.get('utm_source') || '',
-                utm_medium: params.get('utm_medium') || '',
-                utm_campaign: params.get('utm_campaign') || '',
-                utm_term: params.get('utm_term') || '',
-                utm_content: params.get('utm_content') || ''
-            };
-            Object.entries(fields).forEach(([name, value]) => {
-                const input = form.querySelector(`[name="${name}"]`);
-                if (input) input.value = value;
-            });
-        };
-
-        const showFormMessage = (element, message) => {
-            if (!element) return;
-            element.textContent = message;
-            element.classList.add('visible');
-        };
-
-        const formDataToPayload = (formData) => {
-            const payload = {};
-            formData.forEach((value, key) => {
-                payload[key] = value.toString();
-            });
-            return payload;
-        };
-
-        const installSecureIntakeForms = () => {
-            document.querySelectorAll('form[data-secure-intake]').forEach((form) => {
-                form.dataset.loadedAt = String(Date.now());
-                populateSourceFields(form);
-                form.addEventListener('submit', async (event) => {
-                    event.preventDefault();
-                    const confirmation = form.querySelector('.form-confirmation');
-                    const errorMessage = form.querySelector('.form-error');
-                    const submitButton = form.querySelector('button[type="submit"]');
-                    confirmation?.classList.remove('visible');
-                    errorMessage?.classList.remove('visible');
-                    const formName = form.dataset.formName || form.querySelector('[name="form_name"]')?.value || 'Inquiry form';
-
-                    const emailInput = form.querySelector('[name="email"]');
-                    emailInput?.setCustomValidity('');
-                    if (!form.reportValidity()) return;
-                    populateSourceFields(form);
-
-                    const data = new FormData(form);
-                    const email = (data.get('email') || '').toString().trim();
-                    const message = (data.get('message') || '').toString().trim();
-
-                    if (!isValidEmail(email)) {
-                        window.AARIAnalytics?.trackFormBlocked({ formName, blockReason: 'invalid_email' });
-                        emailInput?.setCustomValidity('Please enter a valid email address.');
-                        emailInput?.reportValidity();
-                        return;
-                    }
-
-                    if (message.length < 20 || message.length > 2000) {
-                        showFormMessage(errorMessage, 'Please enter a message between 20 and 2000 characters.');
-                        return;
-                    }
-
-                    submitButton.disabled = true;
-                    submitButton.textContent = 'Sending...';
-
-                    try {
-                        const response = await fetch('/api/submit-inquiry', {
-                            method: 'POST',
-                            headers: { 'Content-Type': 'application/json' },
-                            body: JSON.stringify(formDataToPayload(data))
-                        });
-                        const result = await response.json().catch(() => ({}));
-
-                        if (!response.ok && result.message) {
-                            if (result.code) window.AARIAnalytics?.trackFormBlocked({ formName, blockReason: result.code });
-                            showFormMessage(errorMessage, result.message);
-                            return;
-                        }
-
-                        showFormMessage(confirmation, result.message || confirmationText);
-                        window.AARIAnalytics?.trackFormSubmit({ formName, inquiryType: data.get('inquiry_type') || '' });
-                        if (result.mailto) window.location.href = result.mailto;
-                        form.reset();
-                        form.dataset.loadedAt = String(Date.now());
-                        populateSourceFields(form);
-                    } catch (error) {
-                        showFormMessage(errorMessage, 'We could not send your message right now. Please try the contact form again later.');
-                    } finally {
-                        submitButton.disabled = false;
-                        submitButton.textContent = form.id === 'funder-form' ? 'Send Funder Inquiry' : 'Send Partnership Inquiry';
-                    }
-                });
-            });
-        };
-        const escapeEventHtml = (value = '') => String(value).replace(/[&<>'"]/g, (character) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' }[character]));
-        const loadHomepageEvents = async () => {
-            const grid = document.getElementById('upcoming-events-grid');
-            if (!grid) return;
-            try {
-                const response = await fetch('assets/data/events.json', { cache: 'no-store' });
-                if (!response.ok) throw new Error('Events could not be loaded');
-                const events = (await response.json()).sort((a, b) => a.date.localeCompare(b.date));
-                const today = new Date().toLocaleDateString('en-CA', { timeZone: 'America/New_York' });
-                const upcoming = events.filter((event) => event.date >= today).slice(0, 3);
-                if (!upcoming.length) {
-                    grid.innerHTML = '<div class="bright-card rounded-3xl p-6 md:col-span-2 xl:col-span-3"><p class="text-slatebrand-300">New dates will be added soon.</p><a href="events.html" class="mt-4 inline-flex font-extrabold text-gold-400">Open the events calendar →</a></div>';
-                    return;
-                }
-                const dateFormatter = new Intl.DateTimeFormat('en-US', { month: 'short', day: 'numeric', year: 'numeric', timeZone: 'America/New_York' });
-                const timeFormatter = new Intl.DateTimeFormat('en-US', { hour: 'numeric', minute: '2-digit', timeZone: 'America/New_York' });
-                const eventDate = (event, field = 'startTime') => new Date(`${event.date}T${event[field] || '12:00'}:00-04:00`);
-                grid.innerHTML = upcoming.map((event) => {
-                    const time = event.allDay ? 'Date only' : `${timeFormatter.format(eventDate(event))}–${timeFormatter.format(eventDate(event, 'endTime'))} ET`;
-                    return `<article class="bright-card rounded-3xl p-6">
-                        <div class="flex items-start justify-between gap-4">
-                            <div><p class="text-sm font-extrabold uppercase tracking-[0.14em] text-gold-400">${escapeEventHtml(dateFormatter.format(eventDate(event)))}</p><p class="mt-1 text-xs font-semibold text-slatebrand-400">${escapeEventHtml(time)}</p></div>
-                            <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[11px] font-bold text-slatebrand-300">${escapeEventHtml(event.audience)}</span>
-                        </div>
-                        <h3 class="mt-5 text-xl font-extrabold text-white">${escapeEventHtml(event.title)}</h3>
-                        <p class="mt-3 text-sm leading-relaxed text-slatebrand-300">${escapeEventHtml(event.description)}</p>
-                        <a href="events.html#calendar-title" class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-gold-400 hover:text-gold-300">Event details <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
-                    </article>`;
-                }).join('');
-                lucide.createIcons();
-            } catch (error) {
-                grid.innerHTML = '<div class="bright-card rounded-3xl p-6 md:col-span-2 xl:col-span-3"><p class="text-slatebrand-300">The upcoming schedule is temporarily unavailable.</p><a href="events.html" class="mt-4 inline-flex font-extrabold text-gold-400">Open the events calendar →</a></div>';
-            }
-        };
-        loadHomepageEvents();
-        installSecureIntakeForms();
-    </script>
+    <script src="assets/js/pages/index-1.js"></script>
 </body>
 </html>

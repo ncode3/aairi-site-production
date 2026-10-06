@@ -1,44 +1,20 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17997086735"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'AW-17997086735');
-    </script>
-    <script src="assets/js/analytics-config.js"></script>
-    <script src="assets/js/analytics.js" defer></script>
+
+
+
+    <script src="assets/js/cohort-proof.js" defer></script>
     <!-- Event snippet for Page view conversion page -->
-    <script>
-      gtag('event', 'conversion', {
-          'send_to': 'AW-17997086735/snlsCKji1oMcEI-A14VD',
-          'value': 1.0,
-          'currency': 'USD'
-      });
-    </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thank You | Atlanta AI &amp; Robotics Initiative</title>
     <meta name="description" content="Thank you for your interest in supporting the Atlanta AI &amp; Robotics Initiative, a 501(c)(3) nonprofit building elite AI infrastructure education for AUC students.">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        navy: { 900: '#020617', 800: '#0f172a', 700: '#1e293b' },
-                        electric: { 500: '#3b82f6', 400: '#60a5fa' },
-                    },
-                    fontFamily: { sans: ['Inter', 'sans-serif'] }
-                }
-            }
-        }
-    </script>
+    <link rel="stylesheet" href="assets/css/pages/thank-you.css">
+
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="assets/vendor/lucide.min.js"></script>
     <style>
         body { font-family: 'Inter', sans-serif; background: #020617; color: #f8fafc; }
         .glass-panel { background: rgba(15,23,42,0.7); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.1); }
@@ -55,6 +31,7 @@
         .delay-3 { animation-delay: 0.35s; opacity: 0; }
         .delay-4 { animation-delay: 0.5s; opacity: 0; }
     </style>
+    <script src="assets/js/ui.js" defer></script>
 </head>
 <body class="antialiased">
 
@@ -77,7 +54,7 @@
                     Donate
                 </a>
             </div>
-            <button class="md:hidden text-slate-300" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+            <button class="md:hidden text-slate-300" data-mobile-menu-toggle>
                 <i data-lucide="menu" class="w-8 h-8"></i>
             </button>
         </div>
@@ -243,8 +220,6 @@
         </div>
     </footer>
 
-    <script>
-        lucide.createIcons();
-    </script>
+    <script src="assets/js/pages/thank-you-1.js"></script>
 </body>
 </html>

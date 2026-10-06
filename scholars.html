@@ -1,44 +1,24 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17997086735"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'AW-17997086735');
-    </script>
-    <script src="assets/js/analytics-config.js"></script>
-    <script src="assets/js/analytics.js" defer></script>
+
+
+
+    <script src="assets/js/cohort-proof.js" defer></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Scholar-to-Mentor Infrastructure Fellowship | AARI</title>
     <meta name="description" content="The AARI Scholar-to-Mentor Infrastructure Fellowship. AUC scholars learn data center fundamentals, networking, Linux, edge computing, robotics, and AI infrastructure. Scholars earn support by building systems and mentoring APS students.">
 
     <!-- 1. Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="assets/css/pages/scholars.css">
 
     <!-- 2. Tailwind Config -->
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        navy: { 900: '#020617', 800: '#0f172a', 700: '#1e293b' },
-                        electric: { 500: '#3b82f6', 400: '#60a5fa' },
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    }
-                }
-            }
-        }
-    </script>
+
 
     <!-- 3. Fonts & Icons -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="assets/vendor/lucide.min.js"></script>
 
     <style>
         body { font-family: 'Inter', sans-serif; background: #020617; color: #f8fafc; }
@@ -77,6 +57,7 @@
             transform: translateY(-4px);
         }
     </style>
+    <script src="assets/js/ui.js" defer></script>
 </head>
 <body class="antialiased selection:bg-amber-500 selection:text-white">
 
@@ -104,7 +85,7 @@
             </div>
 
             <!-- Mobile Menu Button -->
-            <button class="md:hidden text-slate-300" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+            <button class="md:hidden text-slate-300" data-mobile-menu-toggle>
                 <i data-lucide="menu" class="w-8 h-8"></i>
             </button>
         </div>
@@ -186,7 +167,7 @@
 
                 <div class="flex flex-col md:flex-row gap-10 items-start">
                     <!-- Photo -->
-                    <div class="flex-shrink-0 mx-auto md:mx-0">
+                    <div class="shrink-0 mx-auto md:mx-0">
                         <div class="w-56 h-56 md:w-64 md:h-64 rounded-2xl overflow-hidden border-2 border-amber-500/30 shadow-lg shadow-amber-900/20">
                             <img
                                 src="images/david-mykel-taylor.png"
@@ -235,7 +216,7 @@
                     <p class="text-slate-400 text-lg mb-6 leading-relaxed">The fellowship is for AUC students and other qualified scholars who are ready to do the work. Not passive learners. Not spectators. Operators who build systems and teach the next generation.</p>
                     <ul class="space-y-4">
                         <li class="flex items-start gap-4">
-                            <div class="w-10 h-10 bg-amber-500/10 rounded-lg flex items-center justify-center border border-amber-500/30 flex-shrink-0 mt-0.5">
+                            <div class="w-10 h-10 bg-amber-500/10 rounded-lg flex items-center justify-center border border-amber-500/30 shrink-0 mt-0.5">
                                 <i data-lucide="map-pin" class="text-amber-400 w-5 h-5"></i>
                             </div>
                             <div>
@@ -244,7 +225,7 @@
                             </div>
                         </li>
                         <li class="flex items-start gap-4">
-                            <div class="w-10 h-10 bg-blue-500/10 rounded-lg flex items-center justify-center border border-blue-500/30 flex-shrink-0 mt-0.5">
+                            <div class="w-10 h-10 bg-blue-500/10 rounded-lg flex items-center justify-center border border-blue-500/30 shrink-0 mt-0.5">
                                 <i data-lucide="graduation-cap" class="text-blue-400 w-5 h-5"></i>
                             </div>
                             <div>
@@ -253,7 +234,7 @@
                             </div>
                         </li>
                         <li class="flex items-start gap-4">
-                            <div class="w-10 h-10 bg-purple-500/10 rounded-lg flex items-center justify-center border border-purple-500/30 flex-shrink-0 mt-0.5">
+                            <div class="w-10 h-10 bg-purple-500/10 rounded-lg flex items-center justify-center border border-purple-500/30 shrink-0 mt-0.5">
                                 <i data-lucide="users" class="text-purple-400 w-5 h-5"></i>
                             </div>
                             <div>
@@ -355,23 +336,23 @@
                     <p class="text-slate-400 mb-6 leading-relaxed">Real lab work, documented project output, and genuine operator responsibility. Not toy environments.</p>
                     <ul class="space-y-3">
                         <li class="flex items-start gap-3">
-                            <i data-lucide="check-circle" class="text-orange-400 w-5 h-5 flex-shrink-0 mt-0.5"></i>
+                            <i data-lucide="check-circle" class="text-orange-400 w-5 h-5 shrink-0 mt-0.5"></i>
                             <span class="text-slate-300 text-sm">Physical infrastructure: server racking, cabling, power systems</span>
                         </li>
                         <li class="flex items-start gap-3">
-                            <i data-lucide="check-circle" class="text-orange-400 w-5 h-5 flex-shrink-0 mt-0.5"></i>
+                            <i data-lucide="check-circle" class="text-orange-400 w-5 h-5 shrink-0 mt-0.5"></i>
                             <span class="text-slate-300 text-sm">Network configurations and system deployments</span>
                         </li>
                         <li class="flex items-start gap-3">
-                            <i data-lucide="check-circle" class="text-orange-400 w-5 h-5 flex-shrink-0 mt-0.5"></i>
+                            <i data-lucide="check-circle" class="text-orange-400 w-5 h-5 shrink-0 mt-0.5"></i>
                             <span class="text-slate-300 text-sm">Edge AI inference pipelines on NVIDIA Jetson</span>
                         </li>
                         <li class="flex items-start gap-3">
-                            <i data-lucide="check-circle" class="text-orange-400 w-5 h-5 flex-shrink-0 mt-0.5"></i>
+                            <i data-lucide="check-circle" class="text-orange-400 w-5 h-5 shrink-0 mt-0.5"></i>
                             <span class="text-slate-300 text-sm">Robotics systems with computer vision and sensor integration</span>
                         </li>
                         <li class="flex items-start gap-3">
-                            <i data-lucide="check-circle" class="text-orange-400 w-5 h-5 flex-shrink-0 mt-0.5"></i>
+                            <i data-lucide="check-circle" class="text-orange-400 w-5 h-5 shrink-0 mt-0.5"></i>
                             <span class="text-slate-300 text-sm">Documented project portfolios with production-grade write-ups</span>
                         </li>
                     </ul>
@@ -386,23 +367,23 @@
                     <p class="text-slate-400 mb-6 leading-relaxed">Scholars deliver hands-on instruction to APS students on site. Near-peer mentorship is a core program mechanism, not an add-on.</p>
                     <ul class="space-y-3">
                         <li class="flex items-start gap-3">
-                            <i data-lucide="check-circle" class="text-purple-400 w-5 h-5 flex-shrink-0 mt-0.5"></i>
+                            <i data-lucide="check-circle" class="text-purple-400 w-5 h-5 shrink-0 mt-0.5"></i>
                             <span class="text-slate-300 text-sm">Beginner robotics: assembly, sensors, basic control</span>
                         </li>
                         <li class="flex items-start gap-3">
-                            <i data-lucide="check-circle" class="text-purple-400 w-5 h-5 flex-shrink-0 mt-0.5"></i>
+                            <i data-lucide="check-circle" class="text-purple-400 w-5 h-5 shrink-0 mt-0.5"></i>
                             <span class="text-slate-300 text-sm">STEM fundamentals and physical computing</span>
                         </li>
                         <li class="flex items-start gap-3">
-                            <i data-lucide="check-circle" class="text-purple-400 w-5 h-5 flex-shrink-0 mt-0.5"></i>
+                            <i data-lucide="check-circle" class="text-purple-400 w-5 h-5 shrink-0 mt-0.5"></i>
                             <span class="text-slate-300 text-sm">Coding basics: Python, block coding, introductory scripting</span>
                         </li>
                         <li class="flex items-start gap-3">
-                            <i data-lucide="check-circle" class="text-purple-400 w-5 h-5 flex-shrink-0 mt-0.5"></i>
+                            <i data-lucide="check-circle" class="text-purple-400 w-5 h-5 shrink-0 mt-0.5"></i>
                             <span class="text-slate-300 text-sm">Intro AI concepts in plain English, without the hype</span>
                         </li>
                         <li class="flex items-start gap-3">
-                            <i data-lucide="check-circle" class="text-purple-400 w-5 h-5 flex-shrink-0 mt-0.5"></i>
+                            <i data-lucide="check-circle" class="text-purple-400 w-5 h-5 shrink-0 mt-0.5"></i>
                             <span class="text-slate-300 text-sm">Delivered directly to APS students at the Kidd partnership site</span>
                         </li>
                     </ul>
@@ -431,23 +412,23 @@
                     </h3>
                     <ul class="space-y-3">
                         <li class="flex items-start gap-3">
-                            <i data-lucide="check" class="text-blue-400 w-4 h-4 flex-shrink-0 mt-0.5"></i>
+                            <i data-lucide="check" class="text-blue-400 w-4 h-4 shrink-0 mt-0.5"></i>
                             <span class="text-slate-300 text-sm">Milestone completion: labs, builds, and curriculum checkpoints</span>
                         </li>
                         <li class="flex items-start gap-3">
-                            <i data-lucide="check" class="text-blue-400 w-4 h-4 flex-shrink-0 mt-0.5"></i>
+                            <i data-lucide="check" class="text-blue-400 w-4 h-4 shrink-0 mt-0.5"></i>
                             <span class="text-slate-300 text-sm">Logged mentoring hours with APS students</span>
                         </li>
                         <li class="flex items-start gap-3">
-                            <i data-lucide="check" class="text-blue-400 w-4 h-4 flex-shrink-0 mt-0.5"></i>
+                            <i data-lucide="check" class="text-blue-400 w-4 h-4 shrink-0 mt-0.5"></i>
                             <span class="text-slate-300 text-sm">Lab build participation: showing up, doing the work</span>
                         </li>
                         <li class="flex items-start gap-3">
-                            <i data-lucide="check" class="text-blue-400 w-4 h-4 flex-shrink-0 mt-0.5"></i>
+                            <i data-lucide="check" class="text-blue-400 w-4 h-4 shrink-0 mt-0.5"></i>
                             <span class="text-slate-300 text-sm">Reliability and consistency over time</span>
                         </li>
                         <li class="flex items-start gap-3">
-                            <i data-lucide="check" class="text-blue-400 w-4 h-4 flex-shrink-0 mt-0.5"></i>
+                            <i data-lucide="check" class="text-blue-400 w-4 h-4 shrink-0 mt-0.5"></i>
                             <span class="text-slate-300 text-sm">Documented project work meeting quality standards</span>
                         </li>
                     </ul>
@@ -460,23 +441,23 @@
                     </h3>
                     <ul class="space-y-3">
                         <li class="flex items-start gap-3">
-                            <i data-lucide="laptop" class="text-emerald-400 w-4 h-4 flex-shrink-0 mt-0.5"></i>
+                            <i data-lucide="laptop" class="text-emerald-400 w-4 h-4 shrink-0 mt-0.5"></i>
                             <span class="text-slate-300 text-sm"><strong class="text-white">Equipment ownership</strong> - Linux laptop, edge device, monitor, storage, peripherals. Theirs to keep.</span>
                         </li>
                         <li class="flex items-start gap-3">
-                            <i data-lucide="graduation-cap" class="text-emerald-400 w-4 h-4 flex-shrink-0 mt-0.5"></i>
+                            <i data-lucide="graduation-cap" class="text-emerald-400 w-4 h-4 shrink-0 mt-0.5"></i>
                             <span class="text-slate-300 text-sm"><strong class="text-white">Scholarship support</strong> - Restricted to tuition, books, and fees at AUC institutions.</span>
                         </li>
                         <li class="flex items-start gap-3">
-                            <i data-lucide="badge-check" class="text-emerald-400 w-4 h-4 flex-shrink-0 mt-0.5"></i>
+                            <i data-lucide="badge-check" class="text-emerald-400 w-4 h-4 shrink-0 mt-0.5"></i>
                             <span class="text-slate-300 text-sm"><strong class="text-white">Industry certifications</strong> - CompTIA, AWS, Red Hat, and other recognized credentials.</span>
                         </li>
                         <li class="flex items-start gap-3">
-                            <i data-lucide="briefcase" class="text-emerald-400 w-4 h-4 flex-shrink-0 mt-0.5"></i>
+                            <i data-lucide="briefcase" class="text-emerald-400 w-4 h-4 shrink-0 mt-0.5"></i>
                             <span class="text-slate-300 text-sm"><strong class="text-white">Internship and apprenticeship priority</strong> - Direct pathways to employer partners.</span>
                         </li>
                         <li class="flex items-start gap-3">
-                            <i data-lucide="star" class="text-emerald-400 w-4 h-4 flex-shrink-0 mt-0.5"></i>
+                            <i data-lucide="star" class="text-emerald-400 w-4 h-4 shrink-0 mt-0.5"></i>
                             <span class="text-slate-300 text-sm"><strong class="text-white">Leadership roles inside AARI</strong> - Fellows who complete the arc become instructors, operators, and program leads.</span>
                         </li>
                     </ul>
@@ -669,19 +650,6 @@
         </div>
     </footer>
 
-    <script>
-        lucide.createIcons();
-
-        // Fade-in animation
-        const fadeElements = document.querySelectorAll('.fade-in-up');
-        const fadeObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, { threshold: 0.1 });
-        fadeElements.forEach(el => fadeObserver.observe(el));
-    </script>
+    <script src="assets/js/pages/scholars-1.js"></script>
 </body>
 </html>
