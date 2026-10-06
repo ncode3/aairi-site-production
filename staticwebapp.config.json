@@ -88,12 +88,22 @@
     },
     {
       "route": "/api/submit-inquiry",
-      "methods": ["GET", "PUT", "PATCH", "DELETE", "OPTIONS", "TRACE", "CONNECT"],
+      "methods": [
+        "GET",
+        "PUT",
+        "PATCH",
+        "DELETE",
+        "OPTIONS",
+        "TRACE",
+        "CONNECT"
+      ],
       "statusCode": 404
     },
     {
       "route": "/api/impact",
-      "methods": ["GET"],
+      "methods": [
+        "GET"
+      ],
       "headers": {
         "Cache-Control": "public, max-age=60"
       }
@@ -128,7 +138,7 @@
     "Strict-Transport-Security": "max-age=31536000; includeSubDomains; preload"
   },
   "platform": {
-    "apiRuntime": "node:20"
+    "apiRuntime": "node:22"
   },
   "navigationFallback": {
     "rewrite": "/index.html",
