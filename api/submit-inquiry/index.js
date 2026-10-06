@@ -2,6 +2,15 @@ const GENERIC_SUCCESS = 'Thanks. Your message has been received.';
 const RATE_LIMIT_WINDOW_MS = 10 * 60 * 1000;
 const RATE_LIMIT_MAX = 3;
 const MIN_SUBMIT_MS = 3000;
+const MAX_BODY_BYTES = 32 * 1024;
+const MAX_RATE_LIMIT_KEYS = 10000;
+const FIELD_LIMITS = {
+  full_name: 80, email: 254, message: 2000, inquiry_type: 80,
+  organization: 200, reason_for_inquiry: 1000, goal: 1000, timeline: 200,
+  budget_range: 200, contact_policy_confirm: 3, form_name: 120,
+  page_url: 2048, utm_source: 256, utm_medium: 256, utm_campaign: 256,
+  utm_term: 256, utm_content: 256, company_website: 256, fax_number: 256
+};
 
 const allowedInquiryTypes = new Set([
   'Partnership',
@@ -48,17 +57,19 @@ const spamPatterns = [
 ];
 
 const rateLimitStore = new Map();
+let lastRateLimitSweep = 0;
 
 function getHeader(req, name) {
   const headers = req.headers || {};
   const lowerName = name.toLowerCase();
-  return headers[name] || headers[lowerName] || '';
+  const value = headers[name] || headers[lowerName];
+  return typeof value === 'string' ? value : '';
 }
 
 function getClientIp(req) {
   const forwarded = getHeader(req, 'x-forwarded-for');
-  if (forwarded) return forwarded.split(',')[0].trim();
-  return getHeader(req, 'x-client-ip') || 'unknown';
+  if (forwarded) return forwarded.split(',')[0].trim().slice(0, 64);
+  return getHeader(req, 'x-client-ip').slice(0, 64) || 'unknown';
 }
 
 function normalizeString(value) {
@@ -106,15 +117,12 @@ function validationResponse(message, code) {
 }
 
 function logBlocked(context, reason, req, payload) {
-  const ip = getClientIp(req);
   const entry = {
     event: 'form_blocked',
     reason,
     form_name: normalizeString(payload.form_name),
     inquiry_type: normalizeString(payload.inquiry_type),
     email_domain: normalizeString(payload.email).split('@').pop()?.toLowerCase() || '',
-    ip,
-    page_url: normalizeString(payload.page_url),
     timestamp: new Date().toISOString()
   };
   context.log.warn(JSON.stringify(entry));
@@ -126,12 +134,19 @@ function logAccepted(context, req, payload) {
     form_name: normalizeString(payload.form_name),
     inquiry_type: normalizeString(payload.inquiry_type),
     email_domain: normalizeString(payload.email).split('@').pop()?.toLowerCase() || '',
-    ip: getClientIp(req),
     timestamp: new Date().toISOString()
   }));
 }
 
 function isRateLimited(key, now = Date.now()) {
+  if (now - lastRateLimitSweep >= 60000) {
+    for (const [storedKey, times] of rateLimitStore) {
+      if (!times.some((time) => now - time < RATE_LIMIT_WINDOW_MS)) rateLimitStore.delete(storedKey);
+    }
+    lastRateLimitSweep = now;
+  }
+  // This remains a per-instance abuse control; enforce global limits at the edge.
+  if (!rateLimitStore.has(key) && rateLimitStore.size >= MAX_RATE_LIMIT_KEYS) return true;
   const recent = (rateLimitStore.get(key) || []).filter((time) => now - time < RATE_LIMIT_WINDOW_MS);
   if (recent.length >= RATE_LIMIT_MAX) {
     rateLimitStore.set(key, recent);
@@ -149,6 +164,15 @@ function hasExpectedFrontDoorHeader(req) {
 }
 
 function validatePayload(payload, now = Date.now()) {
+  if (!payload || typeof payload !== 'object' || Array.isArray(payload)) {
+    return { validationError: true, code: 'invalid_payload', message: 'Please submit a valid form.' };
+  }
+  for (const [field, limit] of Object.entries(FIELD_LIMITS)) {
+    const value = payload[field];
+    if (value !== undefined && (typeof value !== 'string' || value.length > limit)) {
+      return { validationError: true, code: 'invalid_field', message: 'A form field is invalid or too long.' };
+    }
+  }
   const name = normalizeString(payload.full_name);
   const email = normalizeString(payload.email).toLowerCase();
   const emailDomain = email.split('@').pop() || '';
@@ -261,8 +285,14 @@ function buildMailtoUrl(data) {
 
 async function forwardSubmission(data) {
   if (process.env.CONTACT_WEBHOOK_URL) {
-    const response = await fetch(process.env.CONTACT_WEBHOOK_URL, {
+    const webhook = new URL(process.env.CONTACT_WEBHOOK_URL);
+    if (webhook.protocol !== 'https:' || webhook.username || webhook.password) {
+      throw new Error('invalid_webhook_configuration');
+    }
+    const response = await fetch(webhook.href, {
       method: 'POST',
+      signal: AbortSignal.timeout(10000),
+      redirect: 'error',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data)
     });
@@ -274,6 +304,8 @@ async function forwardSubmission(data) {
     const subject = `AARI Inquiry: ${data.inquiry_type} - ${data.organization || data.full_name}`;
     const response = await fetch('https://api.sendgrid.com/v3/mail/send', {
       method: 'POST',
+      signal: AbortSignal.timeout(10000),
+      redirect: 'error',
       headers: {
         Authorization: `Bearer ${process.env.SENDGRID_API_KEY}`,
         'Content-Type': 'application/json'
@@ -294,7 +326,15 @@ async function forwardSubmission(data) {
 }
 
 async function handleRequest(context, req) {
-  const payload = req.body || {};
+  if (req.method !== 'POST') return jsonResponse(405, { ok: false, code: 'method_not_allowed' });
+  if (!/^application\/json(?:\s*;|$)/i.test(getHeader(req, 'content-type'))) {
+    return jsonResponse(415, { ok: false, code: 'unsupported_media_type' });
+  }
+  const payload = req.body;
+  const serialized = typeof req.rawBody === 'string' ? req.rawBody : JSON.stringify(payload);
+  if (serialized && Buffer.byteLength(serialized, 'utf8') > MAX_BODY_BYTES) {
+    return jsonResponse(413, { ok: false, code: 'payload_too_large' });
+  }
   const ip = getClientIp(req);
   const validation = validatePayload(payload);
 
@@ -334,7 +374,7 @@ module.exports = async function (context, req) {
   } catch (error) {
     context.log.error(JSON.stringify({
       event: 'form_delivery_failed',
-      reason: error.message,
+      reason: 'submission_processing_failed',
       timestamp: new Date().toISOString()
     }));
     context.res = jsonResponse(500, {

@@ -4,10 +4,11 @@
   "version": "1.0.0",
   "scripts": {
     "impact:list": "node scripts/update-impact-metric.js --list",
-    "impact:update": "node scripts/update-impact-metric.js"
+    "impact:update": "node scripts/update-impact-metric.js",
+    "test": "node --test test/*.test.js"
   },
   "engines": {
-    "node": "20.x"
+    "node": "22.x"
   },
   "dependencies": {
     "@azure/data-tables": "^13.3.1"

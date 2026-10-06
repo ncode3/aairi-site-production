@@ -2,6 +2,10 @@ const { TableClient } = require('@azure/data-tables');
 
 const TABLE_NAME = 'AARIImpactMetrics';
 const CACHE_TTL_MS = 60 * 1000;
+const PUBLIC_METRIC_IDS = new Set([
+  'active_projects', 'first_placement', 'footprint_sqft',
+  'partners_engaged', 'students_trained', 'workshops_delivered'
+]);
 
 let cachedPayload = null;
 let cachedAt = 0;
@@ -28,6 +32,8 @@ function trackTelemetry(item) {
   };
   fetch('https://dc.services.visualstudio.com/v2/track', {
     method: 'POST',
+    signal: AbortSignal.timeout(5000),
+    redirect: 'error',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(envelope)
   }).catch(() => {});
@@ -80,7 +86,7 @@ function trackExceptionTelemetry(error) {
         ver: 2,
         exceptions: [{
           typeName: error.name || 'Error',
-          message: error.message || 'Unknown error'
+          message: 'Impact metrics request failed'
         }]
       }
     }
@@ -92,7 +98,7 @@ function jsonResponse(status, body, serverTimeMs = 0) {
     status,
     headers: {
       'Content-Type': 'application/json',
-      'Cache-Control': 'public, max-age=60',
+      'Cache-Control': status === 200 ? 'public, max-age=60' : 'no-store',
       'Server-Timing': `aari-impact;dur=${Math.max(0, Math.round(serverTimeMs))}`,
       'X-AARI-Server-Time-Ms': String(Math.max(0, Math.round(serverTimeMs)))
     },
@@ -130,10 +136,10 @@ async function readMetricsFromTable(context) {
   const metrics = [];
   try {
     const entities = client.listEntities({
-      queryOptions: { filter: `PartitionKey eq 'impact'` }
+      queryOptions: { filter: `PartitionKey eq 'impact' and (${[...PUBLIC_METRIC_IDS].map(id => `RowKey eq '${id}'`).join(' or ')})` }
     });
     for await (const entity of entities) {
-      metrics.push(normalizeMetric(entity));
+      if (PUBLIC_METRIC_IDS.has(entity.rowKey)) metrics.push(normalizeMetric(entity));
     }
     trackDependencyTelemetry({ duration: Date.now() - started, status: 0, success: true });
   } catch (error) {
@@ -183,7 +189,7 @@ module.exports = async function (context, req) {
     status = 503;
     context.log.error(JSON.stringify({
       event: 'impact_metrics_unavailable',
-      reason: error.message,
+      reason: 'storage_read_failed',
       timestamp: new Date().toISOString()
     }));
     trackExceptionTelemetry(error);
