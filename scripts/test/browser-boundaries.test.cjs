@@ -5,12 +5,25 @@ const path = require('node:path');
 const root = path.resolve(__dirname, '../..');
 const dist = path.join(root, 'dist');
 
+// Inspect repository-authored build output; this is not an HTML sanitizer.
+function scriptTags(html) {
+  return [...html.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script\b[^>]*>/gi)];
+}
+
+test('script inspection includes browser-accepted closing tag variants', () => {
+  for (const close of ['</script>', '</script >', '</script\n>', '</SCRIPT\t>', '</script ignored>']) {
+    const tags = scriptTags(`<script>unexpectedInlineCode()${close}`);
+    assert.equal(tags.length, 1, `missed ${JSON.stringify(close)}`);
+    assert.match(tags[0][2], /unexpectedInlineCode\(\)/);
+  }
+});
+
 test('every published page uses local, existing scripts and compiled styles', () => {
   const pages = fs.readdirSync(dist).filter(name => name.endsWith('.html'));
   assert.ok(pages.length >= 18);
   for (const name of pages) {
     const html = fs.readFileSync(path.join(dist, name), 'utf8');
-    for (const match of html.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script>/gi)) {
+    for (const match of scriptTags(html)) {
       assert.equal(match[2].trim(), '', `${name}: inline executable script`);
       const src = match[1].match(/\bsrc="([^"]+)"/);
       assert.ok(src && src[1].startsWith('assets/'), `${name}: external script`);
