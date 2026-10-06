@@ -1,0 +1,17 @@
+{
+  "name": "aari-website-build",
+  "private": true,
+  "scripts": {
+    "build": "python3 scripts/build_static_site.py && node scripts/build_browser_assets.cjs",
+    "test": "node --test scripts/test/*.test.cjs"
+  },
+  "engines": {
+    "node": "22.x"
+  },
+  "devDependencies": {
+    "lucide": "0.468.0",
+    "tailwindcss": "4.3.3",
+    "@tailwindcss/node": "4.3.3",
+    "@tailwindcss/oxide": "4.3.3"
+  }
+}

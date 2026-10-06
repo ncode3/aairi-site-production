@@ -1,36 +1,18 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17997086735"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'AW-17997086735');
-    </script>
-    <script src="assets/js/analytics-config.js"></script>
-    <script src="assets/js/analytics.js" defer></script>
+
+
+
+    <script src="assets/js/cohort-proof.js" defer></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy | Atlanta AI &amp; Robotics Initiative</title>
     <meta name="description" content="Privacy Policy for the Atlanta AI &amp; Robotics Initiative, Inc., a 501(c)(3) nonprofit organization. Learn how we collect, use, and protect your information.">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        navy: { 900: '#020617', 800: '#0f172a', 700: '#1e293b' },
-                        electric: { 500: '#3b82f6', 400: '#60a5fa' },
-                    },
-                    fontFamily: { sans: ['Inter', 'sans-serif'] }
-                }
-            }
-        }
-    </script>
+    <link rel="stylesheet" href="assets/css/pages/privacy.css">
+
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="assets/vendor/lucide.min.js"></script>
     <style>
         body { font-family: 'Inter', sans-serif; background: #020617; color: #f8fafc; }
         .glass-panel { background: rgba(15,23,42,0.7); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.1); }
@@ -45,6 +27,7 @@
         .prose-dark li { margin-bottom: 0.5rem; line-height: 1.7; }
         .prose-dark strong { color: #e2e8f0; }
     </style>
+    <script src="assets/js/ui.js" defer></script>
 </head>
 <body class="antialiased">
 
@@ -67,7 +50,7 @@
                     Donate
                 </a>
             </div>
-            <button class="md:hidden text-slate-300" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+            <button class="md:hidden text-slate-300" data-mobile-menu-toggle>
                 <i data-lucide="menu" class="w-8 h-8"></i>
             </button>
         </div>
@@ -119,7 +102,7 @@
                     <li><strong>Donation Information:</strong> Name, email address, billing address, and donation amount when you make a contribution. Payment card data is processed securely by Stripe and is never stored on our servers.</li>
                     <li><strong>Newsletter Subscriptions:</strong> Email address and communication preferences when you sign up for AARI updates.</li>
                     <li><strong>Program Inquiries:</strong> Name, academic institution, and contact information when you inquire about the Scholars Program or Infrastructure Fellows Program.</li>
-                    <li><strong>Website Analytics:</strong> Anonymized usage data such as pages visited, browser type, and approximate geographic region through standard web analytics tools.</li>
+                    <li><strong>Website Operations:</strong> Our hosting and security services process request information, including IP addresses, requested paths, timestamps, and errors, to operate and protect the website. Do not include sensitive information in page URLs.</li>
                 </ul>
                 <p>We do <strong>not</strong> collect Social Security numbers, government ID numbers, or sensitive financial account information beyond what is required by our donation processor (Stripe).</p>
 
@@ -163,10 +146,10 @@
 
                 <h3>7. Cookies and Analytics</h3>
                 <p>
-                    Our website may use cookies and similar tracking technologies for functional purposes (such as remembering your preferences) and analytics (such as understanding how visitors use our site). You may control cookie settings through your browser preferences. We do not use advertising cookies or sell data to advertising networks.
+                    We do not load Google Ads or visitor analytics scripts on this website. We do not use advertising cookies or sell data to advertising networks. Embedded application forms and external donation services may use their own necessary cookies and process data under their own privacy policies.
                 </p>
                 <p>
-                    We use analytics to understand site traffic and improve programs. We do not sell contact information.
+                    We use operational and security logs to maintain availability and investigate errors or abuse. We do not sell contact information. Student applications are submitted directly to Jotform through the embedded form; payment information is handled by the linked payment service.
                 </p>
 
                 <h3>8. Children's Privacy</h3>
@@ -237,8 +220,6 @@
         </div>
     </footer>
 
-    <script>
-        lucide.createIcons();
-    </script>
+    <script src="assets/js/pages/privacy-1.js"></script>
 </body>
 </html>

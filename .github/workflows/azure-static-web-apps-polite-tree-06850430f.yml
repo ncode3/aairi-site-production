@@ -41,8 +41,14 @@ jobs:
       - name: Validate API behavior
         run: npm test --prefix api
 
-      - name: Stage public website files
-        run: python scripts/build_static_site.py
+      - name: Install locked browser build dependencies
+        run: npm ci --ignore-scripts
+
+      - name: Build public website files
+        run: npm run build
+
+      - name: Validate browser security boundaries
+        run: npm test
 
       - name: Build and Deploy
         uses: Azure/static-web-apps-deploy@1a947af9992250f3bc2e68ad0754c0b0c11566c9 # v1
