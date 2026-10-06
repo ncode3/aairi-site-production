@@ -4,6 +4,14 @@ param frontDoorProfileName string = 'afd-aari-website-prod'
 @description('Azure Front Door endpoint name.')
 param endpointName string = 'aari-website'
 
+@description('Existing custom-domain resource names on this profile. Supply every public route domain.')
+@minLength(1)
+param customDomainResourceNames array
+
+var customDomainAssociations = [for domainName in customDomainResourceNames: {
+  id: resourceId('Microsoft.Cdn/profiles/customDomains', frontDoorProfileName, domainName)
+}]
+
 @description('Azure Front Door WAF policy name.')
 param wafPolicyName string = 'wafAariWebsiteProd'
 
@@ -83,8 +91,10 @@ resource route 'Microsoft.Cdn/profiles/afdEndpoints/routes@2024-02-01' = {
       id: originGroup.id
     }
     supportedProtocols: [
+      'Http'
       'Https'
     ]
+    customDomains: customDomainAssociations
     patternsToMatch: [
       '/*'
     ]
@@ -206,11 +216,11 @@ resource securityPolicy 'Microsoft.Cdn/profiles/securityPolicies@2024-02-01' = {
       }
       associations: [
         {
-          domains: [
+          domains: concat([
             {
               id: endpoint.id
             }
-          ]
+          ], customDomainAssociations)
           patternsToMatch: [
             '/*'
           ]
