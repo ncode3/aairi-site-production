@@ -37,6 +37,8 @@ test('valid inquiry keeps the existing mailto fallback without calling external 
   assert.equal(result.status, 200);
   assert.match(result.body.mailto, /^mailto:/);
   assert.equal(result.body.ok, true);
+  assert.equal(result.body.delivered, false);
+  assert.match(result.body.message, /has not been sent yet/);
 });
 
 test('honeypot is rejected without logging IP addresses or query strings', async () => {

@@ -363,7 +363,10 @@ async function handleRequest(context, req) {
   logAccepted(context, req, payload);
   return jsonResponse(200, {
     ok: true,
-    message: GENERIC_SUCCESS,
+    delivered: delivery.delivered,
+    message: delivery.mailto
+      ? 'Your message has not been sent yet. Send the draft in your email app to complete your inquiry.'
+      : GENERIC_SUCCESS,
     ...(delivery.mailto ? { mailto: delivery.mailto } : {})
   });
 }

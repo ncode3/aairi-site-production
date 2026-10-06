@@ -457,15 +457,23 @@ lucide.createIcons();
                         });
                         const result = await response.json().catch(() => ({}));
 
-                        if (!response.ok && result.message) {
+                        if (!response.ok) {
                             if (result.code) window.AARIAnalytics?.trackFormBlocked({ formName, blockReason: result.code });
-                            showFormMessage(errorMessage, result.message);
+                            showFormMessage(errorMessage, result.message || 'We could not send your message. Please try again later.');
                             return;
                         }
 
                         showFormMessage(confirmation, result.message || confirmationText);
                         window.AARIAnalytics?.trackFormSubmit({ formName, inquiryType: data.get('inquiry_type') || '' });
-                        if (result.mailto) window.location.href = result.mailto;
+                        if (result.mailto) {
+                            const emailLink = document.createElement('a');
+                            emailLink.href = result.mailto;
+                            emailLink.textContent = 'Open email draft';
+                            emailLink.className = 'block mt-3 underline font-bold';
+                            confirmation.appendChild(emailLink);
+                            window.location.href = result.mailto;
+                            return;
+                        }
                         form.reset();
                         form.dataset.loadedAt = String(Date.now());
                         populateSourceFields(form);
