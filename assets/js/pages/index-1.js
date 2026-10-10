@@ -105,8 +105,8 @@ lucide.createIcons();
             {
                 name: 'Microsoft',
                 category: 'Cloud',
-                status: 'Active - workshop delivered',
-                role: "Microsoft Garage hosted AARI's VQE workshop; Azure Quantum is part of the hybrid quantum-to-edge learning pipeline.",
+                status: '2026 Grant Partner - $35,000 + 42U rack',
+                role: "Microsoft Community Affairs awarded AARI $35,000 for the Infrastructure Foundations and Datacenter Career Pathways Cohort and donated a full 42U server rack for student training.",
                 logo: 'images/logo-microsoft.webp'
             },
             {
@@ -167,8 +167,8 @@ lucide.createIcons();
             {
                 name: 'Waymo',
                 category: 'Robotics',
-                status: 'Active - partner',
-                role: 'Connects AARI students to autonomous vehicle technology, robotics systems, perception, safety, and real-world AI operations. Logo source: Waymo.',
+                status: 'Event participation - August 27, 2026',
+                role: 'Waymo representatives participated in the August 27 back-to-school robotics event. Ongoing instruction or supervision is not represented.',
                 logo: 'images/logo-waymo.png'
             },
             {
@@ -481,7 +481,7 @@ lucide.createIcons();
                         showFormMessage(errorMessage, 'We could not send your message right now. Please try the contact form again later.');
                     } finally {
                         submitButton.disabled = false;
-                        submitButton.textContent = form.id === 'funder-form' ? 'Send Funder Inquiry' : 'Send Partnership Inquiry';
+                        submitButton.textContent = form.id === 'funder-form' ? 'Send Funder Inquiry' : 'Send Inquiry';
                     }
                 });
             });
@@ -504,7 +504,7 @@ lucide.createIcons();
                 const timeFormatter = new Intl.DateTimeFormat('en-US', { hour: 'numeric', minute: '2-digit', timeZone: 'America/New_York' });
                 const eventDate = (event, field = 'startTime') => new Date(`${event.date}T${event[field] || '12:00'}:00-04:00`);
                 grid.innerHTML = upcoming.map((event) => {
-                    const time = event.allDay ? 'Date only' : `${timeFormatter.format(eventDate(event))}–${timeFormatter.format(eventDate(event, 'endTime'))} ET`;
+                    const time = event.allDay ? 'Time to be confirmed' : `${timeFormatter.format(eventDate(event))}–${timeFormatter.format(eventDate(event, 'endTime'))} ET`;
                     return `<article class="bright-card rounded-3xl p-6">
                         <div class="flex items-start justify-between gap-4">
                             <div><p class="text-sm font-extrabold uppercase tracking-[0.14em] text-gold-400">${escapeEventHtml(dateFormatter.format(eventDate(event)))}</p><p class="mt-1 text-xs font-semibold text-slatebrand-400">${escapeEventHtml(time)}</p></div>
@@ -512,12 +512,12 @@ lucide.createIcons();
                         </div>
                         <h3 class="mt-5 text-xl font-extrabold text-white">${escapeEventHtml(event.title)}</h3>
                         <p class="mt-3 text-sm leading-relaxed text-slatebrand-300">${escapeEventHtml(event.description)}</p>
-                        <a href="events.html#calendar-title" class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-gold-400 hover:text-gold-300">Event details <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+                        <a href="events.html#event-${escapeEventHtml(event.id)}" class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-gold-400 hover:text-gold-300">Event details <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
                     </article>`;
                 }).join('');
                 lucide.createIcons();
             } catch (error) {
-                grid.innerHTML = '<div class="bright-card rounded-3xl p-6 md:col-span-2 xl:col-span-3"><p class="text-slatebrand-300">The upcoming schedule is temporarily unavailable.</p><a href="events.html" class="mt-4 inline-flex font-extrabold text-gold-400">Open the events calendar →</a></div>';
+                // Keep the static schedule when refreshing fails.
             }
         };
         loadHomepageEvents();

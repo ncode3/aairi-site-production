@@ -9,7 +9,7 @@ const EVENT_DATA_URL = 'assets/data/events.json';
 
     const escapeHtml = (value = '') => String(value).replace(/[&<>'"]/g, (character) => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', "'":'&#39;', '"':'&quot;' }[character]));
     const eventDateTime = (event, field = 'startTime') => new Date(`${event.date}T${event[field] || '12:00'}:00-04:00`);
-    const formatTime = (event) => event.allDay ? 'Date only' : `${timeFormatter.format(eventDateTime(event))}–${timeFormatter.format(eventDateTime(event, 'endTime'))} ET`;
+    const formatTime = (event) => event.allDay ? (event.date >= new Date().toLocaleDateString('en-CA', { timeZone: 'America/New_York' }) ? 'Time to be confirmed' : 'Date only') : `${timeFormatter.format(eventDateTime(event))}–${timeFormatter.format(eventDateTime(event, 'endTime'))} ET`;
     const calendarUrl = (event) => {
       const formatStamp = (date) => date.toISOString().replace(/[-:]/g, '').replace(/\.000Z$/, 'Z');
       const start = event.allDay ? event.date.replaceAll('-', '') : formatStamp(eventDateTime(event));
@@ -67,12 +67,17 @@ const EVENT_DATA_URL = 'assets/data/events.json';
     function renderList() {
       const target = document.getElementById('event-list');
       if (!events.length) { target.innerHTML = '<p class="text-slate-300">New dates will be added soon.</p>'; return; }
-      target.innerHTML = events.map((event) => `
-        <article class="rounded-3xl border border-white/10 bg-white/[.035] p-6">
+      const today = new Date().toLocaleDateString('en-CA', { timeZone: 'America/New_York' });
+      const ordered = [...events.filter(e => e.date >= today), ...events.filter(e => e.date < today).reverse()];
+      target.innerHTML = ordered.map((event, index) => `
+        ${index === 0 || (event.date < today && ordered[index - 1].date >= today) ? `<h3 class="md:col-span-2 xl:col-span-3 text-2xl font-bold">${event.date >= today ? 'Upcoming events' : 'Past events &amp; photos'}</h3>` : ''}
+        <article id="event-${escapeHtml(event.id)}" class="scroll-mt-24 rounded-3xl border border-white/10 bg-white/[.035] p-6">
           <div class="flex items-start justify-between gap-4"><div><p class="text-sm font-extrabold uppercase tracking-[.12em] text-gold-300">${escapeHtml(shortDateFormatter.format(easternDate(event.date)))}</p><p class="mt-1 text-xs font-semibold text-slate-400">${escapeHtml(formatTime(event))}</p></div><span class="rounded-full border border-white/10 px-3 py-1 text-[11px] font-bold text-slate-300">${escapeHtml(event.audience)}</span></div>
           <h3 class="mt-5 text-xl font-extrabold">${escapeHtml(event.title)}</h3>
           <p class="mt-3 text-sm leading-relaxed text-slate-300">${escapeHtml(event.description)}</p>
           <p class="mt-5 flex gap-2 text-sm text-slate-400"><i data-lucide="map-pin" class="mt-0.5 h-4 w-4 shrink-0"></i><span>${escapeHtml(event.location)}</span></p>
+          ${(event.photos || []).map(photo => `<figure class="mt-5"><a href="${escapeHtml(photo.src)}"><img src="${escapeHtml(photo.src)}" alt="${escapeHtml(photo.alt)}" loading="lazy" class="w-full aspect-[4/3] object-cover rounded-xl"></a><figcaption class="mt-2 text-xs text-slate-400">${escapeHtml(photo.caption)}</figcaption></figure>`).join('')}
+          ${event.url ? `<a href="${escapeHtml(event.url)}" class="block mt-5 font-bold text-gold-300">${escapeHtml(event.cta || 'Event details')} →</a>` : ''}
           <button type="button" data-list-event-id="${escapeHtml(event.id)}" class="mt-6 text-sm font-extrabold text-gold-300 hover:text-gold-400">View event details →</button>
         </article>`).join('');
       target.querySelectorAll('[data-list-event-id]').forEach((button) => button.addEventListener('click', () => { const event = events.find((item) => item.id === button.dataset.listEventId); visibleMonth = easternDate(event.date); renderCalendar(); renderSelected(event); document.getElementById('calendar-title').scrollIntoView({ behavior: 'smooth', block: 'center' }); }));
@@ -90,8 +95,8 @@ const EVENT_DATA_URL = 'assets/data/events.json';
         renderCalendar(); renderList();
       } catch (error) {
         document.getElementById('calendar-title').textContent = 'Events calendar';
-        document.getElementById('calendar-grid').innerHTML = '<p class="col-span-7 p-8 text-slate-300">The calendar is temporarily unavailable. Please check back shortly.</p>';
-        document.getElementById('event-list').innerHTML = '<p class="text-slate-300">The event list is temporarily unavailable.</p>';
+        // Retain static calendar and event list if the refresh fails.
+
       }
     }
 
