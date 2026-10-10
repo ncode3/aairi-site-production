@@ -4,7 +4,6 @@
 
 
 
-    <script src="assets/js/cohort-proof.js" defer></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AARI Trust Center | Governance and Donor Accountability</title>
@@ -15,7 +14,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>body{font-family:Inter,sans-serif;background:#020617;color:#f8fafc}.glass-panel{background:rgba(15,23,42,.78);border:1px solid rgba(148,163,184,.16)}a:focus-visible{outline:3px solid #60a5fa;outline-offset:4px}</style>
     <script src="assets/js/ui.js" defer></script>
-</head>
+<script src="assets/vendor/lucide.min.js" defer></script></head>
 <body class="antialiased">
     <nav class="border-b border-white/10 bg-navy-950/95">
         <div class="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between gap-6">
@@ -36,27 +35,112 @@
                 <section class="glass-panel rounded-3xl p-7"><h2 class="text-2xl font-bold mb-4">Diligence materials</h2><p class="text-slatebrand-300 mb-4">AARI maintains IRS status records, a current Board roster, adopted bylaws and governing policies, a 2026 annual operating budget, and H1 2026 management-prepared financial statements.</p><p class="rounded-xl border border-emerald-400/20 bg-emerald-400/10 p-4 text-sm text-emerald-100">Approved copies are available to qualified funders and diligence partners on request. Signed records, bank support, student information, and restricted documents remain private.</p></section>
             </div>
 
-            <section class="mb-12" aria-labelledby="leadership-governance">
-                <h2 id="leadership-governance" class="text-3xl font-bold mb-6">Leadership and governance</h2>
-                <p class="text-slatebrand-300 mb-5">Founder and CEO Nolan S. Code leads organizational strategy, fundraising, budgeting and program delivery, working across technology, operations and partnerships leadership. AARI brings these functions together to align infrastructure priorities, resources and partner commitments.</p>
-                <h3 class="text-2xl font-bold mb-4">Executive leadership</h3>
-                <div class="grid md:grid-cols-2 gap-5">
-                    <article class="glass-panel rounded-2xl p-6"><h3 class="font-bold text-xl">Nolan S. Code</h3><p class="text-electric-400">Founder &amp; Chief Executive Officer</p></article>
-                    <article class="glass-panel rounded-2xl p-6"><h3 class="font-bold text-xl">Dorian Person</h3><p class="text-electric-400">Chief Technology Officer</p></article>
-                    <article class="glass-panel rounded-2xl p-6"><h3 class="font-bold text-xl">David Taylor</h3><p class="text-electric-400">Chief Operating Officer</p></article>
-                    <article class="glass-panel rounded-2xl p-6"><h3 class="font-bold text-xl">Leslie &quot;Nick&quot; Nicholson</h3><p class="text-electric-400">Chief Partnerships Officer</p></article>
+            <section id="leadership" class="py-20 md:py-24 scroll-mt-24">
+            <div class="max-w-6xl mx-auto px-6">
+                <div class="max-w-3xl mb-12">
+                    <div class="section-kicker mb-5"><i data-lucide="users-round" class="w-4 h-4"></i>Leadership</div>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4">Executive Leadership</h2>
                 </div>
-                <h3 class="text-2xl font-bold mb-4 mt-8">Board of Directors</h3>
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
-                    <article class="glass-panel rounded-2xl p-6"><h3 class="font-bold text-xl">Nolan S. Code</h3><p class="text-electric-400">Director</p></article>
-                    <article class="glass-panel rounded-2xl p-6"><h3 class="font-bold text-xl">Dwayne Joseph, PhD</h3><p class="text-electric-400">Founding Director</p></article>
-                    <article class="glass-panel rounded-2xl p-6"><h3 class="font-bold text-xl">Carlotta A. Berry, PhD</h3><p class="text-electric-400">Founding Director</p></article>
-                    <article class="glass-panel rounded-2xl p-6"><h3 class="font-bold text-xl">Frank Johnson</h3><p class="text-electric-400">Director</p></article>
-                    <article class="glass-panel rounded-2xl p-6"><h3 class="font-bold text-xl">James T. Adams</h3><p class="text-electric-400">Director</p></article>
-                    <article class="glass-panel rounded-2xl p-6"><h3 class="font-bold text-xl">Bryan Jones Richardson</h3><p class="text-electric-400">Director</p></article>
+                <div class="grid md:grid-cols-2 gap-6 mb-14">
+                    <article class="profile-card glass-panel rounded-3xl p-7 border border-white/10 flex flex-col md:flex-row gap-6">
+                        <img src="images/nolan-headshot.jpg" alt="Nolan S. Code" class="w-32 h-32 rounded-2xl object-cover border border-white/10">
+                        <div>
+                            <h3 class="text-2xl font-semibold mb-2">Nolan S. Code</h3>
+                            <p class="text-electric-400 font-medium mb-3">Founder &amp; CEO</p>
+                            <p class="text-slatebrand-300 leading-relaxed mb-4">Leads AARI's strategy, fundraising, budgets and execution, aligning technology, operations and partnerships. Morehouse College alumnus. MBA.</p>
+                            <a href="https://www.linkedin.com/in/nolan-s-code-mba/" target="_blank" rel="noreferrer" class="text-sm text-slatebrand-400 hover:text-electric-300 transition-colors">LinkedIn</a>
+                        </div>
+                    </article>
+                    <article class="profile-card glass-panel rounded-3xl p-7 border border-white/10 flex flex-col md:flex-row gap-6">
+                        <img src="images/dorian-person.jpg" alt="Dorian Person" class="w-32 h-32 rounded-2xl object-cover border border-white/10">
+                        <div>
+                            <h3 class="text-2xl font-semibold mb-2">Dorian Person</h3>
+                            <p class="text-electric-400 font-medium mb-3">Chief Technology Officer</p>
+                            <p class="text-slatebrand-300 leading-relaxed mb-4">Leads technology strategy, infrastructure engineering and distributed systems architecture.</p>
+                            <a href="https://www.linkedin.com/in/dorianperson/" target="_blank" rel="noreferrer" class="text-sm text-slatebrand-400 hover:text-electric-300 transition-colors">LinkedIn</a>
+                        </div>
+                    </article>
+                    <article class="profile-card glass-panel rounded-3xl p-7 border border-white/10 flex flex-col md:flex-row gap-6">
+                        <img src="images/david-taylor.jpg" alt="David Taylor" class="w-32 h-32 rounded-2xl object-cover border border-white/10">
+                        <div>
+                            <h3 class="text-2xl font-semibold mb-2">David Taylor</h3>
+                            <p class="text-electric-400 font-medium mb-3">Chief Operating Officer</p>
+                            <p class="text-slatebrand-300 leading-relaxed mb-4">Leads day-to-day operations, platform delivery and operating processes, coordinating programs and resources.</p>
+                            <a href="https://www.linkedin.com/in/davidtaylor15/" target="_blank" rel="noreferrer" class="text-sm text-slatebrand-400 hover:text-electric-300 transition-colors">LinkedIn</a>
+                        </div>
+                    </article>
+                    <article class="profile-card glass-panel rounded-3xl p-7 border border-white/10 flex flex-col md:flex-row gap-6">
+                        <img src="images/leslie-nicholson.jpg" alt="Leslie &quot;Nick&quot; Nicholson" class="w-32 h-32 rounded-2xl object-cover border border-white/10">
+                        <div>
+                            <h3 class="text-2xl font-semibold mb-2">Leslie &quot;Nick&quot; Nicholson</h3>
+                            <p class="text-electric-400 font-medium mb-3">Chief Partnerships Officer</p>
+                            <p class="text-slatebrand-300 leading-relaxed mb-4">Leads enterprise and institutional partnerships, strategic alliances and partner engagement.</p>
+                            <a href="https://www.linkedin.com/in/leslie-nicholson-099068a/" target="_blank" rel="noreferrer" class="text-sm text-slatebrand-400 hover:text-electric-300 transition-colors">LinkedIn</a>
+                        </div>
+                    </article>
                 </div>
-                <p class="text-sm text-slatebrand-400 mt-4">AARI's directors serve in their individual fiduciary capacities. Executive leadership titles are shown separately from Board service.</p>
-            </section>
+                <div class="max-w-3xl mb-8">
+                    <h3 class="text-2xl md:text-3xl font-bold mb-3">Academic &amp; Technical Leadership</h3>
+                </div>
+                <div class="grid md:grid-cols-2 gap-6 mb-14">
+                    <article class="profile-card glass-panel rounded-3xl p-7 border border-white/10 flex flex-col md:flex-row gap-6">
+                        <img src="images/dwayne-joseph.webp" alt="Dwayne Joseph, PhD" class="w-32 h-32 rounded-2xl object-cover border border-white/10">
+                        <div>
+                            <h3 class="text-2xl font-semibold mb-2">Dwayne Joseph, PhD</h3>
+                            <p class="text-electric-400 font-medium mb-3">Founding Director</p>
+                            <p class="text-slatebrand-300 leading-relaxed">Dr. Joseph brings deep expertise in STEM education infrastructure and institutional partnerships, providing strategic guidance on academic integration and platform scaling.</p>
+                        </div>
+                    </article>
+                    <article class="profile-card glass-panel rounded-3xl p-7 border border-white/10 flex flex-col md:flex-row gap-6">
+                        <img src="images/carlotta-berry.jpg" alt="Carlotta A. Berry, PhD" class="w-32 h-32 rounded-2xl object-cover border border-white/10">
+                        <div>
+                            <h3 class="text-2xl font-semibold mb-2">Carlotta A. Berry, PhD</h3>
+                            <p class="text-electric-400 font-medium mb-3">Founding Director &middot; Robotics &amp; Systems Engineering</p>
+                            <p class="text-slatebrand-300 leading-relaxed">Dr. Berry brings decades of robotics research and engineering education experience, ensuring technical rigor and depth in the platform's applied robotics and systems curriculum.</p>
+                        </div>
+                    </article>
+                </div>
+                <div class="max-w-3xl mb-8">
+                    <h3 class="text-2xl md:text-3xl font-bold mb-3">Board of Directors</h3>
+                    <p class="text-slatebrand-300">AARI is governed by its Board of Directors. Directors serve in their individual fiduciary capacities and without compensation for Board service.</p>
+                </div>
+                <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
+                    <article class="profile-card glass-panel rounded-3xl p-6 border border-white/10">
+                        <img src="images/nolan-headshot.jpg" alt="Nolan S. Code" class="w-24 h-24 rounded-2xl object-cover border border-white/10 mb-5">
+                        <h3 class="text-xl font-semibold mb-2">Nolan S. Code</h3>
+                        <p class="text-electric-400 font-medium mb-3">Director &middot; Founder &amp; CEO</p>
+                    </article>
+                    <article class="profile-card glass-panel rounded-3xl p-6 border border-white/10">
+                        <img src="images/dwayne-joseph.webp" alt="Dwayne Joseph, PhD" class="w-24 h-24 rounded-2xl object-cover border border-white/10 mb-5">
+                        <h3 class="text-xl font-semibold mb-2">Dwayne Joseph, PhD</h3>
+                        <p class="text-electric-400 font-medium mb-3">Founding Director</p>
+                    </article>
+                    <article class="profile-card glass-panel rounded-3xl p-6 border border-white/10">
+                        <img src="images/carlotta-berry.jpg" alt="Carlotta A. Berry, PhD" class="w-24 h-24 rounded-2xl object-cover border border-white/10 mb-5">
+                        <h3 class="text-xl font-semibold mb-2">Carlotta A. Berry, PhD</h3>
+                        <p class="text-electric-400 font-medium mb-3">Founding Director &middot; Robotics &amp; Systems Engineering</p>
+                    </article>
+                    <article class="profile-card glass-panel rounded-3xl p-6 border border-white/10">
+                        <img src="images/frank-johnson.webp" alt="Frank Johnson" loading="lazy" decoding="async" class="w-24 h-24 rounded-2xl object-cover object-top border border-white/10 mb-5">
+                        <h3 class="text-xl font-semibold mb-2">Frank Johnson</h3>
+                        <p class="text-electric-400 font-medium mb-3">Director &middot; Azure Hardware Infrastructure</p>
+                        <p class="text-slatebrand-300 text-sm leading-relaxed">Frank is an engineer and applied data scientist with experience in hardware development, machine learning, and community development. In Microsoft's Azure hardware infrastructure organization, he helps optimize server rack design, development, and global data center deployment through manufacturing expertise, automation, data-driven decision-making, and supplier management. He also serves on the University of Central Florida's Data Science Advisory Board and leads a music, entertainment, and technology business.</p>
+                    </article>
+                    <article class="profile-card glass-panel rounded-3xl p-6 border border-white/10">
+                        <img src="images/james-adams.webp" alt="James T. Adams" loading="lazy" decoding="async" class="w-24 h-24 rounded-2xl object-cover object-top border border-white/10 mb-5">
+                        <h3 class="text-xl font-semibold mb-2">James T. Adams</h3>
+                        <p class="text-electric-400 font-medium mb-3">Director &middot; Principal Account Technology Strategist, Microsoft</p>
+                        <p class="text-slatebrand-300 text-sm leading-relaxed">James advises enterprise telecommunications, media, and gaming organizations across AI adoption, Copilot, data platforms, cybersecurity, SAP, and modern workplace transformation. A military veteran and former infrastructure engineer, he brings an infrastructure-up view of AI spanning power, compute, data, identity, security, and operations. He is also an adjunct professor at Morehouse College, founder of ClearFit, and host of <em>9 to 5 Imposter</em>. At AARI, he contributes governance, curriculum guidance, and industry access.</p>
+                    </article>
+                    <article class="profile-card glass-panel rounded-3xl p-6 border border-white/10">
+                        <img src="images/bryan-richardson.webp" alt="Bryan Jones Richardson" loading="lazy" decoding="async" class="w-24 h-24 rounded-2xl object-cover object-top border border-white/10 mb-5">
+                        <h3 class="text-xl font-semibold mb-2">Bryan Jones Richardson</h3>
+                        <p class="text-electric-400 font-medium mb-3">Director &middot; Principal Software Engineer &amp; Tech Lead, Fidelity</p>
+                        <p class="text-slatebrand-300 text-sm leading-relaxed">Bryan is an Atlanta native and Morehouse College graduate with more than 15 years of software engineering experience. He has led teams building IoT, connected-vehicle, and rapid-prototyping solutions using Bluetooth, ultra-wideband, computer vision, artificial intelligence, iOS, and Android. His career includes Stable Kernel, The Home Depot, Graybar, and General Motors. At Fidelity, he leads architecture, technical execution, and deployment for mobile products used by more than 30 million Fidelity and NetBenefits users.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
 
             <div class="grid md:grid-cols-2 gap-6 mb-12">
                 <section class="glass-panel rounded-3xl p-7"><h2 class="text-2xl font-bold mb-4">Impact methodology</h2><p class="text-slatebrand-300 mb-5">AARI separates students reached from students trained, submitted evidence from verified artifacts, student-reported outcomes from confirmed placements, and completed periods from future goals.</p><a href="impact-methodology.html" class="text-electric-400 font-semibold">Read the impact methodology</a></section>

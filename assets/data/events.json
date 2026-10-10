@@ -1,5 +1,31 @@
 [
   {
+    "id": "renderatl-2026",
+    "date": "2026-08-12",
+    "startTime": "13:00",
+    "endTime": "13:30",
+    "allDay": false,
+    "title": "RenderATL: From Demo to Production",
+    "category": "Speaking",
+    "audience": "Public conference",
+    "location": "AmericasMart Atlanta, Building 2, Breakout Stage 1",
+    "description": "Nolan S. Code speaks on the infrastructure gap and why students must own the stack.",
+    "url": null,
+    "cta": null,
+    "photos": [
+      {
+        "src": "images/events/renderatl-2026-conversation.webp",
+        "alt": "Nolan Code in conversation with RenderATL attendees",
+        "caption": "RenderATL · August 12, 2026"
+      },
+      {
+        "src": "images/events/renderatl-2026-stage.webp",
+        "alt": "Nolan Code and an attendee at the RenderATL stage",
+        "caption": "RenderATL · August 12, 2026"
+      }
+    ]
+  },
+  {
     "id": "summer-2026-cohort-closeout",
     "date": "2026-09-04",
     "allDay": true,
@@ -65,6 +91,49 @@
     "location": "QTS Atlanta Metro, West Midtown, Atlanta, GA",
     "description": "Join AARI at QTS for student career conversations, interview practice, and networking with the Talent Acquisition team. Bring your ID and a copy of your resume. Request an invitation to attend. Building and check-in details will follow. The 2 p.m. end time is tentative.",
     "url": "mailto:nolan@atlanta-robotics.org?subject=QTS%20visit%20October%201%20-%20Invitation%20request",
-    "cta": "Request an invitation"
+    "cta": "Request an invitation",
+    "photos": [
+      {
+        "src": "images/events/qts-october-1-2026.webp",
+        "alt": "AARI students and the QTS team at the October 1 career event",
+        "caption": "QTS career conversations, mock interviews, and data-center tour · October 1, 2026"
+      }
+    ]
+  },
+  {
+    "id": "infrastructure-foundations-launch",
+    "date": "2026-10-26",
+    "allDay": true,
+    "title": "Infrastructure Foundations Cohort Launch",
+    "category": "Program launch",
+    "audience": "Enrolled students and families",
+    "location": "Virtual orientation; time to be confirmed",
+    "description": "AARI launches its Microsoft-supported data-center career pathways cohort with Atlanta Technical College and Promise Career Institute. Recurring session times, venue, and transportation details will be confirmed with families.",
+    "url": "apply.html",
+    "cta": "Program application"
+  },
+  {
+    "id": "mit-minds-in-motion-2026",
+    "date": "2026-10-30",
+    "allDay": true,
+    "title": "MIT: Minds in Motion Physical AI Summit",
+    "category": "Speaking",
+    "audience": "Public summit",
+    "location": "MIT Samberg Conference Center, Cambridge, MA",
+    "description": "Nolan S. Code brings Own the Stack to Imagination in Action’s Minds in Motion Physical AI Summit. See the organizer’s page for the schedule.",
+    "url": "https://imaginationinaction.co/2610mindsinmotion/speakers/nolan",
+    "cta": "Speaker details"
+  },
+  {
+    "id": "microsoft-garage-robotics-2026",
+    "date": "2026-10-31",
+    "allDay": true,
+    "title": "Microsoft Garage: CAD and Robotics Workshop",
+    "category": "Student workshop",
+    "audience": "College students",
+    "location": "Microsoft Garage, Atlanta; final logistics to be confirmed",
+    "description": "Planned workshop: design and 3D print Andino robot components, then move from remote control toward autonomous navigation. Workshop hours and final arrangements are being confirmed.",
+    "url": "contact.html",
+    "cta": "Ask about participation"
   }
 ]

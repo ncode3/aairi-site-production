@@ -28,9 +28,6 @@ jobs:
           submodules: false
           lfs: false
 
-      - name: Apply completed-cohort source patch
-        run: python scripts/patch_completed_cohort_sections_v2.py
-
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with:
           node-version: '22'

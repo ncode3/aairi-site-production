@@ -2,7 +2,7 @@
   "name": "aari-website-build",
   "private": true,
   "scripts": {
-    "build": "python3 scripts/build_static_site.py && node scripts/build_browser_assets.cjs",
+    "build": "python3 scripts/render_public_content.py && python3 scripts/build_static_site.py && node scripts/build_browser_assets.cjs",
     "test": "node --test scripts/test/*.test.cjs"
   },
   "engines": {

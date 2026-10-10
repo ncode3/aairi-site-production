@@ -10,8 +10,8 @@ lucide.createIcons();
             {
                 name: 'Microsoft',
                 category: 'Strategic Anchor',
-                status: 'Active - workshop delivered',
-                role: "Microsoft Garage hosted AARI's VQE workshop; Azure Quantum is part of the hybrid quantum-to-edge learning pipeline.",
+                status: '2026 Grant Partner - $35,000 + 42U rack',
+                role: "Microsoft Community Affairs awarded AARI $35,000 for the Infrastructure Foundations and Datacenter Career Pathways Cohort and donated a full 42U server rack for student training.",
                 logo: 'images/logo-microsoft.webp'
             },
             {
