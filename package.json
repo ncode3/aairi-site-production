@@ -9,7 +9,7 @@
     "node": "22.x"
   },
   "devDependencies": {
-    "lucide": "0.468.0",
+    "lucide": "1.52.0",
     "tailwindcss": "4.3.3",
     "@tailwindcss/node": "4.3.3",
     "@tailwindcss/oxide": "4.3.3"
