@@ -52,3 +52,13 @@ test('student form and application fallback survive the build', () => {
     assert.equal(fs.existsSync(path.join(dist, name)), false);
   }
 });
+
+test('page navigation preserves asset caches and homepage scripts do not block parsing', () => {
+  const config = JSON.parse(fs.readFileSync(path.join(dist, 'staticwebapp.config.json')));
+  for (const headers of [config.globalHeaders, ...config.routes.map(route => route.headers || {})]) {
+    assert.equal(Object.keys(headers).some(key => key.toLowerCase() === 'clear-site-data'), false);
+  }
+  const tags = scriptTags(fs.readFileSync(path.join(dist, 'index.html'), 'utf8'));
+  assert.ok(tags.length >= 3);
+  for (const [ , attributes ] of tags) assert.match(attributes, /\bdefer\b/);
+});

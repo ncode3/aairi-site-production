@@ -5,6 +5,8 @@ __pycache__/
 # Local dependencies, generated output, secrets, and infrastructure state
 node_modules/
 dist/
+test-results/
+playwright-report/
 .env
 .env.*
 !.env.example

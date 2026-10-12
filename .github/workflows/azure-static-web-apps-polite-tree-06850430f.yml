@@ -47,6 +47,12 @@ jobs:
       - name: Validate browser security boundaries
         run: npm test
 
+      - name: Install browser for homepage reliability checks
+        run: npx playwright install --with-deps chromium
+
+      - name: Validate homepage in desktop and mobile browsers
+        run: npm run test:browser
+
       - name: Validate production origin configuration
         run: python -m unittest discover -s scripts/test -p 'test_*.py'
 

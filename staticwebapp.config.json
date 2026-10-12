@@ -75,15 +75,13 @@
     {
       "route": "/index.html",
       "headers": {
-        "Cache-Control": "no-store",
-        "Clear-Site-Data": "\"cache\""
+        "Cache-Control": "no-store"
       }
     },
     {
       "route": "/infrastructure.html",
       "headers": {
-        "Cache-Control": "no-store",
-        "Clear-Site-Data": "\"cache\""
+        "Cache-Control": "no-store"
       }
     },
     {
