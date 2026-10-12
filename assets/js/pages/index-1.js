@@ -1,4 +1,4 @@
-lucide.createIcons();
+window.lucide?.createIcons();
 
         const mobileToggle = document.getElementById('mobile-toggle');
         const mobileMenu = document.getElementById('mobile-menu');
@@ -515,7 +515,7 @@ lucide.createIcons();
                         <a href="events.html#event-${escapeEventHtml(event.id)}" class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-gold-400 hover:text-gold-300">Event details <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
                     </article>`;
                 }).join('');
-                lucide.createIcons();
+                window.lucide?.createIcons();
             } catch (error) {
                 // Keep the static schedule when refreshing fails.
             }

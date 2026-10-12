@@ -3,15 +3,17 @@
   "private": true,
   "scripts": {
     "build": "python3 scripts/render_public_content.py && python3 scripts/build_static_site.py && node scripts/build_browser_assets.cjs",
-    "test": "node --test scripts/test/*.test.cjs"
+    "test": "node --test scripts/test/*.test.cjs",
+    "test:browser": "playwright test"
   },
   "engines": {
     "node": "22.x"
   },
   "devDependencies": {
-    "lucide": "0.468.0",
-    "tailwindcss": "4.3.3",
+    "@playwright/test": "1.64.0",
     "@tailwindcss/node": "4.3.3",
-    "@tailwindcss/oxide": "4.3.3"
+    "@tailwindcss/oxide": "4.3.3",
+    "lucide": "0.468.0",
+    "tailwindcss": "4.3.3"
   }
 }
