@@ -37,8 +37,36 @@ The user reported recovery at 10:50 a.m. Eastern.
 
 These defects are verified contributors to load fragility, **not a proven cause
 of the original freeze**. A frozen renderer is not itself proof of an Azure
-outage. No browser trace from the affected machine or account-level Azure
-Service Health/Front Door request history was available in this investigation.
+outage. After successful Azure sign-in, the following account-level evidence
+was checked:
+
+- Production Static Web App: Ready, Standard plan, linked to the expected
+  GitHub repository and main branch.
+- Resource activity log: no events in the last six hours covering the freeze.
+- Subscription Service Health: no active service issues. Last-week health
+  history contained an October 8 Log Analytics/Application Insights incident;
+  no October 12 incident was listed.
+- Static Web App last-hour metrics: 510 site requests, 17.7 MB data out,
+  9 function hits, and 2 function errors at inspection time.
+- Linked Application Insights: last-hour overview showed 18 recorded server
+  requests, zero failed requests, and 110.35 ms average server response time.
+  The Failures view showed zero failed requests among 80 recorded requests
+  over the last 24 hours, with no exception or failed-dependency samples.
+  This telemetry covers instrumented requests, not all website traffic.
+- The two platform function-error counts were not explained by the available
+  Application Insights samples. They cannot be assigned to the browser freeze.
+
+No affected-browser performance trace or per-request frontend trace was
+available. Azure's availability diagnostic blade did not return an analysis
+during the inspection. These observations provide no confirmed Azure outage,
+but cannot rule out an unrecorded transient platform or client problem.
+
+Production correction merged in PR #47, commit
+`3ed0ae3a48b9d957bca16deace0d2a5811bea317`. Azure deployment run
+`38267123861` succeeded. All 23 checks passed (7 API, 8 content/security,
+4 Python configuration, 4 desktop/mobile Chromium). Live HTTP verification
+confirmed the cache-clearing header was absent and all homepage scripts were
+deferred. Chrome loaded the corrected site without application errors.
 The new browser checks protect deployment changes; they are not continuous
 availability monitoring and cannot reproduce every extension, GPU, memory, or
 network condition on a visitor's computer.
