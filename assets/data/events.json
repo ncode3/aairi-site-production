@@ -124,14 +124,16 @@
   },
   {
     "id": "microsoft-garage-robotics-2026",
-    "date": "2026-10-31",
-    "allDay": true,
+    "date": "2026-10-26",
+    "allDay": false,
     "title": "Microsoft Garage: CAD and Robotics Workshop",
     "category": "Student workshop",
     "audience": "College students",
     "location": "Microsoft Garage, Atlanta; final logistics to be confirmed",
-    "description": "Planned workshop: design and 3D print Andino robot components, then move from remote control toward autonomous navigation. Workshop hours and final arrangements are being confirmed.",
+    "description": "Planned hands-on workshop for an initial group of 12 college students: CAD design, 3D printing of Andino robot components and sensor mounts, hardware assembly, programming, and testing toward autonomous navigation. Professional development sessions with Dr. Dwayne Joseph and Dr. Carlotta Berry are being scheduled. October 26 is held on the calendar; 10 AM–3 PM ET, the agenda, and final logistics are tentative.",
     "url": "contact.html",
-    "cta": "Ask about participation"
+    "cta": "Ask about participation",
+    "startTime": "10:00",
+    "endTime": "15:00"
   }
 ]

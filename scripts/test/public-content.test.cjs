@@ -26,7 +26,12 @@ test('dated events, event photos and grant partners are present before JavaScrip
     }
   }
   assert.ok(events.some(e => e.date === '2026-10-30' && e.title.includes('MIT')));
-  assert.ok(events.some(e => e.date === '2026-10-31' && e.title.includes('Microsoft')));
+  const garage = events.find(e => e.id === 'microsoft-garage-robotics-2026');
+  assert.equal(garage.date, '2026-10-26');
+  assert.equal(garage.startTime, '10:00');
+  assert.equal(garage.endTime, '15:00');
+  assert.equal(garage.allDay, false);
+  assert.match(garage.description, /tentative/);
   const partners = read('partners.html');
   assert.match(partners, /Microsoft Community Affairs awarded AARI \$35,000/);
   assert.match(partners, /<article class="partner-slide"/);
