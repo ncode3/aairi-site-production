@@ -8,7 +8,7 @@ const EVENT_DATA_URL = 'assets/data/events.json';
     let visibleMonth = new Date();
 
     const escapeHtml = (value = '') => String(value).replace(/[&<>'"]/g, (character) => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', "'":'&#39;', '"':'&quot;' }[character]));
-    const eventDateTime = (event, field = 'startTime') => new Date(`${event.date}T${event[field] || '12:00'}:00-04:00`);
+    const eventDateTime = (event, field = 'startTime') => new Date(`${event.date}T${event[field] || '12:00'}:00${event.utcOffset || '-04:00'}`);
     const formatTime = (event) => event.allDay ? (event.date >= new Date().toLocaleDateString('en-CA', { timeZone: 'America/New_York' }) ? 'Time to be confirmed' : 'Date only') : `${timeFormatter.format(eventDateTime(event))}–${timeFormatter.format(eventDateTime(event, 'endTime'))} ET`;
     const calendarUrl = (event) => {
       const formatStamp = (date) => date.toISOString().replace(/[-:]/g, '').replace(/\.000Z$/, 'Z');
