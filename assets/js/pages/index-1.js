@@ -502,7 +502,7 @@ window.lucide?.createIcons();
                 }
                 const dateFormatter = new Intl.DateTimeFormat('en-US', { month: 'short', day: 'numeric', year: 'numeric', timeZone: 'America/New_York' });
                 const timeFormatter = new Intl.DateTimeFormat('en-US', { hour: 'numeric', minute: '2-digit', timeZone: 'America/New_York' });
-                const eventDate = (event, field = 'startTime') => new Date(`${event.date}T${event[field] || '12:00'}:00-04:00`);
+                const eventDate = (event, field = 'startTime') => new Date(`${event.date}T${event[field] || '12:00'}:00${event.utcOffset || '-04:00'}`);
                 grid.innerHTML = upcoming.map((event) => {
                     const time = event.allDay ? 'Time to be confirmed' : `${timeFormatter.format(eventDate(event))}–${timeFormatter.format(eventDate(event, 'endTime'))} ET`;
                     return `<article class="bright-card rounded-3xl p-6">
