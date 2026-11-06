@@ -225,5 +225,35 @@
     "description": "Free weekly Infrastructure Foundations class for enrolled AARI students. Learn Linux, networking, programming, and the systems supporting local AI through hands-on exercises. Mondays, November 9–December 14, 6–7 p.m. Eastern. Entrance and pickup instructions will be shared with families before classes begin.",
     "url": "contact.html",
     "cta": "Ask about the program"
+  },
+  {
+    "id": "ge-vernova-energy-cohort-2026-11-10",
+    "date": "2026-11-10",
+    "startTime": "14:00",
+    "endTime": "17:00",
+    "utcOffset": "-05:00",
+    "allDay": false,
+    "title": "AARI x GE Vernova: New Energy Cohort Kickoff",
+    "category": "Student event",
+    "audience": "Invited participants",
+    "location": "GE Vernova, 600 Galleria Parkway SE, Atlanta, GA 30339",
+    "description": "AARI's new energy cohort kicks off in person at GE Vernova. Invited students should contact AARI for visitor check-in, parking, and transportation assistance.",
+    "url": "contact.html",
+    "cta": "Contact AARI about participation"
+  },
+  {
+    "id": "tag-ai-summit-2026-11-17",
+    "date": "2026-11-17",
+    "startTime": "08:00",
+    "endTime": "17:30",
+    "utcOffset": "-05:00",
+    "allDay": false,
+    "title": "TAG AI Summit: The AI-Powered Enterprise",
+    "category": "Summit and robotics demonstration",
+    "audience": "Registration required",
+    "location": "Honeywell, 715 Peachtree St NE, Atlanta, GA 30308",
+    "description": "Join AARI at the TAG AI Summit. Check-in begins at 8 a.m.; the program begins at 9 a.m. Nolan S. Code moderates Leading Enterprise AI Transformation from 10:05–10:35 a.m. AARI's Physical AI / MBot demonstration is confirmed for 4 p.m., followed by networking from 4:15–5:30 p.m. All times Eastern. Register through TAG; adding this event to your calendar does not register you for the summit.",
+    "url": "https://members.tagonline.org/calendar/Details/tag-ai-summit-the-ai-powered-enterprise-1906151?sourceTypeId=Hub",
+    "cta": "Event details and registration"
   }
 ]
