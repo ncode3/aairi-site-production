@@ -32,6 +32,7 @@ const EVENT_DATA_URL = 'assets/data/events.json';
         </div>
         <p class="mt-5 leading-relaxed text-slate-300">${escapeHtml(event.description)}</p>
         <div class="mt-6 flex flex-col sm:flex-row xl:flex-col 2xl:flex-row gap-3">
+          ${event.videos?.length || event.photos?.length ? `<a href="#event-${escapeHtml(event.id)}" class="rounded-xl bg-white px-4 py-3 text-center text-sm font-extrabold text-navy-950 hover:bg-slate-100">View event highlights</a>` : ''}
           ${event.url ? `<a href="${escapeHtml(event.url)}" target="_blank" rel="noopener noreferrer" class="rounded-xl bg-white px-4 py-3 text-center text-sm font-extrabold text-navy-950 hover:bg-slate-100">${escapeHtml(event.cta || 'Event details')}</a>` : ''}
           <a href="${escapeHtml(calendarUrl(event))}" target="_blank" rel="noopener noreferrer" class="rounded-xl border border-white/15 bg-white/5 px-4 py-3 text-center text-sm font-bold text-white hover:border-gold-400/50">Add to calendar</a>
         </div>`;
@@ -70,12 +71,13 @@ const EVENT_DATA_URL = 'assets/data/events.json';
       const today = new Date().toLocaleDateString('en-CA', { timeZone: 'America/New_York' });
       const ordered = [...events.filter(e => e.date >= today), ...events.filter(e => e.date < today).reverse()];
       target.innerHTML = ordered.map((event, index) => `
-        ${index === 0 || (event.date < today && ordered[index - 1].date >= today) ? `<h3 class="md:col-span-2 xl:col-span-3 text-2xl font-bold">${event.date >= today ? 'Upcoming events' : 'Past events &amp; photos'}</h3>` : ''}
+        ${index === 0 || (event.date < today && ordered[index - 1].date >= today) ? `<h3 class="md:col-span-2 xl:col-span-3 text-2xl font-bold">${event.date >= today ? 'Upcoming events' : 'Past events &amp; highlights'}</h3>` : ''}
         <article id="event-${escapeHtml(event.id)}" class="scroll-mt-24 rounded-3xl border border-white/10 bg-white/[.035] p-6">
           <div class="flex items-start justify-between gap-4"><div><p class="text-sm font-extrabold uppercase tracking-[.12em] text-gold-300">${escapeHtml(shortDateFormatter.format(easternDate(event.date)))}</p><p class="mt-1 text-xs font-semibold text-slate-400">${escapeHtml(formatTime(event))}</p></div><span class="rounded-full border border-white/10 px-3 py-1 text-[11px] font-bold text-slate-300">${escapeHtml(event.audience)}</span></div>
           <h3 class="mt-5 text-xl font-extrabold">${escapeHtml(event.title)}</h3>
           <p class="mt-3 text-sm leading-relaxed text-slate-300">${escapeHtml(event.description)}</p>
           <p class="mt-5 flex gap-2 text-sm text-slate-400"><i data-lucide="map-pin" class="mt-0.5 h-4 w-4 shrink-0"></i><span>${escapeHtml(event.location)}</span></p>
+          ${(event.videos || []).map(video => `<figure class="mt-5"><video controls playsinline preload="none" poster="${escapeHtml(video.poster)}" aria-label="${escapeHtml(video.caption)}" class="w-full rounded-xl"><source src="${escapeHtml(video.src)}" type="video/mp4"></video><figcaption class="mt-2 text-xs text-slate-400">${escapeHtml(video.caption)}</figcaption></figure>`).join('')}
           ${(event.photos || []).map(photo => `<figure class="mt-5"><a href="${escapeHtml(photo.src)}"><img src="${escapeHtml(photo.src)}" alt="${escapeHtml(photo.alt)}" loading="lazy" class="w-full aspect-[4/3] object-cover rounded-xl"></a><figcaption class="mt-2 text-xs text-slate-400">${escapeHtml(photo.caption)}</figcaption></figure>`).join('')}
           ${event.url ? `<a href="${escapeHtml(event.url)}" class="block mt-5 font-bold text-gold-300">${escapeHtml(event.cta || 'Event details')} →</a>` : ''}
           <button type="button" data-list-event-id="${escapeHtml(event.id)}" class="mt-6 text-sm font-extrabold text-gold-300 hover:text-gold-400">View event details →</button>

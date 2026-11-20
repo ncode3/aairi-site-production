@@ -37,13 +37,21 @@ def photos(event):
         for p in event.get('photos', [])
     ) + '</div>' if event.get('photos') else ''
 
+def videos(event):
+    return ''.join(
+        f'<figure class="mt-5"><video controls playsinline preload="none" poster="{escape(video["poster"])}" aria-label="{escape(video["caption"])}" class="w-full rounded-xl">'
+        f'<source src="{escape(video["src"])}" type="video/mp4"></video>'
+        f'<figcaption class="mt-2 text-xs text-slate-400">{escape(video["caption"])}</figcaption></figure>'
+        for video in event.get('videos', [])
+    )
+
 def card(event, homepage=False):
     d = date.fromisoformat(event['date']).strftime('%b %d, %Y').replace(' 0', ' ')
     link = event.get('url') or f'events.html#event-{event["id"]}'
     return f'''<article id="event-{escape(event['id'])}" class="glass-panel rounded-3xl border border-white/10 p-6 scroll-mt-24">
 <p class="text-sm font-bold text-gold-300">{d}</p><p class="mt-1 text-xs text-slate-400">{escape(event_time(event))} · {escape(event['audience'])}</p>
 <h3 class="mt-4 text-xl font-bold">{escape(event['title'])}</h3><p class="mt-3 text-sm text-slate-300">{escape(event['description'])}</p><p class="mt-4 text-sm text-slate-400">{escape(event['location'])}</p>
-{'' if homepage else photos(event)}<a href="{escape(link)}" class="inline-block mt-5 font-bold text-gold-300">{escape(event.get('cta') or 'Event details')} →</a></article>'''
+{'' if homepage else videos(event) + photos(event)}<a href="{escape(link)}" class="inline-block mt-5 font-bold text-gold-300">{escape(event.get('cta') or 'Event details')} →</a></article>'''
 
 def render():
     events = sorted(json.loads((ROOT/'assets/data/events.json').read_text()), key=lambda e:e['date'])
@@ -53,7 +61,7 @@ def render():
     home.write_text(replace_content(home.read_text(), 'upcoming-events-grid', ''.join(card(e,True) for e in upcoming[:3]) or '<p>New dates will be added soon. <a href="events.html">See past events.</a></p>'))
     page = ROOT/'events.html'
     text=page.read_text()
-    text=replace_content(text,'event-list','<h3 class="md:col-span-2 xl:col-span-3 text-2xl font-bold">Upcoming events</h3>'+''.join(card(e) for e in upcoming)+'<h3 class="md:col-span-2 xl:col-span-3 text-2xl font-bold mt-6">Past events &amp; photos</h3>'+''.join(card(e) for e in past))
+    text=replace_content(text,'event-list','<h3 class="md:col-span-2 xl:col-span-3 text-2xl font-bold">Upcoming events</h3>'+''.join(card(e) for e in upcoming)+'<h3 class="md:col-span-2 xl:col-span-3 text-2xl font-bold mt-6">Past events &amp; highlights</h3>'+''.join(card(e) for e in past))
     selected=(upcoming or events)[0]
     month=date.fromisoformat(selected['date']).replace(day=1)
     text=re.sub(r'(<h2 id="calendar-title"[^>]*>).*?(</h2>)',r'\g<1>'+month.strftime('%B %Y')+r'\g<2>',text)
