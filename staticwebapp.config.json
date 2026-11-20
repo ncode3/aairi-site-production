@@ -126,6 +126,9 @@
     "Cross-Origin-Opener-Policy": "same-origin",
     "Strict-Transport-Security": "max-age=31536000; includeSubDomains; preload"
   },
+  "mimeTypes": {
+    ".mp4": "video/mp4"
+  },
   "platform": {
     "apiRuntime": "node:22"
   },
