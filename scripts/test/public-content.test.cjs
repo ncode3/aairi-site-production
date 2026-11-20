@@ -24,6 +24,12 @@ test('dated events, event photos and grant partners are present before JavaScrip
       assert.ok(page.includes(photo.src));
       assert.ok(fs.existsSync(path.join(dist, photo.src)));
     }
+    for (const video of event.videos || []) {
+      assert.ok(page.includes(`poster="${video.poster}"`));
+      assert.ok(page.includes(`<source src="${video.src}" type="video/mp4">`));
+      assert.ok(fs.existsSync(path.join(dist, video.src)));
+      assert.ok(fs.existsSync(path.join(dist, video.poster)));
+    }
   }
   assert.ok(events.some(e => e.date === '2026-10-30' && e.title.includes('MIT')));
   const garage = events.find(e => e.id === 'microsoft-garage-robotics-2026');

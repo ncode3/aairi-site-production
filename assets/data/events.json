@@ -252,8 +252,54 @@
     "category": "Summit and robotics demonstration",
     "audience": "Registration required",
     "location": "Honeywell, 715 Peachtree St NE, Atlanta, GA 30308",
-    "description": "Join AARI at the TAG AI Summit. Check-in begins at 8 a.m.; the program begins at 9 a.m. Nolan S. Code moderates Leading Enterprise AI Transformation from 10:05–10:35 a.m. AARI's Physical AI / MBot demonstration is confirmed for 4 p.m., followed by networking from 4:15–5:30 p.m. All times Eastern. Register through TAG; adding this event to your calendar does not register you for the summit.",
+    "description": "AARI students demonstrated their MBot live at the TAG AI Summit at Honeywell. Nolan S. Code also moderated the Leading Enterprise AI Transformation panel.",
     "url": "https://members.tagonline.org/calendar/Details/tag-ai-summit-the-ai-powered-enterprise-1906151?sourceTypeId=Hub",
-    "cta": "Event details and registration"
+    "cta": "TAG summit details",
+    "videos": [
+      {
+        "src": "assets/video/honeywell-student-demo.mp4",
+        "poster": "images/events/honeywell-student-demo.webp",
+        "caption": "Watch the student MBot demonstration at Honeywell"
+      },
+      {
+        "src": "assets/video/honeywell-mbot-closeup.mp4",
+        "poster": "images/events/honeywell-mbot-closeup.webp",
+        "caption": "Watch a close-up of the MBot in motion"
+      }
+    ],
+    "photos": [
+      {
+        "src": "images/events/tag-ai-summit-honeywell.webp",
+        "alt": "AARI team members stand near a Honeywell sign at the TAG AI Summit",
+        "caption": "AARI at the TAG AI Summit"
+      }
+    ]
+  },
+  {
+    "id": "morehouse-jetson-nano-lab-2026-11-18",
+    "date": "2026-11-18",
+    "allDay": true,
+    "title": "NVIDIA Jetson Nano Lab at Morehouse College",
+    "category": "Student lab",
+    "audience": "Morehouse students",
+    "location": "Morehouse College, Atlanta, GA",
+    "description": "Students set up NVIDIA Jetson Nano developer kits at Morehouse College and prepared the boards to run AI models locally.",
+    "photos": [
+      {
+        "src": "images/events/morehouse-jetson-students.webp",
+        "alt": "Morehouse students work around a lab bench with monitors and hardware",
+        "caption": "Students set up the Jetson Nano lab"
+      },
+      {
+        "src": "images/events/morehouse-jetson-kits.webp",
+        "alt": "Unboxed NVIDIA Jetson Nano developer kits on a lab table",
+        "caption": "NVIDIA Jetson Nano developer kits"
+      },
+      {
+        "src": "images/events/morehouse-jetson-workstation.webp",
+        "alt": "A lab workstation with the NVIDIA logo on its monitor",
+        "caption": "A Jetson Nano lab workstation"
+      }
+    ]
   }
 ]
